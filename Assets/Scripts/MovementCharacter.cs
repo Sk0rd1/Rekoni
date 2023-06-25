@@ -134,6 +134,7 @@ public class MovementCharacter : MonoBehaviour
     {
         if(firstStageOfClimbing)
         {
+
             //controller.Move(new Vector3(0f, 2 * gravity, 0f) * Time.deltaTime);
         }
         if(secondStageOfClimbing)
