@@ -12,6 +12,9 @@ public class CameraMovement : MonoBehaviour
     private GameObject character;
     [SerializeField]
 
+    //Last Try
+    //Checking 4444555
+    //SAFASFSFAASFSAFSFASFFSAFSA
     public Vector3 GetOffsetPosition() { return offsetPosition; }
 
     void Start()
