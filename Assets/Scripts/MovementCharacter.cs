@@ -49,6 +49,8 @@ public class MovementCharacter : MonoBehaviour
 
     private bool firstStageOfClimbing = false;
     private bool secondStageOfClimbing = false;
+    private bool firstStageOfClimbing2 = false;
+    private bool secondStageOfClimbing2 = false;
 
     private Rigidbody boxForMoveNew;
     private Rigidbody boxForMoveOld;
