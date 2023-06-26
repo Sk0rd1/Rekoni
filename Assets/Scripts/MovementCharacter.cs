@@ -1,14 +1,14 @@
 /*Баги
- * 1 - Коробку можна перемістити персонажем(хз що робити, бо isKinematic не варіант)
+ * 1 - Коробку можна перемістити персонажем(хз що робити, бо isKinematic не варіант і додавання Rigidbody до персонажа також не допомагає)
  * 2 - X не завжди спрацьовує коли потрібно взяти коробку(можливо потрібно збільшити область тригеру)
- * 3 - під час бігу натискання телепортації відміняє телепорт і через це на наступний раз йде телепортація за карту
+ * 3 + під час бігу натискання телепортації відміняє телепорт і через це на наступний раз йде телепортація за карту
  * 4 - Y взагалі не працює(хз що робити)
  * 5 - потрбіно зробити щоб при бізі спочатку був поворот а тільки потім рух
  * 6 - зробити норальний підйом на коробку
  * 7 - зробити щось схоже на східці (45 градусів)
  * 8 - добавити ричаг та двері
  * 9 - анімація падіння не завжди програється
- * 
+ * 10 - відміна телепортації якщо заважає обєкт
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -134,6 +134,7 @@ public class MovementCharacter : MonoBehaviour
     {
         if(firstStageOfClimbing)
         {
+
             //controller.Move(new Vector3(0f, 2 * gravity, 0f) * Time.deltaTime);
         }
         if(secondStageOfClimbing)
@@ -343,20 +344,20 @@ public class MovementCharacter : MonoBehaviour
         animator.SetBool("isRunning", false);
         animator.SetBool("isMoveTime", true);
 
-        yield return new WaitForSeconds(1.5f);
-        
-        if(isMoveTimeCast)
+        Vector3 pointToCheck = Vector3.zero;
+
+        if (isMoveTimeCast)
         {
             if (isNewTime)
             {
-                transform.position += moveTimeDirection;
-                cameraCharacter.transform.position = transform.position + new Vector3(0f, 22.5f, -18f);
+                pointToCheck = transform.position + moveTimeDirection;
+
                 isNewTime = false;
             }
             else
             {
-                transform.position -= moveTimeDirection;
-                cameraCharacter.transform.position = transform.position + new Vector3(0f, 22.5f, -18f);
+                pointToCheck = transform.position - moveTimeDirection;
+
                 isNewTime = true;
             }
 
@@ -364,6 +365,11 @@ public class MovementCharacter : MonoBehaviour
             boxForMoveNew = null;
             boxForMoveOld = null;
         }
+
+        yield return new WaitForSeconds(1.5f);
+
+        transform.position = pointToCheck;
+        cameraCharacter.transform.position = transform.position + new Vector3(0f, 22.5f, -18f);
 
         yield return new WaitForSeconds(0.5f);
 
