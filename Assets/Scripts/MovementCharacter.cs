@@ -136,6 +136,7 @@ public class MovementCharacter : MonoBehaviour
 
         if (!isFalling() && !isMoveTimeCast && !isRolling)
         {
+            isMoveTimeCast = false;
             Running(currentDirection);
         }
 
