@@ -88,13 +88,19 @@ public class MovementCharacter : MonoBehaviour
     void Update()
     {
         Vector3 currentDirection = GetCurrentPosition();
+        if (!nowCastMoveTime)
+        {
+            isMoveTimeCast = false;
+            isRolling = false;
+            controller.Move(new Vector3(0f, -gravity, 0f) * Time.deltaTime);
+        }
 
-        if (Input.GetButtonDown("Roll") && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast)
+         if (Input.GetButtonDown("Roll") && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast)
         {
             StartCoroutine(Roll());
         }
 
-        if (Input.GetButtonDown("MoveTime") && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling)
+        else if (Input.GetButtonDown("MoveTime") && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling)
         {
             isMoveTimeCast = true;
             StartCoroutine(MoveTime());
@@ -122,7 +128,7 @@ public class MovementCharacter : MonoBehaviour
             }
         }*/
 
-        if (!Input.GetButton("MoveTime"))
+        else if (!Input.GetButton("MoveTime"))
         {
             isMoveTimeCast = false;
             animator.SetBool("isMoveTime", false);
@@ -130,13 +136,11 @@ public class MovementCharacter : MonoBehaviour
 
         if (!isFalling() && !isMoveTimeCast && !isRolling)
         {
+            isMoveTimeCast = false;
             Running(currentDirection);
         }
 
-        if(!nowCastMoveTime)
-        {
-            controller.Move(new Vector3(0f, -gravity, 0f) * Time.deltaTime);
-        }
+
 
 
         /*if (isMoveBox && (boxForMoveNew != null || boxForMoveOld) && !isClimbing && !isRolling)
@@ -211,7 +215,8 @@ public class MovementCharacter : MonoBehaviour
         }
 
         oldValueY = transform.position.y;
-        
+        isRolling = false;
+        isMoveTimeCast = false;
         return isFall;
     }
 
