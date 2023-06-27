@@ -33,7 +33,14 @@ public class MovementCharacter : MonoBehaviour
     private Camera cameraCharacter;
     [SerializeField]
     private Vector3 moveTimeDirection = new Vector3(200f, 0f, 0f);
-
+    public float MOVESPEED
+    { get { return moveSpeed; } }
+    public float TURNDURATION
+    { get { return turnDuration; } }
+    public float GRAVITY
+    { get { return gravity; } }
+    public Vector3 MOVETIMEDIRECTION
+    { get { return moveTimeDirection; } }
 
     private Vector3 rollMoveDirection = new Vector3(0f, 0f, 1f);
     private Vector3 climbMoveDirection = Vector3.zero;
@@ -45,15 +52,30 @@ public class MovementCharacter : MonoBehaviour
     private bool isRolling = false;
     private bool isClimbing = false;
     private bool isMoveBox = false;
-    private float oldValueY;
+    public bool NOWCASTMOVETIME
+    { get { return nowCastMoveTime; } }
+    public bool ISCLIBING
+    { get { return isClimbing; } }
+    public bool ISMOVEBOX
+    { get { return isMoveBox; } }
 
+    private float oldValueY;
     private bool firstStageOfClimbing = false;
     private bool secondStageOfClimbing = false;
 
     private Rigidbody boxForMoveNew;
     private Rigidbody boxForMoveOld;
-    private GameObject currentBoxNew; 
-    private GameObject currentBoxOld; 
+    private GameObject currentBoxNew;
+    private GameObject currentBoxOld;
+    /*private void InitializeVariables()
+    {
+        BoxMove point = new BoxMove();
+        boxForMoveNew = point.BOXORMOVENEW;
+        boxForMoveOld = point.BOXFORMOVEOLD;
+        currentBoxNew = point.CURRENTBOXNEW;
+        currentBoxOld = point.CURRENTBOXOLD;
+    }*/
+
 
 
     void Start()
@@ -78,7 +100,7 @@ public class MovementCharacter : MonoBehaviour
             StartCoroutine(MoveTime());
         }
         
-        if (Input.GetButtonDown("ClimbOnBox") && (currentBoxNew != null || currentBoxOld != null) && !isMoveBox && !isClimbing && !isRolling)
+        /*if (Input.GetButtonDown("ClimbOnBox") && (currentBoxNew != null || currentBoxOld != null) && !isMoveBox && !isClimbing && !isRolling)
         {
             StartCoroutine(ClimbOnBox());
         }
@@ -98,7 +120,7 @@ public class MovementCharacter : MonoBehaviour
                 animator.SetBool("isMoveBox", true);
                 GetBoxForMove();
             }
-        }
+        }*/
 
         if (!Input.GetButton("MoveTime"))
         {
@@ -117,10 +139,10 @@ public class MovementCharacter : MonoBehaviour
         }
 
 
-        if (isMoveBox && (boxForMoveNew != null || boxForMoveOld) && !isClimbing && !isRolling)
+        /*if (isMoveBox && (boxForMoveNew != null || boxForMoveOld) && !isClimbing && !isRolling)
         {
             MoveBox();
-        }
+        }*/
 
         if (isRolling && !isClimbing && !isMoveTimeCast)
         {
@@ -172,93 +194,7 @@ public class MovementCharacter : MonoBehaviour
     }
 
 
-    private void GetBoxForMove()
-    {
-        try
-        {
-            boxForMoveNew = currentBoxNew.GetComponent<Rigidbody>();
-        }
-        catch
-        {
-            boxForMoveNew = null;
-        }
-
-        try
-        {
-            boxForMoveOld = currentBoxOld.GetComponent<Rigidbody>();
-        }
-        catch
-        {
-            boxForMoveOld = null;
-        }
-    }
-
-    private void MoveBox()
-    {
-        float horizontalDirection = Input.GetAxis("Axis 4");
-        float verticalDirection = -Input.GetAxis("Axis 5");
-
-        Vector3 boxDirection = new Vector3(horizontalDirection, 0f, verticalDirection);
-
-        if (boxForMoveNew != null)
-        {
-            boxForMoveNew.AddForce(boxDirection * 1000 * Time.deltaTime, ForceMode.Force);
-            transform.LookAt(new Vector3(boxForMoveNew.transform.position.x, 0f, boxForMoveNew.transform.position.z));
-        }
-
-        if (boxForMoveOld != null)
-        {
-            string nameOld = boxForMoveOld.name;
-            string numberOld = nameOld.Substring(13);
-            string nameNew = "BoxForMoveNew" + numberOld;
-
-            GameObject boxFtomOldToNew = GameObject.Find(nameNew);
-
-            boxForMoveOld.AddForce(boxDirection * 1000 * Time.deltaTime, ForceMode.Force);
-            boxFtomOldToNew.transform.position = boxForMoveOld.transform.position - moveTimeDirection;
-            transform.LookAt(new Vector3(boxForMoveOld.transform.position.x, 0f, boxForMoveOld.transform.position.z));
-        }
-    }
-
-    private IEnumerator ClimbOnBox()
-    {
-        GameObject currentBox;
-
-        if (currentBoxNew == null)
-            currentBox = currentBoxOld;
-        else
-            currentBox = currentBoxNew;
-
-        isClimbing = true;
-        Quaternion rotationOld = transform.rotation;
-        transform.LookAt(currentBox.transform);
-        Quaternion rotationNew = transform.rotation;
-        transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
-
-        Vector3 direction = currentBox.transform.position - transform.position;
-        direction.y = 0;
-        direction.Normalize();
-        controller.Move(direction * moveSpeed * Time.deltaTime);
-
-        yield return new WaitForSeconds(0.3f);
-
-        animator.SetBool("isClimbing", true);
-
-        firstStageOfClimbing = true;
-
-        yield return new WaitForSeconds(0.6f);
-
-        firstStageOfClimbing = false;
-        secondStageOfClimbing = true;
-
-        yield return new WaitForSeconds(0.4f);
-
-        secondStageOfClimbing = false;
-
-        animator.SetBool("isClimbing", false);
-
-        isClimbing = false;
-    }
+   
 
     private bool isFalling()
     {
@@ -328,7 +264,7 @@ public class MovementCharacter : MonoBehaviour
         moveDirection = new Vector3(horizontalInput, 0f, verticalInput);
         moveDirection.Normalize();
 
-        //moveDirection.y = -gravity;
+        moveDirection.y = -gravity;
 
         if(Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z) > 0.1 && !isRolling)
         {
