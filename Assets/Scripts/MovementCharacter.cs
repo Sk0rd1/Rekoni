@@ -79,6 +79,7 @@ public class MovementCharacter : MonoBehaviour
 
         if (Input.GetButtonDown("MoveTime") && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling)
         {
+
             isMoveTimeCast = true;
             StartCoroutine(MoveTime());
         }
@@ -261,7 +262,7 @@ public class MovementCharacter : MonoBehaviour
     private bool isFalling()
     {
         bool isFall = false;
-
+        isRolling = false;
         if (Mathf.Abs(oldValueY - transform.position.y) > 0.1f)
         {
             isFall = true;
@@ -323,8 +324,17 @@ public class MovementCharacter : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             horizontalInput = 1;
 
-        moveDirection = new Vector3(horizontalInput, 0f, verticalInput);
-        moveDirection.Normalize();
+        if (Mathf.Abs(oldValueY - transform.position.y) > 0.1f)
+        {
+            horizontalInput = 0;
+            verticalInput = 0;
+            moveDirection.z = -gravity;
+        }
+        else
+        {
+            moveDirection = new Vector3(horizontalInput, 0f, verticalInput);
+            moveDirection.Normalize();
+        }
 
         if (Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z) > 0.1 && !isRolling)
         {

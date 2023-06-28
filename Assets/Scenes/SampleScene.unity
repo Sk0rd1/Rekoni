@@ -508,7 +508,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &108251785
+--- !u!114 &108251787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -522,8 +522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   turnDuration: 0.1
-  gravity: 6
-  cameraCharacter: {fileID: 963194227}
+  gravity: 15
+  cameraCharacter: {fileID: 0}
   moveTimeDirection: {x: 200, y: 0, z: 0}
 --- !u!1 &110876052
 GameObject:
@@ -1860,11 +1860,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379259793}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &394020328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2656431786303760210, guid: 1d60cd11ce17e5340b1e9aca108f0709, type: 3}
-  m_PrefabInstance: {fileID: 1323329197}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &397584886
 GameObject:
   m_ObjectHideFlags: 0
@@ -4604,7 +4599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetPosition: {x: 0, y: 22.5, z: -18}
   rotation: {x: 48, y: 0, z: 0, w: 0}
-  character: {fileID: 394020328}
+  character: {fileID: 108251771}
 --- !u!1 &966823373
 GameObject:
   m_ObjectHideFlags: 0
@@ -6235,7 +6230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d60cd11ce17e5340b1e9aca108f0709, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.62
+      value: 49.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d60cd11ce17e5340b1e9aca108f0709, type: 3}
       propertyPath: m_LocalPosition.z
