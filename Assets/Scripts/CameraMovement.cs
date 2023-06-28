@@ -10,9 +10,6 @@ public class CameraMovement : MonoBehaviour
     private Quaternion rotation = new Quaternion(48f, 0f, 0f, 0f);
     [SerializeField]
     private GameObject character;
-    [SerializeField]
-
-    public Vector3 GetOffsetPosition() { return offsetPosition; }
 
     void Start()
     {
