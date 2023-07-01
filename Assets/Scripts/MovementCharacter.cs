@@ -74,6 +74,7 @@ Exile, STOPBAN & DILBLIN
  */
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -108,6 +109,18 @@ public class MovementCharacter : MonoBehaviour
     private bool isClimbing = false;
     private bool isMoveBox = false;
     private float oldValueY;
+    
+
+
+    [SerializeField] private float _wallAngelMax;
+    [SerializeField] private float _groundAngelMax;
+    [SerializeField] private LayerMask _layerMask;
+    private Rigidbody _rigidBody;
+    private CapsuleCollider _capsule;
+    [Header("Heights")] [SerializeField] private float _overpassHeight;
+    [Header("Offsets")][SerializeField] private float _climbOriginDown;
+    private bool _climbing;
+
 
     private Rigidbody boxForMoveNew;
     private Rigidbody boxForMoveOld;
@@ -117,6 +130,8 @@ public class MovementCharacter : MonoBehaviour
 
     void Start()
     {
+        _rigidBody = GetComponent<Rigidbody>();
+        _capsule = GetComponent<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         oldValueY = transform.position.y;
@@ -285,20 +300,19 @@ public class MovementCharacter : MonoBehaviour
             currentBox = currentBoxOld;
         else
             currentBox = currentBoxNew;
-
+        controller.center = new Vector3(0f, 0f, 0f);
         isClimbing = true;
         Quaternion rotationOld = transform.rotation;
         transform.LookAt(currentBox.transform);
         Quaternion rotationNew = transform.rotation;
         transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
-
         Vector3 direction = currentBox.transform.position - transform.position;
         direction.y = 0;
         direction.Normalize();
         controller.Move(direction * moveSpeed * Time.deltaTime);
 
         yield return new WaitForSeconds(0.1f);
-        //transform.LookAt(currentBox.transform);
+        transform.LookAt(currentBox.transform);
         animator.SetBool("isClimbing", true);
 
         yield return new WaitForSeconds(1.1f);
@@ -306,10 +320,10 @@ public class MovementCharacter : MonoBehaviour
         Vector3 climbDirection = transform.forward * 1.2f;
         climbDirection.y += 5;
         transform.position += climbDirection;
-
-        animator.SetBool("isClimbing", false);
+        controller.center = new Vector3(0f, 0.9f, 0f);
 
         yield return new WaitForSeconds(0.05f);
+        animator.SetBool("isClimbing", false);
         isClimbing = false;
     }
 
