@@ -338,16 +338,9 @@ public class MovementCharacter : MonoBehaviour
         else
             currentBox = currentBoxNew;
         isClimbing = true;
-        Quaternion rotationOld = transform.rotation;
-        transform.LookAt(currentBox.transform);
-        Quaternion rotationNew = transform.rotation;
-        transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
-        Vector3 direction = currentBox.transform.position - transform.position;
-        direction.y = 0;
-        direction.Normalize();
-        controller.Move(direction * moveSpeed * Time.deltaTime);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return StartCoroutine(RunToClimb(currentBox));
+
         transform.LookAt(new Vector3(currentBox.transform.position.x, transform.position.y, currentBox.transform.position.z));
         animator.SetBool("isClimbing", true);
         isFirstStageOfClimbing = true;
@@ -368,6 +361,35 @@ public class MovementCharacter : MonoBehaviour
         animator.speed = 1f;
         isClimbing = false;
     }
+
+    private IEnumerator RunToClimb(GameObject currentBox)
+    {
+        Quaternion rotationOld = transform.rotation;
+        transform.LookAt(currentBox.transform);
+        Quaternion rotationNew = transform.rotation;
+        transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
+        Vector3 direction = currentBox.transform.position - transform.position;
+        direction.y = 0;
+        direction.Normalize();
+
+
+        Vector3 oldVector = Vector3.zero;
+        Vector3 newVector = transform.position;
+        while (true)
+        {
+            animator.SetBool("isRunning", true);
+            newVector = transform.position;
+            if (oldVector.x == newVector.x || oldVector.z == newVector.z)
+            {
+                yield break;
+            }
+
+            controller.Move(direction * moveSpeed * Time.deltaTime);
+            oldVector = newVector;
+            yield return null;
+        }
+    }
+
 
     private bool isFalling()
     {

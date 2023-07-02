@@ -8,12 +8,12 @@ public class CameraMovement : MonoBehaviour
     private Vector3 offsetPosition = new Vector3(0f, 22.5f, -18f);
     [SerializeField]
     private Quaternion rotation = new Quaternion(48f, 0f, 0f, 0f);
-    [SerializeField]
+
     private GameObject character;
 
     void Start()
     {
-
+        character = GameObject.Find("CharacterModel");
     }
     void Update()
     {
