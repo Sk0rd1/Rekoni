@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
             agent.SetDestination(walkPoint);
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if(distanceToWalkPoint.magnitude <2f)
+        if(distanceToWalkPoint.magnitude <1f)
             walkPointSet = false;
 
     }
@@ -59,7 +59,7 @@ public class EnemyAI : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 1f, whatIsGround))
+        if (Physics.Raycast(walkPoint, -transform.up, 1.5f, whatIsGround))
             walkPointSet = true;
 
     }
