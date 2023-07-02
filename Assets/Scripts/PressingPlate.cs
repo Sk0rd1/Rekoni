@@ -5,16 +5,19 @@ using UnityEngine.Events;
 
 public class PressingPlate : MonoBehaviour
 {
-    public UnityEvent OnPressed;
+    public UnityEvent OnPressed;    
     private bool isPressed = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (!isPressed)
+        if (other.tag == "Player")
         {
-            Transform cube = transform.GetChild(0);
-            cube.transform.position += new Vector3(0f, -0.49f, 0f);
-            isPressed = true;
+            if (!isPressed)
+            {
+                Transform cube = transform.GetChild(0);
+                cube.transform.position += new Vector3(0f, -0.49f, 0f);
+                isPressed = true;
+            }
+            OnPressed.Invoke();
         }
-        OnPressed.Invoke();
     }
 }

@@ -78,6 +78,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.TextCore.Text;
 
@@ -104,9 +105,9 @@ public class MovementCharacter : MonoBehaviour
     private bool isMoveTimeReady = true;
     private bool isMoveTimeCast = false;
     private bool isRollingReady = true;
-    private bool nowCastMoveTime = false;
     private bool isRolling = false;
     private bool isClimbing = false;
+    private bool isFirstStageOfClimbing = false;
     private bool isMoveBox = false;
     private float oldValueY;
     
@@ -141,7 +142,6 @@ public class MovementCharacter : MonoBehaviour
     void Update()
     {
         Vector3 currentDirection = GetCurrentPosition();
-        nowCastMoveTime = false;
 
         if (Input.GetButtonDown("Roll") && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast)
         {
@@ -189,6 +189,11 @@ public class MovementCharacter : MonoBehaviour
         {
             controller.Move(rollMoveDirection * moveSpeed * 1.75f * Time.deltaTime);
         }
+
+        if(isFirstStageOfClimbing)
+        {
+            transform.position += new Vector3(0f, 0.17f * gravity * Time.deltaTime, 0f);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -213,7 +218,7 @@ public class MovementCharacter : MonoBehaviour
             currentBoxNew = null;
         }
 
-        if (other.CompareTag("BoxInteractionNew"))
+        if (other.CompareTag("BoxInteractionOld"))
         {
             currentBoxOld = null;
         }
@@ -326,37 +331,41 @@ public class MovementCharacter : MonoBehaviour
 
     private IEnumerator ClimbOnBox()
     {
-        //GameObject currentBox;
+        GameObject currentBox;
 
-        //if (currentBoxNew == null)
-        //    currentBox = currentBoxOld;
-        //else
-        //    currentBox = currentBoxNew;
-        //controller.center = new Vector3(0f, 0f, 0f);
-        //isClimbing = true;
-        //Quaternion rotationOld = transform.rotation;
-        //transform.LookAt(currentBox.transform);
-        //Quaternion rotationNew = transform.rotation;
-        //transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
-        //Vector3 direction = currentBox.transform.position - transform.position;
-        //direction.y = 0;
-        //direction.Normalize();
-        //controller.Move(direction * moveSpeed * Time.deltaTime);
+        if (currentBoxNew == null)
+            currentBox = currentBoxOld;
+        else
+            currentBox = currentBoxNew;
+        isClimbing = true;
+        Quaternion rotationOld = transform.rotation;
+        transform.LookAt(currentBox.transform);
+        Quaternion rotationNew = transform.rotation;
+        transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
+        Vector3 direction = currentBox.transform.position - transform.position;
+        direction.y = 0;
+        direction.Normalize();
+        controller.Move(direction * moveSpeed * Time.deltaTime);
 
-        yield return new WaitForSeconds(0.1f);
-        //transform.LookAt(currentBox.transform);
+        yield return new WaitForSeconds(0.5f);
+        transform.LookAt(new Vector3(currentBox.transform.position.x, transform.position.y, currentBox.transform.position.z));
         animator.SetBool("isClimbing", true);
+        isFirstStageOfClimbing = true;
 
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(0.9f);
+
+        animator.SetBool("isClimbing", false);
+        isFirstStageOfClimbing = false;
 
         Vector3 climbDirection = transform.forward * 1.2f;
-        climbDirection.y += 5;
+        climbDirection.y += 3f;
         transform.position += climbDirection;
-        controller.center = new Vector3(0f, 0.9f, 0f);
-        animator.SetBool("isClimbing", false);
 
-        yield return new WaitForSeconds(0.05f);
-        //animator.SetBool("isClimbing", false);
+        animator.speed = 0.5f;
+
+        yield return new WaitForSeconds(0.4f);
+
+        animator.speed = 1f;
         isClimbing = false;
     }
 
@@ -483,7 +492,6 @@ public class MovementCharacter : MonoBehaviour
 
         if (isMoveTimeCast)
         {
-            nowCastMoveTime = true;
             transform.position = pointToCheck;
             cameraCharacter.transform.position = transform.position + new Vector3(0f, 22.5f, -18f);
 
