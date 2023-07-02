@@ -6,11 +6,6 @@ public class Door : MonoBehaviour
 {
     private bool isOpen;
 
-    void Start()
-    {
-        
-    }
-
     public void Open()
     {
         isOpen = true;
