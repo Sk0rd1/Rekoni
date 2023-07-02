@@ -123,6 +123,7 @@ public class MovementCharacter : MonoBehaviour
 
 
     private Rigidbody boxForMoveNew;
+    private GameObject boxFromOldToNew = null;
     private Rigidbody boxForMoveOld;
     private GameObject currentBoxNew;
     private GameObject currentBoxOld;
@@ -160,19 +161,7 @@ public class MovementCharacter : MonoBehaviour
 
         if (Input.GetButtonDown("MoveBox") && (currentBoxNew != null || currentBoxOld != null || isMoveBox) && !isClimbing && !isRolling)
         {
-            if (isMoveBox)
-            {
-                isMoveBox = false;
-                moveSpeed *= 2f;
-                animator.SetBool("isMoveBox", false);
-            }
-            else
-            {
-                moveSpeed /= 2f;
-                isMoveBox = true;
-                animator.SetBool("isMoveBox", true);
-                GetBoxForMove();
-            }
+            StateOfMoveBox();
         }
 
         if (!Input.GetButton("MoveTime"))
@@ -252,6 +241,49 @@ public class MovementCharacter : MonoBehaviour
         }
     }
 
+    private void StateOfMoveBox()
+    {
+        if (isMoveBox)
+        {
+            if (boxFromOldToNew != null)
+            {
+                bool isCancelMoveBox = true;
+                Vector3 pointToCheck = boxForMoveOld.transform.position - moveTimeDirection;
+                Collider[] colliders = Physics.OverlapSphere(pointToCheck, 2.52f);
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.tag == "BanTeleport")
+                    {
+                        isCancelMoveBox = false;
+                    }
+                }
+
+                if(isCancelMoveBox)
+                {
+                    boxFromOldToNew.transform.position = pointToCheck;
+                    isMoveBox = false;
+                    moveSpeed *= 2f;
+                    animator.SetBool("isMoveBox", false);
+                    boxFromOldToNew = null;
+                    boxFromOldToNew = null;
+                }
+            }
+            else
+            {
+                isMoveBox = false;
+                moveSpeed *= 2f;
+                animator.SetBool("isMoveBox", false);
+            }
+        }
+        else
+        {
+            moveSpeed /= 2f;
+            isMoveBox = true;
+            animator.SetBool("isMoveBox", true);
+            GetBoxForMove();
+        }
+    }
+
     private void MoveBox()
     {
         float horizontalDirection = Input.GetAxis("Axis 4");
@@ -284,35 +316,35 @@ public class MovementCharacter : MonoBehaviour
             string numberOld = nameOld.Substring(13);
             string nameNew = "BoxForMoveNew" + numberOld;
 
-            GameObject boxFtomOldToNew = GameObject.Find(nameNew);
+            boxFromOldToNew = GameObject.Find(nameNew);
 
             boxForMoveOld.AddForce(boxDirection * 1000 * Time.deltaTime, ForceMode.Force);
-            boxFtomOldToNew.transform.position = boxForMoveOld.transform.position - moveTimeDirection;
+            //boxFromOldToNew.transform.position = boxForMoveOld.transform.position - moveTimeDirection;
             transform.LookAt(new Vector3(boxForMoveOld.transform.position.x, 0f, boxForMoveOld.transform.position.z));
         }
     }
 
     private IEnumerator ClimbOnBox()
     {
-        GameObject currentBox;
+        //GameObject currentBox;
 
-        if (currentBoxNew == null)
-            currentBox = currentBoxOld;
-        else
-            currentBox = currentBoxNew;
-        controller.center = new Vector3(0f, 0f, 0f);
-        isClimbing = true;
-        Quaternion rotationOld = transform.rotation;
-        transform.LookAt(currentBox.transform);
-        Quaternion rotationNew = transform.rotation;
-        transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
-        Vector3 direction = currentBox.transform.position - transform.position;
-        direction.y = 0;
-        direction.Normalize();
-        controller.Move(direction * moveSpeed * Time.deltaTime);
+        //if (currentBoxNew == null)
+        //    currentBox = currentBoxOld;
+        //else
+        //    currentBox = currentBoxNew;
+        //controller.center = new Vector3(0f, 0f, 0f);
+        //isClimbing = true;
+        //Quaternion rotationOld = transform.rotation;
+        //transform.LookAt(currentBox.transform);
+        //Quaternion rotationNew = transform.rotation;
+        //transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
+        //Vector3 direction = currentBox.transform.position - transform.position;
+        //direction.y = 0;
+        //direction.Normalize();
+        //controller.Move(direction * moveSpeed * Time.deltaTime);
 
         yield return new WaitForSeconds(0.1f);
-        transform.LookAt(currentBox.transform);
+        //transform.LookAt(currentBox.transform);
         animator.SetBool("isClimbing", true);
 
         yield return new WaitForSeconds(1.1f);
@@ -321,9 +353,10 @@ public class MovementCharacter : MonoBehaviour
         climbDirection.y += 5;
         transform.position += climbDirection;
         controller.center = new Vector3(0f, 0.9f, 0f);
+        animator.SetBool("isClimbing", false);
 
         yield return new WaitForSeconds(0.05f);
-        animator.SetBool("isClimbing", false);
+        //animator.SetBool("isClimbing", false);
         isClimbing = false;
     }
 
@@ -461,11 +494,9 @@ public class MovementCharacter : MonoBehaviour
 
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
         animator.SetBool("isMoveTime", false);
-
-        yield return new WaitForSeconds(0.5f);
 
         isMoveTimeReady = true;
     }
