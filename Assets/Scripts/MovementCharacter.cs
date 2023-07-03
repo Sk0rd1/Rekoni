@@ -1,4 +1,4 @@
-﻿/*Багів немає, я все пофіксив все, бо я талант
+﻿/*Багів немає, я все пофіксив все, бо я талант(але є один, перший перекат робиться на місці)
 [Текст песни «​как же он силён»]
 
 [Интро: Серега Пират]
@@ -277,7 +277,7 @@ public class MovementCharacter : MonoBehaviour
             {
                 bool isCancelMoveBox = true;
                 Vector3 pointToCheck = boxForMoveOld.transform.position - moveTimeDirection;
-                Collider[] colliders = Physics.OverlapSphere(pointToCheck, 2.52f);
+                Collider[] colliders = Physics.OverlapSphere(pointToCheck, 2.49f);
                 foreach (Collider collider in colliders)
                 {
                     if (collider.tag == "BanTeleport")
@@ -416,11 +416,16 @@ public class MovementCharacter : MonoBehaviour
 
         Vector3 oldVector = Vector3.zero;
         Vector3 newVector = transform.position;
+        controller.Move(direction * moveSpeed * Time.deltaTime);
+
         while (true)
         {
             animator.SetBool("isRunning", true);
             newVector = transform.position;
-            if ((direction.z == 0 && oldVector.x == newVector.x) || (direction.x == 0 && oldVector.z == newVector.z))
+            //Debug.Log("direction.x + z" + direction.x + " " + direction.z);
+            //Debug.Log("oldVector.x + z " + oldVector.x + " " + oldVector.z);
+            //Debug.Log("newVector.x + z " + newVector.x + " " + newVector.z);
+            if ((Mathf.Abs(direction.z) < 0.01f && Mathf.Abs(oldVector.x - newVector.x) < 0.01f) || (Mathf.Abs(direction.x) < 0.01f && Mathf.Abs(oldVector.z - newVector.z) < 0.01f) || (Mathf.Abs(oldVector.x - newVector.x) < 0.01f && Mathf.Abs(oldVector.z - newVector.z) < 0.01f))
             {
                 yield break;
             }
