@@ -130,6 +130,18 @@ public class MovementCharacter : MonoBehaviour
     private GameObject currentBoxOld;
     private GameObject boxForClimb;
 
+    // V-sync and lock FPS
+    //private void Awake()
+    //{
+    //    QualitySettings.vSyncCount = 0;
+    //    Application.targetFrameRate = 60;
+    //}
+
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 2;
+        Application.targetFrameRate = 1000;
+    }
 
     void Start()
     {
@@ -547,7 +559,7 @@ public class MovementCharacter : MonoBehaviour
         if (isMoveTimeCast)
         {
             transform.position = pointToCheck;
-            cameraCharacter.transform.position = transform.position + new Vector3(0f, 22.5f, -18f);
+            cameraCharacter.transform.position = transform.position + new Vector3(0f, 30f, -18f);
 
             if (isNewTime)
                 isNewTime = false;
@@ -556,8 +568,7 @@ public class MovementCharacter : MonoBehaviour
 
         }
 
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.1f);
 
         isMoveTimeCast = false;
 
