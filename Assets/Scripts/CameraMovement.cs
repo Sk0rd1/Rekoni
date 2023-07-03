@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
 
     void Start()
     {
-        character = GameObject.Find("CharacterModel");
+        character = GameObject.Find("CharacterGirl");
     }
     void Update()
     {

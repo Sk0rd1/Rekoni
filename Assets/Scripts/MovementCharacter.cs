@@ -128,6 +128,7 @@ public class MovementCharacter : MonoBehaviour
     private Rigidbody boxForMoveOld;
     private GameObject currentBoxNew;
     private GameObject currentBoxOld;
+    private GameObject boxForClimb;
 
 
     void Start()
@@ -148,13 +149,13 @@ public class MovementCharacter : MonoBehaviour
             StartCoroutine(Roll());
         }
 
-        if (Input.GetButtonDown("MoveTime") && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling)
+        if (Input.GetButtonDown("MoveTime") && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling && !isMoveTimeCast)
         {
             isMoveTimeCast = true;
             StartCoroutine(MoveTime());
         }
 
-        if (Input.GetButtonDown("ClimbOnBox") && (currentBoxNew != null || currentBoxOld != null) && !isMoveBox && !isClimbing && !isRolling)
+        if (Input.GetButtonDown("ClimbOnBox") && (currentBoxNew != null || currentBoxOld != null || boxForClimb != null) && !isMoveBox && !isClimbing && !isRolling && !isMoveTimeCast)
         {
             StartCoroutine(ClimbOnBox());
         }
@@ -170,7 +171,7 @@ public class MovementCharacter : MonoBehaviour
             animator.SetBool("isMoveTime", false);
         }
 
-        if (!isFalling() && !isMoveTimeCast && !isRolling)
+        if (!isFalling() && !isMoveTimeCast && !isRolling && !isClimbing)
         {
             Running(currentDirection);
         }
@@ -209,6 +210,11 @@ public class MovementCharacter : MonoBehaviour
             currentBoxOld = other.gameObject;
             currentBoxNew = null;
         }
+
+        if(other.CompareTag("ToClimb"))
+        {
+            boxForClimb = other.gameObject;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -221,6 +227,11 @@ public class MovementCharacter : MonoBehaviour
         if (other.CompareTag("BoxInteractionOld"))
         {
             currentBoxOld = null;
+        }
+
+        if (other.CompareTag("ToClimb"))
+        {
+            boxForClimb = null;
         }
     }
 
@@ -324,24 +335,35 @@ public class MovementCharacter : MonoBehaviour
             boxFromOldToNew = GameObject.Find(nameNew);
 
             boxForMoveOld.AddForce(boxDirection * 1000 * Time.deltaTime, ForceMode.Force);
-            //boxFromOldToNew.transform.position = boxForMoveOld.transform.position - moveTimeDirection;
-            transform.LookAt(new Vector3(boxForMoveOld.transform.position.x, 0f, boxForMoveOld.transform.position.z));
+            boxFromOldToNew.transform.position = boxForMoveOld.transform.position - moveTimeDirection;
+            transform.LookAt(new Vector3(boxForMoveOld.transform.position.x, transform.position.y, boxForMoveOld.transform.position.z));
         }
     }
 
     private IEnumerator ClimbOnBox()
     {
-        GameObject currentBox;
+        GameObject currentBox = null;
 
-        if (currentBoxNew == null)
-            currentBox = currentBoxOld;
-        else
+        if (boxForClimb != null)
+            currentBox = boxForClimb;
+
+        if (currentBoxNew != null)
             currentBox = currentBoxNew;
+
+        if (currentBoxOld != null)
+            currentBox = currentBoxOld;
+
         isClimbing = true;
+
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
 
         yield return StartCoroutine(RunToClimb(currentBox));
 
-        transform.LookAt(new Vector3(currentBox.transform.position.x, transform.position.y, currentBox.transform.position.z));
+        //transform.LookAt(new Vector3(currentBox.transform.position.x, transform.position.y, currentBox.transform.position.z));
         animator.SetBool("isClimbing", true);
         isFirstStageOfClimbing = true;
 
@@ -364,13 +386,20 @@ public class MovementCharacter : MonoBehaviour
 
     private IEnumerator RunToClimb(GameObject currentBox)
     {
-        Quaternion rotationOld = transform.rotation;
-        transform.LookAt(currentBox.transform);
-        Quaternion rotationNew = transform.rotation;
-        transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
-        Vector3 direction = currentBox.transform.position - transform.position;
+        //Quaternion rotationOld = transform.rotation;
+        //transform.LookAt(currentBox.transform);
+        //Quaternion rotationNew = transform.rotation;
+        //transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
+
+        GameObject childObject = currentBox.transform.Find("CubeBanTeleport").gameObject;
+        Collider childCollider = childObject.GetComponent<Collider>();
+
+        Vector3 direction = childCollider.ClosestPoint(transform.position) - transform.position;
+
         direction.y = 0;
         direction.Normalize();
+
+        transform.rotation = Quaternion.LookRotation(direction);
 
 
         Vector3 oldVector = Vector3.zero;
@@ -379,7 +408,7 @@ public class MovementCharacter : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
             newVector = transform.position;
-            if (oldVector.x == newVector.x || oldVector.z == newVector.z)
+            if ((direction.z == 0 && oldVector.x == newVector.x) || (direction.x == 0 && oldVector.z == newVector.z))
             {
                 yield break;
             }
@@ -497,12 +526,15 @@ public class MovementCharacter : MonoBehaviour
             pointToCheck = transform.position - moveTimeDirection;
         }
 
+        pointToCheck.y += 1;
+
         yield return new WaitForSeconds(0.5f);
 
         Collider[] colliders = Physics.OverlapSphere(pointToCheck, 1f);
+        pointToCheck.y -= 1;
         foreach (Collider collider in colliders)
         {
-            if (collider.isTrigger)
+            if (collider.tag == "BanTeleport" || collider.tag == "BoxBanTeleport")
             {
                 animator.SetBool("isMoveTime", false);
                 isMoveTimeReady = true;
@@ -523,6 +555,11 @@ public class MovementCharacter : MonoBehaviour
                 isNewTime = true;
 
         }
+
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+
+        isMoveTimeCast = false;
 
         yield return new WaitForSeconds(1f);
 
