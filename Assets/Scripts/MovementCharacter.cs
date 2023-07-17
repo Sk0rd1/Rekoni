@@ -1,78 +1,4 @@
-﻿/*Багів немає, я все пофіксив все, бо я талант(але є один, перший перекат робиться на місці, перехід між Movetime і Running)
-[Текст песни «​как же он силён»]
-
-[Интро: Серега Пират]
-Воу, вылетаю
-Воу, вылетаю ([?])
-
-[Куплет 1: Серега Пират]
-Тут опять я, секи — понты
-Хочешь отомстить, но я забыл, кто ты
-Я будто палач, и мне никто не даст сдачи
-Я будто палач, и мне никто не даст сдачи
-Захожу в игру, на ФП беру
-Антимага, потому что я на нём ебу
-Тиммейты снова плачут: «Антимаг не даст сдачи»
-Смотри, как я хуячу, ты ебаный неудачник
-
-[Припев: Barikader]
-Как же он силён, как же он умён
-Мне никогда не стать таким же
-Как же он силён, как же он умён
-Он скоро станет лучшим в мире
-На-на, на-на, на-на, на-на, на (Лучшим)
-На-на, на-на, на-на, на-на, на
-На-на, на-на, на-на, на-на, на (Лучшим)
-На-на, на-на, на-на, на-на, на
-You might also like
-Дота 2
-KSB muzic
-MiMiMaMaMu
-Exile, STOPBAN & DILBLIN
-​skyline ​ryodan
-​shadowraze & jzxdx
-[Куплет 2: Серега Пират]
-Тут опять я, секи — понты
-Хочешь отомстить, но я забыл, кто ты
-Воу, брат, вот это тайминг
-Как это так? Ты под читами?
-Чё за хуйня? Не понимаю
-Я АФК, мы проебали
-Что за слоты у меня-и-я
-Будто бы магия-ия
-Враги сияют пламене-и-я
-Все говорят про меня-и-я
-
-[Припев: Barikader]
-Как же он силён, как же он умён
-Мне никогда не стать таким же
-Как же он силён, как же он умён
-Он скоро станет лучшим в мире
-На-на, на-на, на-на, на-на, на (Лучшим)
-На-на, на-на, на-на, на-на, на
-На-на, на-на, на-на, на-на, на (Лучшим)
-На-на, на-на, на-на, на-на, на
-
-[Интерлюдия: Серега Пират]
-А теперь, с вашего позволения, мы немножечко разъебём энергией
-Я, я-я, и-я, и-я
-[Припев: Barikader & Серега Пират]
-Как же он силён, как же он умён
-Мне никогда не стать таким же (Эщкере)
-Как же он силён, как же он умён
-Он скоро станет лучшим в мире
-На-на, на-на, на-на, на-на, на (Лучшим)
-На-на, на-на, на-на, на-на, на
-На-на, на-на, на-на, на-на, на (Лучшим)
-На-на, на-на, на-на, на-на, на
-
-[Аутро: Barikader]
-Где же твои понты?
-Будто это не ты
-Разъеби, ты вдребезги
-Жаль, что я не ты
- */
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
@@ -86,9 +12,10 @@ public class MovementCharacter : MonoBehaviour
 {
     CharacterController controller;
     Animator animator;
+    MagicSpells magicSpells;
 
     [SerializeField]
-    private float moveSpeed = 10f;
+    private float MOVESPEED = 15f;
     [SerializeField]
     private float turnDuration = 0.1f;
     [SerializeField]
@@ -98,10 +25,9 @@ public class MovementCharacter : MonoBehaviour
     [SerializeField]
     private Vector3 moveTimeDirection = new Vector3(200f, 0f, 0f);
 
-
-    private Vector3 rollMoveDirection = new Vector3(0f, 0f, 1f);
-    private Vector3 climbMoveDirection = Vector3.zero;
     private bool isNewTime = true;
+    private bool isCastSpell = false;
+    private bool[] spellNum = { false/*L1*/, false/*R1*/, false/*L2*/, false/*R2*/};
     private bool isMoveTimeReady = true;
     private bool isMoveTimeCast = false;
     private bool isRollingReady = true;
@@ -110,25 +36,13 @@ public class MovementCharacter : MonoBehaviour
     private bool isFirstStageOfClimbing = false;
     private bool isMoveBox = false;
     private float oldValueY;
-    
+    private float moveSpeed;
 
-
-    [SerializeField] private float _wallAngelMax;
-    [SerializeField] private float _groundAngelMax;
-    [SerializeField] private LayerMask _layerMask;
-    private Rigidbody _rigidBody;
-    private CapsuleCollider _capsule;
-    [Header("Heights")] [SerializeField] private float _overpassHeight;
-    [Header("Offsets")][SerializeField] private float _climbOriginDown;
-    private bool _climbing;
-
-
-    private Rigidbody boxForMoveNew;
-    private GameObject boxFromOldToNew = null;
-    private Rigidbody boxForMoveOld;
     private GameObject currentBoxNew;
     private GameObject currentBoxOld;
     private GameObject boxForClimb;
+    private GameObject boxForClimbNew;
+    private GameObject boxForClimbOld;
 
     // V-sync and lock FPS
     //private void Awake()
@@ -145,36 +59,87 @@ public class MovementCharacter : MonoBehaviour
 
     void Start()
     {
-        _rigidBody = GetComponent<Rigidbody>();
-        _capsule = GetComponent<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         oldValueY = transform.position.y;
+        magicSpells = GetComponent<MagicSpells>();
     }
 
     void Update()
     {
+        moveSpeed = MOVESPEED;
         Vector3 currentDirection = GetCurrentPosition();
 
-        if (Input.GetButtonDown("Roll") && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast)
+        if (Input.GetButtonDown("Roll") && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast && !isCastSpell)
         {
             StartCoroutine(Roll());
         }
 
-        if (Input.GetButtonDown("MoveTime") && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling && !isMoveTimeCast)
+        if (Input.GetButtonDown("MoveTime") && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling && !isMoveTimeCast && !isCastSpell )
         {
             isMoveTimeCast = true;
             StartCoroutine(MoveTime());
         }
 
-        if (Input.GetButtonDown("ClimbOnBox") && (currentBoxNew != null || currentBoxOld != null || boxForClimb != null) && !isMoveBox && !isClimbing && !isRolling && !isMoveTimeCast)
+        if (Input.GetButtonDown("ClimbOnBox") && (currentBoxNew != null || currentBoxOld != null || boxForClimb != null) && !isMoveBox && !isClimbing && !isRolling && !isMoveTimeCast && !isCastSpell)
         {
             StartCoroutine(ClimbOnBox());
         }
 
-        if (Input.GetButtonDown("MoveBox") && (currentBoxNew != null || currentBoxOld != null || isMoveBox) && !isClimbing && !isRolling)
+        if (Input.GetButtonDown("MoveBox") && ((currentBoxNew != null && currentBoxOld != null) || isMoveBox) && !isClimbing && !isRolling && !isCastSpell )
         {
             StateOfMoveBox();
+        }
+
+        if (Input.GetButton("L1"))
+        {
+            spellNum[0] = true;
+            spellNum[1] = false;
+            spellNum[2] = false;
+            spellNum[3] = false;
+        }
+        else if (Input.GetButton("R1"))
+        {
+            spellNum[0] = false;
+            spellNum[1] = true;
+            spellNum[2] = false;
+            spellNum[3] = false;
+        }
+        /*else if (Input.GetButton("L2"))
+        {
+            spellNum[0] = false;
+            spellNum[1] = false;
+            spellNum[2] = true;
+            spellNum[3] = false;
+        }
+        else if (Input.GetButton("R2"))
+        {
+            spellNum[0] = false;
+            spellNum[1] = false;
+            spellNum[2] = false;
+            spellNum[3] = true;
+        }*/
+        else
+        {
+            spellNum[0] = false;
+            spellNum[1] = false;
+            spellNum[2] = false;
+            spellNum[3] = false;
+        }
+
+        Vector3 rightSteakDirection = RightSteak();
+        if(!isMoveBox && (spellNum[0] || spellNum[1] || spellNum[2] || spellNum[3]))
+        {
+            isCastSpell = true;
+            magicSpells.CastSpell(true, rightSteakDirection);
+            animator.SetBool("isMoveBox", true);
+        }
+        else
+        {
+            if (!isMoveBox)
+                animator.SetBool("isMoveBox", false);
+            isCastSpell = false;
+            magicSpells.CastSpell(false, rightSteakDirection);
         }
 
         if (!Input.GetButton("MoveTime"))
@@ -188,7 +153,7 @@ public class MovementCharacter : MonoBehaviour
             Running(currentDirection);
         }
 
-        if (isMoveBox && (boxForMoveNew != null || boxForMoveOld) && !isClimbing && !isRolling)
+        if (isMoveBox && (currentBoxNew != null && currentBoxOld != null) && !isClimbing && !isRolling && !isCastSpell)
         {
             MoveBox();
         }
@@ -198,9 +163,9 @@ public class MovementCharacter : MonoBehaviour
             controller.Move(new Vector3(0f, -gravity, 0f) * Time.deltaTime);
         }
 
-        if (isRolling)
+        if (isRolling && !isCastSpell)
         {
-            controller.Move(rollMoveDirection * moveSpeed * 1.75f * Time.deltaTime);
+            controller.Move(transform.forward * moveSpeed * 1.75f * Time.deltaTime);
         }
 
         if(isFirstStageOfClimbing)
@@ -214,13 +179,25 @@ public class MovementCharacter : MonoBehaviour
         if (other.CompareTag("BoxInteractionNew"))
         {
             currentBoxNew = other.gameObject;
-            currentBoxOld = null;
+            boxForClimbNew = other.gameObject;
+
+            string nameOld = currentBoxNew.name;
+            string numberOld = nameOld.Substring(13);
+            string nameNew = "BoxForMoveOld" + numberOld;
+
+            currentBoxOld = GameObject.Find(nameNew);
         }
 
         if (other.CompareTag("BoxInteractionOld"))
         {
             currentBoxOld = other.gameObject;
-            currentBoxNew = null;
+            boxForClimbOld = other.gameObject;
+
+            string nameNew = currentBoxOld.name;
+            string numberNew = nameNew.Substring(13);
+            string nameOld = "BoxForMoveOld" + numberNew;
+
+            currentBoxOld = GameObject.Find(nameOld);
         }
 
         if(other.CompareTag("ToClimb"))
@@ -231,14 +208,14 @@ public class MovementCharacter : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("BoxInteractionNew"))
+        if(other.CompareTag("BoxInteractionNew"))
         {
-            currentBoxNew = null;
+            boxForClimbNew = null;
         }
 
         if (other.CompareTag("BoxInteractionOld"))
         {
-            currentBoxOld = null;
+            boxForClimbOld = null;
         }
 
         if (other.CompareTag("ToClimb"))
@@ -247,72 +224,54 @@ public class MovementCharacter : MonoBehaviour
         }
     }
 
-
-    private void GetBoxForMove()
-    {
-        try
-        {
-            boxForMoveNew = currentBoxNew.GetComponent<Rigidbody>();
-        }
-        catch
-        {
-            boxForMoveNew = null;
-        }
-
-        try
-        {
-            boxForMoveOld = currentBoxOld.GetComponent<Rigidbody>();
-        }
-        catch
-        {
-            boxForMoveOld = null;
-        }
-    }
-
     private void StateOfMoveBox()
     {
         if (isMoveBox)
         {
-            if (boxFromOldToNew != null)
-            {
-                bool isCancelMoveBox = true;
-                Vector3 pointToCheck = boxForMoveOld.transform.position - moveTimeDirection;
-                Collider[] colliders = Physics.OverlapSphere(pointToCheck, 2.49f);
-                foreach (Collider collider in colliders)
-                {
-                    if (collider.tag == "BanTeleport")
-                    {
-                        isCancelMoveBox = false;
-                    }
-                }
+            bool isCancelMoveBox = true;
+            Vector3 pointToCheckOld = currentBoxOld.transform.position;
+            Vector3 pointToCheckNew = currentBoxNew.transform.position;
 
-                if(isCancelMoveBox)
+            Collider[] collidersNew = Physics.OverlapSphere(pointToCheckNew, 2.49f);
+            Collider[] collidersOld = Physics.OverlapSphere(pointToCheckOld, 2.49f);
+
+            foreach (Collider collider in collidersNew)
+            {
+                if (collider.tag == "BanTeleport")
                 {
-                    boxFromOldToNew.transform.position = pointToCheck;
-                    isMoveBox = false;
-                    moveSpeed *= 2f;
-                    animator.SetBool("isMoveBox", false);
-                    boxFromOldToNew = null;
-                    boxFromOldToNew = null;
+                    isCancelMoveBox = false;
                 }
             }
-            else
+
+            foreach (Collider collider in collidersOld)
+            {
+                if (collider.tag == "BanTeleport")
+                {
+                    isCancelMoveBox = false;
+                }
+            }
+
+            if (isCancelMoveBox)
             {
                 isMoveBox = false;
-                moveSpeed *= 2f;
                 animator.SetBool("isMoveBox", false);
+
+                currentBoxNew.GetComponent<Rigidbody>().isKinematic = true;
+                currentBoxOld.GetComponent<Rigidbody>().isKinematic = true;
             }
+
         }
         else
         {
-            moveSpeed /= 2f;
             isMoveBox = true;
+            currentBoxNew.GetComponent<Rigidbody>().isKinematic = false;
+            currentBoxOld.GetComponent<Rigidbody>().isKinematic = false;
             animator.SetBool("isMoveBox", true);
-            GetBoxForMove();
         }
+
     }
 
-    private void MoveBox()
+    private Vector3 RightSteak()
     {
         float horizontalDirection = Input.GetAxis("Axis 4");
         float verticalDirection = -Input.GetAxis("Axis 5");
@@ -329,17 +288,38 @@ public class MovementCharacter : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
             horizontalDirection = 1;
 
-        Vector3 boxDirection = new Vector3(horizontalDirection, 0f, verticalDirection);
-        boxDirection.Normalize();
+        Vector3 steakDirection = new Vector3(horizontalDirection, 0f, verticalDirection);
+        steakDirection.Normalize();
+        return steakDirection;
+    }
 
-        if (boxForMoveNew != null)
+    private void MoveBox()
+    {
+        Vector3 boxDirection = RightSteak();
+
+        if (currentBoxNew != null && currentBoxOld != null)
         {
-            boxForMoveNew.AddForce(boxDirection * 1000 * Time.deltaTime, ForceMode.Force);
-            transform.LookAt(new Vector3(boxForMoveNew.transform.position.x, transform.position.y, boxForMoveNew.transform.position.z));
+            if (isNewTime)
+            {
+                //currentBoxNew.transform.position += boxDirection * moveSpeed * Time.deltaTime;
+                currentBoxNew.GetComponent<Rigidbody>().AddForce(5f * boxDirection * moveSpeed * Time.deltaTime, ForceMode.Impulse);
+                currentBoxOld.transform.position = currentBoxNew.transform.position + moveTimeDirection;
+                transform.LookAt(new Vector3(currentBoxNew.transform.position.x, transform.position.y, currentBoxNew.transform.position.z));
+            }
+            else
+            {
+                //currentBoxOld.transform.position += boxDirection * moveSpeed * Time.deltaTime;
+                currentBoxOld.GetComponent<Rigidbody>().AddForce(5f * boxDirection * moveSpeed * Time.deltaTime, ForceMode.Force);
+                Debug.Log(1000000000 * boxDirection * moveSpeed * Time.deltaTime);
+                currentBoxNew.transform.position = currentBoxOld.transform.position - moveTimeDirection;
+                transform.LookAt(new Vector3(currentBoxOld.transform.position.x, transform.position.y, currentBoxOld.transform.position.z));
+            }
+
         }
 
-        if (boxForMoveOld != null)
+        /*if (boxForMoveOld != null)
         {
+            // тут повинен бути інший код
             string nameOld = boxForMoveOld.name;
             string numberOld = nameOld.Substring(13);
             string nameNew = "BoxForMoveNew" + numberOld;
@@ -349,28 +329,35 @@ public class MovementCharacter : MonoBehaviour
             boxForMoveOld.AddForce(boxDirection * 1000 * Time.deltaTime, ForceMode.Force);
             boxFromOldToNew.transform.position = boxForMoveOld.transform.position - moveTimeDirection;
             transform.LookAt(new Vector3(boxForMoveOld.transform.position.x, transform.position.y, boxForMoveOld.transform.position.z));
-        }
+        }*/
     }
 
     private IEnumerator ClimbOnBox()
     {
         GameObject currentBox = null;
 
+        if (boxForClimbOld != null)
+        {
+            Debug.Log("currentBoxOld");
+            currentBox = boxForClimbOld;
+        }
+
+        if (boxForClimbNew != null)
+        {
+            Debug.Log("currentBoxNew");
+            currentBox = boxForClimbNew;
+        }
+
         if (boxForClimb != null)
+        {
+            Debug.Log("boxForClimb");
             currentBox = boxForClimb;
+        }
 
-        if (currentBoxNew != null)
-            currentBox = currentBoxNew;
-
-        if (currentBoxOld != null)
-            currentBox = currentBoxOld;
+        if (currentBox == null) yield break;
 
         isClimbing = true;
 
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
 
         yield return StartCoroutine(RunToClimb(currentBox));
@@ -398,11 +385,6 @@ public class MovementCharacter : MonoBehaviour
 
     private IEnumerator RunToClimb(GameObject currentBox)
     {
-        //Quaternion rotationOld = transform.rotation;
-        //transform.LookAt(currentBox.transform);
-        //Quaternion rotationNew = transform.rotation;
-        //transform.rotation = new Quaternion(rotationOld.x, rotationNew.y, rotationOld.z, 1f);
-
         GameObject childObject = currentBox.transform.Find("CubeBanTeleport").gameObject;
         Collider childCollider = childObject.GetComponent<Collider>();
 
@@ -422,9 +404,6 @@ public class MovementCharacter : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
             newVector = transform.position;
-            //Debug.Log("direction.x + z" + direction.x + " " + direction.z);
-            //Debug.Log("oldVector.x + z " + oldVector.x + " " + oldVector.z);
-            //Debug.Log("newVector.x + z " + newVector.x + " " + newVector.z);
             if ((Mathf.Abs(direction.z) < 0.01f && Mathf.Abs(oldVector.x - newVector.x) < 0.01f) || (Mathf.Abs(direction.x) < 0.01f && Mathf.Abs(oldVector.z - newVector.z) < 0.01f) || (Mathf.Abs(oldVector.x - newVector.x) < 0.01f && Mathf.Abs(oldVector.z - newVector.z) < 0.01f))
             {
                 yield break;
@@ -441,9 +420,9 @@ public class MovementCharacter : MonoBehaviour
     {
         bool isFall = false;
 
-        if ((oldValueY - transform.position.y) > 0.05f)
+        if ((oldValueY - transform.position.y) > 0.05f * Time.deltaTime)
         {
-            isRolling = false;
+            //isRolling = false;
             isMoveTimeCast = false;
             isFall = true;
             animator.SetBool("isFalling", true);
@@ -460,6 +439,25 @@ public class MovementCharacter : MonoBehaviour
 
     private void Running(Vector3 currentDirection)
     {
+        if (isMoveBox)
+        {
+            moveSpeed = MOVESPEED / 3f;
+            Vector3 rotationVector = transform.rotation.eulerAngles;
+            Quaternion rotation = Quaternion.Euler(0f, rotationVector.y, 0f);
+            Vector3 relativeVector = transform.InverseTransformDirection(currentDirection);
+            animator.SetFloat("MoveBoxHorizontal", relativeVector.x);
+            animator.SetFloat("MoveBoxVertical", relativeVector.z);
+        }
+
+        if (spellNum[0] || spellNum[1] || spellNum[2] || spellNum[3])
+        {
+            moveSpeed = MOVESPEED / 3f;
+            Vector3 rotationVector = transform.rotation.eulerAngles;
+            Quaternion rotation = Quaternion.Euler(0f, rotationVector.y, 0f);
+            Vector3 relativeVector = transform.InverseTransformDirection(currentDirection);
+            animator.SetFloat("MoveBoxHorizontal", relativeVector.x);
+            animator.SetFloat("MoveBoxVertical", relativeVector.z);
+        }
 
         if (Mathf.Abs(currentDirection.x) + Mathf.Abs(currentDirection.z) > 0.1f)
         {
@@ -470,15 +468,6 @@ public class MovementCharacter : MonoBehaviour
         else
         {
             animator.SetBool("isRunning", false);
-        }
-
-        if (isMoveBox)
-        {
-            Vector3 rotationVector = transform.rotation.eulerAngles;
-            Quaternion rotation = Quaternion.Euler(0f, rotationVector.y, 0f);
-            Vector3 relativeVector = transform.InverseTransformDirection(currentDirection);
-            animator.SetFloat("MoveBoxHorizontal", relativeVector.x);
-            animator.SetFloat("MoveBoxVertical", relativeVector.z);
         }
     }
 
@@ -516,11 +505,6 @@ public class MovementCharacter : MonoBehaviour
         {
             moveDirection = new Vector3(horizontalInput, 0f, verticalInput);
             moveDirection.Normalize();
-        }
-
-        if (Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z) > 0.1 && !isRolling)
-        {
-            rollMoveDirection = moveDirection;
         }
 
         return moveDirection;
@@ -564,7 +548,7 @@ public class MovementCharacter : MonoBehaviour
         if (isMoveTimeCast)
         {
             transform.position = pointToCheck;
-            cameraCharacter.transform.position = transform.position + new Vector3(0f, 30f, -18f);
+            cameraCharacter.transform.position = transform.position + new Vector3(0f, 30f, -14f);
 
             if (isNewTime)
                 isNewTime = false;
@@ -573,14 +557,10 @@ public class MovementCharacter : MonoBehaviour
 
         }
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
 
         isMoveTimeCast = false;
-
-        yield return new WaitForSeconds(1f);
-
         animator.SetBool("isMoveTime", false);
-
         isMoveTimeReady = true;
     }
 
