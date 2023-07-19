@@ -37,6 +37,7 @@ public class MovementCharacter : MonoBehaviour
     private bool isMoveBox = false;
     private float oldValueY;
     private float moveSpeed;
+    private Vector3 cameraStartPosition = new Vector3(0f, 40f, -11f);
 
     private GameObject currentBoxNew;
     private GameObject currentBoxOld;
@@ -63,6 +64,7 @@ public class MovementCharacter : MonoBehaviour
         animator = GetComponent<Animator>();
         oldValueY = transform.position.y;
         magicSpells = GetComponent<MagicSpells>();
+        cameraCharacter.transform.position = transform.position + cameraStartPosition; 
     }
 
     void Update()
@@ -86,8 +88,9 @@ public class MovementCharacter : MonoBehaviour
             StartCoroutine(ClimbOnBox());
         }
 
-        if (Input.GetButtonDown("MoveBox") && ((currentBoxNew != null && currentBoxOld != null) || isMoveBox) && !isClimbing && !isRolling && !isCastSpell )
+        if (Input.GetButtonDown("MoveBox") && ((currentBoxNew != null && currentBoxOld != null) || isMoveBox) &&  !isClimbing && !isRolling && !isCastSpell)
         {
+            Debug.Log("MoveBox");
             StateOfMoveBox();
         }
 
@@ -195,9 +198,9 @@ public class MovementCharacter : MonoBehaviour
 
             string nameNew = currentBoxOld.name;
             string numberNew = nameNew.Substring(13);
-            string nameOld = "BoxForMoveOld" + numberNew;
+            string nameOld = "BoxForMoveNew" + numberNew;
 
-            currentBoxOld = GameObject.Find(nameOld);
+            currentBoxNew = GameObject.Find(nameOld);
         }
 
         if(other.CompareTag("ToClimb"))
@@ -312,8 +315,7 @@ public class MovementCharacter : MonoBehaviour
             else
             {
                 //currentBoxOld.transform.position += boxDirection * moveSpeed * Time.deltaTime;
-                currentBoxOld.GetComponent<Rigidbody>().AddForce(5f * boxDirection * moveSpeed * Time.deltaTime, ForceMode.Force);
-                Debug.Log(1000000000 * boxDirection * moveSpeed * Time.deltaTime);
+                currentBoxOld.GetComponent<Rigidbody>().AddForce(5f * boxDirection * moveSpeed * Time.deltaTime, ForceMode.Impulse);
                 currentBoxNew.transform.position = currentBoxOld.transform.position - moveTimeDirection;
                 transform.LookAt(new Vector3(currentBoxOld.transform.position.x, transform.position.y, currentBoxOld.transform.position.z));
             }
@@ -341,19 +343,16 @@ public class MovementCharacter : MonoBehaviour
 
         if (boxForClimbOld != null)
         {
-            Debug.Log("currentBoxOld");
             currentBox = boxForClimbOld;
         }
 
         if (boxForClimbNew != null)
         {
-            Debug.Log("currentBoxNew");
             currentBox = boxForClimbNew;
         }
 
         if (boxForClimb != null)
         {
-            Debug.Log("boxForClimb");
             currentBox = boxForClimb;
         }
 
@@ -397,7 +396,6 @@ public class MovementCharacter : MonoBehaviour
         direction.Normalize();
 
         transform.rotation = Quaternion.LookRotation(direction);
-
 
         Vector3 oldVector = Vector3.zero;
         Vector3 newVector = transform.position;
@@ -465,6 +463,8 @@ public class MovementCharacter : MonoBehaviour
         if (Mathf.Abs(currentDirection.x) + Mathf.Abs(currentDirection.z) > 0.1f)
         {
             animator.SetBool("isRunning", true);
+            // delete next row
+            //animator.speed = 1.25f; потрібно пришвидшити анімацію бігу
             RotationCharacter(currentDirection);
             controller.Move(currentDirection * moveSpeed * Time.deltaTime);
         }
@@ -551,7 +551,7 @@ public class MovementCharacter : MonoBehaviour
         if (isMoveTimeCast)
         {
             transform.position = pointToCheck;
-            cameraCharacter.transform.position = transform.position + new Vector3(0f, 40f, -11f);
+            cameraCharacter.transform.position = transform.position + cameraStartPosition;
 
             if (isNewTime)
                 isNewTime = false;
@@ -599,7 +599,7 @@ public class MovementCharacter : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
             transform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
-            yield return null;
+            //yield return null;
         }
 
         transform.rotation = targetRotation;
