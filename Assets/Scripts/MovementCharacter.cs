@@ -273,8 +273,11 @@ public class MovementCharacter : MonoBehaviour
 
     private Vector3 RightSteak()
     {
-        float horizontalDirection = Input.GetAxis("Axis 4");
-        float verticalDirection = -Input.GetAxis("Axis 5");
+        float horizontalDirection = 0f;
+        float verticalDirection = 0f;
+
+        horizontalDirection = Input.GetAxis("Axis 4");
+        verticalDirection = -Input.GetAxis("Axis 5");
 
         if (Input.GetKey(KeyCode.UpArrow))
             verticalDirection = 1;
