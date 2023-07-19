@@ -548,7 +548,7 @@ public class MovementCharacter : MonoBehaviour
         if (isMoveTimeCast)
         {
             transform.position = pointToCheck;
-            cameraCharacter.transform.position = transform.position + new Vector3(0f, 30f, -14f);
+            cameraCharacter.transform.position = transform.position + new Vector3(0f, 40f, -11f);
 
             if (isNewTime)
                 isNewTime = false;

@@ -12,7 +12,7 @@ public class MagicSpells : MonoBehaviour
 
     void Start()
     {
-        cursor = GameObject.Find("Cursor");
+        cursor = GameObject.Find("CursorBase");
         animator = GetComponent<Animator>();
         movementCharacter = GetComponent<MovementCharacter>();
         cursor.transform.position = new Vector3(0f, -20f, 0f);
@@ -49,10 +49,16 @@ public class MagicSpells : MonoBehaviour
 
     private void CursorMove(Vector3 directionAxis)
     {
-        directionAxis.y += 2f;
-        directionAxis *= 2f;
+        directionAxis.y += 0.5f;
+        directionAxis *= 3f;
 
         cursor.transform.position = transform.position + directionAxis;
+
+        Quaternion characterRotation = transform.rotation;
+        Vector3 eulerAngles = characterRotation.eulerAngles;
+
+        Debug.Log("(1) " + transform.rotation.y + "   (2)" + eulerAngles.y);
+        cursor.transform.rotation = Quaternion.Euler(90f, 0f, -eulerAngles.y);
     }
 
     public void CastSpell(bool isCastSpell, Vector3 steakDirection)
