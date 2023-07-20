@@ -90,44 +90,46 @@ public class MovementCharacter : MonoBehaviour
 
         if (Input.GetButtonDown("MoveBox") && ((currentBoxNew != null && currentBoxOld != null) || isMoveBox) &&  !isClimbing && !isRolling && !isCastSpell)
         {
-            Debug.Log("MoveBox");
             StateOfMoveBox();
         }
 
-        if (Input.GetButton("L1"))
+        if (!isClimbing && !isRolling && !isMoveTimeCast)
         {
-            spellNum[0] = true;
-            spellNum[1] = false;
-            spellNum[2] = false;
-            spellNum[3] = false;
-        }
-        else if (Input.GetButton("R1"))
-        {
-            spellNum[0] = false;
-            spellNum[1] = true;
-            spellNum[2] = false;
-            spellNum[3] = false;
-        }
-        /*else if (Input.GetButton("L2"))
-        {
-            spellNum[0] = false;
-            spellNum[1] = false;
-            spellNum[2] = true;
-            spellNum[3] = false;
-        }
-        else if (Input.GetButton("R2"))
-        {
-            spellNum[0] = false;
-            spellNum[1] = false;
-            spellNum[2] = false;
-            spellNum[3] = true;
-        }*/
-        else
-        {
-            spellNum[0] = false;
-            spellNum[1] = false;
-            spellNum[2] = false;
-            spellNum[3] = false;
+            if (Input.GetButton("L1"))
+            {
+                spellNum[0] = true;
+                spellNum[1] = false;
+                spellNum[2] = false;
+                spellNum[3] = false;
+            }
+            else if (Input.GetButton("R1"))
+            {
+                spellNum[0] = false;
+                spellNum[1] = true;
+                spellNum[2] = false;
+                spellNum[3] = false;
+            }
+            /*else if (Input.GetButton("L2"))
+            {
+                spellNum[0] = false;
+                spellNum[1] = false;
+                spellNum[2] = true;
+                spellNum[3] = false;
+            }
+            else if (Input.GetButton("R2"))
+            {
+                spellNum[0] = false;
+                spellNum[1] = false;
+                spellNum[2] = false;
+                spellNum[3] = true;
+            }*/
+            else
+            {
+                spellNum[0] = false;
+                spellNum[1] = false;
+                spellNum[2] = false;
+                spellNum[3] = false;
+            }
         }
 
         Vector3 rightSteakDirection = RightSteak();
@@ -282,6 +284,9 @@ public class MovementCharacter : MonoBehaviour
         horizontalDirection = Input.GetAxis("Axis 4");
         verticalDirection = -Input.GetAxis("Axis 5");
 
+        //if (horizontalDirection < 0.1) horizontalDirection = 0;
+        //if (verticalDirection < 0.1) verticalDirection = 0;
+
         if (Input.GetKey(KeyCode.UpArrow))
             verticalDirection = 1;
 
@@ -321,20 +326,6 @@ public class MovementCharacter : MonoBehaviour
             }
 
         }
-
-        /*if (boxForMoveOld != null)
-        {
-            // тут повинен бути інший код
-            string nameOld = boxForMoveOld.name;
-            string numberOld = nameOld.Substring(13);
-            string nameNew = "BoxForMoveNew" + numberOld;
-
-            boxFromOldToNew = GameObject.Find(nameNew);
-
-            boxForMoveOld.AddForce(boxDirection * 1000 * Time.deltaTime, ForceMode.Force);
-            boxFromOldToNew.transform.position = boxForMoveOld.transform.position - moveTimeDirection;
-            transform.LookAt(new Vector3(boxForMoveOld.transform.position.x, transform.position.y, boxForMoveOld.transform.position.z));
-        }*/
     }
 
     private IEnumerator ClimbOnBox()
