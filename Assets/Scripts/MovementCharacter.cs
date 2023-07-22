@@ -185,6 +185,7 @@ public class MovementCharacter : MonoBehaviour
             boxForMoveNew = null;
         }
 
+<<<<<<< Updated upstream
         try
         {
             boxForMoveOld = currentBoxOld.GetComponent<Rigidbody>();
@@ -193,6 +194,36 @@ public class MovementCharacter : MonoBehaviour
         {
             boxForMoveOld = null;
         }
+=======
+    }
+
+    private Vector3 RightSteak()
+    {
+        float horizontalDirection = 0f;
+        float verticalDirection = 0f;
+
+        //horizontalDirection = Mathf.Abs(Input.GetAxis("Axis 4")) > 0.1f ? Input.GetAxis("Axis 4") : 0;
+        //verticalDirection = Mathf.Abs(Input.GetAxis("Axis 5")) > 0.1f ? -Input.GetAxis("Axis 5") : 0;
+
+        horizontalDirection = Input.GetAxis("Axis 4");
+        verticalDirection = -Input.GetAxis("Axis 5");
+
+        if (Input.GetKey(KeyCode.UpArrow))
+            verticalDirection = 1;
+
+        if (Input.GetKey(KeyCode.DownArrow))
+            verticalDirection = -1;
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+            horizontalDirection = -1;
+
+        if (Input.GetKey(KeyCode.RightArrow))
+            horizontalDirection = 1;
+
+        Vector3 steakDirection = new Vector3(horizontalDirection, 0f, verticalDirection);
+        steakDirection.Normalize();
+        return steakDirection;
+>>>>>>> Stashed changes
     }
 
     private void MoveBox()
