@@ -10,9 +10,11 @@ using UnityEngine.TextCore.Text;
 
 public class MovementCharacter : MonoBehaviour
 {
-    CharacterController controller;
-    Animator animator;
-    MagicSpells magicSpells;
+    private CharacterController controller;
+    private Animator animator;
+    private MagicSpells magicSpells;
+    private InputManager inputManager;
+    private Camera cameraCharacter;
 
     [SerializeField]
     private float MOVESPEED = 15f;
@@ -21,13 +23,11 @@ public class MovementCharacter : MonoBehaviour
     [SerializeField]
     private float gravity = 15f;
     [SerializeField]
-    private Camera cameraCharacter;
-    [SerializeField]
     private Vector3 moveTimeDirection = new Vector3(200f, 0f, 0f);
 
     private bool isNewTime = true;
     private bool isCastSpell = false;
-    private bool[] spellNum = { false/*L1*/, false/*R1*/, false/*L2*/, false/*R2*/};
+    private short spellNum = 0;
     private bool isMoveTimeReady = true;
     private bool isMoveTimeCast = false;
     private bool isRollingReady = true;
@@ -60,10 +60,12 @@ public class MovementCharacter : MonoBehaviour
 
     void Start()
     {
+        cameraCharacter = GameObject.Find("Main Camera").GetComponent<Camera>();
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         oldValueY = transform.position.y;
         magicSpells = GetComponent<MagicSpells>();
+        inputManager = GetComponent<InputManager>();
         cameraCharacter.transform.position = transform.position + cameraStartPosition; 
     }
 
@@ -72,68 +74,30 @@ public class MovementCharacter : MonoBehaviour
         moveSpeed = MOVESPEED;
         Vector3 currentDirection = GetCurrentPosition();
 
-        if (Input.GetButtonDown("Roll") && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast && !isCastSpell)
+        if (inputManager.Roll() && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast && !isCastSpell)
         {
             StartCoroutine(Roll());
         }
 
-        if (Input.GetButtonDown("MoveTime") && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling && !isMoveTimeCast && !isCastSpell )
+        if (inputManager.MoveTime() && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling && !isMoveTimeCast && !isCastSpell )
         {
             isMoveTimeCast = true;
             StartCoroutine(MoveTime());
         }
 
-        if (Input.GetButtonDown("ClimbOnBox") && (currentBoxNew != null || currentBoxOld != null || boxForClimb != null) && !isMoveBox && !isClimbing && !isRolling && !isMoveTimeCast && !isCastSpell)
+        if (inputManager.ClimbOnBox() && (currentBoxNew != null || currentBoxOld != null || boxForClimb != null) && !isMoveBox && !isClimbing && !isRolling && !isMoveTimeCast && !isCastSpell)
         {
             StartCoroutine(ClimbOnBox());
         }
 
-        if (Input.GetButtonDown("MoveBox") && ((currentBoxNew != null && currentBoxOld != null) || isMoveBox) &&  !isClimbing && !isRolling && !isCastSpell)
+        if (inputManager.MoveBox() && ((currentBoxNew != null && currentBoxOld != null) || isMoveBox) &&  !isClimbing && !isRolling && !isCastSpell)
         {
             StateOfMoveBox();
         }
 
-        if (!isClimbing && !isRolling && !isMoveTimeCast)
-        {
-            if (Input.GetButton("L1"))
-            {
-                spellNum[0] = true;
-                spellNum[1] = false;
-                spellNum[2] = false;
-                spellNum[3] = false;
-            }
-            else if (Input.GetButton("R1"))
-            {
-                spellNum[0] = false;
-                spellNum[1] = true;
-                spellNum[2] = false;
-                spellNum[3] = false;
-            }
-            /*else if (Input.GetButton("L2"))
-            {
-                spellNum[0] = false;
-                spellNum[1] = false;
-                spellNum[2] = true;
-                spellNum[3] = false;
-            }
-            else if (Input.GetButton("R2"))
-            {
-                spellNum[0] = false;
-                spellNum[1] = false;
-                spellNum[2] = false;
-                spellNum[3] = true;
-            }*/
-            else
-            {
-                spellNum[0] = false;
-                spellNum[1] = false;
-                spellNum[2] = false;
-                spellNum[3] = false;
-            }
-        }
-
-        Vector3 rightSteakDirection = RightSteak();
-        if(!isMoveBox && (spellNum[0] || spellNum[1] || spellNum[2] || spellNum[3]))
+        Vector3 rightSteakDirection = inputManager.RightSteakDirection();
+        spellNum = inputManager.SpellNum();
+        if(!isMoveBox && spellNum != 0)
         {
             isCastSpell = true;
             magicSpells.CastSpell(true, rightSteakDirection);
@@ -147,7 +111,7 @@ public class MovementCharacter : MonoBehaviour
             magicSpells.CastSpell(false, rightSteakDirection);
         }
 
-        if (!Input.GetButton("MoveTime"))
+        if (!inputManager.MoveTime())
         {
             isMoveTimeCast = false;
             animator.SetBool("isMoveTime", false);
@@ -276,37 +240,9 @@ public class MovementCharacter : MonoBehaviour
 
     }
 
-    private Vector3 RightSteak()
-    {
-        float horizontalDirection = 0f;
-        float verticalDirection = 0f;
-
-        horizontalDirection = Input.GetAxis("Axis 4");
-        verticalDirection = -Input.GetAxis("Axis 5");
-
-        //if (horizontalDirection < 0.1) horizontalDirection = 0;
-        //if (verticalDirection < 0.1) verticalDirection = 0;
-
-        if (Input.GetKey(KeyCode.UpArrow))
-            verticalDirection = 1;
-
-        if (Input.GetKey(KeyCode.DownArrow))
-            verticalDirection = -1;
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-            horizontalDirection = -1;
-
-        if (Input.GetKey(KeyCode.RightArrow))
-            horizontalDirection = 1;
-
-        Vector3 steakDirection = new Vector3(horizontalDirection, 0f, verticalDirection);
-        steakDirection.Normalize();
-        return steakDirection;
-    }
-
     private void MoveBox()
     {
-        Vector3 boxDirection = RightSteak();
+        Vector3 boxDirection = inputManager.RightSteakDirection();
 
         if (currentBoxNew != null && currentBoxOld != null)
         {
@@ -441,7 +377,7 @@ public class MovementCharacter : MonoBehaviour
             animator.SetFloat("MoveBoxVertical", relativeVector.z);
         }
 
-        if (spellNum[0] || spellNum[1] || spellNum[2] || spellNum[3])
+        if (spellNum != 0)
         {
             moveSpeed = MOVESPEED / 3f;
             Vector3 rotationVector = transform.rotation.eulerAngles;
@@ -467,38 +403,15 @@ public class MovementCharacter : MonoBehaviour
 
     private Vector3 GetCurrentPosition()
     {
-        Vector3 moveDirection = Vector3.zero;
-
-        float horizontalInput = 0f;
-        float verticalInput = 0f;
-
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-
-        if (Input.GetKey(KeyCode.W))
-            verticalInput = 1;
-
-        if (Input.GetKey(KeyCode.S))
-            verticalInput = -1;
-
-        if (Input.GetKey(KeyCode.A))
-            horizontalInput = -1;
-
-        if (Input.GetKey(KeyCode.D))
-            horizontalInput = 1;
+        Vector3 moveDirection = inputManager.LeftSteakDirection();
 
         if ((oldValueY - transform.position.y) > 0.1f)
         {
             isRolling = false;
             isMoveTimeCast = false;
-            horizontalInput = 0;
-            verticalInput = 0;
-            moveDirection.z = -gravity;
-        }
-        else
-        {
-            moveDirection = new Vector3(horizontalInput, 0f, verticalInput);
-            moveDirection.Normalize();
+            moveDirection.x = 0;
+            moveDirection.z = 0;
+            moveDirection.y = -gravity;
         }
 
         return moveDirection;

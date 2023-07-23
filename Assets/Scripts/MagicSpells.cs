@@ -5,51 +5,67 @@ using UnityEngine;
 public class MagicSpells : MonoBehaviour
 {
     private GameObject cursor;
-    private GameObject character;
+    private InputManager inputManager;
+    private short spellNum = 0;
+    private short spellNumUp = 0;
     private bool isCastSpell = false;
     private Vector3 steakDirection = new Vector3(0f, 0f, 1f);
 
     //spells
-    Spell_1 spellL1;
+    private Spell_1 spellL1;
+    private Spell_MMM spellL2;
     //end of spells
 
     void Start()
     {
         cursor = GameObject.Find("CursorBase");
-        character = GameObject.Find("CharacterGirl");
+        //character = GameObject.Find("CharacterGirl");
         cursor.transform.position = new Vector3(0f, -20f, 0f);
+        inputManager = GetComponent<InputManager>();
 
         //spells
         spellL1 = GameObject.Find("SpellsList").GetComponent<Spell_1>();
+        spellL2 = GameObject.Find("SpellsList").GetComponent<Spell_MMM>();
+
         //end of spells
     }
 
     void Update()
     {
-        if (isCastSpell)
-        {
-            if (Input.GetButton("L1"))
+        spellNum = inputManager.SpellNum();
+        spellNumUp = inputManager.SpellNumUp();
+
+            switch (spellNum)
             {
-                //steakDirection = character.transform.forward;
-                CursorMove(steakDirection);
-                spellL1.CastSpell(steakDirection);
-            }
-            else
-            if (Input.GetButton("R1"))
-            {
-                CursorMove(steakDirection);
+                case 1:
+                    CursorMove(steakDirection);
+                    spellL1.CastSpell(steakDirection);
+                break;
+
+                case 2:
+                    CursorMove(steakDirection);
+                    spellL2.CastSpell(steakDirection);
+                break;
+
+                default:
+                cursor.transform.position = new Vector3(0f, 100f, 0f);
+                break;
             }
 
-            if (Input.GetButtonUp("L1"))
+            switch (spellNumUp)
             {
-                spellL1.CastSpellEnd(steakDirection);
+                case 1:
+                    spellL1.CastSpellEnd(steakDirection);
+                    break;
+
+                case 2:
+                    spellL2.CastSpellEnd(steakDirection);
+                    break;
+
+                default:
+
+                    break;
             }
-        }
-        else
-        {
-            cursor.transform.position = new Vector3(0f, 100f, 0f);
-        }
-        Debug.Log(steakDirection);
     }
 
     private void CursorMove(Vector3 directionAxis)

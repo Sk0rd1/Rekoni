@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class Spell_1 : MonoBehaviour
 {
+    [SerializeField]
+    private float offsetCursorPosition = 1f;
+    [SerializeField]
+    private float timeCast = 2f;
+    [SerializeField]
+    private float cursorSpeed = 5f;
+
+
     private GameObject character;
 
     private GameObject cursorPrefabModel;
@@ -20,12 +28,6 @@ public class Spell_1 : MonoBehaviour
     private bool firstFrameToCast = true;
     private float effectRadius = 7f;
 
-    [SerializeField]
-    private float offsetCursorPosition = 1f;
-    [SerializeField]
-    private float timeCast = 2f;
-    [SerializeField]
-    private float cursorSpeed = 5f;
     
 
     void Start()
@@ -39,11 +41,6 @@ public class Spell_1 : MonoBehaviour
         effectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
 
         cursorModel.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-    }
-
-    void Update()
-    {
-        
     }
 
     public void CastSpell(Vector3 cursorDirection)
