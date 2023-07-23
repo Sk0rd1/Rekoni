@@ -14,7 +14,7 @@ public class Spell_MMM : MonoBehaviour
     private bool firstFrameToCast = true;
     private float reloadUnderMeteor = 0.2f;
     private int numberMeteor = 6;
-    private float speefFall = 100;
+    private float speefFall = 150;
 
     private GameObject character;
     private Vector3 centerSpell = Vector3.zero;
@@ -102,7 +102,13 @@ public class Spell_MMM : MonoBehaviour
         for(int i = 0; i < numberMeteor; i++) 
         {
             cursorList[i].transform.position = cursorLocation[i];
-            effectList[i].transform.position = cursorLocation[i] + new Vector3(Random.Range(0f, 16f) - 8f, 50f, Random.Range(0f, 16f) - 8f);
+            effectList[i].transform.position = cursorLocation[i] + new Vector3(Random.Range(0f, 16f) - 8f, 70f, Random.Range(0f, 16f) - 8f);
+            //StartCoroutine(MoveToPoint(effectList[i], cursorLocation[i], i));
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        for(int i = 0; i < numberMeteor; i++)
+        {
             StartCoroutine(MoveToPoint(effectList[i], cursorLocation[i], i));
             yield return new WaitForSeconds(reloadUnderMeteor);
         }
@@ -116,13 +122,16 @@ public class Spell_MMM : MonoBehaviour
         GameObject sphereMiddle = effect.transform.Find("SphereMiddle").gameObject;
         Vector3 sphereMiddleRotation;
 
+        Vector3 angle1 = new Vector3(Random.Range(50f, 180f) * Time.deltaTime, Random.Range(50f, 180f) * Time.deltaTime, Random.Range(50f, 180f) * Time.deltaTime);
+        Vector3 angle2 = new Vector3(Random.Range(50f, 180f) * Time.deltaTime, Random.Range(50f, 180f) * Time.deltaTime, Random.Range(50f, 180f) * Time.deltaTime);
+
         while (effect.transform.position.y > point.y)
         {
             sphereOutsideRotation = sphereOutside.transform.eulerAngles;
-            sphereOutside.transform.rotation = Quaternion.Euler(sphereOutsideRotation.x, sphereOutsideRotation.y + 180 * Time.deltaTime, sphereOutsideRotation.z);
+            sphereOutside.transform.rotation = Quaternion.Euler(sphereOutsideRotation.x + angle1.x, sphereOutsideRotation.y + angle1.y, sphereOutsideRotation.z + angle1.z);
 
             sphereMiddleRotation = sphereMiddle.transform.eulerAngles;
-            sphereMiddle.transform.rotation = Quaternion.Euler(sphereMiddleRotation.x, sphereMiddleRotation.y, sphereMiddleRotation.z + 180 * Time.deltaTime);
+            sphereMiddle.transform.rotation = Quaternion.Euler(sphereOutsideRotation.x + angle2.x, sphereOutsideRotation.y + angle2.y, sphereOutsideRotation.z + angle2.z);
 
             effect.transform.position -= (effect.transform.position - point).normalized * Time.deltaTime * speefFall;
             yield return new WaitForEndOfFrame();
@@ -130,16 +139,16 @@ public class Spell_MMM : MonoBehaviour
 
         cursorList[index].transform.position = new Vector3(0f, -20f, 0f);
 
-        float scaleMax = 2.0f;
+        float scaleMax = 1.5f;
         float currentScale = 1.0f;
         Vector3 localScale = effect.transform.localScale;
         while (currentScale <= scaleMax)
         {
             sphereOutsideRotation = sphereOutside.transform.eulerAngles;
-            sphereOutside.transform.rotation = Quaternion.Euler(sphereOutsideRotation.x, sphereOutsideRotation.y + 270 * Time.deltaTime, sphereOutsideRotation.z);
+            sphereOutside.transform.rotation = Quaternion.Euler(sphereOutsideRotation.x + angle1.x, sphereOutsideRotation.y + angle1.y, sphereOutsideRotation.z + angle1.z);
 
             sphereMiddleRotation = sphereMiddle.transform.eulerAngles;
-            sphereMiddle.transform.rotation = Quaternion.Euler(sphereMiddleRotation.x, sphereMiddleRotation.y, sphereMiddleRotation.z + 270 * Time.deltaTime);
+            sphereMiddle.transform.rotation = Quaternion.Euler(sphereOutsideRotation.x + angle2.x, sphereOutsideRotation.y + angle2.y, sphereOutsideRotation.z + angle2.z);
 
             effect.transform.localScale = localScale * currentScale;
             currentScale += 5f * Time.deltaTime;
