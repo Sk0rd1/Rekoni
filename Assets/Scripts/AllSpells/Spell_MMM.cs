@@ -53,6 +53,7 @@ public class Spell_MMM : MonoBehaviour
 
             cursorForEffectPrefabModel = Resources.Load<GameObject>(cursorForEffectName);
             GameObject instantinateCurdorForEffect = Instantiate(cursorForEffectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+            instantinateCurdorForEffect.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
             cursorList.Add(instantinateCurdorForEffect);
         }
     }
@@ -91,9 +92,51 @@ public class Spell_MMM : MonoBehaviour
     IEnumerator EffectCast()
     {
         float currentTime = 0f;
-        for(int i = 0; i < numberMeteor; i++)
+        int numberCircle;
+        for (int i = 0; i < numberMeteor; i++)
         {
-            cursorLocation[i] = new Vector3(centerSpell.x + Random.Range(0f, 16f) - 8f, centerSpell.y, centerSpell.z + Random.Range(0f, 16f) - 8f);            
+            numberCircle = Random.Range(0, 11);
+
+            if (numberCircle < 6)
+            {
+                float x = Random.Range(0f, 4f) - 2f;
+                float z = Random.Range(0f, 4f) - 2f;
+                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y, centerSpell.z + z);
+            }
+            else if (numberCircle < 9)
+            {
+                float x = Random.Range(0f, 4f) - 2f;
+                float z = Random.Range(0f, 4f) - 2f;
+
+                if (x < 0)
+                    x -= 2f;
+                else
+                    x += 2f;
+
+                if (z < 0)
+                    z -= 2f;
+                else
+                    z += 2f;
+
+                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y, centerSpell.z + z);
+            }
+            else
+            {
+                float x = Random.Range(0f, 4f) - 2f;
+                float z = Random.Range(0f, 4f) - 2f;
+
+                if (x < 0)
+                    x -= 4f;
+                else
+                    x += 4f;
+
+                if (z < 0)
+                    z -= 4f;
+                else
+                    z += 4f;
+
+                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y, centerSpell.z + z);
+            }
         }
 
         for(int i = 0; i < numberMeteor; i++) 
