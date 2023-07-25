@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-55525
+61833
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [12024] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 3457553142 [EditorId] 3457553142 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [19796] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 812939277 [EditorId] 812939277 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [12024] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 3457553142 [EditorId] 3457553142 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19796] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 812939277 [EditorId] 812939277 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 517.27 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 342.39 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56740
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.014483 seconds.
+Registered in 0.007377 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 648.93 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 517.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.039 seconds
+- Completed reload, in  2.549 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3042ms)
-		BeginReloadAssembly (309ms)
+	ReloadAssembly (2550ms)
+		BeginReloadAssembly (315ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (2235ms)
-			LoadAssemblies (311ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (1899ms)
+			LoadAssemblies (312ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (375ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (127ms)
-			SetupLoadedEditorAssemblies (1524ms)
+			RebuildScriptCaches (118ms)
+			SetupLoadedEditorAssemblies (1216ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (29ms)
+				InitializePlatformSupportModulesInManaged (27ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (649ms)
-				BeforeProcessingInitializeOnLoad (4ms)
-				ProcessInitializeOnLoadAttributes (586ms)
-				ProcessInitializeOnLoadMethodAttributes (254ms)
+				RefreshPlugins (518ms)
+				BeforeProcessingInitializeOnLoad (7ms)
+				ProcessInitializeOnLoadAttributes (484ms)
+				ProcessInitializeOnLoadMethodAttributes (179ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.029388 seconds.
+Registered in 0.027752 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 360.85 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 409.29 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.685 seconds
+- Completed reload, in  4.954 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4688ms)
-		BeginReloadAssembly (407ms)
+	ReloadAssembly (4957ms)
+		BeginReloadAssembly (384ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (22ms)
+			DisableScriptedObjects (20ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (49ms)
-		EndReloadAssembly (3914ms)
-			LoadAssemblies (383ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (4194ms)
+			LoadAssemblies (376ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1025ms)
+			SetupTypeCache (1144ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (237ms)
-			SetupLoadedEditorAssemblies (2176ms)
+			RebuildScriptCaches (278ms)
+			SetupLoadedEditorAssemblies (2290ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (361ms)
-				BeforeProcessingInitializeOnLoad (374ms)
-				ProcessInitializeOnLoadAttributes (1108ms)
-				ProcessInitializeOnLoadMethodAttributes (308ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (409ms)
+				BeforeProcessingInitializeOnLoad (422ms)
+				ProcessInitializeOnLoadAttributes (1149ms)
+				ProcessInitializeOnLoadMethodAttributes (287ms)
 				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (24ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
-Refreshing native plugins compatible for Editor in 2.91 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.19 seconds
+Refreshing native plugins compatible for Editor in 3.21 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5333 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (1.9 MB). Loaded Objects now: 5778.
-Memory consumption went from 223.7 MB to 221.8 MB.
-Total: 10.480600 ms (FindLiveObjects: 0.769100 ms CreateObjectMapping: 0.483300 ms MarkObjects: 8.000900 ms  DeleteObjects: 1.224600 ms)
+Unloading 5331 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (1.9 MB). Loaded Objects now: 5776.
+Memory consumption went from 222.3 MB to 220.3 MB.
+Total: 13.386800 ms (FindLiveObjects: 0.963700 ms CreateObjectMapping: 1.162300 ms MarkObjects: 9.526100 ms  DeleteObjects: 1.731700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,19 +164,163 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1081090.913648 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph
-  artifactKey: Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph using Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e921d18b9371cbd748b1fa79f3ae0119') in 0.115704 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.317736 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph
-  artifactKey: Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph using Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '098de59a5e56575f616bbde4c8aaf916') in 0.006465 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 65.066600 seconds.
+  Time since last request: 1092522.169921 seconds.
   path: Assets/ibah555TexturePack/SkilAnimations/Materials/ForElPrimo.mat
   artifactKey: Guid(311eefe906785af4d8ccd2fcfc16fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/ForElPrimo.mat using Guid(311eefe906785af4d8ccd2fcfc16fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7cc645ba1c728259265670bf769d1d2') in 0.842803 seconds 
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/ForElPrimo.mat using Guid(311eefe906785af4d8ccd2fcfc16fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e479cdc9f20b0e4f3aa8ca91daf45a9') in 1.560211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/RedFireTargets.fbx
+  artifactKey: Guid(4ad48b6dc6d3c024ba730b02916b4b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/RedFireTargets.fbx using Guid(4ad48b6dc6d3c024ba730b02916b4b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '343908a76150969e416c67e708de45c2') in 0.236191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.004_alpha.png
+  artifactKey: Guid(4a36c8a16c74284448502445bae8c6aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.004_alpha.png using Guid(4a36c8a16c74284448502445bae8c6aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe61e684f118bd23dbabcaa24c6c01fd') in 0.119095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat
+  artifactKey: Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat using Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65b14295c3e74b9e6ee84a807892ed44') in 0.067489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Circle.004_alpha.png
+  artifactKey: Guid(455968b269d99ad438a19a01340833c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Circle.004_alpha.png using Guid(455968b269d99ad438a19a01340833c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1668d608781763b5babebe9d4ae81f5e') in 0.040481 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph
+  artifactKey: Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph using Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ed19b80cd469765db7e2ab290229ead') in 0.045235 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.002_pass.009.png
+  artifactKey: Guid(27027a2b5e2c8ab4ebd636221e5e6605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.002_pass.009.png using Guid(27027a2b5e2c8ab4ebd636221e5e6605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '081ea7c62c76dbd3d8b9121e3fdc80e5') in 0.060074 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.002_alpha.mat
+  artifactKey: Guid(d0d21a4075eb2c34a92f5ac2631888de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.002_alpha.mat using Guid(d0d21a4075eb2c34a92f5ac2631888de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4167b5665c9721fbcd8a92a29d618cf') in 0.145988 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 389.011117 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat
+  artifactKey: Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat using Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26848d719144dbd5c641fbffe46c67ec') in 0.045498 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 174.496383 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat
+  artifactKey: Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat using Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b885117c5186e76c38570540a949b3f5') in 0.034837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 519.413427 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat
+  artifactKey: Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat using Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a34dbb4ec1da869fd01c8db9e4a25ae') in 0.034686 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.233823 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/RedFireTargets.fbx
+  artifactKey: Guid(4ad48b6dc6d3c024ba730b02916b4b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/RedFireTargets.fbx using Guid(4ad48b6dc6d3c024ba730b02916b4b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e77145597be9c6ef2059ef64e9e4c2b1') in 0.064284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.561460 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/ForElPrimo.mat
+  artifactKey: Guid(311eefe906785af4d8ccd2fcfc16fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/ForElPrimo.mat using Guid(311eefe906785af4d8ccd2fcfc16fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '894465cd45e467409542ec3fa3813efc') in 0.044004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat
+  artifactKey: Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat using Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '854e1155f2d810bcd81f59674d1867d9') in 0.023934 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 69.290396 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/RedFireTargets.fbx
+  artifactKey: Guid(4ad48b6dc6d3c024ba730b02916b4b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/RedFireTargets.fbx using Guid(4ad48b6dc6d3c024ba730b02916b4b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a80b68cc4b88b1575da955f7c7354b64') in 0.061248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 782.604249 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Circle.003_color.png
+  artifactKey: Guid(5aa55c4761f8adc49b99d30ebff591d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Circle.003_color.png using Guid(5aa55c4761f8adc49b99d30ebff591d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd98f4f2426fc692f013a43c0e9f78210') in 0.056018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 87.766555 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Materials/Circle.002_color 1.mat
+  artifactKey: Guid(0b89ec1697660114e8639857ced4e612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Materials/Circle.002_color 1.mat using Guid(0b89ec1697660114e8639857ced4e612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '418f18e6b71f916760b228cb4db45af7') in 0.061218 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Materials/Circle.002_color.mat
+  artifactKey: Guid(952b761fe6a78bd41a32013d48e6a291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Materials/Circle.002_color.mat using Guid(952b761fe6a78bd41a32013d48e6a291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f3f1ef85858b9e0c0a9b71ab9203554') in 0.040352 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.438835 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/ForElPrimo.mat
+  artifactKey: Guid(311eefe906785af4d8ccd2fcfc16fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/ForElPrimo.mat using Guid(311eefe906785af4d8ccd2fcfc16fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd782b85a44256dd76baf48721d85bda') in 0.029267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.576310 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/ForElPrimo.001.mat
+  artifactKey: Guid(57201d34f2118d042a73048be4788cf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/ForElPrimo.001.mat using Guid(57201d34f2118d042a73048be4788cf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6e6c8c1cc5c5df606b7b6792d72642b') in 0.045454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 335.581942 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/ForElPrimo.001.mat
+  artifactKey: Guid(57201d34f2118d042a73048be4788cf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/ForElPrimo.001.mat using Guid(57201d34f2118d042a73048be4788cf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '383a1b4dddea38fea03d1a673eced81e') in 1.346858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 109.574710 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.003_color.mat
+  artifactKey: Guid(d849d48680f5a33448fdff2dac8b8d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.003_color.mat using Guid(d849d48680f5a33448fdff2dac8b8d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87be8920c4322d0b65acbb1df09fe78e') in 0.040261 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 764.711442 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.003_color.mat
+  artifactKey: Guid(d849d48680f5a33448fdff2dac8b8d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.003_color.mat using Guid(d849d48680f5a33448fdff2dac8b8d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a1dae052aa1a090986dbc2e6294f36a') in 0.050932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.386151 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph
+  artifactKey: Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph using Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e166383cca33080a76e4046e1d2f530') in 0.006555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 102.132898 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat
+  artifactKey: Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat using Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f583d312b95353c277fa1f9307949b4') in 0.033355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.721274 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat
+  artifactKey: Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat using Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dbe820f6731150d50dd2dcce8ad86d1') in 0.025640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 349.354462 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.003_color.png
+  artifactKey: Guid(bc252dba3379a5c45a9fdd109a322178) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Circle.003_color.png using Guid(bc252dba3379a5c45a9fdd109a322178) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '329d09eece2686fa282e6bce7a01bf4d') in 0.023858 seconds 
