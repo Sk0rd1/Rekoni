@@ -53,11 +53,8 @@ public class Spell_MMM : MonoBehaviour
 
             cursorForEffectPrefabModel = Resources.Load<GameObject>(cursorForEffectName);
             GameObject instantinateCurdorForEffect = Instantiate(cursorForEffectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-            instantinateCurdorForEffect.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
             cursorList.Add(instantinateCurdorForEffect);
         }
-
-        cursorModel.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
     }
 
     public void CastSpell(Vector3 cursorDirection)
