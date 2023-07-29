@@ -12,9 +12,6 @@ public class Spell_1 : MonoBehaviour
     [SerializeField]
     private float cursorSpeed = 5f;
 
-
-    private GameObject character;
-
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
     private GameObject cursorModel;
@@ -28,14 +25,15 @@ public class Spell_1 : MonoBehaviour
     private bool firstFrameToCast = true;
     private float effectRadius = 7f;
 
+    private Vector3 currentGamepadPosition = Vector3.zero;
+
     
 
     void Start()
     {
-        character = GameObject.Find("CharacterGirl");
-
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        cursorModel.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
 
         effectPrefabModel = Resources.Load<GameObject>(effectName);
         effectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
@@ -43,10 +41,11 @@ public class Spell_1 : MonoBehaviour
         cursorModel.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
     }
 
-    public void CastSpell(Vector3 cursorDirection)
+    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         if (firstFrameToCast)
         {
+            currentGamepadPosition = Vector3.zero;
             firstFrameToCast = false;
             StartCoroutine(TimerCast());
         }
@@ -54,16 +53,54 @@ public class Spell_1 : MonoBehaviour
         {
             if (isSpellCast)
             {
-                cursorModel.transform.position = character.transform.position + cursorDirection * cursorSpeed * (currentTime + offsetCursorPosition);
+                cursorModel.transform.position = PointCenterSpell(cursorPosition, characterPosition, isGamepadUsing);
             }
             else
             {
-                cursorModel.transform.position = character.transform.position + cursorDirection * cursorSpeed * (timeCast + offsetCursorPosition);
+                cursorModel.transform.position = PointCenterSpell(cursorPosition, characterPosition, isGamepadUsing);   
             }
         }
     }
 
-    public void CastSpellEnd(Vector3 cursorDirection)
+    private Vector3 PointCenterSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        Vector3 pointCenterSpell = Vector3.zero;
+
+        if (isGamepadUsing)
+        {
+            if(cursorPosition.x < 0f)
+            {
+                cursorPosition.x = cursorPosition.x * cursorPosition.x;
+                cursorPosition.x = -cursorPosition.x;
+            }
+            else
+            {
+                cursorPosition.x = cursorPosition.x * cursorPosition.x;
+            }
+
+            if (cursorPosition.z < 0f)
+            {
+                cursorPosition.z = cursorPosition.z * cursorPosition.z;
+                cursorPosition.z = -cursorPosition.z;
+            }
+            else
+            {
+                cursorPosition.z = cursorPosition.z * cursorPosition.z;
+            }
+
+            currentGamepadPosition += cursorPosition;
+
+            pointCenterSpell = characterPosition + currentGamepadPosition * Time.deltaTime;
+        }
+        else
+        {
+            pointCenterSpell = cursorPosition;
+        }
+
+        return pointCenterSpell;
+    }
+
+    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         firstFrameToCast = true;
 

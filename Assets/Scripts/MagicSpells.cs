@@ -8,8 +8,11 @@ public class MagicSpells : MonoBehaviour
     private InputManager inputManager;
     private short spellNum = 0;
     private short spellNumUp = 0;
+    private bool[] spellNumReady = {false/*L1*/, false/*R1*/, false/*L2*/, false/*R2*/};
     private bool isCastSpell = false;
-    private Vector3 steakDirection = new Vector3(0f, 0f, 1f);
+    private bool isGamepadUsing = false;
+    private Vector3 mousePosition = new Vector3(0f, 0f, 1f);
+    private Vector3 characterPosition = Vector3.zero;
 
     //spells
     private Spell_1 spellL1;
@@ -19,7 +22,6 @@ public class MagicSpells : MonoBehaviour
     void Start()
     {
         cursor = GameObject.Find("CursorBase");
-        //character = GameObject.Find("CharacterGirl");
         cursor.transform.position = new Vector3(0f, -20f, 0f);
         inputManager = GetComponent<InputManager>();
 
@@ -35,41 +37,64 @@ public class MagicSpells : MonoBehaviour
         spellNum = inputManager.SpellNum();
         spellNumUp = inputManager.SpellNumUp();
 
-            switch (spellNum)
-            {
-                case 1:
-                    CursorMove(steakDirection);
-                    spellL1.CastSpell(steakDirection);
-                break;
+        
 
-                case 2:
-                    CursorMove(steakDirection);
-                    spellL2.CastSpell(steakDirection);
-                break;
+        if (spellNum == 1)
+        {
+            CursorMove();
+            spellL1.CastSpell(mousePosition, transform.position, isGamepadUsing);
+            spellNumReady[spellNum - 1] = true;
+        }
+        else if (spellNum == 2 && spellL2.IsSpellReady())
+        {
+            CursorMove();
+            spellL2.CastSpell(mousePosition, transform.position, isGamepadUsing);
+            spellNumReady[spellNum - 1] = true;
+        }
+        else
+        {
+            spellNumReady[0] = true;
+            spellNumReady[1] = true;
+            spellNumReady[2] = true;
+            spellNumReady[3] = true;
 
-                default:
-                cursor.transform.position = new Vector3(0f, 100f, 0f);
-                break;
-            }
+            cursor.transform.position = new Vector3(0f, 100f, 0f);
+        }
 
-            switch (spellNumUp)
-            {
-                case 1:
-                    spellL1.CastSpellEnd(steakDirection);
-                    break;
-
-                case 2:
-                    spellL2.CastSpellEnd(steakDirection);
-                    break;
-
-                default:
-
-                    break;
-            }
+        if (spellNumUp == 1)
+        {
+            spellL1.CastSpellEnd(mousePosition, transform.position, isGamepadUsing);
+        }
+        else if (spellNumUp == 2 && spellL2.IsSpellReady())
+        {
+            spellL2.CastSpellEnd(mousePosition, transform.position, isGamepadUsing);
+        }
     }
 
-    private void CursorMove(Vector3 directionAxis)
+    /*private void CheckSpellNumReady()
     {
+        //spellNumReady[0] = spellL1.IsSpellReady();
+        spellNumReady[1] = spellL2.IsSpellReady();
+        //spellNumReady[2] = spellL3.IsSpellReady();
+        //spellNumReady[3] = spellL4.IsSpellReady();
+    }*/
+
+    private void CursorMove()
+    {
+        Vector3 directionAxis = Vector3.forward;
+        if (isGamepadUsing)
+        {
+            //if (mousePosition == Vector3.zero)
+            //    mousePosition = transform.forward;
+            //mousePosition.Normalize();
+            directionAxis = mousePosition;
+            directionAxis.Normalize();
+        }
+        else
+        {
+            directionAxis = mousePosition - transform.position;
+            directionAxis.Normalize();
+        }
         directionAxis.y += 0.5f;
         directionAxis *= 3f;
 
@@ -81,16 +106,22 @@ public class MagicSpells : MonoBehaviour
         cursor.transform.rotation = Quaternion.Euler(90f, 0f, -eulerAngles.y);
     }
 
-    public void CastSpell(bool isCastSpell, Vector3 steakDirection)
+    public void CastSpell(bool isCastSpell, Vector3 mousePosition, bool isGamepadUsing)
     {
-        if (steakDirection != Vector3.zero)
-            this.steakDirection = steakDirection;
+        this.mousePosition = mousePosition;
         this.isCastSpell = isCastSpell;
+        this.isGamepadUsing = isGamepadUsing;
+        this.characterPosition = characterPosition;
     }
 
     public Vector3 GetCursorPosition()
     {
         return cursor.transform.position;
+    }
+
+    public bool[] SpellNumReadyToCast()
+    {
+        return spellNumReady;
     }
 
     private void LateUpdate()
