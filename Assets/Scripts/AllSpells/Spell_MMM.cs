@@ -5,19 +5,19 @@ using UnityEngine.TextCore.Text;
 
 public class Spell_MMM : MonoBehaviour
 {
-    private float offsetCursorPosition = 1.2f;
-    private float timeCast = 1.5f;
-    private float cursorSpeed = 10f;
-
-    private bool isSpellCast = false;
-    private float currentTime = 0f;
-    private bool firstFrameToCast = true;
     private float reloadUnderMeteor = 0.2f;
     private int numberMeteor = 6;
     private float speefFall = 150;
+    private float reloadTime = 4f;
+    private float radiusSpell = 15f;
 
-    private GameObject character;
+
+    private bool firstFrameToCast = true;
+    private float currentTime = 0f;
+    private bool isSpellReady = true;
+
     private Vector3 centerSpell = Vector3.zero;
+    private Vector3 currentGamepadPosition = Vector3.zero;
 
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
@@ -33,8 +33,6 @@ public class Spell_MMM : MonoBehaviour
 
     void Start()
     {
-        character = GameObject.Find("CharacterGirl");
-
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
         effectList = new List<GameObject>();
@@ -58,28 +56,60 @@ public class Spell_MMM : MonoBehaviour
         }
     }
 
-    public void CastSpell(Vector3 cursorDirection)
+    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         if (firstFrameToCast)
         {
             firstFrameToCast = false;
-            StartCoroutine(TimerCast());
+            currentGamepadPosition = Vector3.zero;
         }
         else
         {
-            if (isSpellCast)
-            {
-                cursorModel.transform.position = character.transform.position + cursorDirection * cursorSpeed * (currentTime + offsetCursorPosition);
-            }
-            else
-            {
-                cursorModel.transform.position = character.transform.position + cursorDirection * cursorSpeed * (timeCast + offsetCursorPosition);
-            }
+            cursorModel.transform.position = DistanceWithRadius(cursorPosition, characterPosition, isGamepadUsing);
         }
     }
 
-    public void CastSpellEnd(Vector3 cursorDirection)
+    private Vector3 PointCenterSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
+        Vector3 pointCenterSpell = Vector3.zero;
+
+        if (isGamepadUsing)
+        {
+            if(cursorPosition.x < 0f)
+            {
+                cursorPosition.x = cursorPosition.x * cursorPosition.x;
+                cursorPosition.x = -cursorPosition.x;
+            }
+            else
+            {
+                cursorPosition.x = cursorPosition.x * cursorPosition.x;
+            }
+
+            if (cursorPosition.z < 0f)
+            {
+                cursorPosition.z = cursorPosition.z * cursorPosition.z;
+                cursorPosition.z = -cursorPosition.z;
+            }
+            else
+            {
+                cursorPosition.z = cursorPosition.z * cursorPosition.z;
+            }
+            currentGamepadPosition += cursorPosition * Time.deltaTime * 20f;
+
+            pointCenterSpell = characterPosition + currentGamepadPosition;
+        }
+        else
+        {
+            pointCenterSpell = cursorPosition;
+        }
+
+        return pointCenterSpell;
+    }
+
+    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        StartCoroutine(Reload());
+
         firstFrameToCast = true;
 
         centerSpell = cursorModel.transform.position;
@@ -91,7 +121,6 @@ public class Spell_MMM : MonoBehaviour
 
     IEnumerator EffectCast()
     {
-        float currentTime = 0f;
         int numberCircle;
         for (int i = 0; i < numberMeteor; i++)
         {
@@ -101,7 +130,7 @@ public class Spell_MMM : MonoBehaviour
             {
                 float x = Random.Range(0f, 4f) - 2f;
                 float z = Random.Range(0f, 4f) - 2f;
-                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y, centerSpell.z + z);
+                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y + 0.5f, centerSpell.z + z);
             }
             else if (numberCircle < 9)
             {
@@ -118,7 +147,7 @@ public class Spell_MMM : MonoBehaviour
                 else
                     z += 2f;
 
-                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y, centerSpell.z + z);
+                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y + 0.5f, centerSpell.z + z);
             }
             else
             {
@@ -135,7 +164,7 @@ public class Spell_MMM : MonoBehaviour
                 else
                     z += 4f;
 
-                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y, centerSpell.z + z);
+                cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y + 0.5f, centerSpell.z + z);
             }
         }
 
@@ -143,7 +172,6 @@ public class Spell_MMM : MonoBehaviour
         {
             cursorList[i].transform.position = cursorLocation[i];
             effectList[i].transform.position = cursorLocation[i] + new Vector3(Random.Range(0f, 16f) - 8f, 70f, Random.Range(0f, 16f) - 8f);
-            //StartCoroutine(MoveToPoint(effectList[i], cursorLocation[i], i));
             yield return new WaitForSeconds(0.1f);
         }
 
@@ -165,7 +193,7 @@ public class Spell_MMM : MonoBehaviour
         Vector3 angle1 = new Vector3(Random.Range(50f, 180f) * Time.deltaTime, Random.Range(50f, 180f) * Time.deltaTime, Random.Range(50f, 180f) * Time.deltaTime);
         Vector3 angle2 = new Vector3(Random.Range(50f, 180f) * Time.deltaTime, Random.Range(50f, 180f) * Time.deltaTime, Random.Range(50f, 180f) * Time.deltaTime);
 
-        while (effect.transform.position.y > point.y)
+        while (effect.transform.position.y - 0.5f > point.y)
         {
             sphereOutsideRotation = sphereOutside.transform.eulerAngles;
             sphereOutside.transform.rotation = Quaternion.Euler(sphereOutsideRotation.x + angle1.x, sphereOutsideRotation.y + angle1.y, sphereOutsideRotation.z + angle1.z);
@@ -198,20 +226,66 @@ public class Spell_MMM : MonoBehaviour
 
         effect.transform.localScale = localScale;
         effect.transform.position = new Vector3(0f, -20f, 0f);
-
-        
-        yield return null;
     }
 
-    IEnumerator TimerCast()
+    private Vector3 DistanceWithRadius(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
-        isSpellCast = true;
+        Vector3 pointCenterSpell = PointCenterSpell(cursorPosition, characterPosition, isGamepadUsing) - characterPosition;
+
+        if (isGamepadUsing)
+        {
+            if(Mathf.Sqrt(pointCenterSpell.x * pointCenterSpell.x + pointCenterSpell.z * pointCenterSpell.z) < radiusSpell)
+            {
+                return pointCenterSpell + characterPosition;
+            }
+            else
+            {
+                pointCenterSpell.y = 0f;
+                pointCenterSpell.Normalize();
+
+                currentGamepadPosition = pointCenterSpell * radiusSpell;
+
+                pointCenterSpell = characterPosition + currentGamepadPosition;
+
+                return pointCenterSpell;
+            }
+        }
+        else
+        {
+            float deltaX = cursorPosition.x - characterPosition.x;
+            float deltaZ = cursorPosition.z - characterPosition.z;
+
+            if (Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ) < radiusSpell)
+            {
+                return pointCenterSpell + characterPosition;
+            }
+            else
+            {
+                Vector3 pointDirection = cursorPosition - characterPosition;
+                pointDirection.y = 0f;
+                pointDirection.Normalize();
+
+                pointCenterSpell = characterPosition + pointDirection * radiusSpell;
+
+                return pointCenterSpell;
+            }
+        }
+    }
+
+    IEnumerator Reload()
+    {
         currentTime = 0;
-        while (currentTime < timeCast)
+        isSpellReady = false;
+        while (currentTime < reloadTime)
         {
             currentTime += Time.deltaTime;
             yield return null;
         }
-        isSpellCast = false;
+        isSpellReady = true;
+    }
+
+    public bool IsSpellReady()
+    {
+        return isSpellReady;
     }
 }

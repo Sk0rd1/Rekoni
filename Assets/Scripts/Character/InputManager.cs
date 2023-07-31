@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
@@ -16,6 +17,8 @@ public class InputManager : MonoBehaviour
     private bool buttonMoveTime = false;
     private bool buttonMoveBox = false;
     private bool buttonClimbOnBox = false;
+
+    private Vector3 rSvalue = Vector3.zero;
 
 
     private Camera cameraCharacter;
@@ -124,7 +127,6 @@ public class InputManager : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Debug.Log("1");
                 spellNum = 1;
             }
 
@@ -201,6 +203,7 @@ public class InputManager : MonoBehaviour
             verticalDirection = -Input.GetAxis("Axis 5");
 
             Vector3 steakDirection = new Vector3(horizontalDirection, 0f, verticalDirection);
+            rSvalue = steakDirection;
             steakDirection.Normalize();
             rightSteakDirection = steakDirection;
         }
@@ -215,9 +218,11 @@ public class InputManager : MonoBehaviour
             {
                 newHitPoint = new Vector3(hit.point.x, transform.position.y, hit.point.z);
             }
-            newHitPoint = newHitPoint - transform.position;
-            newHitPoint.Normalize();
             rightSteakDirection = newHitPoint;
+            rSvalue = newHitPoint;
+            //newHitPoint = newHitPoint - transform.position;
+            //newHitPoint.Normalize();
+            //rightSteakDirection = newHitPoint;
         }
     }
 
@@ -253,6 +258,16 @@ public class InputManager : MonoBehaviour
     public Vector3 RightSteakDirection()
     {
         return rightSteakDirection;
+    }
+
+    public Vector3 MousePosition()
+    {
+        return rSvalue;
+    }
+
+    public bool IsGamepadUsing()
+    {
+        return isGamepadUsing;
     }
 
     public Vector3 LeftSteakDirection()

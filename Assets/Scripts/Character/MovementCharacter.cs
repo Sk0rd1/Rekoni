@@ -1,12 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using UnityEngine.TextCore.Text;
 
 public class MovementCharacter : MonoBehaviour
 {
@@ -95,12 +88,12 @@ public class MovementCharacter : MonoBehaviour
             StateOfMoveBox();
         }
 
-        Vector3 rightSteakDirection = inputManager.RightSteakDirection();
+        Vector3 rightSteakDirection = inputManager.MousePosition();
         spellNum = inputManager.SpellNum();
         if(!isMoveBox && spellNum != 0)
         {
             isCastSpell = true;
-            magicSpells.CastSpell(true, rightSteakDirection);
+            magicSpells.CastSpell(true, rightSteakDirection, inputManager.IsGamepadUsing());
             animator.SetBool("isMoveBox", true);
         }
         else
@@ -108,14 +101,15 @@ public class MovementCharacter : MonoBehaviour
             if (!isMoveBox)
                 animator.SetBool("isMoveBox", false);
             isCastSpell = false;
-            magicSpells.CastSpell(false, rightSteakDirection);
+            magicSpells.CastSpell(false, rightSteakDirection, inputManager.IsGamepadUsing());
         }
 
-        if (!inputManager.MoveTime())
+        /*if (!inputManager.MoveTime())
         {
-            isMoveTimeCast = false;
             animator.SetBool("isMoveTime", false);
-        }
+            isMoveTimeNowCasting = false;
+            StartCoroutine(DelayMoveTime());
+        }*/
 
         if (!isFalling() && !isMoveTimeCast && !isRolling && !isClimbing)
         {
@@ -134,13 +128,19 @@ public class MovementCharacter : MonoBehaviour
 
         if (isRolling && !isCastSpell)
         {
-            controller.Move(transform.forward * moveSpeed * 1.75f * Time.deltaTime);
+            controller.Move(transform.forward * moveSpeed * 1.4f * Time.deltaTime);
         }
 
         if(isFirstStageOfClimbing)
         {
             transform.position += new Vector3(0f, 0.17f * gravity * Time.deltaTime, 0f);
         }
+    }
+
+    IEnumerator DelayMoveTime()
+    {
+        yield return new WaitForSeconds(1f);
+        isMoveTimeCast = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -377,14 +377,19 @@ public class MovementCharacter : MonoBehaviour
             animator.SetFloat("MoveBoxVertical", relativeVector.z);
         }
 
+        bool[] spellNumReady = magicSpells.SpellNumReadyToCast();
+
         if (spellNum != 0)
         {
-            moveSpeed = MOVESPEED / 3f;
-            Vector3 rotationVector = transform.rotation.eulerAngles;
-            Quaternion rotation = Quaternion.Euler(0f, rotationVector.y, 0f);
-            Vector3 relativeVector = transform.InverseTransformDirection(currentDirection);
-            animator.SetFloat("MoveBoxHorizontal", relativeVector.x);
-            animator.SetFloat("MoveBoxVertical", relativeVector.z);
+            if (/*spellNum != 0 && */spellNumReady[spellNum - 1])
+            {
+                moveSpeed = MOVESPEED / 3f;
+                Vector3 rotationVector = transform.rotation.eulerAngles;
+                Quaternion rotation = Quaternion.Euler(0f, rotationVector.y, 0f);
+                Vector3 relativeVector = transform.InverseTransformDirection(currentDirection);
+                animator.SetFloat("MoveBoxHorizontal", relativeVector.x);
+                animator.SetFloat("MoveBoxVertical", relativeVector.z);
+            }
         }
 
         if (Mathf.Abs(currentDirection.x) + Mathf.Abs(currentDirection.z) > 0.1f)
