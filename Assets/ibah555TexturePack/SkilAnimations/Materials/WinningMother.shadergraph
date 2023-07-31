@@ -11,6 +11,9 @@
         },
         {
             "m_Id": "dadee8267166433d917abbc13d43205a"
+        },
+        {
+            "m_Id": "c29b09aa32974fba92f1dbf3b0439b29"
         }
     ],
     "m_Keywords": [],
@@ -68,6 +71,9 @@
         },
         {
             "m_Id": "0d2dd619e22b46f084c0149996a749f6"
+        },
+        {
+            "m_Id": "64f645bc11ae4ccaba1a36522484e622"
         }
     ],
     "m_GroupDatas": [],
@@ -258,10 +264,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -565.5999755859375,
-            "y": -246.3999786376953,
+            "x": -783.2000122070313,
+            "y": -351.20001220703127,
             "width": 208.0,
-            "height": 431.9999694824219
+            "height": 432.0000305175781
         }
     },
     "m_Slots": [
@@ -384,6 +390,21 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "21b5c31963a0424b9a99b1823889003f",
+    "m_Id": 0,
+    "m_DisplayName": "PowerRadius",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -690,6 +711,41 @@
     "m_ShaderOutputName": "Sampler",
     "m_StageCapability": 3,
     "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "64f645bc11ae4ccaba1a36522484e622",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -504.7999572753906,
+            "y": 125.59999084472656,
+            "width": 143.19998168945313,
+            "height": 33.59999084472656
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "21b5c31963a0424b9a99b1823889003f"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "c29b09aa32974fba92f1dbf3b0439b29"
+    }
 }
 
 {
@@ -1060,6 +1116,9 @@
         },
         {
             "m_Id": "dadee8267166433d917abbc13d43205a"
+        },
+        {
+            "m_Id": "c29b09aa32974fba92f1dbf3b0439b29"
         }
     ]
 }
@@ -1271,6 +1330,33 @@
         "g": 0.5,
         "b": 0.5,
         "a": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "c29b09aa32974fba92f1dbf3b0439b29",
+    "m_Guid": {
+        "m_GuidSerialized": "fbeb0f0f-c682-4b44-9eb6-b954e95a7b32"
+    },
+    "m_Name": "PowerRadius",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "PowerRadius",
+    "m_DefaultReferenceName": "_PowerRadius",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": -0.6499999761581421,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
     }
 }
 
