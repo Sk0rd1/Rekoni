@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64671
+55418
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [2164] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 2959477077 [EditorId] 2959477077 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [17100] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 3881197261 [EditorId] 3881197261 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [2164] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 2959477077 [EditorId] 2959477077 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [17100] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 3881197261 [EditorId] 3881197261 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 617.45 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 339.97 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56424
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56140
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008821 seconds.
+Registered in 0.008852 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 664.17 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 433.61 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.186 seconds
+- Completed reload, in  3.040 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4188ms)
-		BeginReloadAssembly (477ms)
+	ReloadAssembly (3042ms)
+		BeginReloadAssembly (336ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (3204ms)
-			LoadAssemblies (476ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (2282ms)
+			LoadAssemblies (334ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (620ms)
+			SetupTypeCache (511ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (155ms)
-			SetupLoadedEditorAssemblies (2165ms)
+			RebuildScriptCaches (166ms)
+			SetupLoadedEditorAssemblies (1190ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (53ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (664ms)
-				BeforeProcessingInitializeOnLoad (10ms)
-				ProcessInitializeOnLoadAttributes (1058ms)
-				ProcessInitializeOnLoadMethodAttributes (376ms)
+				InitializePlatformSupportModulesInManaged (26ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (434ms)
+				BeforeProcessingInitializeOnLoad (7ms)
+				ProcessInitializeOnLoadAttributes (561ms)
+				ProcessInitializeOnLoadMethodAttributes (160ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.040164 seconds.
+Registered in 0.020993 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 510.62 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 456.76 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  6.669 seconds
+- Completed reload, in  5.771 seconds
 Domain Reload Profiling:
-	ReloadAssembly (6673ms)
-		BeginReloadAssembly (618ms)
+	ReloadAssembly (5775ms)
+		BeginReloadAssembly (473ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (34ms)
+			DisableScriptedObjects (27ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (1ms)
-			CreateAndSetChildDomain (72ms)
-		EndReloadAssembly (5438ms)
-			LoadAssemblies (578ms)
+			CreateAndSetChildDomain (58ms)
+		EndReloadAssembly (4803ms)
+			LoadAssemblies (478ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1435ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (337ms)
-			SetupLoadedEditorAssemblies (3051ms)
+			SetupTypeCache (1415ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (330ms)
+			SetupLoadedEditorAssemblies (2445ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (16ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (511ms)
-				BeforeProcessingInitializeOnLoad (502ms)
-				ProcessInitializeOnLoadAttributes (1555ms)
-				ProcessInitializeOnLoadMethodAttributes (451ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (5ms)
+				RefreshPlugins (457ms)
+				BeforeProcessingInitializeOnLoad (423ms)
+				ProcessInitializeOnLoadAttributes (1244ms)
+				ProcessInitializeOnLoadMethodAttributes (293ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (23ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.24 seconds
-Refreshing native plugins compatible for Editor in 2.66 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.17 seconds
+Refreshing native plugins compatible for Editor in 2.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5340 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 46 unused Assets / (1.9 MB). Loaded Objects now: 5794.
-Memory consumption went from 230.8 MB to 228.9 MB.
-Total: 14.885100 ms (FindLiveObjects: 1.028200 ms CreateObjectMapping: 1.492500 ms MarkObjects: 10.475100 ms  DeleteObjects: 1.885900 ms)
+Unloading 5344 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 46 unused Assets / (1.9 MB). Loaded Objects now: 5799.
+Memory consumption went from 233.7 MB to 231.8 MB.
+Total: 12.327700 ms (FindLiveObjects: 0.896800 ms CreateObjectMapping: 1.387700 ms MarkObjects: 8.591700 ms  DeleteObjects: 1.449100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,103 +164,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1715622.346648 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.mat
-  artifactKey: Guid(70498d4780df4ff4f9f2fb95240ee357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.mat using Guid(70498d4780df4ff4f9f2fb95240ee357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd21396e3fe622a0f052e1aa77e309e42') in 1.492272 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.274863 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.shadergraph
-  artifactKey: Guid(c3489ccb41dd3954dac66267ee29a980) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.shadergraph using Guid(c3489ccb41dd3954dac66267ee29a980) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99314a70e444f7b5595c977ec8f7ee6c') in 0.011649 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 451.522887 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/WinningMother.shadergraph
-  artifactKey: Guid(0be7c72b7ddde764489e4e7558deb7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/WinningMother.shadergraph using Guid(0be7c72b7ddde764489e4e7558deb7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '284d7a08b5006135d0564b53166686c1') in 0.032796 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 353.272536 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast 1.mat
-  artifactKey: Guid(9a2da5e25aac1a8499f087da1ac2b867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast 1.mat using Guid(9a2da5e25aac1a8499f087da1ac2b867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69a88a0e5a88cf2f5f488a307ff1acad') in 0.042499 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 50.313826 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast 1.mat
-  artifactKey: Guid(9a2da5e25aac1a8499f087da1ac2b867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast 1.mat using Guid(9a2da5e25aac1a8499f087da1ac2b867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e47991d3fabb87a70334af893ac4455') in 0.028458 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1019.555639 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.shadergraph
-  artifactKey: Guid(c3489ccb41dd3954dac66267ee29a980) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.shadergraph using Guid(c3489ccb41dd3954dac66267ee29a980) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a79ee2f7ca353de486cdf5d79ac6b568') in 0.006936 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.507718 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/CircleSettings.shadergraph
-  artifactKey: Guid(7ebeca824e71ded48963f7b7558e8e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/CircleSettings.shadergraph using Guid(7ebeca824e71ded48963f7b7558e8e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a0b6fb0dc096c7817f80bd09521b2d8') in 0.027442 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 37.012065 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.mat
-  artifactKey: Guid(70498d4780df4ff4f9f2fb95240ee357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.mat using Guid(70498d4780df4ff4f9f2fb95240ee357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f4679be3f9c30316c2b6cc3b6e5a00c') in 0.074327 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat
-  artifactKey: Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/testLast.mat using Guid(dba7049b1d715e049b333e2521e30daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93eb4601b0040243065b48850ac8d4fe') in 0.044907 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 64.659688 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Groung.mat
-  artifactKey: Guid(b4efb019bfb04fb4d8e0972678e2ddd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Groung.mat using Guid(b4efb019bfb04fb4d8e0972678e2ddd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb9a168af3a3004c4e3c4d8812de77c9') in 0.070592 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 627.038933 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/CircleSettings.shadergraph
-  artifactKey: Guid(7ebeca824e71ded48963f7b7558e8e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/CircleSettings.shadergraph using Guid(7ebeca824e71ded48963f7b7558e8e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97b9ad086959b680834ea84025838d0f') in 0.012579 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1582.563068 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph
-  artifactKey: Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/WinningFather.shadergraph using Guid(085524abe8381894b864e5009435a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba57af0e8c15e2fcdf8338cc007ccf84') in 0.036462 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 155.607066 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Groung.mat
-  artifactKey: Guid(b4efb019bfb04fb4d8e0972678e2ddd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Groung.mat using Guid(b4efb019bfb04fb4d8e0972678e2ddd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cf89337499b1898bdf313a3a74ef85f') in 0.083411 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000065 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Test2.mat
-  artifactKey: Guid(bd64c24c00620a446800d248eeba3e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Test2.mat using Guid(bd64c24c00620a446800d248eeba3e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa7c28cc1b8f167977f10f2f1a775da6') in 0.056737 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 284.127596 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/ShootPoint.mat
-  artifactKey: Guid(1bb964ef3762ae841a858806248362c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/ShootPoint.mat using Guid(1bb964ef3762ae841a858806248362c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7bbee0fc056baf9af04a17c209ed7ab') in 5.283233 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2131.924339 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.mat
-  artifactKey: Guid(70498d4780df4ff4f9f2fb95240ee357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/BarrierShild.mat using Guid(70498d4780df4ff4f9f2fb95240ee357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba8cf7d21560d4f0e4475f082b32e4f2') in 0.084192 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000089 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/Test2.mat
-  artifactKey: Guid(bd64c24c00620a446800d248eeba3e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/Test2.mat using Guid(bd64c24c00620a446800d248eeba3e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c0f4e6b52ed790eaba0597c73bf4841') in 0.052894 seconds 
+  Time since last request: 1788429.887239 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/Materials/ForToxic.mat
+  artifactKey: Guid(a80fb148058622642a0e0c11f90c3863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/ForToxic.mat using Guid(a80fb148058622642a0e0c11f90c3863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db6d346a5578141bcae7012efb5a3be7') in 1.046062 seconds 
