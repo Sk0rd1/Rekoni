@@ -23,7 +23,7 @@ public class Spell_SSI : MonoBehaviour
     private bool isSpellCast = false;
     private float currentTime = 0f;
     private bool firstFrameToCast = true;
-    private float effectRadius = 7f;
+    private float effectRadius = 3f;
 
     private Vector3 currentGamepadPosition = Vector3.zero;
 
@@ -85,7 +85,6 @@ public class Spell_SSI : MonoBehaviour
         }
         else
         {
-            Debug.Log(cursorPosition);
             pointCenterSpell = cursorPosition;
         }
 
@@ -96,30 +95,30 @@ public class Spell_SSI : MonoBehaviour
     {
         firstFrameToCast = true;
 
-        Debug.Log("CM " + cursorModel.transform.position);
         effectModel.transform.position = cursorModel.transform.position;
-        Debug.Log("EM " + effectModel.transform.position);
         cursorModel.transform.position += new Vector3(0f, -20f, 0f);
 
-        //StartCoroutine(EffectCast());
+        StartCoroutine(EffectCast(effectModel));
     }
 
-    IEnumerator EffectCast()
+    IEnumerator EffectCast(GameObject effect)
     {
         float currentEffectRadius = 0.1f;
-        effectModel.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+        effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
 
         while (currentEffectRadius < effectRadius)
         {
-            currentEffectRadius += 15f * Time.deltaTime;
-            effectModel.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+            currentEffectRadius += 5f * Time.deltaTime;
+            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
             yield return new WaitForEndOfFrame();
         }
 
-        while (currentEffectRadius > 0.5f)
+        yield return new WaitForSeconds(3f);
+
+        while (currentEffectRadius > 0.2f)
         {
-            currentEffectRadius -= 15f * Time.deltaTime;
-            effectModel.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+            currentEffectRadius -= 10f * Time.deltaTime;
+            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
             yield return new WaitForEndOfFrame();
         }
 

@@ -22,6 +22,7 @@ public class Spell_MMM : MonoBehaviour
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
     private GameObject cursorForEffectPrefabModel;
+    private GameObject boomEffectPrefab;
     private GameObject cursorModel;
     private List<GameObject> cursorList;
     private List<GameObject> effectList;
@@ -30,6 +31,7 @@ public class Spell_MMM : MonoBehaviour
     private string cursorName = "MMM/CT_MMM";
     private string effectName = "MMM/ES_MMM";
     private string cursorForEffectName = "MMM/CFE_MMM";
+    private string boomEffectName = "MMM/BoomEffect";
 
     void Start()
     {
@@ -207,7 +209,7 @@ public class Spell_MMM : MonoBehaviour
 
         cursorList[index].transform.position = new Vector3(0f, -20f, 0f);
 
-        float scaleMax = 1.5f;
+        /*float scaleMax = 1.5f;
         float currentScale = 1.0f;
         Vector3 localScale = effect.transform.localScale;
         while (currentScale <= scaleMax)
@@ -224,7 +226,9 @@ public class Spell_MMM : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        effect.transform.localScale = localScale;
+        effect.transform.localScale = localScale;*/
+        boomEffectPrefab = Resources.Load<GameObject>(boomEffectName);
+        GameObject boomEffect = Instantiate(boomEffectPrefab, effect.transform.position, Quaternion.identity);
         effect.transform.position = new Vector3(0f, -20f, 0f);
     }
 
