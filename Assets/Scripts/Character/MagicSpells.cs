@@ -15,8 +15,10 @@ public class MagicSpells : MonoBehaviour
     private Vector3 characterPosition = Vector3.zero;
 
     //spells
-    private Spell_1 spellL1;
-    private Spell_MMM spellL2;
+    private Spell_SSI spellPos1;
+    private Spell_MMM spellPos2;
+    private Spell_IPS spellPos3;
+    //private Spell_MMM spellPod4;
     //end of spells
 
     void Start()
@@ -26,8 +28,9 @@ public class MagicSpells : MonoBehaviour
         inputManager = GetComponent<InputManager>();
 
         //spells
-        spellL1 = GameObject.Find("SpellsList").GetComponent<Spell_1>();
-        spellL2 = GameObject.Find("SpellsList").GetComponent<Spell_MMM>();
+        spellPos1 = GameObject.Find("SpellsList").GetComponent<Spell_SSI>();
+        spellPos2 = GameObject.Find("SpellsList").GetComponent<Spell_MMM>();
+        spellPos3 = GameObject.Find("SpellsList").GetComponent<Spell_IPS>();
 
         //end of spells
     }
@@ -42,13 +45,19 @@ public class MagicSpells : MonoBehaviour
         if (spellNum == 1)
         {
             CursorMove();
-            spellL1.CastSpell(mousePosition, transform.position, isGamepadUsing);
+            spellPos1.CastSpell(mousePosition, transform.position, isGamepadUsing);
             spellNumReady[spellNum - 1] = true;
         }
-        else if (spellNum == 2 && spellL2.IsSpellReady())
+        else if (spellNum == 2 && spellPos2.IsSpellReady())
         {
             CursorMove();
-            spellL2.CastSpell(mousePosition, transform.position, isGamepadUsing);
+            spellPos2.CastSpell(mousePosition, transform.position, isGamepadUsing);
+            spellNumReady[spellNum - 1] = true;
+        }
+        else if (spellNum == 3 && spellPos3.IsSpellReady())
+        {
+            CursorMove();
+            spellPos3.CastSpell(mousePosition, transform.position, isGamepadUsing);
             spellNumReady[spellNum - 1] = true;
         }
         else
@@ -63,11 +72,11 @@ public class MagicSpells : MonoBehaviour
 
         if (spellNumUp == 1)
         {
-            spellL1.CastSpellEnd(mousePosition, transform.position, isGamepadUsing);
+            spellPos1.CastSpellEnd(mousePosition, transform.position, isGamepadUsing);
         }
-        else if (spellNumUp == 2 && spellL2.IsSpellReady())
+        else if (spellNumUp == 2 && spellPos2.IsSpellReady())
         {
-            spellL2.CastSpellEnd(mousePosition, transform.position, isGamepadUsing);
+            spellPos2.CastSpellEnd(mousePosition, transform.position, isGamepadUsing);
         }
     }
 
