@@ -5,6 +5,8 @@ using UnityEngine.TextCore.Text;
 
 public class Spell_MMM : MonoBehaviour
 {
+    public readonly bool MOMENTARYCAST = false;
+
     private float reloadUnderMeteor = 0.2f;
     private int numberMeteor = 6;
     private float speefFall = 150;
@@ -106,6 +108,11 @@ public class Spell_MMM : MonoBehaviour
         }
 
         return pointCenterSpell;
+    }
+
+    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        cursorModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 
     public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)

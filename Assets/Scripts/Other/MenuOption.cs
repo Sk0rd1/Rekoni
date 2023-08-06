@@ -171,7 +171,7 @@ public class MenuOption : MonoBehaviour
             spriteName = "Button2";
         }
 
-        Sprite sprite = Resources.Load<Sprite>("Button3");
+        Sprite sprite = Resources.Load<Sprite>(spriteName);
         button.image.sprite = sprite;
     }
 }

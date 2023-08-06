@@ -4,13 +4,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spell_SSI : MonoBehaviour
-{
-    [SerializeField]
-    private float offsetCursorPosition = 1f;
+{   
     [SerializeField]
     private float timeCast = 2f;
-    [SerializeField]
-    private float cursorSpeed = 5f;
+
+    public readonly bool MOMENTARYCAST = false;
 
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
@@ -20,7 +18,6 @@ public class Spell_SSI : MonoBehaviour
     private string cursorName = "SSI/Cursor";
     private string effectName = "SSI/BlackHole";
 
-    private bool isSpellCast = false;
     private float currentTime = 0f;
     private bool firstFrameToCast = true;
     private float effectRadius = 3f;
@@ -91,6 +88,11 @@ public class Spell_SSI : MonoBehaviour
         return pointCenterSpell;
     }
 
+    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+    }
+
     public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         firstFrameToCast = true;
@@ -127,13 +129,18 @@ public class Spell_SSI : MonoBehaviour
 
     IEnumerator TimerCast()
     {
-        isSpellCast = true;
+        //isSpellCast = true;
         currentTime = 0;
         while (currentTime < timeCast)
         {
             currentTime += Time.deltaTime;
             yield return null;
         }
-        isSpellCast = false;
+        //isSpellCast = false;
+    }
+
+    public bool IsSpellReady()
+    {
+        return true;
     }
 }

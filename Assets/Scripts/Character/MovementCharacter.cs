@@ -20,7 +20,7 @@ public class MovementCharacter : MonoBehaviour
 
     private bool isNewTime = true;
     private bool isCastSpell = false;
-    private short spellNum = 0;
+    private int spellNumCast = 0;
     private bool isMoveTimeReady = true;
     private bool isMoveTimeCast = false;
     private bool isRollingReady = true;
@@ -64,33 +64,36 @@ public class MovementCharacter : MonoBehaviour
 
     void Update()
     {
+        inputManager.CheckButton();
+        magicSpells.CheckCast();
+
         moveSpeed = MOVESPEED;
         Vector3 currentDirection = GetCurrentPosition();
 
-        if (inputManager.Roll() && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast && !isCastSpell)
+        if (inputManager.ButtonRoll && isRollingReady && !isMoveBox && !isClimbing && !isMoveTimeCast && !isCastSpell)
         {
             StartCoroutine(Roll());
         }
 
-        if (inputManager.MoveTime() && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling && !isMoveTimeCast && !isCastSpell )
+        if (inputManager.ButtonMoveTime && !isMoveBox && !isClimbing && isMoveTimeReady && !isRolling && !isMoveTimeCast && !isCastSpell )
         {
             isMoveTimeCast = true;
             StartCoroutine(MoveTime());
         }
 
-        if (inputManager.ClimbOnBox() && (currentBoxNew != null || currentBoxOld != null || boxForClimb != null) && !isMoveBox && !isClimbing && !isRolling && !isMoveTimeCast && !isCastSpell)
+        if (inputManager.ButtonClimbOnBox && (currentBoxNew != null || currentBoxOld != null || boxForClimb != null) && !isMoveBox && !isClimbing && !isRolling && !isMoveTimeCast && !isCastSpell)
         {
             StartCoroutine(ClimbOnBox());
         }
 
-        if (inputManager.MoveBox() && ((currentBoxNew != null && currentBoxOld != null) || isMoveBox) &&  !isClimbing && !isRolling && !isCastSpell)
+        if (inputManager.ButtonMoveBox && ((currentBoxNew != null && currentBoxOld != null) || isMoveBox) &&  !isClimbing && !isRolling && !isCastSpell)
         {
             StateOfMoveBox();
         }
 
         Vector3 rightSteakDirection = inputManager.MousePosition();
-        spellNum = inputManager.SpellNum();
-        if(!isMoveBox && spellNum != 0)
+        spellNumCast = magicSpells.SpellNumCast;
+        if(!isMoveBox && spellNumCast != 0)
         {
             isCastSpell = true;
             magicSpells.CastSpell(true, rightSteakDirection, inputManager.IsGamepadUsing());
@@ -377,20 +380,16 @@ public class MovementCharacter : MonoBehaviour
             animator.SetFloat("MoveBoxVertical", relativeVector.z);
         }
 
-        bool[] spellNumReady = magicSpells.SpellNumReadyToCast();
-
-        if (spellNum != 0)
+        if (spellNumCast != 0)
         {
-            if (/*spellNum != 0 && */spellNumReady[spellNum - 1])
-            {
-                moveSpeed = MOVESPEED / 3f;
-                Vector3 rotationVector = transform.rotation.eulerAngles;
-                Quaternion rotation = Quaternion.Euler(0f, rotationVector.y, 0f);
-                Vector3 relativeVector = transform.InverseTransformDirection(currentDirection);
-                animator.SetFloat("MoveBoxHorizontal", relativeVector.x);
-                animator.SetFloat("MoveBoxVertical", relativeVector.z);
-            }
+            moveSpeed = MOVESPEED / 3f;
+            Vector3 rotationVector = transform.rotation.eulerAngles;
+            Quaternion rotation = Quaternion.Euler(0f, rotationVector.y, 0f);
+            Vector3 relativeVector = transform.InverseTransformDirection(currentDirection);
+            animator.SetFloat("MoveBoxHorizontal", relativeVector.x);
+            animator.SetFloat("MoveBoxVertical", relativeVector.z);
         }
+
 
         if (Mathf.Abs(currentDirection.x) + Mathf.Abs(currentDirection.z) > 0.1f)
         {
