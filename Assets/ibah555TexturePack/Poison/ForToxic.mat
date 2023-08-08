@@ -21,13 +21,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ForToxic
-  m_Shader: {fileID: -6465566751694194690, guid: 44d5e6036652dde46a219eef92f5255e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f014989bc7049714dac09655422ff797, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -47,23 +47,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Metalic: 0.2
-    - _NoiseVibePower: 59.55
-    - _Normal_Strength: 0.04
-    - _PowerForObmivanie: 1.9
+    - _Metalic: 0.193
+    - _NoiseScale_DontTuch: 5.37
+    - _NoiseVibePower: 37.8
+    - _Normal_Strength: 0.8
+    - _PowerForObmivanie: 6.1
     - _QueueControl: 1
     - _QueueOffset: 0
-    - _RadiusTransperence: 0.7
-    - _Smoothnes: 24.1
+    - _RadiusTransperence: 0.338
+    - _Smoothnes: 1.05
     - _Transperency: 0
     - _TransperencyMask: 1.67
     - _VoronoiAgitation: -0.03
-    - _VoronoiPower: 1
+    - _VoronoiPower: 4.17
     - _VoronoiScale: 0
     m_Colors:
-    - _BaseColor: {r: 0.60360223, g: 1.8388816, b: 0, a: 1}
-    - _Normalls_Speed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _VoronoiColor: {r: 1, g: 1, b: 1, a: 0}
-    - _VoronoiSpeed: {r: -0.18, g: 0.07, b: 0, a: 0}
-    - _VoronoiTiling: {r: 2.2, g: 2.4, b: 0, a: 0}
+    - _BaseColor: {r: 0.42191735, g: 1.509434, b: 0.09113555, a: 1}
+    - _Normalls_Speed: {r: 0.23, g: -0.06, b: 0, a: 0}
+    - _VoronoiColor: {r: 0.5520116, g: 0.75294244, b: 0.052860655, a: 1}
+    - _VoronoiSpeed: {r: 0.13, g: -0.49, b: 0, a: 0}
+    - _VoronoiTiling: {r: 2.12, g: 2.75, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58615
+60151
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [10344] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 3556273400 [EditorId] 3556273400 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [18336] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 1383141769 [EditorId] 1383141769 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [10344] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 3556273400 [EditorId] 3556273400 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [18336] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 1383141769 [EditorId] 1383141769 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 530.17 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 364.13 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56248
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56236
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007632 seconds.
+Registered in 0.008417 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2012.45 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 415.09 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.711 seconds
+- Completed reload, in  2.422 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5712ms)
-		BeginReloadAssembly (359ms)
+	ReloadAssembly (2424ms)
+		BeginReloadAssembly (281ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (4888ms)
-			LoadAssemblies (359ms)
+		EndReloadAssembly (1826ms)
+			LoadAssemblies (280ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (448ms)
+			SetupTypeCache (349ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (685ms)
-			SetupLoadedEditorAssemblies (3516ms)
+			RebuildScriptCaches (105ms)
+			SetupLoadedEditorAssemblies (1193ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (63ms)
+				InitializePlatformSupportModulesInManaged (20ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2013ms)
-				BeforeProcessingInitializeOnLoad (4ms)
-				ProcessInitializeOnLoadAttributes (1151ms)
-				ProcessInitializeOnLoadMethodAttributes (284ms)
+				RefreshPlugins (415ms)
+				BeforeProcessingInitializeOnLoad (7ms)
+				ProcessInitializeOnLoadAttributes (526ms)
+				ProcessInitializeOnLoadMethodAttributes (223ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.035856 seconds.
+Registered in 0.032182 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 383.59 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 426.33 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.754 seconds
+- Completed reload, in  5.365 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5757ms)
-		BeginReloadAssembly (570ms)
+	ReloadAssembly (5368ms)
+		BeginReloadAssembly (431ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (25ms)
+			DisableScriptedObjects (27ms)
 			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (81ms)
-		EndReloadAssembly (4709ms)
-			LoadAssemblies (775ms)
+			ReleaseScriptingObjects (1ms)
+			CreateAndSetChildDomain (53ms)
+		EndReloadAssembly (4592ms)
+			LoadAssemblies (363ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1115ms)
+			SetupTypeCache (1265ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (335ms)
-			SetupLoadedEditorAssemblies (2401ms)
+			RebuildScriptCaches (414ms)
+			SetupLoadedEditorAssemblies (2405ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (384ms)
-				BeforeProcessingInitializeOnLoad (364ms)
-				ProcessInitializeOnLoadAttributes (1242ms)
-				ProcessInitializeOnLoadMethodAttributes (392ms)
+				InitializePlatformSupportModulesInManaged (14ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (426ms)
+				BeforeProcessingInitializeOnLoad (429ms)
+				ProcessInitializeOnLoadAttributes (1172ms)
+				ProcessInitializeOnLoadMethodAttributes (352ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (26ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
-Refreshing native plugins compatible for Editor in 3.80 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.20 seconds
+Refreshing native plugins compatible for Editor in 4.58 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5927 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6387.
-Memory consumption went from 259.6 MB to 257.0 MB.
-Total: 14.497600 ms (FindLiveObjects: 0.992400 ms CreateObjectMapping: 1.223400 ms MarkObjects: 10.542400 ms  DeleteObjects: 1.735900 ms)
+Memory consumption went from 259.6 MB to 256.9 MB.
+Total: 15.072800 ms (FindLiveObjects: 1.184000 ms CreateObjectMapping: 1.331200 ms MarkObjects: 10.597000 ms  DeleteObjects: 1.956500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,25 +164,142 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 260144.956746 seconds.
-  path: Assets/ibah555TexturePack/Arrows/Arrow_Snow.vfx
-  artifactKey: Guid(fb481ccc19419ca4a977fa9bef370308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Arrows/Arrow_Snow.vfx using Guid(fb481ccc19419ca4a977fa9bef370308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4dac0c5fd8d7d16cec03925317dbac5') in 2.606416 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.714546 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/Materials/SircleForSkill_1.mat
-  artifactKey: Guid(581c2e305f65aa14fba73de8d6cb4419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/Materials/SircleForSkill_1.mat using Guid(581c2e305f65aa14fba73de8d6cb4419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77c934f568ea09dd0251b333590c6f29') in 0.072884 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.280813 seconds.
+  Time since last request: 261338.995688 seconds.
   path: Assets/ibah555TexturePack/AnotherObjects/Disappearance/EnemisDead.mat
   artifactKey: Guid(9ea0f30d0b9aa744e8ac8ab0f279e415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/AnotherObjects/Disappearance/EnemisDead.mat using Guid(9ea0f30d0b9aa744e8ac8ab0f279e415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ee9b294136824f5bd886a2cfa13fe91') in 0.601959 seconds 
+Start importing Assets/ibah555TexturePack/AnotherObjects/Disappearance/EnemisDead.mat using Guid(9ea0f30d0b9aa744e8ac8ab0f279e415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1df61ad1a91330e28527b0e2570c5411') in 0.975817 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.911676 seconds.
-  path: Assets/ibah555TexturePack/AnotherObjects/Disappearance/Disapperance_Graph.shadergraph
-  artifactKey: Guid(2a610a112d1abe7468611dbe25e23cd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/AnotherObjects/Disappearance/Disapperance_Graph.shadergraph using Guid(2a610a112d1abe7468611dbe25e23cd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdcbf1c6c3ec13b7e3f2a391f3a7f225') in 0.008402 seconds 
+  Time since last request: 22.582628 seconds.
+  path: Assets/ibah555TexturePack/New Material.mat
+  artifactKey: Guid(4515595afc40c2d439d760a2a5aac5fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/New Material.mat using Guid(4515595afc40c2d439d760a2a5aac5fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e179c39f6d632ebed437955fbafea292') in 0.056071 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.645198 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy
+  artifactKey: Guid(8617f55431a0c014091750ec68712b16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy using Guid(8617f55431a0c014091750ec68712b16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8deb6a45958c362a0169bef8b4ab475a') in 0.020087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.598074 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/New Shader Graph.shadergraph
+  artifactKey: Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/New Shader Graph.shadergraph using Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cec40ef5c93579c29b6387c539e2ea6c') in 0.029837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.072952 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph.shadergraph
+  artifactKey: Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph.shadergraph using Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50a30f3425e26a1df8105233c6853d2e') in 0.021265 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 544.471872 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/Snow0192_6_seamless_S.jpg
+  artifactKey: Guid(5009acf383c97b643bf67d5ad8a5276f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/Snow0192_6_seamless_S.jpg using Guid(5009acf383c97b643bf67d5ad8a5276f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88082a73d13ed0bc8655d1c458e1ff6e') in 0.070392 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 284.990860 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/TestIce.mat
+  artifactKey: Guid(7e3c2c55ce35c1c4ab0aa74f3b98ad00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/TestIce.mat using Guid(7e3c2c55ce35c1c4ab0aa74f3b98ad00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0d78afc24410433bd3d8782bf646182') in 0.041180 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3498.164916 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph.shadergraph
+  artifactKey: Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph.shadergraph using Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa47623c060fec4fa577bd3fad302264') in 0.073166 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.252600 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/TestIce.mat
+  artifactKey: Guid(7e3c2c55ce35c1c4ab0aa74f3b98ad00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/TestIce.mat using Guid(7e3c2c55ce35c1c4ab0aa74f3b98ad00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ceaa5d1fdc5cf513f3359f690d1651d') in 8.553303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.062024 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/TestIce.mat
+  artifactKey: Guid(7e3c2c55ce35c1c4ab0aa74f3b98ad00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/TestIce.mat using Guid(7e3c2c55ce35c1c4ab0aa74f3b98ad00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdb48ce6c353740eaf0cf13bd07b6c69') in 8.554265 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.030312 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.90 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  8.985 seconds
+Domain Reload Profiling:
+	ReloadAssembly (9014ms)
+		BeginReloadAssembly (1759ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (170ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (1ms)
+			CreateAndSetChildDomain (757ms)
+		EndReloadAssembly (6596ms)
+			LoadAssemblies (815ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (2295ms)
+			ReleaseScriptCaches (5ms)
+			RebuildScriptCaches (499ms)
+			SetupLoadedEditorAssemblies (2693ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (54ms)
+				SetLoadedEditorAssemblies (3ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (567ms)
+				ProcessInitializeOnLoadAttributes (1561ms)
+				ProcessInitializeOnLoadMethodAttributes (492ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (93ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 10.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5735 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (2.6 MB). Loaded Objects now: 6479.
+Memory consumption went from 252.1 MB to 249.5 MB.
+Total: 17.497800 ms (FindLiveObjects: 1.578200 ms CreateObjectMapping: 1.113500 ms MarkObjects: 10.156600 ms  DeleteObjects: 4.644800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 322.240004 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/TestIce.mat
+  artifactKey: Guid(7e3c2c55ce35c1c4ab0aa74f3b98ad00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/TestIce.mat using Guid(7e3c2c55ce35c1c4ab0aa74f3b98ad00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '505e872a18f857ac39664b95fb736541') in 8.167452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 94.689824 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/MelleDown.shadergraph
+  artifactKey: Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/MelleDown.shadergraph using Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84346060def35f03a8731848d1fbb3ae') in 0.005699 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 74.580304 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph 1.shadergraph
+  artifactKey: Guid(0d56be4c599174c4199019ca29971a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph 1.shadergraph using Guid(0d56be4c599174c4199019ca29971a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd80c6e3ef1f64367e94c9a1f311cb1ec') in 0.018697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 662.050800 seconds.
+  path: Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph 1.shadergraph
+  artifactKey: Guid(0d56be4c599174c4199019ca29971a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph 1.shadergraph using Guid(0d56be4c599174c4199019ca29971a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fd1aa10de3ba3a87439b3c13edd475c') in 0.009830 seconds 
