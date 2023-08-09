@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64473
+51961
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [6068] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 2131044775 [EditorId] 2131044775 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [13148] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 2674551603 [EditorId] 2674551603 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [6068] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 2131044775 [EditorId] 2131044775 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [13148] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 2674551603 [EditorId] 2674551603 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 392.64 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 651.26 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56856
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56368
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006283 seconds.
+Registered in 0.006276 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 356.52 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 582.67 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.122 seconds
+- Completed reload, in  3.473 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2124ms)
-		BeginReloadAssembly (310ms)
+	ReloadAssembly (3477ms)
+		BeginReloadAssembly (497ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (3ms)
-		EndReloadAssembly (1499ms)
-			LoadAssemblies (307ms)
+		EndReloadAssembly (2468ms)
+			LoadAssemblies (495ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (293ms)
+			SetupTypeCache (470ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (88ms)
-			SetupLoadedEditorAssemblies (965ms)
+			RebuildScriptCaches (155ms)
+			SetupLoadedEditorAssemblies (1623ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
+				InitializePlatformSupportModulesInManaged (25ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (357ms)
-				BeforeProcessingInitializeOnLoad (4ms)
-				ProcessInitializeOnLoadAttributes (428ms)
-				ProcessInitializeOnLoadMethodAttributes (155ms)
+				RefreshPlugins (583ms)
+				BeforeProcessingInitializeOnLoad (6ms)
+				ProcessInitializeOnLoadAttributes (793ms)
+				ProcessInitializeOnLoadMethodAttributes (215ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.022468 seconds.
+Registered in 0.031873 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 417.05 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 631.12 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.627 seconds
+- Completed reload, in  7.236 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4629ms)
-		BeginReloadAssembly (375ms)
+	ReloadAssembly (7240ms)
+		BeginReloadAssembly (608ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (22ms)
+			DisableScriptedObjects (37ms)
 			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (53ms)
-		EndReloadAssembly (3881ms)
-			LoadAssemblies (339ms)
+			ReleaseScriptingObjects (1ms)
+			CreateAndSetChildDomain (80ms)
+		EndReloadAssembly (6084ms)
+			LoadAssemblies (546ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1045ms)
+			SetupTypeCache (1702ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (346ms)
-			SetupLoadedEditorAssemblies (2060ms)
+			RebuildScriptCaches (623ms)
+			SetupLoadedEditorAssemblies (3097ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
+				InitializePlatformSupportModulesInManaged (14ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (417ms)
-				BeforeProcessingInitializeOnLoad (375ms)
-				ProcessInitializeOnLoadAttributes (984ms)
-				ProcessInitializeOnLoadMethodAttributes (263ms)
+				RefreshPlugins (631ms)
+				BeforeProcessingInitializeOnLoad (561ms)
+				ProcessInitializeOnLoadAttributes (1477ms)
+				ProcessInitializeOnLoadMethodAttributes (402ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (20ms)
+			AwakeInstancesAfterBackupRestoration (25ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.17 seconds
-Refreshing native plugins compatible for Editor in 3.04 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.41 seconds
+Refreshing native plugins compatible for Editor in 9.21 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5930 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6390.
-Memory consumption went from 261.0 MB to 258.4 MB.
-Total: 13.263600 ms (FindLiveObjects: 1.101900 ms CreateObjectMapping: 1.221200 ms MarkObjects: 8.805000 ms  DeleteObjects: 2.133000 ms)
+Unloading 5932 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6392.
+Memory consumption went from 262.5 MB to 259.8 MB.
+Total: 25.119900 ms (FindLiveObjects: 1.385700 ms CreateObjectMapping: 2.001900 ms MarkObjects: 19.470500 ms  DeleteObjects: 2.258800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,169 +164,565 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 342027.676393 seconds.
-  path: Assets/ibah555TexturePack/Poison/TestPoison_1.mat
-  artifactKey: Guid(2ae907077ff4ed048a267812e9d904e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Poison/TestPoison_1.mat using Guid(2ae907077ff4ed048a267812e9d904e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a3a2018504f587289269c8e9df55f33') in 6.275461 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 165.948280 seconds.
-  path: Assets/ibah555TexturePack/Fire
-  artifactKey: Guid(c4d9ef211c3c1a041bae946565ee7414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire using Guid(c4d9ef211c3c1a041bae946565ee7414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '324e47545ff58c6222600ab05b2914db') in 0.019717 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.235881 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_Shader_2.shadergraph
-  artifactKey: Guid(d54f1b2fea7a4dc4caa8eb546179a4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Shader_2.shadergraph using Guid(d54f1b2fea7a4dc4caa8eb546179a4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17ca70276030bb5cb1a3472424ea5ebb') in 0.028027 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1010.394574 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_Shader_2.shadergraph
-  artifactKey: Guid(d54f1b2fea7a4dc4caa8eb546179a4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Shader_2.shadergraph using Guid(d54f1b2fea7a4dc4caa8eb546179a4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3e8ffae985581f16e3a03dda01b0909') in 0.021618 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.886793 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_2.mat
-  artifactKey: Guid(b5bf37e4fa2e497468a18b9a09ffe763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_2.mat using Guid(b5bf37e4fa2e497468a18b9a09ffe763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '724bef77b9a6a931a6c814e0c0a0e87f') in 5.022456 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 163.965717 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_2.mat
-  artifactKey: Guid(b5bf37e4fa2e497468a18b9a09ffe763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_2.mat using Guid(b5bf37e4fa2e497468a18b9a09ffe763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '347c35d27ae80bfbabbd2ae155ce88c0') in 0.052402 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.927934 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_Shader_3.shadergraph
-  artifactKey: Guid(2ce0e00d5f2ad6448896c18f65b31941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Shader_3.shadergraph using Guid(2ce0e00d5f2ad6448896c18f65b31941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd578c76f33d9cda145f980ab7436d41') in 0.020914 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 43.724171 seconds.
-  path: Assets/ibah555TexturePack/Fire/NonFire&Amazing
-  artifactKey: Guid(d11f31eb200320944b082533c75c9b0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/NonFire&Amazing using Guid(d11f31eb200320944b082533c75c9b0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e3677654cc91625d248259c49b76d6') in 0.018222 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 84.055290 seconds.
-  path: Assets/ibah555TexturePack/Fire/Shader Graphs_Fire_Shader_3.mat
-  artifactKey: Guid(06623a4708a013c43880fe983ec199dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Shader Graphs_Fire_Shader_3.mat using Guid(06623a4708a013c43880fe983ec199dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd652631c1eef191e17522fdb339c49a7') in 4.010542 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.811500 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_3.mat
-  artifactKey: Guid(06623a4708a013c43880fe983ec199dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_3.mat using Guid(06623a4708a013c43880fe983ec199dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fff047dae07cf9b95d7a4f08bfcca7f3') in 0.050009 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.548950 seconds.
-  path: Assets/ibah555TexturePack/Fire/NonFire&Amazing/Fire_2.mat
-  artifactKey: Guid(b5bf37e4fa2e497468a18b9a09ffe763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/NonFire&Amazing/Fire_2.mat using Guid(b5bf37e4fa2e497468a18b9a09ffe763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '894d41e9a6a00315157ebebb03a2179d') in 0.045158 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 336.642339 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_Shader_3.shadergraph
-  artifactKey: Guid(2ce0e00d5f2ad6448896c18f65b31941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Shader_3.shadergraph using Guid(2ce0e00d5f2ad6448896c18f65b31941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76a87be126cee0c9f4b7ff5037e2709d') in 0.009985 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 491.877273 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_Try_2.png
-  artifactKey: Guid(e8ec039768cae5a4687cfbc5ee67b2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Try_2.png using Guid(e8ec039768cae5a4687cfbc5ee67b2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '113f375af90f2315343f0b6f27504a14') in 0.085862 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 144.372253 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_Shader_3.shadergraph
-  artifactKey: Guid(2ce0e00d5f2ad6448896c18f65b31941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Shader_3.shadergraph using Guid(2ce0e00d5f2ad6448896c18f65b31941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc5ca87d025bc20a368d51663a475fa2') in 0.028484 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 350.264372 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_Try_2 1.png
-  artifactKey: Guid(0699fa7c4c523aa488ec1aae9a9a0afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Try_2 1.png using Guid(0699fa7c4c523aa488ec1aae9a9a0afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3007d1110906239c1c768bf6a50b0915') in 0.035922 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 256.140280 seconds.
+  Time since last request: 351550.595772 seconds.
   path: Assets/ibah555TexturePack/Fire/Fire_Try_2 2.png
   artifactKey: Guid(74a46b5f0010f71499c7b9900f588fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Try_2 2.png using Guid(74a46b5f0010f71499c7b9900f588fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d14ab696086b50bb6513c580afb5fba') in 0.033705 seconds 
+Start importing Assets/ibah555TexturePack/Fire/Fire_Try_2 2.png using Guid(74a46b5f0010f71499c7b9900f588fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6c5e287a81252917489e92ac9aaa044') in 0.375016 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 116.677534 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6545f53a306f93f32f70ff4d28b1536') in 0.085248 seconds 
+  Time since last request: 0.000065 seconds.
+  path: Assets/ibah555TexturePack/Fire/Fire_3.mat
+  artifactKey: Guid(06623a4708a013c43880fe983ec199dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Fire/Fire_3.mat using Guid(06623a4708a013c43880fe983ec199dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3869f57bef808ff218977fde7859a62e') in 1.223877 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 72.276205 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '593b36f199a4d19b7c33a52065d014f9') in 0.050466 seconds 
+  Time since last request: 0.000111 seconds.
+  path: Assets/ibah555TexturePack/Fire/Fire_Try_2.png
+  artifactKey: Guid(e8ec039768cae5a4687cfbc5ee67b2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Fire/Fire_Try_2.png using Guid(e8ec039768cae5a4687cfbc5ee67b2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c85475b31273d0c70ff50655e37a3bad') in 0.054261 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 54.404926 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5346979de68d59a6a599d5412064cd4') in 0.039979 seconds 
+  Time since last request: 85.554813 seconds.
+  path: Assets/ibah555TexturePack/Smoke
+  artifactKey: Guid(f894ff187881bce469d54f02c4cf3fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke using Guid(f894ff187881bce469d54f02c4cf3fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91b7ce3c642b95ee360c0acc830a3fe8') in 0.022336 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.057763 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f66011016c6ece40a62c22ce4094361') in 0.047365 seconds 
+  Time since last request: 49.450188 seconds.
+  path: Assets/ibah555TexturePack/Smoke/SmokeGraph.shadergraph
+  artifactKey: Guid(378b580991f83af4b90c3a0fe8324325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/SmokeGraph.shadergraph using Guid(378b580991f83af4b90c3a0fe8324325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6963e60d3c6f2a0c392b045ff7c51096') in 0.033583 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 456.130149 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94ab98a6e7ff777bc16efdf4dc589416') in 0.053801 seconds 
+  Time since last request: 124.701160 seconds.
+  path: Assets/ibah555TexturePack/Smoke/SmokeGraph.shadergraph
+  artifactKey: Guid(378b580991f83af4b90c3a0fe8324325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/SmokeGraph.shadergraph using Guid(378b580991f83af4b90c3a0fe8324325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf5837fbaed964f8538837824d958ef8') in 0.013369 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 182.659431 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '838bef872ddb43db4da67326deefd32d') in 0.044963 seconds 
+  Time since last request: 33.404585 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f674a543598d2b877ed2747ae17b0222') in 0.736116 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.354450 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0996760408a5e75eb000ec111b92c17c') in 0.042075 seconds 
+  Time since last request: 18.823773 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93ff20cd7368644a0f39000deb7d9d7d') in 0.619020 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 44.248478 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7d870266276aed8f8493e7b3522f3f5') in 0.042171 seconds 
+  Time since last request: 65.700862 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43879e0bb2600059b345e78c85288246') in 0.769180 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 19.618751 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd344068d111bf785577a686c7d25032b') in 0.040998 seconds 
+  Time since last request: 11.550441 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba452da300986ad8a5f10e32cc05b73b') in 0.366868 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 49.857133 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7af89d15b942a9d8b2c0d14970d110be') in 0.042711 seconds 
+  Time since last request: 83.782712 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0f181dd724331b45f968786c009ab9b') in 0.803450 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 237.962608 seconds.
-  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
-  artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '932ebb5619d8420e85865e4863ad7b04') in 0.042914 seconds 
+  Time since last request: 112.823356 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fa386f9eff9846c38a3518dfc0bd869') in 0.609901 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.947745 seconds.
+  Time since last request: 7.476973 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '919c47f3e03c6e12fb849c8ecba9b0aa') in 0.596064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.250479 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b82139950ef7f7ca254f79988502a555') in 0.631456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 415.985748 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5dda5c3c202b969c62b77c88081c964') in 1.120771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 748.916482 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke.fbx
+  artifactKey: Guid(2f38680be4a90334f8290e9339da02b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke.fbx using Guid(2f38680be4a90334f8290e9339da02b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02a3ed0539d1f5d24695648b9020bd72') in 0.150928 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 367.812369 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbbb94b329ded09635d8d3bd7ac57f64') in 0.860579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 215.257637 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke 1.fbx
+  artifactKey: Guid(fdb48d02c455af84ea368dd1926480ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke 1.fbx using Guid(fdb48d02c455af84ea368dd1926480ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9425077eb637fe46eed5e832011f7ba7') in 0.074188 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 63.815478 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke 2.fbx
+  artifactKey: Guid(5bd1d0d2c1a631d4292fb353d7de46b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke 2.fbx using Guid(5bd1d0d2c1a631d4292fb353d7de46b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fde09e98e47a7b79a9d2890ad3ce544') in 0.072274 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.861186 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e182456c3b586f95aa10eaad7504f83') in 1.623634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 46.610494 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81757a77c55c4a6d4220b3879fca5b3a') in 1.201274 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 135.481403 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b501749f2972b931800ad8374182624') in 2.317157 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 79.721917 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b2c265bebb1ff83523aeca61f1e7d11') in 2.041481 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.128931 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89da699497a28ef2294187e374521543') in 2.243582 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 161.352980 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7449228c21628907c1cca669ea42070b') in 2.466902 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.123309 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '157588c73d9fd56c7e1a02f312475b09') in 2.946740 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 172.437448 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f5cf0484145308a0288187bc95ccafb') in 3.064263 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 71.442067 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a083a649ae33697acd0d3e2a7106302') in 2.749905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 36.691839 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45ff3e2712ccaf2651193c3734e9de46') in 2.655753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.448676 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '209dcb13c1c4c6a15cfbeb8921f14a30') in 1.443613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 238.559341 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fa4e39e223993141fb2a5e948434f86') in 2.883655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.338128 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'def7023769abfc56abf42efaa614e5bc') in 2.338866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 274.353247 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38a930b6c61c3293bdb0e81b7a629154') in 0.053780 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.054150 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 4.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.641 seconds
+Domain Reload Profiling:
+	ReloadAssembly (6645ms)
+		BeginReloadAssembly (1120ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (94ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (480ms)
+		EndReloadAssembly (5032ms)
+			LoadAssemblies (508ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1497ms)
+			ReleaseScriptCaches (8ms)
+			RebuildScriptCaches (393ms)
+			SetupLoadedEditorAssemblies (2370ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (50ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (5ms)
+				BeforeProcessingInitializeOnLoad (451ms)
+				ProcessInitializeOnLoadAttributes (1424ms)
+				ProcessInitializeOnLoadMethodAttributes (420ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (62ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 24.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5736 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (2.6 MB). Loaded Objects now: 6487.
+Memory consumption went from 254.4 MB to 251.8 MB.
+Total: 38.744100 ms (FindLiveObjects: 1.599400 ms CreateObjectMapping: 2.984400 ms MarkObjects: 32.231400 ms  DeleteObjects: 1.925900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 53.137431 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80b314ff10837bef829943bcdce54c71') in 3.126402 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 263.326594 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47ecd2ba7326eb383008372058541a17') in 0.024123 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.266788 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '309970d8b045cb328ab10478de234443') in 0.023444 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 149.629032 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7185638f2bcfc8db1c715f12bd359d1') in 0.028494 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.034226 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 5.34 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.775 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5778ms)
+		BeginReloadAssembly (786ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (40ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (233ms)
+		EndReloadAssembly (4501ms)
+			LoadAssemblies (576ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1481ms)
+			ReleaseScriptCaches (7ms)
+			RebuildScriptCaches (460ms)
+			SetupLoadedEditorAssemblies (1818ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (64ms)
+				SetLoadedEditorAssemblies (3ms)
+				RefreshPlugins (6ms)
+				BeforeProcessingInitializeOnLoad (461ms)
+				ProcessInitializeOnLoadAttributes (1001ms)
+				ProcessInitializeOnLoadMethodAttributes (277ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (48ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 9.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5735 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (2.6 MB). Loaded Objects now: 6530.
+Memory consumption went from 254.3 MB to 251.7 MB.
+Total: 11.292300 ms (FindLiveObjects: 0.887400 ms CreateObjectMapping: 1.193900 ms MarkObjects: 7.611000 ms  DeleteObjects: 1.597800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 83.287605 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd925a8ecb73955138e0b87217a365bc5') in 2.025742 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.463102 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce9964673748a5c1acc202ec5e667cfe') in 0.022637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.334271 seconds.
   path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx
   artifactKey: Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be1772c5ae62215cc36248a70c16bc7a') in 0.044955 seconds 
+Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire.vfx using Guid(2b7639baadb27ae4fbd5dfb111d5e976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '918c1cf1c31bb234f436ba1ca2c38449') in 2.304791 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.422674 seconds.
+  path: Assets/ibah555TexturePack/Fire/vfx_graph_Fire 1.vfx
+  artifactKey: Guid(43147a5ff6848a24a9d8a33eea95c53b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Fire/vfx_graph_Fire 1.vfx using Guid(43147a5ff6848a24a9d8a33eea95c53b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '713b16aa2266c07dec58d28d246042df') in 0.068294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.777420 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e3f2849cdba6f3021b3b200e900d602') in 0.021919 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.658074 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '487ba78359780528e6a8674a9addfd3e') in 0.019829 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.403510 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce27c2736c2050b5a7522cd1319aac16') in 0.019889 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.264978 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c33ae74149167338b867a4f989e9a449') in 0.021672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.873146 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a1bfdd48dea1e6dac8e0a247df2df13') in 0.020018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.902866 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '200e5f81a081112a54f77e33d71ffa7c') in 0.022991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.811250 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab9b5611f1fc319a7b73ad308fa0772a') in 0.021812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.409238 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c84f52ecf906d81f5852932b6990a1b0') in 0.023805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.689748 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4313b4e3cc9dd5b42214dfc3a204d768') in 0.021866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.491771 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feefd12b9cc92c7fda529b090555bd78') in 0.022286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.972075 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3efb63c5d2c7392426f443f46b8902c7') in 0.022118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.490482 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f923876b91ba48dfa816aa23ccda347') in 0.021254 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.998121 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cd9e012b2147c96c67d4a9f8fa03736') in 0.021408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.440883 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7735d97f210491ae5bfc9fd888f7003b') in 0.032940 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.019758 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.096 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4099ms)
+		BeginReloadAssembly (392ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (26ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (104ms)
+		EndReloadAssembly (3417ms)
+			LoadAssemblies (303ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1036ms)
+			ReleaseScriptCaches (6ms)
+			RebuildScriptCaches (260ms)
+			SetupLoadedEditorAssemblies (1591ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (30ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (317ms)
+				ProcessInitializeOnLoadAttributes (958ms)
+				ProcessInitializeOnLoadMethodAttributes (276ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (48ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.84 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5735 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (2.6 MB). Loaded Objects now: 6573.
+Memory consumption went from 254.4 MB to 251.8 MB.
+Total: 13.752300 ms (FindLiveObjects: 0.889000 ms CreateObjectMapping: 0.663700 ms MarkObjects: 10.746700 ms  DeleteObjects: 1.450800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 202.281167 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fcf04f10fbaa77f75d85c2d4c86aa8e') in 1.869927 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.018787 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.14 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.101 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4103ms)
+		BeginReloadAssembly (422ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (24ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (114ms)
+		EndReloadAssembly (3390ms)
+			LoadAssemblies (321ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1056ms)
+			ReleaseScriptCaches (6ms)
+			RebuildScriptCaches (299ms)
+			SetupLoadedEditorAssemblies (1478ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (34ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (322ms)
+				ProcessInitializeOnLoadAttributes (833ms)
+				ProcessInitializeOnLoadMethodAttributes (275ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (50ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 7.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5735 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (2.6 MB). Loaded Objects now: 6616.
+Memory consumption went from 254.5 MB to 251.8 MB.
+Total: 10.031300 ms (FindLiveObjects: 0.866100 ms CreateObjectMapping: 0.815100 ms MarkObjects: 7.110900 ms  DeleteObjects: 1.236600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
