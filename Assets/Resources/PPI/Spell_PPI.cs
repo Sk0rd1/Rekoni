@@ -5,9 +5,12 @@ using UnityEngine;
 public class Spell_PPI : MonoBehaviour
 {
     public readonly bool MOMENTARYCAST = true;
-
-    private float timeCastShield = 3f;
+    [SerializeField]
+    private float shieldDuration = 3f;
+    [SerializeField]
     private float reloadTime = 4f;
+    [SerializeField]
+    private int numOfAttack = 4;
 
     private bool isSpellReady = true;
     private string effectName = "PPI/Shield";
@@ -42,7 +45,7 @@ public class Spell_PPI : MonoBehaviour
         GameObject characterGirl = GameObject.Find("CharacterGirl");
 
         float currenrTime = 0f;
-        while(currenrTime < timeCastShield)
+        while(currenrTime < shieldDuration)
         {
             yield return new WaitForEndOfFrame();
             shieldEffect.transform.position = characterGirl.transform.position + shieldOffset;

@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.15f1 (e8e88683f834) revision 15263878'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'en' Physical Memory: 14274 MB
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'uk' Physical Memory: 15741 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-H:\Unique\UnityVersions\2021.3.15f1\Editor\Unity.exe
+F:\Unity\2021.3.15f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-H:/Unique/gitSAVES/Rekoni
+F:/Unity/Rekoni
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54659
-Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
-H:/Unique/gitSAVES/Rekoni
+51037
+Successfully changed project path to: F:/Unity/Rekoni
+F:/Unity/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,442 +47,70 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [18848] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 2781956566 [EditorId] 2781956566 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [20728] Host "[IP] 192.168.1.3 [Port] 0 [Flags] 2 [Guid] 188120889 [EditorId] 188120889 [Version] 1048832 [Id] WindowsEditor(7,KyChort) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [18848] Host "[IP] 192.168.0.105 [Port] 0 [Flags] 2 [Guid] 2781956566 [EditorId] 2781956566 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [20728] Host "[IP] 192.168.1.3 [Port] 0 [Flags] 2 [Guid] 188120889 [EditorId] 188120889 [Version] 1048832 [Id] WindowsEditor(7,KyChort) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 376.51 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 129.93 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
-[Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path H:/Unique/gitSAVES/Rekoni/Assets
+[Subsystems] Discovering subsystems at path F:/Unity/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/Unity/Rekoni/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f99)
     Vendor:   NVIDIA
-    VRAM:     3952 MB
+    VRAM:     3950 MB
     Driver:   31.0.15.3667
 Initialize mono
-Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
-Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+Mono path[0] = 'F:/Unity/2021.3.15f1/Editor/Data/Managed'
+Mono path[1] = 'F:/Unity/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'F:/Unity/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56052
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007077 seconds.
+Register platform support module: F:/Unity/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: F:/Unity/2021.3.15f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: F:/Unity/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: F:/Unity/2021.3.15f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.004959 seconds.
+Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 378.08 ms, found 3 plugins.
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 141.03 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.178 seconds
+- Completed reload, in  1.181 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2180ms)
-		BeginReloadAssembly (255ms)
+	ReloadAssembly (1182ms)
+		BeginReloadAssembly (70ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (1599ms)
-			LoadAssemblies (253ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (992ms)
+			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (319ms)
+			SetupTypeCache (112ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (93ms)
-			SetupLoadedEditorAssemblies (1000ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (798ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (22ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (378ms)
-				BeforeProcessingInitializeOnLoad (4ms)
-				ProcessInitializeOnLoadAttributes (446ms)
-				ProcessInitializeOnLoadMethodAttributes (149ms)
+				InitializePlatformSupportModulesInManaged (370ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (141ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (100ms)
+				ProcessInitializeOnLoadMethodAttributes (185ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.018226 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 384.63 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.341 seconds
-Domain Reload Profiling:
-	ReloadAssembly (4343ms)
-		BeginReloadAssembly (349ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (18ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (52ms)
-		EndReloadAssembly (3661ms)
-			LoadAssemblies (311ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (987ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (319ms)
-			SetupLoadedEditorAssemblies (1960ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (385ms)
-				BeforeProcessingInitializeOnLoad (388ms)
-				ProcessInitializeOnLoadAttributes (903ms)
-				ProcessInitializeOnLoadMethodAttributes (263ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
-Refreshing native plugins compatible for Editor in 2.19 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5932 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6391.
-Memory consumption went from 262.5 MB to 259.9 MB.
-Total: 10.392600 ms (FindLiveObjects: 0.914700 ms CreateObjectMapping: 0.515600 ms MarkObjects: 7.430200 ms  DeleteObjects: 1.529700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 131390.166505 seconds.
-  path: Assets/ibah555TexturePack/Tornado/Tornado_VFX.vfx
-  artifactKey: Guid(46d9f83d777d69741acb7e85939b4bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Tornado/Tornado_VFX.vfx using Guid(46d9f83d777d69741acb7e85939b4bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '289de60b10705133dfe43facde7df313') in 11.172011 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/ibah555TexturePack/Tornado/Tornado_VFX.vfx
-  artifactKey: Guid(46d9f83d777d69741acb7e85939b4bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Tornado/Tornado_VFX.vfx using Guid(46d9f83d777d69741acb7e85939b4bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '289de60b10705133dfe43facde7df313') in 0.164930 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000072 seconds.
-  path: Assets/ibah555TexturePack/Tornado/Tornado.mat
-  artifactKey: Guid(e73b4bb6b6ed55e489bb3c97f7b7fd6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Tornado/Tornado.mat using Guid(e73b4bb6b6ed55e489bb3c97f7b7fd6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '255b2c73e683ed280b7374417114830f') in 1.240050 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 394.245411 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe
-  artifactKey: Guid(92f1e9b28019a844a8bddc9c8ec54901) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe using Guid(92f1e9b28019a844a8bddc9c8ec54901) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f8dbcaabff00078e86e076f833fbb41') in 0.031388 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.038317 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe/Circle_Drive.prefab
-  artifactKey: Guid(98cc6e5e5c8cf2541b2657019c70cbfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe/Circle_Drive.prefab using Guid(98cc6e5e5c8cf2541b2657019c70cbfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9f6f32ad3511013a2e3361b8b9b78f3') in 0.170645 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.378208 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2
-  artifactKey: Guid(07ed91cc6d1d2f54582c7a4e82f9c0bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2 using Guid(07ed91cc6d1d2f54582c7a4e82f9c0bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95fbca5478d3706cce6ca223ba266cbd') in 0.023369 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 521.636031 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png
-  artifactKey: Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png using Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fb0a7276a8e650c33636d8c8ff85c27') in 0.081159 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 41.046649 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/TP_Background.mat
-  artifactKey: Guid(eefd03a53d3313542a636357dc4460f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/TP_Background.mat using Guid(eefd03a53d3313542a636357dc4460f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3d7961ab8c1ebc131c3d21ea2e7e075') in 0.072479 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 588.327886 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base.shadergraph
-  artifactKey: Guid(10ea2239c1b3c124588b2d4077f06879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base.shadergraph using Guid(10ea2239c1b3c124588b2d4077f06879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b3ba006d2dca1d04198eb8c1c11e856') in 0.033436 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 145.612339 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base.shadergraph
-  artifactKey: Guid(10ea2239c1b3c124588b2d4077f06879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base.shadergraph using Guid(10ea2239c1b3c124588b2d4077f06879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd062cb7d24015edd541f70ca799b66be') in 0.005931 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 48.456703 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/BackgroundTry_2.mat
-  artifactKey: Guid(ac61d04722aed1b4a9294599fb2376b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/BackgroundTry_2.mat using Guid(ac61d04722aed1b4a9294599fb2376b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89cc897262b1d63bbb32a8badbcfb5ce') in 0.040522 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 120.763992 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base.shadergraph
-  artifactKey: Guid(10ea2239c1b3c124588b2d4077f06879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base.shadergraph using Guid(10ea2239c1b3c124588b2d4077f06879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4660406ae6ff6f128e57ee7c093b85ca') in 0.027002 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 81.562261 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png
-  artifactKey: Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png using Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf5e0fd153137c30027fd50618f08774') in 0.051571 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 274.655288 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG 1.png
-  artifactKey: Guid(aec14a5de2e676544ac7c7269c7b03fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG 1.png using Guid(aec14a5de2e676544ac7c7269c7b03fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b864b7f6e03a00a7424d9fafd302a32a') in 0.044970 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.274332 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png
-  artifactKey: Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png using Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e6d8e0890681de38b02f3f83f7a5b93') in 0.039107 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.568399 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png
-  artifactKey: Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png using Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4a08a61097f80011e0aa150044bb530') in 0.045863 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 48.434945 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Materials
-  artifactKey: Guid(dbe433fcb02f1604b96166a0c4654a86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Materials using Guid(dbe433fcb02f1604b96166a0c4654a86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9576dbbf49efae5fbc7d903de5c42f1d') in 0.024290 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.041466 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Materials/GeometryPNG.mat
-  artifactKey: Guid(520839da91fe27e43a57667f9edb9688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Materials/GeometryPNG.mat using Guid(520839da91fe27e43a57667f9edb9688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6c6d0542de3a81c78dded8ee901bb39') in 0.048747 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 825.658744 seconds.
-  path: Assets/ibah555TexturePack/BoomEfect_2
-  artifactKey: Guid(185bed05ba1e5b14d9a7c107987b8e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/BoomEfect_2 using Guid(185bed05ba1e5b14d9a7c107987b8e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2fbfc88b7b0c6f0d3f387269a31d914') in 0.024714 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.031488 seconds.
-  path: Assets/ibah555TexturePack/BoomEfect_2/Boom_2.prefab
-  artifactKey: Guid(8de48ed884495774fa8539792c4cfbdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/BoomEfect_2/Boom_2.prefab using Guid(8de48ed884495774fa8539792c4cfbdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c49f8e3b82b969524b7e5e0f4bd0c9b6') in 0.077182 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000055 seconds.
-  path: Assets/ibah555TexturePack/BoomEfect_2/Boom_Smoke.mat
-  artifactKey: Guid(658f55dc87b5ae54c94556fe73e35b3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/BoomEfect_2/Boom_Smoke.mat using Guid(658f55dc87b5ae54c94556fe73e35b3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a3e2e447b8d2579cfe03f8588133b5a') in 0.045220 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 249.575451 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '391353bad52680e3c8bf8092087cf710') in 0.487019 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.551231 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3be593a32c72cfa39822bff8857ba2e') in 0.472996 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1558.267623 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98dd24bd188a284a1de5a09faf21800a') in 0.364211 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.287248 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a02765055331380f6c6912b8be19ad6') in 0.344087 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.117600 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cb1c24b4f7ee486d56224c4bf0360e0') in 0.430378 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 155.450879 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ede1cec30a98cfea8e17a11471b9eaf') in 4.345330 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.008817 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84af2485111374c4e1c99dd133c527e0') in 4.521764 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.612059 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0427379caa1e65004946eee7d1b1c05') in 0.642198 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.662361 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8141f133876a03f8549aac03af7247f4') in 0.280706 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.811422 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a2da9c6d5e1328bc2b0366583b9aaf9') in 0.344111 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 503.747022 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '848e11f9562ef6bf1df7f643227a3166') in 0.460549 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.343773 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ae03ad0b4339e997599044838cf09db') in 0.409358 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 147.155142 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle_Graph.shadergraph
-  artifactKey: Guid(1df03cde20c58e245ae342edc48bbaea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle_Graph.shadergraph using Guid(1df03cde20c58e245ae342edc48bbaea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baee594fd1a4c3d5a65a954dbefc285e') in 0.026759 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 105.080625 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png
-  artifactKey: Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG.png using Guid(8b460830c6816004f968c2382cd10c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '778760eddcc5a40915971d345e140cf9') in 0.035942 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 72.315672 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9e05c244e27253b12617690c9adc7e2') in 2.098693 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 202.180802 seconds.
-  path: Assets/ibah555TexturePack/Tornado
-  artifactKey: Guid(19bdfcb1abf288541b94cf75e59f14d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Tornado using Guid(19bdfcb1abf288541b94cf75e59f14d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2487fce8e5335a3cbc77961b63d3421d') in 0.019963 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.074909 seconds.
-  path: Assets/ibah555TexturePack/Tornado/Circle_Tornado_VFX.vfx
-  artifactKey: Guid(3ccb1584574e8684d950bbe56edfcbb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Tornado/Circle_Tornado_VFX.vfx using Guid(3ccb1584574e8684d950bbe56edfcbb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6e71613906e217c47b9fbd87f6621ec') in 5.994575 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.471528 seconds.
-  path: Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph 1.shadergraph
-  artifactKey: Guid(0d56be4c599174c4199019ca29971a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/IceMateria&Destroy/ShaderGraph 1.shadergraph using Guid(0d56be4c599174c4199019ca29971a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd19c51695fd4909d17f903fd87718d34') in 0.023056 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.885087 seconds.
-  path: Assets/ibah555TexturePack/IceMateria&Destroy/MelleDown.shadergraph
-  artifactKey: Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/IceMateria&Destroy/MelleDown.shadergraph using Guid(3d50a38acd07f4b448fd1cc8611a10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '888c56c15a5598dc6d133a3eff2c3787') in 0.027789 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 181.856407 seconds.
-  path: Assets/ibah555TexturePack/Fire/Fire_Shader_3.shadergraph
-  artifactKey: Guid(2ce0e00d5f2ad6448896c18f65b31941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Fire/Fire_Shader_3.shadergraph using Guid(2ce0e00d5f2ad6448896c18f65b31941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a08b4dd145a1c07def632b8f0c9894fe') in 0.019273 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 39.929193 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Fire_Shader_3.shadergraph
-  artifactKey: Guid(50c2e4b29aadfa242a414e06ab5d8895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Fire_Shader_3.shadergraph using Guid(50c2e4b29aadfa242a414e06ab5d8895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '390f03ddac32c599166bf8aa0a9a31fe') in 0.008668 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.837155 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad0208632b91166853a8583f6a47a5a1') in 2.049450 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.197336 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle_Graph.shadergraph
-  artifactKey: Guid(1df03cde20c58e245ae342edc48bbaea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle_Graph.shadergraph using Guid(1df03cde20c58e245ae342edc48bbaea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce071dc2c90f19b44610731445c8a79c') in 0.010067 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 25.923847 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Circle_Base_2.shadergraph
-  artifactKey: Guid(50c2e4b29aadfa242a414e06ab5d8895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Circle_Base_2.shadergraph using Guid(50c2e4b29aadfa242a414e06ab5d8895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e75eef64721d5647e6add4d70ad33329') in 0.027070 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.896300 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '729571f67b0111dc97d6138dab79b19d') in 1.965207 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 68.736900 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Try_6.mat
-  artifactKey: Guid(8e88bd59dcad7ed409b6c4f45ce8f312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Try_6.mat using Guid(8e88bd59dcad7ed409b6c4f45ce8f312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9d3a2347219f26365ee1c37883db58d') in 0.047287 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.412134 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Circle_Base_2.shadergraph
-  artifactKey: Guid(50c2e4b29aadfa242a414e06ab5d8895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Circle_Base_2.shadergraph using Guid(50c2e4b29aadfa242a414e06ab5d8895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e8fa2d1db59dc6fa992c9c1e327aa44') in 0.016550 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.540037 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ad0f2cb8dfc97b25677603ab8a8fcc3') in 7.167098 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 57.088049 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a510a0f0e4a746ab2139ed28cfefaf9') in 5.330739 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 193.784396 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG 1.png
-  artifactKey: Guid(aec14a5de2e676544ac7c7269c7b03fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG 1.png using Guid(aec14a5de2e676544ac7c7269c7b03fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ad3bc2a2684de442681dd958c185f69') in 0.035286 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.910965 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG 1.png
-  artifactKey: Guid(aec14a5de2e676544ac7c7269c7b03fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/GeometryPNG 1.png using Guid(aec14a5de2e676544ac7c7269c7b03fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6a3adf971bacf6b938c55e75e919aaf') in 0.030844 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.771428 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cdaa6ad3333bec2a4f541ef929e19d1') in 5.049145 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 38.243753 seconds.
-  path: Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx
-  artifactKey: Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Circle_Vibe_2/Base_Circle.vfx using Guid(f69dd65d4095c914bbb26940d0eeddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f42217beb0826bccabf4134199ec6ab') in 0.932520 seconds 
+Registered in 0.006197 seconds.
