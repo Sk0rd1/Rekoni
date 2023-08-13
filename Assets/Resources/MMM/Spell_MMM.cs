@@ -5,18 +5,26 @@ using UnityEngine.TextCore.Text;
 
 public class Spell_MMM : MonoBehaviour
 {
+    [SerializeField]
+    private float reloadTime = 4f;
+    [SerializeField]
+    private int startDamage = 10;
+    [SerializeField]
+    private int increasDamage = 1;
+    [SerializeField]
+    private float fireDuration = 4f;
+    [SerializeField]
+    private float precision = 30f; // стандарта ймовірність попадання в центральний круг 30%, лінійна залежність. Свіввідношення ймовірностей по кругам 3:3:4 = центр:середина:ззовні
+
     public readonly bool MOMENTARYCAST = false;
 
     private float reloadUnderMeteor = 0.2f;
     private int numberMeteor = 6;
-    private float speefFall = 150;
-    private float reloadTime = 4f;
-    private float radiusSpell = 15f;
+    private float speefFall = 100;
+    private float spellDistance = 20f;
 
-
-    private bool firstFrameToCast = true;
-    private float currentTime = 0f;
     private bool isSpellReady = true;
+    private bool firstFrameToCast = true;
 
     private Vector3 centerSpell = Vector3.zero;
     private Vector3 currentGamepadPosition = Vector3.zero;
@@ -37,27 +45,7 @@ public class Spell_MMM : MonoBehaviour
 
     void Start()
     {
-        cursorPrefabModel = Resources.Load<GameObject>(cursorName);
-        cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-        effectList = new List<GameObject>();
-        cursorList = new List<GameObject>();
-
-        for (int i = 0; i < numberMeteor; i++)
-        {
-            cursorLocation.Add(Vector3.zero);
-        }
-
-        for (int i = 0; i < numberMeteor; i++)
-        {
-            effectPrefabModel = Resources.Load<GameObject>(effectName);
-            GameObject instantinateEffect = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-            effectList.Add(instantinateEffect);
-
-            cursorForEffectPrefabModel = Resources.Load<GameObject>(cursorForEffectName);
-            GameObject instantinateCurdorForEffect = Instantiate(cursorForEffectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-            instantinateCurdorForEffect.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-            cursorList.Add(instantinateCurdorForEffect);
-        }
+        
     }
 
     public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -66,6 +54,8 @@ public class Spell_MMM : MonoBehaviour
         {
             firstFrameToCast = false;
             currentGamepadPosition = Vector3.zero;
+            cursorPrefabModel = Resources.Load<GameObject>(cursorName);
+            cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
         }
         else
         {
@@ -117,6 +107,28 @@ public class Spell_MMM : MonoBehaviour
 
     public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
+        Destroy(cursorModel);
+        effectList = new List<GameObject>();
+        cursorList = new List<GameObject>();
+
+        for (int i = 0; i < numberMeteor; i++)
+        {
+            cursorLocation.Add(Vector3.zero);
+        }
+
+        for (int i = 0; i < numberMeteor; i++)
+        {
+            effectPrefabModel = Resources.Load<GameObject>(effectName);
+            GameObject instantinateEffect = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+            effectList.Add(instantinateEffect);
+            MMM mmm = instantinateEffect.GetComponentInChildren<MMM>();
+            mmm.SetValues(startDamage, increasDamage, fireDuration);
+
+            cursorForEffectPrefabModel = Resources.Load<GameObject>(cursorForEffectName);
+            GameObject instantinateCurdorForEffect = Instantiate(cursorForEffectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+            instantinateCurdorForEffect.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+            cursorList.Add(instantinateCurdorForEffect);
+        }
         StartCoroutine(Reload());
 
         firstFrameToCast = true;
@@ -133,15 +145,14 @@ public class Spell_MMM : MonoBehaviour
         int numberCircle;
         for (int i = 0; i < numberMeteor; i++)
         {
-            numberCircle = Random.Range(0, 11);
-
-            if (numberCircle < 6)
+            numberCircle = Random.Range(0, 101);
+            if (numberCircle <= (int)precision)
             {
                 float x = Random.Range(0f, 4f) - 2f;
                 float z = Random.Range(0f, 4f) - 2f;
                 cursorLocation[i] = new Vector3(centerSpell.x + x, centerSpell.y + 0.5f, centerSpell.z + z);
             }
-            else if (numberCircle < 9)
+            else if (numberCircle <= precision * 2)
             {
                 float x = Random.Range(0f, 4f) - 2f;
                 float z = Random.Range(0f, 4f) - 2f;
@@ -184,6 +195,8 @@ public class Spell_MMM : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
+        yield return new WaitForSeconds(1f);
+
         for(int i = 0; i < numberMeteor; i++)
         {
             StartCoroutine(MoveToPoint(effectList[i], cursorLocation[i], i));
@@ -214,7 +227,7 @@ public class Spell_MMM : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        cursorList[index].transform.position = new Vector3(0f, -20f, 0f);
+        Destroy(cursorList[index]);
 
         /*float scaleMax = 1.5f;
         float currentScale = 1.0f;
@@ -237,6 +250,9 @@ public class Spell_MMM : MonoBehaviour
         boomEffectPrefab = Resources.Load<GameObject>(boomEffectName);
         GameObject boomEffect = Instantiate(boomEffectPrefab, effect.transform.position, Quaternion.identity);
         effect.transform.position = new Vector3(0f, -20f, 0f);
+        Destroy(effect);
+        yield return new WaitForSeconds(2f);
+        Destroy(boomEffect);
     }
 
     private Vector3 DistanceWithRadius(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -245,7 +261,7 @@ public class Spell_MMM : MonoBehaviour
 
         if (isGamepadUsing)
         {
-            if(Mathf.Sqrt(pointCenterSpell.x * pointCenterSpell.x + pointCenterSpell.z * pointCenterSpell.z) < radiusSpell)
+            if(Mathf.Sqrt(pointCenterSpell.x * pointCenterSpell.x + pointCenterSpell.z * pointCenterSpell.z) < spellDistance)
             {
                 return pointCenterSpell + characterPosition;
             }
@@ -254,7 +270,7 @@ public class Spell_MMM : MonoBehaviour
                 pointCenterSpell.y = 0f;
                 pointCenterSpell.Normalize();
 
-                currentGamepadPosition = pointCenterSpell * radiusSpell;
+                currentGamepadPosition = pointCenterSpell * spellDistance;
 
                 pointCenterSpell = characterPosition + currentGamepadPosition;
 
@@ -266,7 +282,7 @@ public class Spell_MMM : MonoBehaviour
             float deltaX = cursorPosition.x - characterPosition.x;
             float deltaZ = cursorPosition.z - characterPosition.z;
 
-            if (Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ) < radiusSpell)
+            if (Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ) < spellDistance)
             {
                 return pointCenterSpell + characterPosition;
             }
@@ -276,7 +292,7 @@ public class Spell_MMM : MonoBehaviour
                 pointDirection.y = 0f;
                 pointDirection.Normalize();
 
-                pointCenterSpell = characterPosition + pointDirection * radiusSpell;
+                pointCenterSpell = characterPosition + pointDirection * spellDistance;
 
                 return pointCenterSpell;
             }
@@ -285,13 +301,8 @@ public class Spell_MMM : MonoBehaviour
 
     IEnumerator Reload()
     {
-        currentTime = 0;
         isSpellReady = false;
-        while (currentTime < reloadTime)
-        {
-            currentTime += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(reloadTime);
         isSpellReady = true;
     }
 

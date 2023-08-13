@@ -1,52 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 
-public class Spell_SSI : MonoBehaviour
+public class Spell_III : MonoBehaviour
 {
     [SerializeField]
     private float reloadTime = 4f;
-    [SerializeField]
-    private float timeCast = 3f;
-    [SerializeField]
-    private float timePeriod = 1f;
-    [SerializeField]
-    private int damage = 4;
-    [SerializeField]
-    private float forceAttraction = 0.1f;
 
     public readonly bool MOMENTARYCAST = false;
 
-    SSI ssi;
+    private float spellDistance = 20f;
+    private Vector3 currentGamepadPosition = Vector3.zero;
+    private bool isSpellReady = true;
+    private Vector3 cursorSpellPosition = Vector3.zero;
 
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
     private GameObject cursorModel;
-    private GameObject effectModel;
-
-    private string cursorName = "SSI/Cursor";
-    private string effectName = "SSI/BlackHole";
-
-    private float effectRadius = 3f;
-    private bool isSpellReady = true;
-    private float spellDistance = 20f;
-
-    private Vector3 currentGamepadPosition = Vector3.zero;
+    private List<GameObject> effectModel = new List<GameObject>(); 
+    private string cursorName = "III/Cursor";
+    private string effectName = "III/IceArrow";
 
     void Start()
     {
-
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        cursorModel.SetActive(false);
 
         effectPrefabModel = Resources.Load<GameObject>(effectName);
-        effectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-        ssi = effectModel.GetComponentInChildren<SSI>();
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject currentEffectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+            currentEffectModel.SetActive(false);
+            effectModel.Add(currentEffectModel);
+        }
+        //iii = effectModel.GetComponentInChildren<III>();
     }
 
     public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
+        cursorModel.SetActive(true);
         cursorModel.transform.position = DistanceWithRadius(cursorPosition, characterPosition, isGamepadUsing);
     }
 
@@ -141,41 +135,27 @@ public class Spell_SSI : MonoBehaviour
     {
         StartCoroutine(Reload());
 
-        effectModel.transform.position = cursorModel.transform.position;
-        
-        ssi.SetValues(timeCast, damage, forceAttraction);
+        cursorSpellPosition = cursorModel.transform.position;
 
         cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        cursorModel.SetActive(false);
 
-        StartCoroutine(EffectCast(effectModel));
+        StartCoroutine(EffectCast(characterPosition));
     }
 
-    IEnumerator EffectCast(GameObject effect)
+    IEnumerator EffectCast(Vector3 characterPosition)
     {
-        float currentEffectRadius = 0.1f;
-        effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+        Vector3 pointDirection = cursorSpellPosition - characterPosition;
 
-        ssi.IsCastBH = true;
+        float distanceEffect = Mathf.Sqrt(pointDirection.x * pointDirection.x + pointDirection.z * pointDirection.z);
+        distanceEffect += 2f;
 
-        while (currentEffectRadius < effectRadius)
+        float currentDistance = 0f;
+        while(currentDistance < distanceEffect)
         {
-            currentEffectRadius += 5f * Time.deltaTime;
-            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+            effectModel[0].transform.position = 10f * pointDirection.normalized * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-
-        yield return new WaitForSeconds(timeCast);
-
-        while (currentEffectRadius > 0.2f)
-        {
-            currentEffectRadius -= 10f * Time.deltaTime;
-            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
-            yield return new WaitForEndOfFrame();
-        }
-
-        ssi.IsCastBH = false;
-
-        effectModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 
     public bool IsSpellReady()

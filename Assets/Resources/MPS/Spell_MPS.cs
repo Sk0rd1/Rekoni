@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_PPI : MonoBehaviour
+public class Spell_MPS : MonoBehaviour
 {
+    [SerializeField]
+    private float slow = 10f;
+    [SerializeField]
+    private float numOfHealPerSecond = 1f;
+    [SerializeField]
+    private float buffDuration = 20f;
+    [SerializeField]
+    private float reloadTime = 25f;
+
     public readonly bool MOMENTARYCAST = true;
-    [SerializeField]
-    private float shieldDuration = 3f;
-    [SerializeField]
-    private float reloadTime = 4f;
-    [SerializeField]
-    private int numOfAttack = 4;
 
     private bool isSpellReady = true;
-    private string effectName = "PPI/Shield";
+    private string effectName = "MPS/Circle";
     private GameObject effectModel;
-    private Vector3 characterPosition; 
+    private Vector3 characterPosition;
     private Vector3 shieldOffset = new Vector3(0f, 2.9f, 0f);
     private Vector3 shieldPosition;
 
@@ -41,24 +44,27 @@ public class Spell_PPI : MonoBehaviour
     {
         shieldPosition = characterPosition + shieldOffset;
         effectModel = Resources.Load<GameObject>(effectName);
-        GameObject shieldEffect = Instantiate(effectModel, shieldPosition, Quaternion.identity);
+        GameObject buffEffect = Instantiate(effectModel, shieldPosition, Quaternion.identity);
         GameObject characterGirl = GameObject.Find("CharacterGirl");
 
+        MPS mps = buffEffect.GetComponent<MPS>();
+        mps.SetValues(slow, (float)1f/numOfHealPerSecond);
+
         float currenrTime = 0f;
-        while(currenrTime < shieldDuration)
+        while (currenrTime < buffDuration)
         {
             yield return new WaitForEndOfFrame();
-            shieldEffect.transform.position = characterGirl.transform.position + shieldOffset;
+            buffEffect.transform.position = characterGirl.transform.position + shieldOffset;
             currenrTime += Time.deltaTime;
         }
 
-        Destroy(shieldEffect);
+        Destroy(buffEffect);
     }
 
     IEnumerator Reload()
     {
         yield return new WaitForSeconds(reloadTime);
-        
+
         isSpellReady = true;
     }
 

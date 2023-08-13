@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemysHealth : MonoBehaviour
 {
-    private int health = 1000;
+    private int health = 10;
+    private bool enemyIsDeath = false;
 
     private const float POISONINTERVAL = 1f;
     private int increasePoisonDamage = 0;
@@ -20,20 +22,45 @@ public class EnemysHealth : MonoBehaviour
     private int numOfFireEffects = 0;
     private bool isFireTimerStart = false;
 
+    private Renderer renderer;
+    private Material material;
 
-    void Update()
+    private void Start()
     {
-        Debug.Log("HP" + health);
+        renderer = GetComponent<Renderer>();
+        material = renderer.material;
+    }
 
-        if(health < 1)
+    private void MinusHealth(int damage)
+    {
+        health -= damage;
+        //Debug.Log("HP" + health);
+
+        if(health < 1 && !enemyIsDeath)
         {
-            Destroy(gameObject);
+            enemyIsDeath = true;
+            StartCoroutine(Death());
         }
+    }
+
+    IEnumerator Death()
+    {
+        float currentValue = 1f;
+
+        while(currentValue > -9f)
+        {
+            currentValue -= 200 * Time.deltaTime;
+            material.SetFloat("_Cuttof_Heigth", currentValue);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return null;
+        Destroy(gameObject);
     }
 
     public void Damage(int damage)
     {
-        health -= damage;
+        MinusHealth(damage);
     }
 
     public void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
@@ -66,7 +93,7 @@ public class EnemysHealth : MonoBehaviour
 
         while(numOfTiks > 0)
         {
-            health -= increaseFireDamage;
+            MinusHealth(increaseFireDamage);
             yield return new WaitForSeconds(FIREINTERVAL);
         }
     }
@@ -77,7 +104,7 @@ public class EnemysHealth : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-        health -= finalFireDamage * numOfFireEffects;
+        MinusHealth(finalFireDamage * numOfFireEffects);
 
         finalFireDamage = 0;
         numOfFireEffects = 0;
@@ -95,7 +122,7 @@ public class EnemysHealth : MonoBehaviour
             yield return new WaitForSeconds(POISONINTERVAL);
 
             totalPoisonDamage += increasePoisonDamage;
-            health -= totalPoisonDamage;
+            MinusHealth(totalPoisonDamage);
 
             totalPoisonDuration -= POISONINTERVAL;
         }

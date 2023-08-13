@@ -14,7 +14,7 @@ public class MovementCharacter : MonoBehaviour
     [SerializeField]
     private float turnDuration = 0.1f;
     [SerializeField]
-    private float gravity = 15f;
+    private float gravity = 15f;    
     [SerializeField]
     private Vector3 moveTimeDirection = new Vector3(200f, 0f, 0f);
 

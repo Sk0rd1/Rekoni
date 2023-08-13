@@ -19,7 +19,7 @@ public class MagicSpells : MonoBehaviour
     private Spell_SSI spellPos1;
     private Spell_MMM spellPos2;
     private Spell_PPI spellPos3;
-    private Spell_MMM spellPos4;
+    private Spell_MPS spellPos4;
     //end of spells
 
     void Start()
@@ -33,7 +33,7 @@ public class MagicSpells : MonoBehaviour
         spellPos1 = GameObject.Find("SpellsList").GetComponent<Spell_SSI>();
         spellPos2 = GameObject.Find("SpellsList").GetComponent<Spell_MMM>();
         spellPos3 = GameObject.Find("SpellsList").GetComponent<Spell_PPI>();
-        spellPos4 = GameObject.Find("SpellsList").GetComponent<Spell_MMM>();
+        spellPos4 = GameObject.Find("SpellsList").GetComponent<Spell_MPS>();
         //end of spells
     }
 
