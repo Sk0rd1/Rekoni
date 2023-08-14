@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-public class Spell_MMM : MonoBehaviour
+public class Spell_MMM : Spell_XXX
 {
     [SerializeField]
     private float reloadTime = 4f;
@@ -16,7 +16,7 @@ public class Spell_MMM : MonoBehaviour
     [SerializeField]
     private float precision = 30f; // стандарта ймовірність попадання в центральний круг 30%, лінійна залежність. Свіввідношення ймовірностей по кругам 3:3:4 = центр:середина:ззовні
 
-    public readonly bool MOMENTARYCAST = false;
+    public const bool MOMENTARYCAST = false;
 
     private float reloadUnderMeteor = 0.2f;
     private int numberMeteor = 6;
@@ -43,12 +43,7 @@ public class Spell_MMM : MonoBehaviour
     private string cursorForEffectName = "MMM/CFE_MMM";
     private string boomEffectName = "MMM/BoomEffect";
 
-    void Start()
-    {
-        
-    }
-
-    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         if (firstFrameToCast)
         {
@@ -100,12 +95,13 @@ public class Spell_MMM : MonoBehaviour
         return pointCenterSpell;
     }
 
-    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
-        cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        if (cursorModel != null)
+            cursorModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 
-    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         Destroy(cursorModel);
         effectList = new List<GameObject>();
@@ -306,7 +302,12 @@ public class Spell_MMM : MonoBehaviour
         isSpellReady = true;
     }
 
-    public bool IsSpellReady()
+    public override bool MomentaryCast()
+    {
+        return MOMENTARYCAST;
+    }
+
+    public override bool IsSpellReady()
     {
         return isSpellReady;
     }

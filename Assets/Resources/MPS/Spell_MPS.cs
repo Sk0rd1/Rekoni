@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_MPS : MonoBehaviour
+public class Spell_MPS : Spell_XXX
 {
     [SerializeField]
     private float slow = 10f;
@@ -13,7 +13,7 @@ public class Spell_MPS : MonoBehaviour
     [SerializeField]
     private float reloadTime = 25f;
 
-    public readonly bool MOMENTARYCAST = true;
+    public const bool MOMENTARYCAST = true;
 
     private bool isSpellReady = true;
     private string effectName = "MPS/Circle";
@@ -22,17 +22,17 @@ public class Spell_MPS : MonoBehaviour
     private Vector3 shieldOffset = new Vector3(0f, 2.9f, 0f);
     private Vector3 shieldPosition;
 
-    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         this.characterPosition = characterPosition;
     }
 
-    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         //cursorModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 
-    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         isSpellReady = false;
         StartCoroutine(Reload());
@@ -68,7 +68,12 @@ public class Spell_MPS : MonoBehaviour
         isSpellReady = true;
     }
 
-    public bool IsSpellReady()
+    public override bool MomentaryCast()
+    {
+        return MOMENTARYCAST;
+    }
+
+    public override bool IsSpellReady()
     {
         return isSpellReady;
     }
