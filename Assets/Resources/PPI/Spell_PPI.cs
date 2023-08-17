@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_PPI : MonoBehaviour
+public class Spell_PPI : Spell_XXX
 {
-    public readonly bool MOMENTARYCAST = true;
+    public const bool MOMENTARYCAST = true;
     [SerializeField]
     private float shieldDuration = 3f;
     [SerializeField]
@@ -19,17 +19,17 @@ public class Spell_PPI : MonoBehaviour
     private Vector3 shieldOffset = new Vector3(0f, 2.9f, 0f);
     private Vector3 shieldPosition;
 
-    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         this.characterPosition = characterPosition;
     }
 
-    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         //cursorModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 
-    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         isSpellReady = false;
         StartCoroutine(Reload());
@@ -62,7 +62,12 @@ public class Spell_PPI : MonoBehaviour
         isSpellReady = true;
     }
 
-    public bool IsSpellReady()
+    public override bool MomentaryCast()
+    {
+        return MOMENTARYCAST;
+    }
+
+    public override bool IsSpellReady()
     {
         return isSpellReady;
     }

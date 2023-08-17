@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Spell_SSI : MonoBehaviour
+public class Spell_SSI : Spell_XXX
 {
     [SerializeField]
     private float reloadTime = 4f;
@@ -16,7 +16,7 @@ public class Spell_SSI : MonoBehaviour
     [SerializeField]
     private float forceAttraction = 0.1f;
 
-    public readonly bool MOMENTARYCAST = false;
+    public const bool MOMENTARYCAST = false;
 
     SSI ssi;
 
@@ -39,14 +39,17 @@ public class Spell_SSI : MonoBehaviour
 
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        cursorModel.SetActive(false);
 
         effectPrefabModel = Resources.Load<GameObject>(effectName);
         effectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
         ssi = effectModel.GetComponentInChildren<SSI>();
+        effectModel.SetActive(false);
     }
 
-    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
+        cursorModel.SetActive(true);
         cursorModel.transform.position = DistanceWithRadius(cursorPosition, characterPosition, isGamepadUsing);
     }
 
@@ -132,13 +135,16 @@ public class Spell_SSI : MonoBehaviour
         return pointCenterSpell;
     }
 
-    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
-        cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        if (cursorModel != null)
+            cursorModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 
-    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
     {
+        effectModel.SetActive(true);
+
         StartCoroutine(Reload());
 
         effectModel.transform.position = cursorModel.transform.position;
@@ -178,9 +184,14 @@ public class Spell_SSI : MonoBehaviour
         effectModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 
-    public bool IsSpellReady()
+    public override bool IsSpellReady()
     {
         return isSpellReady;
+    }
+
+    public override bool MomentaryCast()
+    {
+        return MOMENTARYCAST;
     }
 
     IEnumerator Reload()
