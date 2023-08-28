@@ -5,7 +5,7 @@ public class MovementCharacter : MonoBehaviour
 {
     private CharacterController controller;
     private Animator animator;
-    private MagicSpells magicSpells;
+    private SpellManager spellManager;
     private InputManager inputManager;
     private Camera cameraCharacter;
 
@@ -20,7 +20,7 @@ public class MovementCharacter : MonoBehaviour
 
     private bool isNewTime = true;
     private bool isCastSpell = false;
-    private int spellNumCast = 0;
+    private bool isSpellCast = false;
     private bool isMoveTimeReady = true;
     private bool isMoveTimeCast = false;
     private bool isRollingReady = true;
@@ -38,6 +38,8 @@ public class MovementCharacter : MonoBehaviour
     private GameObject boxForClimbNew;
     private GameObject boxForClimbOld;
 
+    private Transform cursorPosition;
+
     // V-sync and lock FPS
     //private void Awake()
     //{
@@ -45,19 +47,20 @@ public class MovementCharacter : MonoBehaviour
     //    Application.targetFrameRate = 60;
     //}
 
-    private void Awake()
+    /*private void Awake()
     {
         QualitySettings.vSyncCount = 2;
         Application.targetFrameRate = 1000;
-    }
+    }*/
 
     void Start()
     {
+        cursorPosition = GameObject.Find("CursorPosition(Clone)").GetComponent<Transform>();
         cameraCharacter = GameObject.Find("Main Camera").GetComponent<Camera>();
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         oldValueY = transform.position.y;
-        magicSpells = GetComponent<MagicSpells>();
+        spellManager = GetComponent<SpellManager>();
         inputManager = GetComponent<InputManager>();
         cameraCharacter.transform.position = transform.position + cameraStartPosition; 
     }
@@ -65,7 +68,7 @@ public class MovementCharacter : MonoBehaviour
     void Update()
     {
         inputManager.CheckButton();
-        magicSpells.CheckCast();
+        spellManager.CheckCast();
 
         moveSpeed = MOVESPEED;
         Vector3 currentDirection = GetCurrentPosition();
@@ -91,12 +94,16 @@ public class MovementCharacter : MonoBehaviour
             StateOfMoveBox();
         }
 
-        Vector3 rightSteakDirection = inputManager.MousePosition();
-        spellNumCast = magicSpells.SpellNumCast;
-        if(!isMoveBox && spellNumCast != 0)
+        //Vector3 rightSteakDirection = inputManager.MousePosition();
+
+        //на наступному рядку повинно навпаки викликатись
+        //spellNumCast = magicSpells.SpellNumCast;
+        isSpellCast = spellManager.IsSpellCast();
+
+        if(!isMoveBox && isSpellCast)
         {
             isCastSpell = true;
-            magicSpells.CastSpell(true, rightSteakDirection, inputManager.IsGamepadUsing());
+            //magicSpells.CastSpell(true, rightSteakDirection, inputManager.IsGamepadUsing());
             animator.SetBool("isMoveBox", true);
         }
         else
@@ -104,7 +111,7 @@ public class MovementCharacter : MonoBehaviour
             if (!isMoveBox)
                 animator.SetBool("isMoveBox", false);
             isCastSpell = false;
-            magicSpells.CastSpell(false, rightSteakDirection, inputManager.IsGamepadUsing());
+            //magicSpells.CastSpell(false, rightSteakDirection, inputManager.IsGamepadUsing());
         }
 
         /*if (!inputManager.MoveTime())
@@ -245,7 +252,7 @@ public class MovementCharacter : MonoBehaviour
 
     private void MoveBox()
     {
-        Vector3 boxDirection = inputManager.RightSteakDirection();
+        Vector3 boxDirection = cursorPosition.transform.position;
 
         if (currentBoxNew != null && currentBoxOld != null)
         {
@@ -380,7 +387,7 @@ public class MovementCharacter : MonoBehaviour
             animator.SetFloat("MoveBoxVertical", relativeVector.z);
         }
 
-        if (spellNumCast != 0)
+        if (isCastSpell)
         {
             moveSpeed = MOVESPEED / 3f;
             Vector3 rotationVector = transform.rotation.eulerAngles;

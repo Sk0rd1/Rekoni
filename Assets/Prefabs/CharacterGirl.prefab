@@ -1073,7 +1073,6 @@ GameObject:
   - component: {fileID: 4285426888112671052}
   - component: {fileID: 4285426888112671053}
   - component: {fileID: 4285426888863601558}
-  - component: {fileID: 4285426888863601555}
   m_Layer: 0
   m_Name: CharacterGirl
   m_TagString: Player
@@ -1157,7 +1156,6 @@ MonoBehaviour:
   MOVESPEED: 15
   turnDuration: 0.1
   gravity: 15
-  cameraCharacter: {fileID: 0}
   moveTimeDirection: {x: 200, y: 0, z: 0}
 --- !u!136 &4285426888863601558
 CapsuleCollider:
@@ -1173,18 +1171,6 @@ CapsuleCollider:
   m_Height: 1.65
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
---- !u!114 &4285426888863601555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4015395424002722179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535a7c8638120604f84fd658518d9a1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4136494098238224020
 GameObject:
   m_ObjectHideFlags: 0

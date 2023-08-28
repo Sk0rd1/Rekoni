@@ -3171,6 +3171,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+--- !u!114 &605642617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605642588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3137b707f469b49845e23d249075df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &607666448
 GameObject:
   m_ObjectHideFlags: 0
@@ -10427,12 +10439,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2123405159}
+  - component: {fileID: 2123405160}
   - component: {fileID: 2123405161}
   - component: {fileID: 2123405162}
   - component: {fileID: 2123405163}
-  - component: {fileID: 2123405164}
-  - component: {fileID: 2123405166}
-  - component: {fileID: 2123405165}
   m_Layer: 0
   m_Name: SpellsList
   m_TagString: Untagged
@@ -10455,6 +10465,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123405160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123405157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49bc51ad14f75f45b8d0ae15fb22e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slow: 10
+  numOfHealPerSecond: 1
+  buffDuration: 20
+  reloadTime: 25
 --- !u!114 &2123405161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10464,14 +10490,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2123405157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f741776600bedd54d891dbc7ef5ea337, type: 3}
+  m_Script: {fileID: 11500000, guid: f35d77de83508be4186a4924033c9128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldDuration: 3
   reloadTime: 4
-  startDamage: 10
-  increasDamage: 1
-  fireDuration: 4
-  precision: 30
+  numOfAttack: 4
 --- !u!114 &2123405162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10481,9 +10505,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2123405157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bfab2ea7cac1a242afc80ee78d8604a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cb5f559e31d7c4459dc69933d58c475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reloadTime: 4
+  timeCast: 3
+  timePeriod: 1
+  damage: 4
+  forceAttraction: 0.1
 --- !u!114 &2123405163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10493,58 +10522,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2123405157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04ca1a3f8d029e648a0e016221ce7e87, type: 3}
+  m_Script: {fileID: 11500000, guid: 209e0860e89181c49886451100114fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   reloadTime: 4
-  timeCast: 3
-  timePeriod: 1
-  damage: 4
-  forceAttraction: 0.1
---- !u!114 &2123405164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123405157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39356ea5d9675544cb6867fc92265da2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldDuration: 3
-  reloadTime: 4
-  numOfAttack: 4
---- !u!114 &2123405165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123405157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c745f533ca37a774b95b2d4d65066fa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reloadTime: 4
---- !u!114 &2123405166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123405157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3160fe3ef438e184f952136dd9b05f7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slow: 10
-  numOfHealPerSecond: 1
-  buffDuration: 10
-  reloadTime: 12
+  startDamage: 10
+  increasDamage: 1
+  fireDuration: 4
+  precision: 30
 --- !u!1001 &92351960587995116
 PrefabInstance:
   m_ObjectHideFlags: 0

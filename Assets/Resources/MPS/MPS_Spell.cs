@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_MPS : MonoBehaviour
+public class MPS_Spell : SpellUniversal
 {
     [SerializeField]
     private float slow = 10f;
@@ -13,42 +13,48 @@ public class Spell_MPS : MonoBehaviour
     [SerializeField]
     private float reloadTime = 25f;
 
-    public const bool MOMENTARYCAST = true;
+    private const bool MOMENTARYCAST = true;
 
     private bool isSpellReady = true;
     private string effectName = "MPS/Circle";
     private GameObject effectModel;
-    private Vector3 characterPosition;
     private Vector3 shieldOffset = new Vector3(0f, 2.9f, 0f);
-    private Vector3 shieldPosition;
 
-    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override bool IsMomemtaryCast()
     {
-        this.characterPosition = characterPosition;
+        return MOMENTARYCAST;
     }
 
-    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override bool IsSpellReady()
     {
-        //cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        return isSpellReady;
     }
 
-    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
-        isSpellReady = false;
+
+    }
+
+    public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
         StartCoroutine(Reload());
-        this.characterPosition = characterPosition;
         StartCoroutine(ShieldMove());
+    }
+
+    public override void CancelCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+
     }
 
     IEnumerator ShieldMove()
     {
-        shieldPosition = characterPosition + shieldOffset;
         effectModel = Resources.Load<GameObject>(effectName);
-        GameObject buffEffect = Instantiate(effectModel, shieldPosition, Quaternion.identity);
         GameObject characterGirl = GameObject.Find("CharacterGirl");
+        Vector3 shieldPosition = characterGirl.transform.position + shieldOffset;
+        GameObject buffEffect = Instantiate(effectModel, shieldPosition, Quaternion.identity);
 
         MPS mps = buffEffect.GetComponent<MPS>();
-        mps.SetValues(slow, (float)1f/numOfHealPerSecond);
+        mps.SetValues(slow, (float)1f / numOfHealPerSecond);
 
         float currenrTime = 0f;
         while (currenrTime < buffDuration)
@@ -63,18 +69,8 @@ public class Spell_MPS : MonoBehaviour
 
     IEnumerator Reload()
     {
+        isSpellReady = false;
         yield return new WaitForSeconds(reloadTime);
-
         isSpellReady = true;
-    }
-
-    public bool MomentaryCast()
-    {
-        return MOMENTARYCAST;
-    }
-
-    public bool IsSpellReady()
-    {
-        return isSpellReady;
     }
 }

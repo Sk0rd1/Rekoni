@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
+using static Unity.Burst.Intrinsics.X86;
 
-public class Spell_MMM : MonoBehaviour
+public class MMM_Spell : SpellUniversal
 {
     [SerializeField]
     private float reloadTime = 4f;
@@ -23,9 +23,7 @@ public class Spell_MMM : MonoBehaviour
     private float speefFall = 100;
     private float spellDistance = 20f;
 
-    private bool isSpellCast = true;
     private bool isSpellReady = true;
-    private bool firstFrameToCast = true;
 
     private Vector3 centerSpell = Vector3.zero;
     private Vector3 currentGamepadPosition = Vector3.zero;
@@ -44,73 +42,33 @@ public class Spell_MMM : MonoBehaviour
     private string cursorForEffectName = "MMM/CFE_MMM";
     private string boomEffectName = "MMM/BoomEffect";
 
-    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    private void Start()
     {
-        if (isSpellCast)
-        {
-            if (firstFrameToCast)
-            {
-                isSpellCast = true;
-                firstFrameToCast = false;
-                currentGamepadPosition = Vector3.zero;
-                cursorPrefabModel = Resources.Load<GameObject>(cursorName);
-                cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-            }
-            else
-            {
-                cursorModel.transform.position = DistanceWithRadius(cursorPosition, characterPosition, isGamepadUsing);
-            }
-        }
+        currentGamepadPosition = Vector3.zero;
+        cursorPrefabModel = Resources.Load<GameObject>(cursorName);
+        cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
     }
 
-    private Vector3 PointCenterSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override bool IsMomemtaryCast()
     {
-        Vector3 pointCenterSpell = Vector3.zero;
-
-        if (isGamepadUsing)
-        {
-            if(cursorPosition.x < 0f)
-            {
-                cursorPosition.x = cursorPosition.x * cursorPosition.x;
-                cursorPosition.x = -cursorPosition.x;
-            }
-            else
-            {
-                cursorPosition.x = cursorPosition.x * cursorPosition.x;
-            }
-
-            if (cursorPosition.z < 0f)
-            {
-                cursorPosition.z = cursorPosition.z * cursorPosition.z;
-                cursorPosition.z = -cursorPosition.z;
-            }
-            else
-            {
-                cursorPosition.z = cursorPosition.z * cursorPosition.z;
-            }
-            currentGamepadPosition += cursorPosition * Time.deltaTime * 20f;
-
-            pointCenterSpell = characterPosition + currentGamepadPosition;
-        }
-        else
-        {
-            pointCenterSpell = cursorPosition;
-        }
-
-        return pointCenterSpell;
+        return MOMENTARYCAST;
     }
 
-    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override bool IsSpellReady()
     {
-        isSpellCast = false;
-        if (cursorModel != null)
-            cursorModel.transform.position -= new Vector3(0f, 20f, 0f);
-        Debug.Log(cursorModel.transform.position.y);
+        return isSpellReady;
     }
 
-    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
-        Destroy(cursorModel);
+        cursorModel.SetActive(true);
+        cursorModel.transform.position = DistanceWithRadius(mousePosition, characterPosition, isGamepadUsing);
+    }
+
+    public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        StartCoroutine(Reload());
+        cursorModel.SetActive(false);
         effectList = new List<GameObject>();
         cursorList = new List<GameObject>();
 
@@ -132,15 +90,106 @@ public class Spell_MMM : MonoBehaviour
             instantinateCurdorForEffect.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
             cursorList.Add(instantinateCurdorForEffect);
         }
-        StartCoroutine(Reload());
-
-        firstFrameToCast = true;
 
         centerSpell = cursorModel.transform.position;
 
         cursorModel.transform.position += new Vector3(0f, -20f, 0f);
 
         StartCoroutine(EffectCast());
+    }
+
+    public override void CancelCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        cursorModel.SetActive(false);
+    }
+
+    IEnumerator Reload()
+    {
+        isSpellReady = false;
+        yield return new WaitForSeconds(reloadTime);
+        isSpellReady = true;
+    }
+
+    private Vector3 DistanceWithRadius(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        Vector3 pointCenterSpell = PointCenterSpell(cursorPosition, characterPosition, isGamepadUsing) - characterPosition;
+
+        if (isGamepadUsing)
+        {
+            if (Mathf.Sqrt(pointCenterSpell.x * pointCenterSpell.x + pointCenterSpell.z * pointCenterSpell.z) < spellDistance)
+            {
+                return pointCenterSpell + characterPosition;
+            }
+            else
+            {
+                pointCenterSpell.y = 0f;
+                pointCenterSpell.Normalize();
+
+                currentGamepadPosition = pointCenterSpell * spellDistance;
+
+                pointCenterSpell = characterPosition + currentGamepadPosition;
+
+                return pointCenterSpell;
+            }
+        }
+        else
+        {
+            float deltaX = cursorPosition.x - characterPosition.x;
+            float deltaZ = cursorPosition.z - characterPosition.z;
+
+            if (Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ) < spellDistance)
+            {
+                return pointCenterSpell + characterPosition;
+            }
+            else
+            {
+                Vector3 pointDirection = cursorPosition - characterPosition;
+                pointDirection.y = 0f;
+                pointDirection.Normalize();
+
+                pointCenterSpell = characterPosition + pointDirection * spellDistance;
+
+                return pointCenterSpell;
+            }
+        }
+    }
+
+    private Vector3 PointCenterSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        Vector3 pointCenterSpell = Vector3.zero;
+
+        if (isGamepadUsing)
+        {
+            if (cursorPosition.x < 0f)
+            {
+                cursorPosition.x = cursorPosition.x * cursorPosition.x;
+                cursorPosition.x = -cursorPosition.x;
+            }
+            else
+            {
+                cursorPosition.x = cursorPosition.x * cursorPosition.x;
+            }
+
+            if (cursorPosition.z < 0f)
+            {
+                cursorPosition.z = cursorPosition.z * cursorPosition.z;
+                cursorPosition.z = -cursorPosition.z;
+            }
+            else
+            {
+                cursorPosition.z = cursorPosition.z * cursorPosition.z;
+            }
+
+            currentGamepadPosition += cursorPosition;
+
+            pointCenterSpell = characterPosition + currentGamepadPosition * Time.deltaTime;
+        }
+        else
+        {
+            pointCenterSpell = cursorPosition;
+        }
+
+        return pointCenterSpell;
     }
 
     IEnumerator EffectCast()
@@ -191,7 +240,7 @@ public class Spell_MMM : MonoBehaviour
             }
         }
 
-        for(int i = 0; i < numberMeteor; i++) 
+        for (int i = 0; i < numberMeteor; i++)
         {
             cursorList[i].transform.position = cursorLocation[i];
             effectList[i].transform.position = cursorLocation[i] + new Vector3(Random.Range(0f, 16f) - 8f, 70f, Random.Range(0f, 16f) - 8f);
@@ -200,7 +249,7 @@ public class Spell_MMM : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        for(int i = 0; i < numberMeteor; i++)
+        for (int i = 0; i < numberMeteor; i++)
         {
             StartCoroutine(MoveToPoint(effectList[i], cursorLocation[i], i));
             yield return new WaitForSeconds(reloadUnderMeteor);
@@ -256,66 +305,5 @@ public class Spell_MMM : MonoBehaviour
         Destroy(effect);
         yield return new WaitForSeconds(2f);
         Destroy(boomEffect);
-    }
-
-    private Vector3 DistanceWithRadius(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
-    {
-        Vector3 pointCenterSpell = PointCenterSpell(cursorPosition, characterPosition, isGamepadUsing) - characterPosition;
-
-        if (isGamepadUsing)
-        {
-            if(Mathf.Sqrt(pointCenterSpell.x * pointCenterSpell.x + pointCenterSpell.z * pointCenterSpell.z) < spellDistance)
-            {
-                return pointCenterSpell + characterPosition;
-            }
-            else
-            {
-                pointCenterSpell.y = 0f;
-                pointCenterSpell.Normalize();
-
-                currentGamepadPosition = pointCenterSpell * spellDistance;
-
-                pointCenterSpell = characterPosition + currentGamepadPosition;
-
-                return pointCenterSpell;
-            }
-        }
-        else
-        {
-            float deltaX = cursorPosition.x - characterPosition.x;
-            float deltaZ = cursorPosition.z - characterPosition.z;
-
-            if (Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ) < spellDistance)
-            {
-                return pointCenterSpell + characterPosition;
-            }
-            else
-            {
-                Vector3 pointDirection = cursorPosition - characterPosition;
-                pointDirection.y = 0f;
-                pointDirection.Normalize();
-
-                pointCenterSpell = characterPosition + pointDirection * spellDistance;
-
-                return pointCenterSpell;
-            }
-        }
-    }
-
-    IEnumerator Reload()
-    {
-        isSpellReady = false;
-        yield return new WaitForSeconds(reloadTime);
-        isSpellReady = true;
-    }
-
-    public bool MomentaryCast()
-    {
-        return MOMENTARYCAST;
-    }
-
-    public bool IsSpellReady()
-    {
-        return isSpellReady;
     }
 }

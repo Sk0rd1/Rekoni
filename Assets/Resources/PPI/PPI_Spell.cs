@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_PPI : MonoBehaviour
+public class PPI_Spell : SpellUniversal
 {
     public const bool MOMENTARYCAST = true;
     [SerializeField]
@@ -15,37 +15,43 @@ public class Spell_PPI : MonoBehaviour
     private bool isSpellReady = true;
     private string effectName = "PPI/Shield";
     private GameObject effectModel;
-    private Vector3 characterPosition; 
     private Vector3 shieldOffset = new Vector3(0f, 2.9f, 0f);
-    private Vector3 shieldPosition;
 
-    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override bool IsMomemtaryCast()
     {
-        this.characterPosition = characterPosition;
+        return MOMENTARYCAST;
     }
 
-    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override bool IsSpellReady()
     {
-        //cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        return isSpellReady;
     }
 
-    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
-        isSpellReady = false;
+
+    }
+
+    public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
         StartCoroutine(Reload());
-        this.characterPosition = characterPosition;
         StartCoroutine(ShieldMove());
+    }
+
+    public override void CancelCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+
     }
 
     IEnumerator ShieldMove()
     {
-        shieldPosition = characterPosition + shieldOffset;
+        GameObject characterGirl = GameObject.Find("CharacterGirl");
+        Vector3 shieldPosition = characterGirl.transform.position + shieldOffset;
         effectModel = Resources.Load<GameObject>(effectName);
         GameObject shieldEffect = Instantiate(effectModel, shieldPosition, Quaternion.identity);
-        GameObject characterGirl = GameObject.Find("CharacterGirl");
 
         float currenrTime = 0f;
-        while(currenrTime < shieldDuration)
+        while (currenrTime < shieldDuration)
         {
             yield return new WaitForEndOfFrame();
             shieldEffect.transform.position = characterGirl.transform.position + shieldOffset;
@@ -57,18 +63,8 @@ public class Spell_PPI : MonoBehaviour
 
     IEnumerator Reload()
     {
+        isSpellReady = false;
         yield return new WaitForSeconds(reloadTime);
-        
         isSpellReady = true;
-    }
-
-    public bool MomentaryCast()
-    {
-        return MOMENTARYCAST;
-    }
-
-    public bool IsSpellReady()
-    {
-        return isSpellReady;
     }
 }

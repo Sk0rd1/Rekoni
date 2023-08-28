@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Spell_SSI : MonoBehaviour
+public class SSI_Spell : SpellUniversal
 {
     [SerializeField]
     private float reloadTime = 4f;
@@ -31,12 +30,10 @@ public class Spell_SSI : MonoBehaviour
     private float effectRadius = 3f;
     private bool isSpellReady = true;
     private float spellDistance = 20f;
-
     private Vector3 currentGamepadPosition = Vector3.zero;
 
     void Start()
     {
-
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
         cursorModel.SetActive(false);
@@ -47,11 +44,74 @@ public class Spell_SSI : MonoBehaviour
         effectModel.SetActive(false);
     }
 
-    public void CastSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
+    public override bool IsMomemtaryCast()
+    {
+        return MOMENTARYCAST;
+    }
+
+    public override bool IsSpellReady()
+    {
+        return isSpellReady;
+    }
+
+    public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        cursorModel.SetActive(true);
+        cursorModel.transform.position = DistanceWithRadius(mousePosition, characterPosition, isGamepadUsing);
+    }
+
+    public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        StartCoroutine(Reload());
+        effectModel.SetActive(true);
+
+        effectModel.transform.position = cursorModel.transform.position;
+
+        ssi.SetValues(timeCast, damage, forceAttraction);
+
+        cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+
+        StartCoroutine(EffectCast(effectModel));
+    }
+
+    public override void CancelCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
+    {
+        cursorModel.SetActive(false);
+    }
+
+    IEnumerator Reload()
     {
         isSpellReady = false;
-        cursorModel.SetActive(true);
-        cursorModel.transform.position = DistanceWithRadius(cursorPosition, characterPosition, isGamepadUsing);
+        yield return new WaitForSeconds(reloadTime);
+        isSpellReady = true;
+    }
+
+    IEnumerator EffectCast(GameObject effect)
+    {
+        float currentEffectRadius = 0.1f;
+        effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+
+        ssi.IsCastBH = true;
+
+        while (currentEffectRadius < effectRadius)
+        {
+            currentEffectRadius += 5f * Time.deltaTime;
+            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return new WaitForSeconds(timeCast);
+
+        while (currentEffectRadius > 0.2f)
+        {
+            currentEffectRadius -= 10f * Time.deltaTime;
+            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+            yield return new WaitForEndOfFrame();
+        }
+
+        ssi.IsCastBH = false;
+
+        effectModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 
     private Vector3 DistanceWithRadius(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -134,73 +194,5 @@ public class Spell_SSI : MonoBehaviour
         }
 
         return pointCenterSpell;
-    }
-
-    public void CancelSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
-    {
-        isSpellReady = true;
-        if (cursorModel != null)
-            cursorModel.transform.position += new Vector3(0f, -20f, 0f);
-        Debug.Log(cursorModel.transform.position.y);
-    }
-
-    public void CastSpellEnd(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
-    {
-        effectModel.SetActive(true);
-
-        StartCoroutine(Reload());
-
-        effectModel.transform.position = cursorModel.transform.position;
-        
-        ssi.SetValues(timeCast, damage, forceAttraction);
-
-        cursorModel.transform.position += new Vector3(0f, -20f, 0f);
-
-        StartCoroutine(EffectCast(effectModel));
-    }
-
-    IEnumerator EffectCast(GameObject effect)
-    {
-        float currentEffectRadius = 0.1f;
-        effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
-
-        ssi.IsCastBH = true;
-
-        while (currentEffectRadius < effectRadius)
-        {
-            currentEffectRadius += 5f * Time.deltaTime;
-            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
-            yield return new WaitForEndOfFrame();
-        }
-
-        yield return new WaitForSeconds(timeCast);
-
-        while (currentEffectRadius > 0.2f)
-        {
-            currentEffectRadius -= 10f * Time.deltaTime;
-            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
-            yield return new WaitForEndOfFrame();
-        }
-
-        ssi.IsCastBH = false;
-
-        effectModel.transform.position += new Vector3(0f, -20f, 0f);
-    }
-
-    public bool IsSpellReady()
-    {
-        return isSpellReady;
-    }
-
-    public bool MomentaryCast()
-    {
-        return MOMENTARYCAST;
-    }
-
-    IEnumerator Reload()
-    {
-        isSpellReady = false;
-        yield return new WaitForSeconds(reloadTime);
-        isSpellReady = true;
     }
 }

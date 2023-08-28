@@ -18,13 +18,17 @@ public class InputManager : MonoBehaviour
     public bool ButtonClimbOnBox { get; private set; }
     public bool ButtonMoveBox { get; private set; }
 
-    private Vector3 rSvalue = Vector3.zero;
-
-
     private Camera cameraCharacter;
-    private Vector3 rightSteakDirection = Vector3.zero;
     private Vector3 leftSteakDirection = Vector3.zero;
+    private GameObject cursorPrefabPosition;
+    private GameObject cursorPosition;
 
+
+    private void Awake()
+    {
+        cursorPrefabPosition = Resources.Load<GameObject>("OtherObjects/CursorPosition");
+        cursorPosition = Instantiate(cursorPrefabPosition);
+    }
 
     private void Start()
     {
@@ -231,9 +235,7 @@ public class InputManager : MonoBehaviour
             verticalDirection = -Input.GetAxis("Axis 5");
 
             Vector3 steakDirection = new Vector3(horizontalDirection, 0f, verticalDirection);
-            rSvalue = steakDirection;
-            steakDirection.Normalize();
-            rightSteakDirection = steakDirection;
+            cursorPosition.transform.position = steakDirection;
         }
         else
         {
@@ -246,8 +248,18 @@ public class InputManager : MonoBehaviour
             {
                 newHitPoint = new Vector3(hit.point.x, transform.position.y, hit.point.z);
             }
-            rightSteakDirection = newHitPoint;
-            rSvalue = newHitPoint;
+
+            try 
+            {
+                cursorPosition.transform.position = newHitPoint;
+            }
+            catch
+            {
+                Debug.Log("GG");
+            }
+            //rightSteakDirection = newHitPoint;
+            //rSvalue = newHitPoint;
+
             //newHitPoint = newHitPoint - transform.position;
             //newHitPoint.Normalize();
             //rightSteakDirection = newHitPoint;
@@ -283,15 +295,15 @@ public class InputManager : MonoBehaviour
         leftSteakDirection.Normalize();
     }
 
-    public Vector3 RightSteakDirection()
+    /*public Vector3 RightSteakDirection()
     {
         return rightSteakDirection;
-    }
+    }*/
 
-    public Vector3 MousePosition()
+    /*public Vector3 MousePosition()
     {
         return rSvalue;
-    }
+    }*/
 
     public bool IsGamepadUsing()
     {
