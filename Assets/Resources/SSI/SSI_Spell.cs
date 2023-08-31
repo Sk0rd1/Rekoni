@@ -31,6 +31,7 @@ public class SSI_Spell : SpellUniversal
     private bool isSpellReady = true;
     private float spellDistance = 20f;
     private Vector3 currentGamepadPosition = Vector3.zero;
+    private float currentReload = 0f;
 
     void Start()
     {
@@ -52,6 +53,11 @@ public class SSI_Spell : SpellUniversal
     public override bool IsSpellReady()
     {
         return isSpellReady;
+    }
+
+    public override float TimeReload()
+    {
+        return currentReload;
     }
 
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -82,7 +88,12 @@ public class SSI_Spell : SpellUniversal
     IEnumerator Reload()
     {
         isSpellReady = false;
-        yield return new WaitForSeconds(reloadTime);
+        currentReload = reloadTime;
+        while (currentReload >= 0f)
+        {
+            currentReload -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
         isSpellReady = true;
     }
 

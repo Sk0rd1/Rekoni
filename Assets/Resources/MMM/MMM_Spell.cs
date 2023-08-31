@@ -22,6 +22,7 @@ public class MMM_Spell : SpellUniversal
     private int numberMeteor = 6;
     private float speefFall = 100;
     private float spellDistance = 20f;
+    private float currentReload = 0f;
 
     private bool isSpellReady = true;
 
@@ -57,6 +58,11 @@ public class MMM_Spell : SpellUniversal
     public override bool IsSpellReady()
     {
         return isSpellReady;
+    }
+
+    public override float TimeReload()
+    {
+        return currentReload;
     }
 
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -106,7 +112,12 @@ public class MMM_Spell : SpellUniversal
     IEnumerator Reload()
     {
         isSpellReady = false;
-        yield return new WaitForSeconds(reloadTime);
+        currentReload = reloadTime;
+        while (currentReload >= 0f)
+        {
+            currentReload -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
         isSpellReady = true;
     }
 

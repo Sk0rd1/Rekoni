@@ -9,9 +9,9 @@ public class MPS_Spell : SpellUniversal
     [SerializeField]
     private float numOfHealPerSecond = 1f;
     [SerializeField]
-    private float buffDuration = 20f;
+    private float buffDuration = 8f;
     [SerializeField]
-    private float reloadTime = 25f;
+    private float reloadTime = 20f;
 
     private const bool MOMENTARYCAST = true;
 
@@ -19,6 +19,7 @@ public class MPS_Spell : SpellUniversal
     private string effectName = "MPS/Circle";
     private GameObject effectModel;
     private Vector3 shieldOffset = new Vector3(0f, 2.9f, 0f);
+    private float currentReload = 0f;
 
     public override bool IsMomemtaryCast()
     {
@@ -28,6 +29,11 @@ public class MPS_Spell : SpellUniversal
     public override bool IsSpellReady()
     {
         return isSpellReady;
+    }
+
+    public override float TimeReload()
+    {
+        return currentReload;
     }
 
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -70,7 +76,12 @@ public class MPS_Spell : SpellUniversal
     IEnumerator Reload()
     {
         isSpellReady = false;
-        yield return new WaitForSeconds(reloadTime);
+        currentReload = reloadTime;
+        while (currentReload >= 0f)
+        {
+            currentReload -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
         isSpellReady = true;
     }
 }

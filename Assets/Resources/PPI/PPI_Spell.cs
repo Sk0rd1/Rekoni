@@ -16,6 +16,7 @@ public class PPI_Spell : SpellUniversal
     private string effectName = "PPI/Shield";
     private GameObject effectModel;
     private Vector3 shieldOffset = new Vector3(0f, 2.9f, 0f);
+    private float currentReload = 0f;
 
     public override bool IsMomemtaryCast()
     {
@@ -25,6 +26,11 @@ public class PPI_Spell : SpellUniversal
     public override bool IsSpellReady()
     {
         return isSpellReady;
+    }
+
+    public override float TimeReload()
+    {
+        return currentReload;
     }
 
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -64,7 +70,12 @@ public class PPI_Spell : SpellUniversal
     IEnumerator Reload()
     {
         isSpellReady = false;
-        yield return new WaitForSeconds(reloadTime);
+        currentReload = reloadTime;
+        while (currentReload >= 0f)
+        {
+            currentReload -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
         isSpellReady = true;
     }
 }

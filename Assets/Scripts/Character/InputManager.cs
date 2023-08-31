@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour
     public bool ButtonMoveTime { get; private set; }
     public bool ButtonClimbOnBox { get; private set; }
     public bool ButtonMoveBox { get; private set; }
+    public bool ButtonNextSpells { get; private set; }
 
     private Camera cameraCharacter;
     private Vector3 leftSteakDirection = Vector3.zero;
@@ -55,6 +56,7 @@ public class InputManager : MonoBehaviour
         CountRightSteak();
         CountLeftSteak();
         CancelSpell();
+        NextCircleOfSpell();
     }
 
     private void PressRoll()
@@ -102,6 +104,18 @@ public class InputManager : MonoBehaviour
         else
         {
             ButtonClimbOnBox = false;
+        }
+    }
+
+    private void NextCircleOfSpell()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            ButtonNextSpells = true;
+        }
+        else
+        {
+            ButtonNextSpells = false;
         }
     }
 
