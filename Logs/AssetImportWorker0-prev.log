@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49262
+50666
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [6480] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 271898410 [EditorId] 271898410 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [21764] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 2483128046 [EditorId] 2483128046 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [6480] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 271898410 [EditorId] 271898410 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [21764] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 2483128046 [EditorId] 2483128046 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 412.94 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 442.87 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56056
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56664
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005870 seconds.
+Registered in 0.008496 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 635.87 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 429.03 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.092 seconds
+- Completed reload, in  2.482 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4094ms)
-		BeginReloadAssembly (430ms)
+	ReloadAssembly (2484ms)
+		BeginReloadAssembly (286ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (3228ms)
-			LoadAssemblies (434ms)
+		EndReloadAssembly (1794ms)
+			LoadAssemblies (284ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (821ms)
+			SetupTypeCache (362ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (181ms)
-			SetupLoadedEditorAssemblies (1878ms)
+			RebuildScriptCaches (108ms)
+			SetupLoadedEditorAssemblies (1154ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (36ms)
+				InitializePlatformSupportModulesInManaged (21ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (636ms)
-				BeforeProcessingInitializeOnLoad (6ms)
-				ProcessInitializeOnLoadAttributes (921ms)
-				ProcessInitializeOnLoadMethodAttributes (272ms)
+				RefreshPlugins (429ms)
+				BeforeProcessingInitializeOnLoad (4ms)
+				ProcessInitializeOnLoadAttributes (528ms)
+				ProcessInitializeOnLoadMethodAttributes (170ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (6ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.042147 seconds.
+Registered in 0.023944 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 511.29 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 432.74 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  6.372 seconds
+- Completed reload, in  5.345 seconds
 Domain Reload Profiling:
-	ReloadAssembly (6375ms)
-		BeginReloadAssembly (431ms)
+	ReloadAssembly (5349ms)
+		BeginReloadAssembly (442ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (25ms)
+			DisableScriptedObjects (19ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (1ms)
-			CreateAndSetChildDomain (62ms)
-		EndReloadAssembly (5515ms)
-			LoadAssemblies (396ms)
+			CreateAndSetChildDomain (58ms)
+		EndReloadAssembly (4471ms)
+			LoadAssemblies (407ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1744ms)
+			SetupTypeCache (1216ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (523ms)
-			SetupLoadedEditorAssemblies (2679ms)
+			RebuildScriptCaches (408ms)
+			SetupLoadedEditorAssemblies (2342ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (513ms)
-				BeforeProcessingInitializeOnLoad (496ms)
-				ProcessInitializeOnLoadAttributes (1328ms)
-				ProcessInitializeOnLoadMethodAttributes (317ms)
-				AfterProcessingInitializeOnLoad (10ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (433ms)
+				BeforeProcessingInitializeOnLoad (425ms)
+				ProcessInitializeOnLoadAttributes (1160ms)
+				ProcessInitializeOnLoadMethodAttributes (298ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (23ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.16 seconds
-Refreshing native plugins compatible for Editor in 5.65 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.32 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5956 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6432.
-Memory consumption went from 351.2 MB to 348.5 MB.
-Total: 40.807900 ms (FindLiveObjects: 16.576900 ms CreateObjectMapping: 7.398300 ms MarkObjects: 14.127500 ms  DeleteObjects: 2.701900 ms)
+Unloading 5960 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6436.
+Memory consumption went from 353.1 MB to 350.4 MB.
+Total: 20.812600 ms (FindLiveObjects: 0.965900 ms CreateObjectMapping: 1.116300 ms MarkObjects: 16.032400 ms  DeleteObjects: 2.694800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,235 +164,253 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1801249.985235 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animation_Circle_Progress/Circle_Progress_2.vfx
-  artifactKey: Guid(f6ef27354dea18743887792928eaa43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animation_Circle_Progress/Circle_Progress_2.vfx using Guid(f6ef27354dea18743887792928eaa43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fe016f41f935177845d541ea14b956b') in 4.128628 seconds 
+  Time since last request: 1810946.520412 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abfb007ffa2f405927c81cb99379bfc8') in 3.585928 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 57.486911 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress
-  artifactKey: Guid(e124296c34da6ad4bb1d379782a53eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress using Guid(e124296c34da6ad4bb1d379782a53eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cf0da5d2b8667e1c14ccd8295fb9fd6') in 0.026638 seconds 
+  Time since last request: 4.058979 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '027169d7e5bfc18292c5eeba4e53b951') in 0.047858 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 31.840907 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/ObjectsForSkills.fbx
-  artifactKey: Guid(d24ae977cc952b242b4f30549182c471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/ObjectsForSkills.fbx using Guid(d24ae977cc952b242b4f30549182c471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ead1e9a7839815ec0a31b3ca75c6c1eb') in 0.160568 seconds 
+  Time since last request: 402.722138 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b5bb9c9dafd6f98b362bf8a11bac133') in 0.026666 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 37.532907 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animation_Circle_Progress
-  artifactKey: Guid(32c8449922a11ef4dade5ddc82050961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animation_Circle_Progress using Guid(32c8449922a11ef4dade5ddc82050961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb4ff224557f27b6bf78c57038043181') in 0.028483 seconds 
+  Time since last request: 34.608542 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f102766c111146dc655444c4099c6ed5') in 0.026314 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 12.116225 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Circle_Progress_2.vfx
-  artifactKey: Guid(91a0213ad2655f74494e43c7b64a5e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Circle_Progress_2.vfx using Guid(91a0213ad2655f74494e43c7b64a5e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95ebe8c7d59fb442843e548f2328fb99') in 3.121885 seconds 
+  Time since last request: 81.381822 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c97c4d0fa7271039425c72462a6c541') in 0.033788 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 73.700831 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Circle_Progress_2.vfx
-  artifactKey: Guid(91a0213ad2655f74494e43c7b64a5e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Circle_Progress_2.vfx using Guid(91a0213ad2655f74494e43c7b64a5e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '420b3a5a2130ea266b8392b4fa1c6d33') in 2.154836 seconds 
+  Time since last request: 18.445951 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a04dc2f0dacbf7f6dce573389f1c000') in 0.020721 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 18.386631 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animation_Circle_Progress/Circle_Progress_2.vfx
-  artifactKey: Guid(f6ef27354dea18743887792928eaa43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animation_Circle_Progress/Circle_Progress_2.vfx using Guid(f6ef27354dea18743887792928eaa43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd624a6467f92593dcab1821fbf0fb9a8') in 0.044572 seconds 
+  Time since last request: 735.743339 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54eb40c9333b300c5ae04b5797214ac9') in 0.027039 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 18.283137 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Progress_2.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Progress_2.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '522671a1298650712f13eaa281a8cc1f') in 2.981868 seconds 
+  Time since last request: 71.325721 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7909db020efd94899f9c2ead1b1299ee') in 0.027809 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 52.877862 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebd3cd454bf89016db2f3bb85088d652') in 2.476179 seconds 
+  Time since last request: 109.317121 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/try_3_long.fbx
+  artifactKey: Guid(085f20d9448d6c74095c39fdf2272f6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/try_3_long.fbx using Guid(085f20d9448d6c74095c39fdf2272f6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67b1d632fbae6768438c5de59d1bfee7') in 0.148506 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 35.475632 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd464bb36c5bea6d21f98dc1dfb43c4b0') in 2.556718 seconds 
+  Time since last request: 81.165252 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6382dabb0cb092e3ca74f3da0fad80d0') in 0.024303 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 31.450862 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4d3091a3e32e55c1f2b5dc1f6b2748c') in 1.228672 seconds 
+  Time since last request: 13.329039 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '066ace4cd101767b746633f1d228f7e9') in 0.020446 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 82.646284 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef0f160cad80605ebbef16577d17a8f1') in 0.845933 seconds 
+  Time since last request: 16.145386 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa3a231f38d8c057d9e7da08e24bcb59') in 0.024969 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 47.290993 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animation_Circle_Progress/Circle_Graph_Skill_Progress.shadergraph
-  artifactKey: Guid(e7f93edae95e0fe48a4779f61fb12608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animation_Circle_Progress/Circle_Graph_Skill_Progress.shadergraph using Guid(e7f93edae95e0fe48a4779f61fb12608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69cab6f4631479fbb07e84622fb50026') in 0.037880 seconds 
+  Time since last request: 43.523013 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f133882e7346780c8b5cea15b2ddaf9') in 0.022963 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.208224 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animation_Circle_Progress/Circle_Front_Graph.shadergraph
-  artifactKey: Guid(d220ea221ec0edf4e89d28e04ece2283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animation_Circle_Progress/Circle_Front_Graph.shadergraph using Guid(d220ea221ec0edf4e89d28e04ece2283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6cf14085acbe1480272c4d507e9ad15') in 0.025873 seconds 
+  Time since last request: 5.931990 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a81de4bd3601baa7bc0dd7c60e27813') in 0.028190 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 19.990816 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Circle_Front_Graph.shadergraph
-  artifactKey: Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Circle_Front_Graph.shadergraph using Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea6f4a20f38e2ef4f7a07c578199260a') in 0.008735 seconds 
+  Time since last request: 19.666004 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27404ecd6d71872167bc1f79b2fbb136') in 0.022799 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.893740 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee61caed929bccae05768ec4a2db7172') in 0.927514 seconds 
+  Time since last request: 46.256048 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94dc813150a2f46e7d5d1c8b4df8d3dd') in 0.025846 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 87.701873 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Circle_Front_Graph.shadergraph
-  artifactKey: Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Circle_Front_Graph.shadergraph using Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e144fe6a5e56a6833568c93b314d20c1') in 0.009980 seconds 
+  Time since last request: 5.540036 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd26bf6038ca4d6aecfbf27caad572591') in 0.022426 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.908597 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Front_Graph.shadergraph
-  artifactKey: Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Front_Graph.shadergraph using Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e4f6d9125ecc1277121bd78535b1f0a') in 0.031570 seconds 
+  Time since last request: 18.876227 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8beb0a2a8ef17cd5a0928c055bdcf35') in 0.021264 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 25.829222 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Front_Graph.shadergraph
-  artifactKey: Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Front_Graph.shadergraph using Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98a12b228b70ce33a86a124dc4c7d0ec') in 0.013347 seconds 
+  Time since last request: 215.589245 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/try_3_long 1.fbx
+  artifactKey: Guid(85b3a461bc5ef234e8d02a86de9577a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/try_3_long 1.fbx using Guid(85b3a461bc5ef234e8d02a86de9577a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06379863275be0dde8698a835bcdf6bb') in 0.053499 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 48.923679 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '479cf4e5a61e39a4b8cce8640bc63a7f') in 1.788958 seconds 
+  Time since last request: 11.758693 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be1f632f8b0703656649567541594a0a') in 0.025010 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 66.581571 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bcdd1d04eb18e819cdf2902e9230ad8') in 0.030215 seconds 
+  Time since last request: 209.616284 seconds.
+  path: Assets/ibah555TexturePack/Slash/Slash_VFX.vfx
+  artifactKey: Guid(1fe464a04641e7c4cacc4387326d5f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Slash/Slash_VFX.vfx using Guid(1fe464a04641e7c4cacc4387326d5f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2177afbdd9d9b26352cbc6e5af4aa48d') in 0.090136 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 45.986084 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8c7b76c3cff45e99a8a9146c17af25c') in 1.520211 seconds 
+  Time since last request: 17.281013 seconds.
+  path: Assets/ibah555TexturePack/Slash/Slash_VFX.vfx
+  artifactKey: Guid(1fe464a04641e7c4cacc4387326d5f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Slash/Slash_VFX.vfx using Guid(1fe464a04641e7c4cacc4387326d5f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fa454788dac2cc024c61b0988375c8c') in 0.044840 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 268.847136 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bb7110e0a3ec851cde9aa52be6f86a') in 1.317168 seconds 
+  Time since last request: 51.275658 seconds.
+  path: Assets/ibah555TexturePack/Slash/Slash_VFX.vfx
+  artifactKey: Guid(1fe464a04641e7c4cacc4387326d5f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Slash/Slash_VFX.vfx using Guid(1fe464a04641e7c4cacc4387326d5f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9a18ac8f6333a7e215328870dc74376') in 0.064048 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 77.445921 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f70f45b7801de1ba32aae7b66b07a17b') in 1.672060 seconds 
+  Time since last request: 231.627179 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f769023cb044649f43cff9c38c0ef59') in 0.040275 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 40.569487 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dccee946985ab3c245bff25fed893e4d') in 0.006153 seconds 
+  Time since last request: 47.093580 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5a35d6c642560cef0843676dff8b759') in 0.021996 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 62.849951 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Slash_Graph.shadergraph
-  artifactKey: Guid(047bd2debfc7ddc44909599b73dcac5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Slash_Graph.shadergraph using Guid(047bd2debfc7ddc44909599b73dcac5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b666fb8ccc5e9fc340344b71efa3d3c4') in 0.026972 seconds 
+  Time since last request: 150.842820 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cb8f89fc423ad058b58133c2dd177c4') in 0.006064 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.914446 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx
-  artifactKey: Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Skill_Long.vfx using Guid(bb4c2da3c79b1fc40a7c7b95363ccd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a1c7c6a7a7247049e6fde6ee5c65ee') in 0.006131 seconds 
+  Time since last request: 15.320343 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2584c35964e6850cfe44baf730c4c1f') in 0.023394 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.902632 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Front_Graph.shadergraph
-  artifactKey: Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Front_Graph.shadergraph using Guid(be723d00dd1b14543a395d3cabe44b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc3ac12821295f6b16b9d864523343cd') in 0.010618 seconds 
+  Time since last request: 111.171233 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61e9719c77af170942e2d2fd424a6e2d') in 0.042887 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.116969 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Slash_VFX.prefab
-  artifactKey: Guid(982848362ea00fa4c88af1412c61e7a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Slash_VFX.prefab using Guid(982848362ea00fa4c88af1412c61e7a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1a604a519df5e5fc87670fc4f8c36f8') in 0.092629 seconds 
+  Time since last request: 101.235557 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
+  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e23ec6dc8a9286473685dffa1a4a0b4') in 0.030606 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 23.982186 seconds.
+  Time since last request: 116.297849 seconds.
   path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Slash_VFX.vfx
-  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Slash_VFX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41cef988a240eebe2013fff724e83d5d') in 2.157967 seconds 
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Slash_VFX.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75b81f6f9276d342651414c12eceddb4') in 2.174840 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 85.698783 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
-  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7ab495d907d23d4eeb04273bf2f7ab4') in 2.261525 seconds 
+  Time since last request: 8.225670 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '089be99864cff1db95211342c3326664') in 2.055396 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 41.268344 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Graph_2.shadergraph
-  artifactKey: Guid(047bd2debfc7ddc44909599b73dcac5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Graph_2.shadergraph using Guid(047bd2debfc7ddc44909599b73dcac5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71642a9c5addbc3a7d02070a5f4cf815') in 0.029198 seconds 
+  Time since last request: 37.865653 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e30a9f0043a6b78be221af5d2a81043') in 2.380938 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 39.798605 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Graph_2.shadergraph
-  artifactKey: Guid(047bd2debfc7ddc44909599b73dcac5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_Graph_2.shadergraph using Guid(047bd2debfc7ddc44909599b73dcac5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9d8f56f54bf79bee1a27a209932b95') in 0.009738 seconds 
+  Time since last request: 10.760759 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '590e9f5fc0bbb1505cc0381293ec0b73') in 0.799914 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 28.229902 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
-  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dc0fa0afb5481e443feea7fe0f44e74') in 3.465604 seconds 
+  Time since last request: 23.172604 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c57fedce4357e3bd81075c370065343') in 0.849818 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 10.865964 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
-  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a58fab5ea68a600ac9669e5d81723f5') in 0.777183 seconds 
+  Time since last request: 200.832046 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b9bcd4a04a9affbd8713e74bb783949') in 0.890081 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.351000 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
-  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9574bdfcb48308df0073031bdc76d4d') in 1.663572 seconds 
+  Time since last request: 102.313356 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f93412fbea85cabee535127e1459fdc') in 0.809974 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.547428 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx
-  artifactKey: Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Long_FVX.vfx using Guid(0884bec32895e0042a0083979a5dacd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d182ef6242c85fe7ef2639903358827') in 0.810515 seconds 
+  Time since last request: 6.620367 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a10c3833b9d3d4afb9d5ef3e13ca00e') in 0.031433 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 102.362319 seconds.
-  path: Assets/ibah555TexturePack/Slash/Try_Long_2.fbx
-  artifactKey: Guid(b49559d133c93884a84243aa99933995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Slash/Try_Long_2.fbx using Guid(b49559d133c93884a84243aa99933995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9716d3d9a3557b3fcd6ff65f9efe8971') in 0.051992 seconds 
+  Time since last request: 8.873397 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68d2d0080164d82596e02265754f5f6a') in 0.605347 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.981045 seconds.
-  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Try_Long_2.fbx
-  artifactKey: Guid(d81cea04aeedc6c43839783c0d8f4ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/Try_Long_2.fbx using Guid(d81cea04aeedc6c43839783c0d8f4ca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '708554f139cb87dc033aceac43084c71') in 0.031606 seconds 
+  Time since last request: 288.045064 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27d08fc2f288a880460fe704abb5a15d') in 0.028598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 162.267322 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/00_00.fbx
+  artifactKey: Guid(aacac71caceb02847a0eae60ed7087eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/00_00.fbx using Guid(aacac71caceb02847a0eae60ed7087eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcb03ddfc1c3e6283a89c5215621e8a7') in 0.060935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.355365 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '831770e0e1da531a660b705dfc462a09') in 0.643871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 207.756608 seconds.
+  path: Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx
+  artifactKey: Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Skill_Animaiont_Long_Progress/23 46.vfx using Guid(30b69e57d2ed5224f84a58b8ce869784) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55a283a326be87a18329c34e604cb009') in 0.029838 seconds 
