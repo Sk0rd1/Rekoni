@@ -15,6 +15,7 @@ public class SpellManager : MonoBehaviour
     private int spellNum = 0;
     private int numOfPrevSpell = 0;
     private bool isCastSpell = false;
+    private bool isCanselSpell = false;
     private bool isGamepadUsing = false;
     private bool firstCircleOfSpells = true;
     private int numOfCircle = 0;
@@ -49,6 +50,19 @@ public class SpellManager : MonoBehaviour
         isGamepadUsing = inputManager.IsGamepadUsing();
         spellNum = inputManager.SpellNum;
         spellNumUp = inputManager.SpellNumUp;
+
+        if (inputManager.IsCancelSpell)
+        {
+            isCanselSpell = true;
+            CancelAllSpells();
+            return;
+        }
+        else
+        {
+            isCanselSpell = false;
+        }
+
+        Debug.Log(spellNum);
 
         if (inputManager.ButtonNextSpells)
         {
@@ -107,14 +121,14 @@ public class SpellManager : MonoBehaviour
         else
         {
             isCastSpell = true;
-            while (spellNumUp != 1 && (spellNum == 0 || currentSpellNum == spellNum))
+            while (spellNumUp != 1 && (spellNum == 0 || currentSpellNum == spellNum) && !isCanselSpell)
             {
                 isCastSpell = true;
                 spellPos[currentSpellNum - 1].FirstStageOfCast(cursorPosition.position, transform.position, isGamepadUsing);
                 yield return new WaitForEndOfFrame();
             }
             isCastSpell = false;
-            if (spellNum == 0 || currentSpellNum == spellNum)
+            if ((spellNum == 0 || currentSpellNum == spellNum) && !isCanselSpell)
             {
                 spellPos[currentSpellNum - 1].SecondStageOfCast(cursorPosition.position, transform.position, isGamepadUsing);
             }

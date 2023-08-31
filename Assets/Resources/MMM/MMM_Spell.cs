@@ -68,11 +68,15 @@ public class MMM_Spell : SpellUniversal
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         cursorModel.SetActive(true);
-        cursorModel.transform.position = DistanceWithRadius(mousePosition, characterPosition, isGamepadUsing);
+
+        centerSpell = DistanceWithRadius(mousePosition, characterPosition, isGamepadUsing);
+
+        cursorModel.transform.position = centerSpell;
     }
 
     public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
+        FirstStageOfCast(mousePosition, characterPosition, isGamepadUsing);
         StartCoroutine(Reload());
         cursorModel.SetActive(false);
         effectList = new List<GameObject>();
@@ -97,9 +101,7 @@ public class MMM_Spell : SpellUniversal
             cursorList.Add(instantinateCurdorForEffect);
         }
 
-        centerSpell = cursorModel.transform.position;
-
-        cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        //centerSpell = cursorModel.transform.position;
 
         StartCoroutine(EffectCast());
     }
