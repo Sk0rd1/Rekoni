@@ -19,6 +19,11 @@ public class SpellUniversal : MonoBehaviour
         return 0f;
     }
 
+    public virtual float RadiusCast()
+    {
+        return 0f;
+    }
+
     public virtual void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
 

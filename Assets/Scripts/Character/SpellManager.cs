@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class SpellManager : MonoBehaviour
 {
+    [SerializeField]
+    float cursorGamepadSpeed = 5.0f;
+
     Transform cursorPosition;
     InputManager inputManager;
 
@@ -15,13 +19,17 @@ public class SpellManager : MonoBehaviour
     private int spellNum = 0;
     private int numOfPrevSpell = 0;
     private bool isCastSpell = false;
-    private bool isCanselSpell = false;
+    private bool secondCircleOfSpells = false;
     private bool isGamepadUsing = false;
-    private bool firstCircleOfSpells = true;
+    private bool isCanselSpell = false;
     private int numOfCircle = 0;
 
+    TextMeshProUGUI[] textNum = new TextMeshProUGUI[8];
+    GameObject[] frontImage = new GameObject[8];
     private GameObject back1; 
-    private GameObject back2; 
+    private GameObject back2;
+
+    private Vector3 resultPosition = Vector3.zero;
 
     private void Start()
     {
@@ -43,6 +51,15 @@ public class SpellManager : MonoBehaviour
         spellPos[5] = GameObject.Find("SpellsList").GetComponent<MMM_Spell>();
         spellPos[6] = GameObject.Find("SpellsList").GetComponent<MMM_Spell>();
         spellPos[7] = GameObject.Find("SpellsList").GetComponent<MMM_Spell>();
+
+        for (int i = 0; i < 8; i++)
+        {
+            int frontNum = i + 1;
+            string resultFront = "Main Camera/Canvas/Front_" + frontNum;
+            frontImage[i] = GameObject.Find(resultFront);
+            string resultNum = "Main Camera/Canvas/Num_" + frontNum;
+            textNum[i] = GameObject.Find(resultNum).GetComponent<TextMeshProUGUI>();
+        }
     }
 
     public void CheckCast()
@@ -62,26 +79,19 @@ public class SpellManager : MonoBehaviour
             isCanselSpell = false;
         }
 
-        Debug.Log(spellNum);
+        secondCircleOfSpells = inputManager.ButtonNextSpells;
 
-        if (inputManager.ButtonNextSpells)
+        if(secondCircleOfSpells)
         {
-            if(firstCircleOfSpells)
-            {
-                Debug.Log("true");
-                firstCircleOfSpells = false;
-                numOfCircle += 4;
-                back1.SetActive(false);
-                back2.SetActive(true);
-            }
-            else
-            {
-                Debug.Log("false");
-                firstCircleOfSpells = true;
-                numOfCircle -= 4;
-                back1.SetActive(true);
-                back2.SetActive(false);
-            }
+            numOfCircle = 4;
+            back1.SetActive(false);
+            back2.SetActive(true);
+        }
+        else
+        {
+            numOfCircle = 0;
+            back2.SetActive(false);
+            back1.SetActive(true);
         }
 
         if (spellNum != 0)
@@ -89,7 +99,22 @@ public class SpellManager : MonoBehaviour
 
         if (isGamepadUsing)
         {
+            if(spellNumUp != 0)
+                spellNumUp += numOfCircle;
 
+            if (spellNum != 0)
+            {
+                if (spellPos[spellNum - 1].IsSpellReady() && numOfPrevSpell != spellNum)
+                {
+                    numOfPrevSpell = spellNum;
+                    StartCoroutine(OneOfSpellGamepad(spellNum));
+                }
+
+                if (!spellPos[spellNum - 1].IsSpellReady())
+                {
+                    CancelAllSpells();
+                }
+            }
         }
         else
         {
@@ -136,8 +161,53 @@ public class SpellManager : MonoBehaviour
         numOfPrevSpell = 0;
     }
 
+    private IEnumerator OneOfSpellGamepad(int currentSpellNum)
+    {
+        CancelAllSpells();
+
+        if (spellPos[currentSpellNum - 1].IsMomemtaryCast())
+        {
+            spellPos[currentSpellNum - 1].SecondStageOfCast(cursorPosition.position, transform.position, isGamepadUsing);
+        }
+        else
+        {
+            isCastSpell = true;
+            Vector3 gamepadPosition = new Vector3();
+            while ((spellNum == 0 || currentSpellNum == spellNum) && !isCanselSpell)
+            {
+                if (currentSpellNum == spellNumUp)
+                    break;
+                isCastSpell = true;
+                gamepadPosition = GamepadPosition(spellPos[currentSpellNum - 1].RadiusCast());
+                spellPos[currentSpellNum - 1].FirstStageOfCast(gamepadPosition, transform.position, isGamepadUsing);
+                yield return new WaitForEndOfFrame();
+            }
+            resultPosition = Vector3.zero;
+            isCastSpell = false;
+            if ((spellNum == 0 || currentSpellNum == spellNum) && !isCanselSpell && spellNumUp == currentSpellNum)
+            {
+                spellPos[currentSpellNum - 1].SecondStageOfCast(gamepadPosition, transform.position, isGamepadUsing);
+            }
+        }
+        numOfPrevSpell = 0;
+    }
+
+    private Vector3 GamepadPosition(float radiusCast)
+    {
+        resultPosition += cursorPosition.position * Time.deltaTime * cursorGamepadSpeed;
+        resultPosition.y = 0;
+
+        if(Mathf.Sqrt(resultPosition.x * resultPosition.x + resultPosition.z * resultPosition.z) > radiusCast)
+        {
+            resultPosition = resultPosition.normalized * radiusCast;
+        }
+
+        return (resultPosition + transform.position);
+    }
+
     private void CancelAllSpells()
     {
+        resultPosition = Vector3.zero;
         for (int i = 0; i < 8; i++)
         {
             spellPos[i].CancelCast(cursorPosition.position, transform.position, isGamepadUsing);
@@ -153,7 +223,14 @@ public class SpellManager : MonoBehaviour
     {
         if (isCastSpell)
         {
-            transform.LookAt(cursorPosition);
+            if (isGamepadUsing)
+            {
+                transform.LookAt(transform.position + resultPosition);
+            }
+            else
+            {
+                transform.LookAt(cursorPosition);
+            }
         }
     }
 
@@ -161,25 +238,16 @@ public class SpellManager : MonoBehaviour
     {
         for(int i = 0; i < 8; i++)
         {
-            int frontNum = i + 1;
-
-            string resultFront = "Main Camera/Canvas/Front_" + frontNum;
-            GameObject frontImage = GameObject.Find(resultFront);
-
-            string resultNum = "Main Camera/Canvas/Num_" + frontNum;
-            TextMeshProUGUI textNum = GameObject.Find(resultNum).GetComponent<TextMeshProUGUI>();
-
             if (spellPos[i].IsSpellReady())
             {
-                frontImage.SetActive(false);
-                textNum.text = " ";
-
+                frontImage[i].SetActive(false);
+                textNum[i].text = " ";
             }
             else
             {
-                frontImage.SetActive(true);
+                frontImage[i].SetActive(true);
                 int reload = (int)spellPos[i].TimeReload() + 1;
-                textNum.text = reload.ToString();
+                textNum[i].text = reload.ToString();
             }
         }
     }

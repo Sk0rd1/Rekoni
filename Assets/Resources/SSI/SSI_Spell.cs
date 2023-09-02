@@ -55,6 +55,11 @@ public class SSI_Spell : SpellUniversal
         return isSpellReady;
     }
 
+    public override float RadiusCast()
+    {
+        return spellDistance;
+    }
+
     public override float TimeReload()
     {
         return currentReload;
@@ -63,7 +68,7 @@ public class SSI_Spell : SpellUniversal
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         cursorModel.SetActive(true);
-        cursorModel.transform.position = DistanceWithRadius(mousePosition, characterPosition, isGamepadUsing);
+        cursorModel.transform.position = mousePosition;
     }
 
     public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -123,87 +128,5 @@ public class SSI_Spell : SpellUniversal
         ssi.IsCastBH = false;
 
         effectModel.transform.position += new Vector3(0f, -20f, 0f);
-    }
-
-    private Vector3 DistanceWithRadius(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
-    {
-        Vector3 pointCenterSpell = PointCenterSpell(cursorPosition, characterPosition, isGamepadUsing) - characterPosition;
-
-        if (isGamepadUsing)
-        {
-            if (Mathf.Sqrt(pointCenterSpell.x * pointCenterSpell.x + pointCenterSpell.z * pointCenterSpell.z) < spellDistance)
-            {
-                return pointCenterSpell + characterPosition;
-            }
-            else
-            {
-                pointCenterSpell.y = 0f;
-                pointCenterSpell.Normalize();
-
-                currentGamepadPosition = pointCenterSpell * spellDistance;
-
-                pointCenterSpell = characterPosition + currentGamepadPosition;
-
-                return pointCenterSpell;
-            }
-        }
-        else
-        {
-            float deltaX = cursorPosition.x - characterPosition.x;
-            float deltaZ = cursorPosition.z - characterPosition.z;
-
-            if (Mathf.Sqrt(deltaX * deltaX + deltaZ * deltaZ) < spellDistance)
-            {
-                return pointCenterSpell + characterPosition;
-            }
-            else
-            {
-                Vector3 pointDirection = cursorPosition - characterPosition;
-                pointDirection.y = 0f;
-                pointDirection.Normalize();
-
-                pointCenterSpell = characterPosition + pointDirection * spellDistance;
-
-                return pointCenterSpell;
-            }
-        }
-    }
-
-    private Vector3 PointCenterSpell(Vector3 cursorPosition, Vector3 characterPosition, bool isGamepadUsing)
-    {
-        Vector3 pointCenterSpell = Vector3.zero;
-
-        if (isGamepadUsing)
-        {
-            if (cursorPosition.x < 0f)
-            {
-                cursorPosition.x = cursorPosition.x * cursorPosition.x;
-                cursorPosition.x = -cursorPosition.x;
-            }
-            else
-            {
-                cursorPosition.x = cursorPosition.x * cursorPosition.x;
-            }
-
-            if (cursorPosition.z < 0f)
-            {
-                cursorPosition.z = cursorPosition.z * cursorPosition.z;
-                cursorPosition.z = -cursorPosition.z;
-            }
-            else
-            {
-                cursorPosition.z = cursorPosition.z * cursorPosition.z;
-            }
-
-            currentGamepadPosition += cursorPosition;
-
-            pointCenterSpell = characterPosition + currentGamepadPosition * Time.deltaTime;
-        }
-        else
-        {
-            pointCenterSpell = cursorPosition;
-        }
-
-        return pointCenterSpell;
     }
 }
