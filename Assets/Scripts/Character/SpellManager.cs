@@ -173,6 +173,8 @@ public class SpellManager : MonoBehaviour
         {
             isCastSpell = true;
             Vector3 gamepadPosition = new Vector3();
+            resultPosition = transform.forward.normalized * 5f;
+            Debug.Log(resultPosition);
             while ((spellNum == 0 || currentSpellNum == spellNum) && !isCanselSpell)
             {
                 if (currentSpellNum == spellNumUp)
