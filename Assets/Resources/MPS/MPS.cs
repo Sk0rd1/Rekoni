@@ -38,7 +38,8 @@ public class MPS : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             EnemysMovement enMov = other.GetComponent<EnemysMovement>();
-            enMov.Slow(slow);
+            float unslow = -1 * slow;
+            enMov.Slow(unslow);
             enemyCount--;
         }
     }

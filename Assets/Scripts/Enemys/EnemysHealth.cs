@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemysHealth : MonoBehaviour
 {
-    private int health = 10;
+    /*private int health = 10;
     private bool enemyIsDeath = false;
 
     private const float POISONINTERVAL = 1f;
@@ -23,27 +23,27 @@ public class EnemysHealth : MonoBehaviour
     private bool isFireTimerStart = false;
 
     private Renderer renderer;
-    private Material material;
+    private Material material;*/
 
     private void Start()
     {
-        renderer = GetComponent<Renderer>();
-        material = renderer.material;
+        /*renderer = GetComponent<Renderer>();
+        material = renderer.material;*/
     }
 
     private void MinusHealth(int damage)
     {
-        health -= damage;
+        /*health -= damage;
         //Debug.Log("HP" + health);
 
         if(health < 1 && !enemyIsDeath)
         {
             enemyIsDeath = true;
             StartCoroutine(Death());
-        }
+        }*/
     }
 
-    IEnumerator Death()
+    /*IEnumerator Death()
     {
         float currentValue = 1f;
 
@@ -56,38 +56,38 @@ public class EnemysHealth : MonoBehaviour
 
         yield return null;
         Destroy(gameObject);
+    }*/
+
+    public virtual void Damage(int damage)
+    {
+        /*MinusHealth(damage);*/
     }
 
-    public void Damage(int damage)
+    public virtual void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
     {
-        MinusHealth(damage);
-    }
-
-    public void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
-    {
-        totalPoisonDamage += totalDamage;
+        /*totalPoisonDamage += totalDamage;
 
         StartCoroutine(DamageFromPoison(increasesDamage, fullTime));
 
         if (!isPoisonTimerStart)
         {
             StartCoroutine(CountPoisonDamage(increasesDamage, fullTime));
-        }
+        }*/
     }
 
-    public void FireDamage(int finalDamage, int increasingDamage)
+    public virtual void FireDamage(int finalDamage, int increasingDamage)
     {
-        increaseFireDamage += increasingDamage;
+        /*increaseFireDamage += increasingDamage;
         StartCoroutine(CountFireDamage());
         finalFireDamage += finalDamage;
         numOfFireEffects++;
         if (!isFireTimerStart)
         {
             StartCoroutine(FinalFireDamage());
-        }
+        }*/
     }
 
-    IEnumerator CountFireDamage()
+    /*IEnumerator CountFireDamage()
     {
         int numOfTiks = (int)(TIMETOFIREDAMAGE / FIREINTERVAL);
 
@@ -144,5 +144,5 @@ public class EnemysHealth : MonoBehaviour
         yield return new WaitForSeconds(fullTime);
 
         increasePoisonDamage -= increasesDamage;
-    }
+    }*/
 }

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    public int health = 50;
-
+    private int health = 50;
     private TextMeshProUGUI textTMP;
 
     private void Start()
