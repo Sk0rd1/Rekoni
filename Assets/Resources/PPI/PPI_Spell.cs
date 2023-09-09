@@ -6,7 +6,7 @@ public class PPI_Spell : SpellUniversal
 {
     public const bool MOMENTARYCAST = true;
     [SerializeField]
-    private float shieldDuration = 3f;
+    private float shieldDuration = 7f;
     [SerializeField]
     private float reloadTime = 4f;
     [SerializeField]
@@ -55,6 +55,7 @@ public class PPI_Spell : SpellUniversal
         Vector3 shieldPosition = characterGirl.transform.position + shieldOffset;
         effectModel = Resources.Load<GameObject>(effectName);
         GameObject shieldEffect = Instantiate(effectModel, shieldPosition, Quaternion.identity);
+        characterGirl.GetComponent<Health>().AddShield(numOfAttack, shieldDuration, shieldEffect);
 
         float currenrTime = 0f;
         while (currenrTime < shieldDuration)

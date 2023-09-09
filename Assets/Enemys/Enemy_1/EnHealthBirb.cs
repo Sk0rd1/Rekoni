@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnHealthBirb : EnemysHealth
 {
-    private int health = 10;
+    private int health = 50;
     private bool enemyIsDeath = false;
 
     private const float POISONINTERVAL = 1f;
@@ -27,12 +27,14 @@ public class EnHealthBirb : EnemysHealth
     private Renderer renderer;
     private Material[] material;
     private Animator animator;
+    private EnMovBirb enMovBirb;
 
     private void Start()
     {
         renderer = GetComponentInChildren<Renderer>();
         material = renderer.materials;
         animator = GetComponent<Animator>();
+        enMovBirb = GetComponent<EnMovBirb>();
     }
 
     private void MinusHealth(int damage)

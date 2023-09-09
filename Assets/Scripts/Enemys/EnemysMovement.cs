@@ -17,6 +17,11 @@ public class EnemysMovement : MonoBehaviour
         characterGirl = GameObject.Find("CharacterGirl");*/
     }
 
+    public virtual void IsStunned(float time)
+    {
+
+    }
+
     public virtual void Slow(float slow)
     {
         /*currentPercentSpeed -= slow;
