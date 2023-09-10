@@ -40,19 +40,6 @@ public class Health : MonoBehaviour
             currentNumOfShields += numOfShields[i].num;
         }
 
-        for (int i = 0; i < numOfShields.Count; i++)
-        {
-            if (numOfShields[i].num == 0)
-            {
-                try
-                {
-                    numOfShields[i].obj.SetActive(false);
-                }
-                catch { }
-                numOfShields.RemoveAt(i);
-            }
-        }
-
         if (currentNumOfShields > 0)
         {
             for (int i = 0; i < numOfShields.Count; i++)
@@ -76,6 +63,19 @@ public class Health : MonoBehaviour
                 Debug.Log("Dead");
             }
             textTMP.text = health.ToString();
+        }
+
+        for (int i = 0; i < numOfShields.Count; i++)
+        {
+            if (numOfShields[i].num == 0)
+            {
+                try
+                {
+                    numOfShields[i].obj.SetActive(false);
+                }
+                catch { }
+                numOfShields.RemoveAt(i);
+            }
         }
     }
 

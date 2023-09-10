@@ -122,23 +122,21 @@ public class III_Spell : SpellUniversal
         float characterRotation = Mathf.Atan2(characterDirection.y, characterDirection.x);
         float angularArrowRad = angularArrow * Mathf.PI / 180; // перетворення градусів в радіани
 
-        Vector3 finalPoint = new Vector3(
-            characterPosition.x + distanceArrow * Mathf.Cos(characterRotation + angularArrowRad),
-            characterPosition.y,
-            characterPosition.z + distanceArrow * Mathf.Sin(characterRotation + angularArrowRad)
-        );
+        Vector3 finalPoint = characterPosition + Quaternion.AngleAxis(angularArrow, Vector3.up) * characterDirection * distanceArrow;
         Debug.Log(num + " " + finalPoint);
 
         effectList[num].SetActive(true);
         effectList[num].transform.position = characterPosition + characterDirection * 2f;
         Vector3 finalDirection = finalPoint.normalized;
+        effectList[num].transform.position = finalPoint;
 
         float currentDistance = 0f;
-        while (Vector3.Distance(characterPosition, finalPoint) < distanceArrow)
+        /*while (Vector3.Distance(characterPosition, finalPoint) < distanceArrow)
         {
             effectList[num].transform.LookAt(finalPoint);
             effectList[num].transform.position += finalDirection * Time.deltaTime * speedArrow;
             yield return new WaitForEndOfFrame();
-        }
+        }*/
+        yield return null;
     }
 }
