@@ -108,10 +108,10 @@ public class EnMovBirb : EnemysMovement
         agent.SetDestination(transform.position);
         agent.Stop();
         agent.ResetPath();
-        yield return new WaitForSeconds(0.667f);
+        yield return new WaitForSeconds(0.367f);
         if (Vector3.Distance(characterGirl.transform.position, transform.position) < punchRadius * 1.5f)
             characterGirl.GetComponent<Health>().DealDamage(10);
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.45f);
         animator.SetBool("isPunch", false);
         yield return new WaitForSeconds(0.5f);
         readyToFight = true;
