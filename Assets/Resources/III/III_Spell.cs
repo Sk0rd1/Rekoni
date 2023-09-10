@@ -1,36 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
-public class SSI_Spell : SpellUniversal
+public class III_Spell : SpellUniversal
 {
     [SerializeField]
     private float reloadTime = 4f;
     [SerializeField]
-    private float timeCast = 3f;
-    [SerializeField]
-    private float timePeriod = 1f;
-    [SerializeField]
     private int damage = 4;
     [SerializeField]
-    private float forceAttraction = 0.1f;
+    private float timeStunned = 1.5f;
+    [SerializeField]
+    private float distanceArrow = 10f;
+    [SerializeField]
+    private int numberOfArrows = 6;
 
     public const bool MOMENTARYCAST = false;
-
-    SSI ssi;
 
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
     private GameObject cursorModel;
     private GameObject effectModel;
 
-    private string cursorName = "SSI/Cursor";
-    private string effectName = "SSI/BlackHole";
+    private string cursorName = "III/Cursor";
+    private string effectName = "III/IceArrow";
 
     private float effectRadius = 3f;
     private bool isSpellReady = true;
     private float spellDistance = 20f;
     private float currentReload = 0f;
+
+    private List<GameObject> effectList = new List<GameObject>();
 
     void Start()
     {
@@ -40,8 +42,16 @@ public class SSI_Spell : SpellUniversal
 
         effectPrefabModel = Resources.Load<GameObject>(effectName);
         effectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-        ssi = effectModel.GetComponentInChildren<SSI>();
         effectModel.SetActive(false);
+
+        for (int i = 0; i < numberOfArrows; i++)
+        {
+            effectPrefabModel = Resources.Load<GameObject>(effectName);
+            GameObject instantinateEffect = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+            effectList.Add(instantinateEffect);
+            //MMM mmm = instantinateEffect.GetComponentInChildren<MMM>();
+            //mmm.SetValues(startDamage, increasDamage, fireDuration);
+        }
     }
 
     public override bool IsMomemtaryCast()
@@ -77,11 +87,12 @@ public class SSI_Spell : SpellUniversal
 
         effectModel.transform.position = cursorModel.transform.position;
 
-        ssi.SetValues(timeCast, damage, forceAttraction);
-
         cursorModel.transform.position += new Vector3(0f, -20f, 0f);
 
-        StartCoroutine(EffectCast(effectModel));
+        for (int i = 0; i < numberOfArrows; i++)
+        {
+            StartCoroutine(MoveArrow(i, mousePosition, characterPosition));
+        }
     }
 
     public override void CancelCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -101,31 +112,33 @@ public class SSI_Spell : SpellUniversal
         isSpellReady = true;
     }
 
-    IEnumerator EffectCast(GameObject effect)
+    private IEnumerator MoveArrow(int num, Vector3 mousePosition, Vector3 characterPosition)
     {
-        float currentEffectRadius = 0.1f;
-        effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+        Vector3 characterDirection = mousePosition - characterPosition;
+        characterDirection.Normalize();
+        int speedArrow = Random.Range(10, 20);
+        int angularArrow = Random.Range(-45, 45);
 
-        ssi.IsCastBH = true;
+        float characterRotation = Mathf.Atan2(characterDirection.y, characterDirection.x);
+        float angularArrowRad = angularArrow * Mathf.PI / 180; // перетворення градусів в радіани
 
-        while (currentEffectRadius < effectRadius)
+        Vector3 finalPoint = new Vector3(
+            characterPosition.x + distanceArrow * Mathf.Cos(characterRotation + angularArrowRad),
+            characterPosition.y,
+            characterPosition.z + distanceArrow * Mathf.Sin(characterRotation + angularArrowRad)
+        );
+        Debug.Log(num + " " + finalPoint);
+
+        effectList[num].SetActive(true);
+        effectList[num].transform.position = characterPosition + characterDirection * 2f;
+        Vector3 finalDirection = finalPoint.normalized;
+
+        float currentDistance = 0f;
+        while (Vector3.Distance(characterPosition, finalPoint) < distanceArrow)
         {
-            currentEffectRadius += 5f * Time.deltaTime;
-            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
+            effectList[num].transform.LookAt(finalPoint);
+            effectList[num].transform.position += finalDirection * Time.deltaTime * speedArrow;
             yield return new WaitForEndOfFrame();
         }
-
-        yield return new WaitForSeconds(timeCast);
-
-        while (currentEffectRadius > 0.2f)
-        {
-            currentEffectRadius -= 10f * Time.deltaTime;
-            effect.transform.localScale = new Vector3(currentEffectRadius, currentEffectRadius, currentEffectRadius);
-            yield return new WaitForEndOfFrame();
-        }
-
-        ssi.IsCastBH = false;
-
-        effectModel.transform.position += new Vector3(0f, -20f, 0f);
     }
 }

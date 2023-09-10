@@ -10,6 +10,10 @@ public class EnMovBirb : EnemysMovement
     private bool isSee = false;
     private bool readyToFight = true;
     private float punchRadius = 4.0f;
+    private float timeStunned = 0f;
+    private float numOfStunns = 0f;
+    private bool isStunned = false;
+
 
     private float currentPercentSpeed = 100f;
     private float minimalPercentSpeed = 10f;
@@ -23,14 +27,26 @@ public class EnMovBirb : EnemysMovement
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
         animator = GetComponent<Animator>();
-        animator.SetBool("isRunnning", false);
+        //animator.SetBool("isRunnning", false);
         healthBirb = GetComponent<EnHealthBirb>();
+    }
+
+    public override void IsStunned(float time)
+    {
+        numOfStunns++;
+        StartCoroutine(Stunned(time));
+    }
+
+    private IEnumerator Stunned(float time)
+    {
+        isStunned = true;
+        yield return new WaitForSeconds(time);
+        if(--numOfStunns == 0) isStunned = false;
     }
 
     public override void Slow(float slow)
     {
         currentPercentSpeed -= slow;
-        Debug.Log("slow " + slow + " cPS " + currentPercentSpeed);
         if(currentPercentSpeed < minimalPercentSpeed)
         {
             currentPercentSpeed = minimalPercentSpeed;
@@ -63,20 +79,23 @@ public class EnMovBirb : EnemysMovement
         }
         else
         {
-            if (isSee && readyToFight)
+            if (isSee && readyToFight && !isStunned)
             {
-                Debug.Log("isSee, readyToFight");
                 if (Vector3.Distance(characterGirl.transform.position, transform.position) < punchRadius)
                 {
-                    Debug.Log("DealDamage");
                     StartCoroutine(DealDamage());
                 }
                 else
                 {
-                    Debug.Log("Run");
                     animator.SetBool("isRunning", true);
                     agent.SetDestination(characterGirl.transform.position);
                 }
+            }
+            else
+            {
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isPunch", false);
+                agent.ResetPath();
             }
         }
     }

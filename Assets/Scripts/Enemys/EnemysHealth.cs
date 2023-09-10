@@ -63,6 +63,11 @@ public class EnemysHealth : MonoBehaviour
         /*MinusHealth(damage);*/
     }
 
+    public virtual void Stunned(float time)
+    {
+
+    }
+
     public virtual void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
     {
         /*totalPoisonDamage += totalDamage;

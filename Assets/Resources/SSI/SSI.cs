@@ -22,7 +22,8 @@ public class SSI : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             EnemysHealth enemyHealth = other.GetComponent<EnemysHealth>();
-            StartCoroutine(PeriodDamage(enemyHealth));
+            EnemysMovement enemysMovement = other.GetComponent<EnemysMovement>();
+            StartCoroutine(PeriodDamage(enemyHealth, enemysMovement));
             StartCoroutine(EnemyToCenter(other.transform));
         }
     }
@@ -41,6 +42,7 @@ public class SSI : MonoBehaviour
                 resultVector.y = transform.position.y;
 
                 enemy.position += new Vector3(10 * resultVector.x * Time.deltaTime, 0, 10 * resultVector.z * Time.deltaTime);
+                enemy.Rotate(0, 90f * Time.deltaTime, 0);
             }
             catch { }
 
@@ -48,17 +50,18 @@ public class SSI : MonoBehaviour
         }
     }
 
-    IEnumerator PeriodDamage(EnemysHealth enemyHealth)
+    IEnumerator PeriodDamage(EnemysHealth enemyHealth, EnemysMovement enemyMovement)
     {
         while (IsCastBH)
         {
             try
             {
                 enemyHealth.Damage(damage);
+                enemyMovement.IsStunned(0.55f);
             }
             catch { }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
