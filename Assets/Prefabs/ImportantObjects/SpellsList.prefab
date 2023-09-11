@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1945469467995951219}
   - component: {fileID: 1945469467995951218}
   - component: {fileID: 8578448865577474419}
+  - component: {fileID: -3115391854141149835}
   m_Layer: 0
   m_Name: SpellsList
   m_TagString: Untagged
@@ -114,7 +115,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadTime: 4
-  timeCast: 3
-  timePeriod: 1
   damage: 4
-  forceAttraction: 0.1
+  timeStunned: 1.5
+  distanceArrow: 10
+  numberOfArrows: 6
+--- !u!114 &-3115391854141149835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945469467995951228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 7baf0709e13ab3a439d9964f6017536f, type: 2}
