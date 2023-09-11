@@ -6,25 +6,19 @@ using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class III_Spell : SpellUniversal
 {
-    [SerializeField]
     private float reloadTime = 4f;
-    [SerializeField]
     private int damage = 4;
-    [SerializeField]
     private float timeStunned = 1.5f;
-    [SerializeField]
-    private float distanceArrow = 10f;
-    [SerializeField]
-    private int numberOfArrows = 6;
+    private float distanceArrow = 26f;
+    private int numberOfArrows = 10;
 
     public const bool MOMENTARYCAST = false;
 
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
     private GameObject cursorModel;
-    private GameObject effectModel;
 
-    private string cursorName = "III/Cursor";
+    private string cursorName = "Cursors/Pizza60";
     private string effectName = "III/IceArrow";
 
     private float effectRadius = 3f;
@@ -37,20 +31,17 @@ public class III_Spell : SpellUniversal
     void Start()
     {
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
-        cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.EulerAngles(-90f, 0f, 0f));
+        cursorModel.transform.localScale *= 3f; 
         cursorModel.SetActive(false);
-
-        effectPrefabModel = Resources.Load<GameObject>(effectName);
-        effectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-        effectModel.SetActive(false);
 
         for (int i = 0; i < numberOfArrows; i++)
         {
             effectPrefabModel = Resources.Load<GameObject>(effectName);
             GameObject instantinateEffect = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
             effectList.Add(instantinateEffect);
-            //MMM mmm = instantinateEffect.GetComponentInChildren<MMM>();
-            //mmm.SetValues(startDamage, increasDamage, fireDuration);
+            III iii = instantinateEffect.GetComponent<III>();
+            iii.SetValues(damage, timeStunned);
         }
     }
 
@@ -77,17 +68,21 @@ public class III_Spell : SpellUniversal
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         cursorModel.SetActive(true);
-        cursorModel.transform.position = mousePosition;
+        cursorModel.transform.position = characterPosition;
+        Vector3 lookRotation = mousePosition - characterPosition;
+        lookRotation.y = 0f;
+        lookRotation.Normalize();
+        float rotationY = Mathf.Atan2(lookRotation.z, lookRotation.x) * Mathf.Rad2Deg;
+
+        cursorModel.transform.rotation = Quaternion.Euler(90f, - rotationY + 90, 0); //для інших курсорів міняти тільки Y
     }
 
     public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         StartCoroutine(Reload());
-        effectModel.SetActive(true);
-
-        effectModel.transform.position = cursorModel.transform.position;
 
         cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        cursorModel.SetActive(false);
 
         for (int i = 0; i < numberOfArrows; i++)
         {
@@ -116,27 +111,44 @@ public class III_Spell : SpellUniversal
     {
         Vector3 characterDirection = mousePosition - characterPosition;
         characterDirection.Normalize();
-        int speedArrow = Random.Range(10, 20);
-        int angularArrow = Random.Range(-45, 45);
+        int speedArrow = Random.Range(30, 50);
+        int angularArrow = Random.Range(-30, 30);
 
         float characterRotation = Mathf.Atan2(characterDirection.y, characterDirection.x);
         float angularArrowRad = angularArrow * Mathf.PI / 180; // перетворення градусів в радіани
 
-        Vector3 finalPoint = characterPosition + Quaternion.AngleAxis(angularArrow, Vector3.up) * characterDirection * distanceArrow;
-        Debug.Log(num + " " + finalPoint);
+        Vector3 finalPoint = RotatePointAroundPivot(mousePosition, characterPosition, angularArrow);
 
         effectList[num].SetActive(true);
         effectList[num].transform.position = characterPosition + characterDirection * 2f;
-        Vector3 finalDirection = finalPoint.normalized;
-        effectList[num].transform.position = finalPoint;
+        effectList[num].transform.position = new Vector3(effectList[num].transform.position.x, mousePosition.y, effectList[num].transform.position.z);
+        Vector3 finalDirection = finalPoint - characterPosition;
+        finalDirection.y = 0;
+        finalDirection.Normalize();
 
         float currentDistance = 0f;
-        /*while (Vector3.Distance(characterPosition, finalPoint) < distanceArrow)
+        effectList[num].transform.LookAt(finalPoint);
+        while (currentDistance < distanceArrow)
         {
-            effectList[num].transform.LookAt(finalPoint);
             effectList[num].transform.position += finalDirection * Time.deltaTime * speedArrow;
+            currentDistance += speedArrow * Time.deltaTime;
             yield return new WaitForEndOfFrame();
-        }*/
-        yield return null;
+        }
+        effectList[num].transform.position += new Vector3(0f, -30f, 0f);
+        yield return new WaitForSeconds(0.5f);
+        effectList[num].SetActive(false);
+    }
+
+    public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, float angle)
+    {
+        float valueY = point.y;
+        point.y = 0;
+        pivot.y = 0;
+        Vector3 dir = point - pivot;
+        dir.y = 0;
+        dir = Quaternion.Euler(0, angle, 0) * dir;
+        point = dir + pivot;
+        point.y = valueY;
+        return point;
     }
 }
