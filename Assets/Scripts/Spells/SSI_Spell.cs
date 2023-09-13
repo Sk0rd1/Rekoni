@@ -21,22 +21,30 @@ public class SSI_Spell : SpellUniversal
 
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
+    private GameObject radiusPrefabModel;
     private GameObject cursorModel;
     private GameObject effectModel;
+    private GameObject radiusModel;
 
-    private string cursorName = "SSI/Cursor";
+    private string cursorName = "Cursors/Pizza360";
     private string effectName = "SSI/BlackHole";
+    private string radiusName = "Cursors/Pizza360";
 
     private float effectRadius = 3f;
     private bool isSpellReady = true;
-    private float spellDistance = 20f;
     private float currentReload = 0f;
 
     void Start()
     {
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        cursorModel.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
         cursorModel.SetActive(false);
+
+        radiusPrefabModel = Resources.Load<GameObject>(radiusName);
+        radiusModel = Instantiate(radiusPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        radiusModel.transform.localScale = new Vector3(RadiusCast()/2, 2.0f, RadiusCast()/2);
+        radiusModel.SetActive(false);
 
         effectPrefabModel = Resources.Load<GameObject>(effectName);
         effectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
@@ -56,7 +64,7 @@ public class SSI_Spell : SpellUniversal
 
     public override float RadiusCast()
     {
-        return spellDistance;
+        return 20f;
     }
 
     public override float TimeReload()
@@ -67,7 +75,9 @@ public class SSI_Spell : SpellUniversal
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         cursorModel.SetActive(true);
+        radiusModel.SetActive(true);
         cursorModel.transform.position = mousePosition;
+        radiusModel.transform.position = characterPosition;
     }
 
     public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -79,7 +89,9 @@ public class SSI_Spell : SpellUniversal
 
         ssi.SetValues(timeCast, damage, forceAttraction);
 
-        cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        //cursorModel.transform.position += new Vector3(0f, -20f, 0f);
+        radiusModel.SetActive(false);
+        cursorModel.SetActive(false);
 
         StartCoroutine(EffectCast(effectModel));
     }
@@ -87,6 +99,7 @@ public class SSI_Spell : SpellUniversal
     public override void CancelCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         cursorModel.SetActive(false);
+        radiusModel.SetActive(false);
     }
 
     IEnumerator Reload()

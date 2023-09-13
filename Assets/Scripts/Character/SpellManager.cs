@@ -137,7 +137,7 @@ public class SpellManager : MonoBehaviour
 
         if (spellPos[currentSpellNum - 1].IsMomemtaryCast())
         {
-            spellPos[currentSpellNum - 1].SecondStageOfCast(cursorPosition.position, transform.position, isGamepadUsing);
+            spellPos[currentSpellNum - 1].SecondStageOfCast(CursorPosition(cursorPosition.position, spellPos[currentSpellNum - 1].RadiusCast()), transform.position, isGamepadUsing);
         }
         else
         {
@@ -145,16 +145,35 @@ public class SpellManager : MonoBehaviour
             while (spellNumUp != 1 && (spellNum == 0 || currentSpellNum == spellNum) && !isCanselSpell)
             {
                 isCastSpell = true;
-                spellPos[currentSpellNum - 1].FirstStageOfCast(cursorPosition.position, transform.position, isGamepadUsing);
+                spellPos[currentSpellNum - 1].FirstStageOfCast(CursorPosition(cursorPosition.position, spellPos[currentSpellNum - 1].RadiusCast()), transform.position, isGamepadUsing);
                 yield return new WaitForEndOfFrame();
             }
             isCastSpell = false;
             if ((spellNum == 0 || currentSpellNum == spellNum) && !isCanselSpell)
             {
-                spellPos[currentSpellNum - 1].SecondStageOfCast(cursorPosition.position, transform.position, isGamepadUsing);
+                spellPos[currentSpellNum - 1].SecondStageOfCast(CursorPosition(cursorPosition.position, spellPos[currentSpellNum - 1].RadiusCast()), transform.position, isGamepadUsing);
             }
         }
         numOfPrevSpell = 0;
+    }
+
+    private Vector3 CursorPosition(Vector3 position, float radius)
+    {
+        Vector3 radiusPosition = position - transform.position;
+
+        if(radiusPosition.x * radiusPosition.x + radiusPosition.z * radiusPosition.z < radius * radius)
+        {
+            return position;
+        }
+        else
+        {
+            Vector3 newPosition = new Vector3(radiusPosition.x, 0f, radiusPosition.z);
+            newPosition.Normalize();
+            newPosition *= radius;
+            newPosition.y = position.y;
+            
+            return newPosition + new Vector3(transform.position.x, 0f, transform.position.z);
+        }
     }
 
     private IEnumerator OneOfSpellGamepad(int currentSpellNum)
