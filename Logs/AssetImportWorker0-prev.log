@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54688
+51752
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [21704] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 2770092069 [EditorId] 2770092069 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [15884] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 505747838 [EditorId] 505747838 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [21704] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 2770092069 [EditorId] 2770092069 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [15884] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 505747838 [EditorId] 505747838 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 494.30 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 592.66 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56132
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56600
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005586 seconds.
+Registered in 0.007260 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 730.25 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 439.25 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.982 seconds
+- Completed reload, in  2.711 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2983ms)
-		BeginReloadAssembly (321ms)
+	ReloadAssembly (2713ms)
+		BeginReloadAssembly (377ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (2323ms)
-			LoadAssemblies (317ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (1968ms)
+			LoadAssemblies (379ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (430ms)
+			SetupTypeCache (380ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (125ms)
-			SetupLoadedEditorAssemblies (1567ms)
+			RebuildScriptCaches (108ms)
+			SetupLoadedEditorAssemblies (1294ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (46ms)
-				SetLoadedEditorAssemblies (4ms)
-				RefreshPlugins (731ms)
-				BeforeProcessingInitializeOnLoad (7ms)
-				ProcessInitializeOnLoadAttributes (604ms)
-				ProcessInitializeOnLoadMethodAttributes (174ms)
+				InitializePlatformSupportModulesInManaged (25ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (439ms)
+				BeforeProcessingInitializeOnLoad (6ms)
+				ProcessInitializeOnLoadAttributes (639ms)
+				ProcessInitializeOnLoadMethodAttributes (184ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (1ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.030289 seconds.
+Registered in 0.026373 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 640.29 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 548.44 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  8.298 seconds
+- Completed reload, in  7.197 seconds
 Domain Reload Profiling:
-	ReloadAssembly (8302ms)
-		BeginReloadAssembly (1075ms)
+	ReloadAssembly (7200ms)
+		BeginReloadAssembly (587ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (90ms)
+			DisableScriptedObjects (32ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (1ms)
-			CreateAndSetChildDomain (85ms)
-		EndReloadAssembly (6372ms)
-			LoadAssemblies (939ms)
+			CreateAndSetChildDomain (89ms)
+		EndReloadAssembly (6081ms)
+			LoadAssemblies (522ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (2044ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (460ms)
-			SetupLoadedEditorAssemblies (3079ms)
+			SetupTypeCache (2032ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (553ms)
+			SetupLoadedEditorAssemblies (2813ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (15ms)
+				InitializePlatformSupportModulesInManaged (19ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (641ms)
-				BeforeProcessingInitializeOnLoad (591ms)
-				ProcessInitializeOnLoadAttributes (1501ms)
-				ProcessInitializeOnLoadMethodAttributes (321ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (1ms)
+				RefreshPlugins (549ms)
+				BeforeProcessingInitializeOnLoad (577ms)
+				ProcessInitializeOnLoadAttributes (1278ms)
+				ProcessInitializeOnLoadMethodAttributes (374ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (2ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (23ms)
+			AwakeInstancesAfterBackupRestoration (51ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.30 seconds
-Refreshing native plugins compatible for Editor in 5.11 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.26 seconds
+Refreshing native plugins compatible for Editor in 3.58 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5944 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6421.
-Memory consumption went from 355.3 MB to 352.6 MB.
-Total: 24.821000 ms (FindLiveObjects: 2.389200 ms CreateObjectMapping: 1.953900 ms MarkObjects: 15.934100 ms  DeleteObjects: 4.540300 ms)
+Unloading 5940 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6417.
+Memory consumption went from 355.9 MB to 353.2 MB.
+Total: 17.497600 ms (FindLiveObjects: 1.513900 ms CreateObjectMapping: 1.707600 ms MarkObjects: 12.486900 ms  DeleteObjects: 1.785800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,37 +164,559 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 2844442.321899 seconds.
-  path: Assets/Prefabs/DefaultObjects/ICE&WINTER/TestIce.mat
-  artifactKey: Guid(ff7cb43fc7f363c46a235c278ab3c5b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DefaultObjects/ICE&WINTER/TestIce.mat using Guid(ff7cb43fc7f363c46a235c278ab3c5b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36f47b72e8f7100377910b4a15491fd9') in 1.243896 seconds 
+  Time since last request: 3094.367748 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Outline_Graph.shadergraph
+  artifactKey: Guid(d6cbe43154413f84f8def5acf11f329c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Outline_Graph.shadergraph using Guid(d6cbe43154413f84f8def5acf11f329c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e6876d371a5b771cbcb3b24a7ca0808') in 0.137241 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 18.325589 seconds.
-  path: Assets/ibah555TexturePack/Well/Try_Xyini_97.fbx
-  artifactKey: Guid(046b07148e5581e45b5ea81a5fbefbb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Well/Try_Xyini_97.fbx using Guid(046b07148e5581e45b5ea81a5fbefbb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea3d27d863463527330fa7390f7c89f4') in 0.568439 seconds 
+  Time since last request: 21.076045 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Outline_Material.mat
+  artifactKey: Guid(bb3e45890e6964645ae8830ae080a4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Outline_Material.mat using Guid(bb3e45890e6964645ae8830ae080a4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f56ba815ac92a87cca02b48d7db7ac7f') in 1.128108 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 602.362393 seconds.
-  path: Assets/ibah555TexturePack/Well/Try_Xyini_97 1.fbx
-  artifactKey: Guid(3cd5c7442f5495c4880ac34cf73e1ee6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Well/Try_Xyini_97 1.fbx using Guid(3cd5c7442f5495c4880ac34cf73e1ee6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa68e779c3ed5119c74ddc6bb6ace05b') in 0.963227 seconds 
+  Time since last request: 1024.821623 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Outline_Material 1.mat
+  artifactKey: Guid(fbab095c721f301498bdc80819309382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Outline_Material 1.mat using Guid(fbab095c721f301498bdc80819309382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efeed791193fb9a9e689e418f8af761b') in 1.226367 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 157.028998 seconds.
-  path: Assets/ibah555TexturePack/Well/Try_Xyini_97 2.fbx
-  artifactKey: Guid(0025b024491573844a06ce6243980dad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Well/Try_Xyini_97 2.fbx using Guid(0025b024491573844a06ce6243980dad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69d7a537ae2d1a0d004fe4acc08c0fe3') in 1.004478 seconds 
+  Time since last request: 6.928406 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Outline_Material_2.mat
+  artifactKey: Guid(fbab095c721f301498bdc80819309382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Outline_Material_2.mat using Guid(fbab095c721f301498bdc80819309382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99bc8374d0c668821835b658f59f50c3') in 0.039976 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 55.949925 seconds.
-  path: Assets/ibah555TexturePack/Well/Try_Xyini_97 3.fbx
-  artifactKey: Guid(8a6c8ef9e224c484ca4413506f406024) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Well/Try_Xyini_97 3.fbx using Guid(8a6c8ef9e224c484ca4413506f406024) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '006dc94010cafac3d4b170d3770d4162') in 2.222704 seconds 
+  Time since last request: 1406.854059 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Outline_Material.mat
+  artifactKey: Guid(bb3e45890e6964645ae8830ae080a4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Outline_Material.mat using Guid(bb3e45890e6964645ae8830ae080a4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9159e697de8619c241396c984b21f7a5') in 1.282026 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000137 seconds.
-  path: Assets/ibah555TexturePack/Well/Try_Xyini_97 4.fbx
-  artifactKey: Guid(fd0de0c18efb2e8429a97258d2f5e0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Well/Try_Xyini_97 4.fbx using Guid(fd0de0c18efb2e8429a97258d2f5e0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e4acf8ca5ea71211fb63f50e5b2fe13') in 2.167823 seconds 
+  Time since last request: 13.458256 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Transperent_Material.mat
+  artifactKey: Guid(23aa2f0e28b70a44bbce0f1f412d2233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Transperent_Material.mat using Guid(23aa2f0e28b70a44bbce0f1f412d2233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '525099fa9d0537674c3666bbae2679af') in 0.040918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 60.824822 seconds.
+  path: Assets/Resources/_OtherEffects/Trail.prefab
+  artifactKey: Guid(c3e3a5b046e9ad34aacbade458a98d86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/_OtherEffects/Trail.prefab using Guid(c3e3a5b046e9ad34aacbade458a98d86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95809a9dda0af7d25d5e0227dba97379') in 0.129051 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.996872 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Transperent_Material.shadergraph
+  artifactKey: Guid(daceac869c9cd3140ac736eb00a25231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Transperent_Material.shadergraph using Guid(daceac869c9cd3140ac736eb00a25231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55223922f1d4c6734893908db39b928e') in 0.009459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 165.600847 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Transperent_Material.shadergraph
+  artifactKey: Guid(daceac869c9cd3140ac736eb00a25231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Transperent_Material.shadergraph using Guid(daceac869c9cd3140ac736eb00a25231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '081c4f364ede1bc100f0d498cc608356') in 0.009140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 544.450608 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Transperent_Material.mat
+  artifactKey: Guid(23aa2f0e28b70a44bbce0f1f412d2233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Transperent_Material.mat using Guid(23aa2f0e28b70a44bbce0f1f412d2233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ad4d4145d4e8b83c917e8f43bdf9b98') in 1.236724 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 903.472723 seconds.
+  path: Assets/ibah555TexturePack/ProgressBar/ProgressBar_Material.mat
+  artifactKey: Guid(ae943c6f0f6aeb64abff7f9b280d55dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/ProgressBar/ProgressBar_Material.mat using Guid(ae943c6f0f6aeb64abff7f9b280d55dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3274359326ee4d4e7dc02e67cd1756ea') in 0.042723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 513.243806 seconds.
+  path: Assets/ibah555TexturePack/Cylinder.001.prefab
+  artifactKey: Guid(bf940050aca8b35438f07007ff5fdac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Cylinder.001.prefab using Guid(bf940050aca8b35438f07007ff5fdac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8425cb6246b5ab58ff71045dc298054') in 0.097322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000089 seconds.
+  path: Assets/ibah555TexturePack/Sphere.006 (1).prefab
+  artifactKey: Guid(989b62b9f723c0c479ccaacbd67a37dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Sphere.006 (1).prefab using Guid(989b62b9f723c0c479ccaacbd67a37dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae658c7666ca576db46a5c9a28dde336') in 0.071155 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.041500 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/PoisonBootle.mat
+  artifactKey: Guid(801f41934638a2844a74200d16fd5f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/PoisonBootle.mat using Guid(801f41934638a2844a74200d16fd5f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6da3fa152944d34a44035a9c1ca0bdeb') in 0.242615 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/ibah555TexturePack/SkilAnimations/RedMaterial.mat
+  artifactKey: Guid(2d49168944e559b4185dbec3a5ba543e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/SkilAnimations/RedMaterial.mat using Guid(2d49168944e559b4185dbec3a5ba543e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0469c7a9d07257bc3b0a662a0e0994b6') in 0.071827 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.290993 seconds.
+  path: Assets/ibah555TexturePack/Gradius
+  artifactKey: Guid(d9bb2a87d1518c0438119a4f31a91058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius using Guid(d9bb2a87d1518c0438119a4f31a91058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19502d7a853b27d548c17384cdb24883') in 0.041613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 301.365379 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx
+  artifactKey: Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx using Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0cef7d78059b114d44125f09a94e9c1') in 0.184423 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 34.020876 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx
+  artifactKey: Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx using Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adee1987753c673af6fd223efb4e40a8') in 0.051553 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 66.606704 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15 1.fbx
+  artifactKey: Guid(f962570986cf08b40b93f0735dadd81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15 1.fbx using Guid(f962570986cf08b40b93f0735dadd81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11819b4ea82634f3622a63f809d79344') in 0.045445 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 58.422396 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15 2.fbx
+  artifactKey: Guid(5889e973a2dd634479334a92c0f9a64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15 2.fbx using Guid(5889e973a2dd634479334a92c0f9a64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84018eee307e570ef40c03452fb3f498') in 0.050528 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 466.603439 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx
+  artifactKey: Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx using Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '325c0b880631d34072dc73b3f9e02cfe') in 0.048810 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.923390 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15 1.fbx
+  artifactKey: Guid(f962570986cf08b40b93f0735dadd81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15 1.fbx using Guid(f962570986cf08b40b93f0735dadd81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd55b5790a28163d2c2f88fdd42cb4fbd') in 0.033563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.411208 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx
+  artifactKey: Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx using Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3112c082f3685834c79e539026aa7c63') in 0.030296 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.110631 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx
+  artifactKey: Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15.fbx using Guid(00893d9a0f26f284c99d6904a1cebc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eca468d05df0787d4f792399d455e4a8') in 0.036594 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 353.444768 seconds.
+  path: Assets/Prefabs/ImportantObjects/CharacterGirl.prefab
+  artifactKey: Guid(6b5596da38a8bb2439f47ac04fcbd653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ImportantObjects/CharacterGirl.prefab using Guid(6b5596da38a8bb2439f47ac04fcbd653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7be5f1d8344892fda3071d428ca07ca') in 0.505506 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.265949 seconds.
+  path: Assets/Resources/Cursors
+  artifactKey: Guid(93666bf6d6384ac499946ceb0ba4ff71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors using Guid(93666bf6d6384ac499946ceb0ba4ff71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac6a13986a9cfa16699eeb98c0cb0c55') in 0.017580 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.063126 seconds.
+  path: Assets/Resources/Cursors/Pizza15.prefab
+  artifactKey: Guid(e035354a048377743a79e8f6ed6093ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15.prefab using Guid(e035354a048377743a79e8f6ed6093ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b2df919cf94a4fc1584efc41dbe94d5') in 0.051200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Resources/Cursors/Pizza45.prefab
+  artifactKey: Guid(0ff02b3ba7d9b1f42a37ba8349169f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza45.prefab using Guid(0ff02b3ba7d9b1f42a37ba8349169f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48d5d054663a2e744e69a0686a6fffa1') in 0.062574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Resources/Cursors/Pizza90.prefab
+  artifactKey: Guid(6fae21fa1ae3117438e4a63e5b584a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza90.prefab using Guid(6fae21fa1ae3117438e4a63e5b584a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '311afa8ae0b63caf855c12ad07f41e8f') in 0.050378 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.888776 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_15 (2).prefab
+  artifactKey: Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_15 (2).prefab using Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ade2f18c06b1e346691227af1a10e3cb') in 0.038911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.587746 seconds.
+  path: Assets/Resources/Cursors/S_Pizza_15.prefab
+  artifactKey: Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/S_Pizza_15.prefab using Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87318f9b30ad464e6adf34ec25debee1') in 0.037835 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.642300 seconds.
+  path: Assets/Resources/Cursors/S_Pizza_15.prefab
+  artifactKey: Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/S_Pizza_15.prefab using Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '821367a4b9f7ef79be3596a6ecc8d287') in 0.022563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.029472 seconds.
+  path: Assets/Resources/Cursors/S_Pizza_15.prefab
+  artifactKey: Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/S_Pizza_15.prefab using Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24cd17d647ea715784c9539dc4baa1b2') in 0.022636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.733331 seconds.
+  path: Assets/Resources/Cursors/S_Pizza_15.prefab
+  artifactKey: Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/S_Pizza_15.prefab using Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5599591a0947e9665c31030b2dd52c61') in 0.023730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.870790 seconds.
+  path: Assets/Resources/Cursors/S_Pizza_15.prefab
+  artifactKey: Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/S_Pizza_15.prefab using Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f833168a85024b3ae73a02931b4cf7df') in 0.025179 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 62.356747 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_15 (3).prefab
+  artifactKey: Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_15 (3).prefab using Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '315906f4db9fd2223ee575154a2740d2') in 0.040250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.819103 seconds.
+  path: Assets/Resources/Cursors/M_Pizza_15.prefab
+  artifactKey: Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/M_Pizza_15.prefab using Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55957f72c93c16ec701bb017ec537b9a') in 0.036832 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.893110 seconds.
+  path: Assets/Resources/Cursors/M_Pizza_15.prefab
+  artifactKey: Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/M_Pizza_15.prefab using Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7de4b8ae1ad8ffd897162d861b144e1') in 0.023476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.174713 seconds.
+  path: Assets/Resources/Cursors/M_Pizza_15.prefab
+  artifactKey: Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/M_Pizza_15.prefab using Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '913ab9ce23090d6b9e28008d13f98f3f') in 0.022512 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.821746 seconds.
+  path: Assets/Resources/Cursors/Pizza_15_M.prefab
+  artifactKey: Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza_15_M.prefab using Guid(e10f9b5c39efc134cb1c1f1e07b4f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bcd800d6be884ad61d83e624e1c7af0') in 0.032460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.853473 seconds.
+  path: Assets/Resources/Cursors/Pizza_15_S.prefab
+  artifactKey: Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza_15_S.prefab using Guid(506105de9c5f9714aaa5c6a02b56b816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86ff0ea4079493931a91f3cbd621bb70') in 0.036280 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 86.515905 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Outline_Material.mat
+  artifactKey: Guid(bb3e45890e6964645ae8830ae080a4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Outline_Material.mat using Guid(bb3e45890e6964645ae8830ae080a4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4efaf4ebc40a3b67617dd69cc03839ca') in 0.047867 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.601900 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Short_Pizza_15.fbx
+  artifactKey: Guid(44d30bd1b8eee1b45af3ee7d48d4b0a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Short_Pizza_15.fbx using Guid(44d30bd1b8eee1b45af3ee7d48d4b0a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f933b5a9f044f6266160d79cfb4c35') in 0.034338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.425342 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Short_Pizza_15 1.fbx
+  artifactKey: Guid(f4d19e3686485bf4e95702c054e4f3f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Short_Pizza_15 1.fbx using Guid(f4d19e3686485bf4e95702c054e4f3f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4ef612532740e502af0b55495692139') in 0.031892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.937242 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Short_Pizza_15.fbx
+  artifactKey: Guid(44d30bd1b8eee1b45af3ee7d48d4b0a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Short_Pizza_15.fbx using Guid(44d30bd1b8eee1b45af3ee7d48d4b0a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '860b9dc0e19b442c026305c0c067a9e8') in 0.042428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 93.222370 seconds.
+  path: Assets/ibah555TexturePack/Test2
+  artifactKey: Guid(59dc6238e88f4394ca1a4a168c100b57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Test2 using Guid(59dc6238e88f4394ca1a4a168c100b57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e680c5b567a68adba3ccb3ec9db1eaed') in 0.021380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.066162 seconds.
+  path: Assets/ibah555TexturePack/Test2/Test.mat
+  artifactKey: Guid(f6db3b751ad8c014a951b1c0590da1ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Test2/Test.mat using Guid(f6db3b751ad8c014a951b1c0590da1ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98d0aeeb983692f44dead00308cf5653') in 0.041137 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 61.934486 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_15 (5).prefab
+  artifactKey: Guid(09f7dddfd283c314fb398179f0e84f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_15 (5).prefab using Guid(09f7dddfd283c314fb398179f0e84f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2d5fded6fbdd543a59c2e84b2aa1176') in 0.037638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.170847 seconds.
+  path: Assets/Resources/Cursors/Pizza15_M.prefab
+  artifactKey: Guid(09f7dddfd283c314fb398179f0e84f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_M.prefab using Guid(09f7dddfd283c314fb398179f0e84f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '500c572e75d898501514fe0a653d9aad') in 0.032351 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.935288 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_15 (4).prefab
+  artifactKey: Guid(71fba1f8d0b51ea41b57872b7d472fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_15 (4).prefab using Guid(71fba1f8d0b51ea41b57872b7d472fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dbbb2cf7fc2d59d305014856e364dd3') in 0.037578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.137816 seconds.
+  path: Assets/Resources/Cursors/Pizza15_S.prefab
+  artifactKey: Guid(71fba1f8d0b51ea41b57872b7d472fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_S.prefab using Guid(71fba1f8d0b51ea41b57872b7d472fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15def5aac3ed69a1ec8ed48c23cbcc6b') in 0.034868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.262740 seconds.
+  path: Assets/Resources/Cursors/Pizza15_S.prefab
+  artifactKey: Guid(71fba1f8d0b51ea41b57872b7d472fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_S.prefab using Guid(71fba1f8d0b51ea41b57872b7d472fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17b2b52ecf1919828576d734d551213a') in 0.022244 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.792635 seconds.
+  path: Assets/Resources/Cursors/Pizza15_S.prefab
+  artifactKey: Guid(71fba1f8d0b51ea41b57872b7d472fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_S.prefab using Guid(71fba1f8d0b51ea41b57872b7d472fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '155be85a8592d72087042efa7ad7edc6') in 0.024245 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.931308 seconds.
+  path: Assets/Resources/Cursors/Pizza15_M.prefab
+  artifactKey: Guid(09f7dddfd283c314fb398179f0e84f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_M.prefab using Guid(09f7dddfd283c314fb398179f0e84f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96d8a1f4c106c5d65441400227ced2e2') in 0.022881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.034673 seconds.
+  path: Assets/Resources/Cursors/Pizza15_M.prefab
+  artifactKey: Guid(09f7dddfd283c314fb398179f0e84f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_M.prefab using Guid(09f7dddfd283c314fb398179f0e84f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98fecc42ea76e666d873d90787712b42') in 0.029679 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 388.371921 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_30.fbx
+  artifactKey: Guid(588e6a2fba6852c4cbad929134091cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_30.fbx using Guid(588e6a2fba6852c4cbad929134091cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8f599b4ffe0275fe5bdb2f545cb2bd3') in 0.050133 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.277353 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_30.fbx
+  artifactKey: Guid(588e6a2fba6852c4cbad929134091cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_30.fbx using Guid(588e6a2fba6852c4cbad929134091cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04e1aa4ea9593865ea3953aebe6fba55') in 0.041908 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 131.041126 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_30.prefab
+  artifactKey: Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_30.prefab using Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c03e7c03ca5ceccd1766bb6d8db6f6c') in 0.036360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.346251 seconds.
+  path: Assets/Resources/Cursors/Pizza_30_L.prefab
+  artifactKey: Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza_30_L.prefab using Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1afc4a6275afe1116a4f2da3139a81de') in 0.032905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.480924 seconds.
+  path: Assets/Resources/Cursors/Pizza_30_L.prefab
+  artifactKey: Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza_30_L.prefab using Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '887d77599105eb31e26ddc91944e6bd9') in 0.029021 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.457924 seconds.
+  path: Assets/Resources/Cursors/Pizza_30_L.prefab
+  artifactKey: Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza_30_L.prefab using Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b334327cfdf1ce1bc9c291d80bbc7326') in 0.024026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.161572 seconds.
+  path: Assets/Resources/Cursors/Pizza30_L.prefab
+  artifactKey: Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza30_L.prefab using Guid(da30b752a1b0b05488fa2249c25caa4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5483a7697673de5b731e13d9f94e6412') in 0.034337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 136.177469 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_30 1.fbx
+  artifactKey: Guid(a4e908de81911a84ca4dbe101cd6cd01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_30 1.fbx using Guid(a4e908de81911a84ca4dbe101cd6cd01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f7b515472c24793ee767f0293ec237e') in 0.042838 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.964390 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_30 1.prefab
+  artifactKey: Guid(ae4ea2ac407737f4b86622e7eab0bbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_30 1.prefab using Guid(ae4ea2ac407737f4b86622e7eab0bbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a722763500d4633f93225a66a5340fb') in 0.030107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.114728 seconds.
+  path: Assets/Resources/Cursors/Pizza30_S.prefab
+  artifactKey: Guid(ae4ea2ac407737f4b86622e7eab0bbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza30_S.prefab using Guid(ae4ea2ac407737f4b86622e7eab0bbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18360da42908671ca0c55e0579cde3cf') in 0.033814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.845104 seconds.
+  path: Assets/Resources/Cursors/Pizza30_S.prefab
+  artifactKey: Guid(ae4ea2ac407737f4b86622e7eab0bbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza30_S.prefab using Guid(ae4ea2ac407737f4b86622e7eab0bbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96cbaa4c63ad945eb3586406ce13c16c') in 0.020819 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 182.129805 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_45.fbx
+  artifactKey: Guid(46131366cff7ae444af997e5a2db8b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_45.fbx using Guid(46131366cff7ae444af997e5a2db8b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dd6c6d6d682d8645dba44bfeaf8a236') in 0.048024 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 63.768935 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_45.prefab
+  artifactKey: Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_45.prefab using Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1112fcaf978e669f823e8846b4bfffcd') in 0.031550 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.984135 seconds.
+  path: Assets/Resources/Cursors/Pizza_60_L.prefab
+  artifactKey: Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza_60_L.prefab using Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0015217724d88728ba1d26018f6ea3a5') in 0.031438 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.354230 seconds.
+  path: Assets/Resources/Cursors/Pizza60_L.prefab
+  artifactKey: Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60_L.prefab using Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c59f72a85179268e360897170acfd9a') in 0.033305 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 233.026351 seconds.
+  path: Assets/Resources/Cursors/Pizza60 (1).prefab
+  artifactKey: Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60 (1).prefab using Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '220a84594cd7cccb1789b666823849fa') in 0.037506 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.129428 seconds.
+  path: Assets/Resources/Cursors/Pizza60_S.prefab
+  artifactKey: Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60_S.prefab using Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '597a34661696f43244e3bac71a652d8f') in 0.033723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 167.433207 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_90.fbx
+  artifactKey: Guid(32dadbe1b785e054ab8a72884993af4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_90.fbx using Guid(32dadbe1b785e054ab8a72884993af4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efa29bf56427e2160920350d76ac91a1') in 0.050747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 116.532242 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_90 1.fbx
+  artifactKey: Guid(329f807fdece0aa4faafa15f4071fc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_90 1.fbx using Guid(329f807fdece0aa4faafa15f4071fc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9df1c7f7ad1b0ced1fc76feb84009fc') in 0.047555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.790106 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_90_2.fbx
+  artifactKey: Guid(e0ce3e58ddd252a478f8a83f222a438a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_90_2.fbx using Guid(e0ce3e58ddd252a478f8a83f222a438a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8736ca706609cf4cce60c92d0588a34b') in 0.050354 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 254.753317 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15_2.fbx
+  artifactKey: Guid(af8925b36b4557442ba9ecf5da769bae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15_2.fbx using Guid(af8925b36b4557442ba9ecf5da769bae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a2a8eadec7d0837d92a25eaf32e9276') in 0.024905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.475989 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15_2 1.fbx
+  artifactKey: Guid(cfe46886995cbfb4e913a48b90608022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15_2 1.fbx using Guid(cfe46886995cbfb4e913a48b90608022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8371131118aec5fce7af267b4328932') in 0.052451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.638869 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_15_2 1.prefab
+  artifactKey: Guid(cdce135d2e7d91541969ff88bec13ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_15_2 1.prefab using Guid(cdce135d2e7d91541969ff88bec13ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6a73ff6faef2ab084ca9366bbeb25f6') in 0.028830 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.827396 seconds.
+  path: Assets/Resources/Cursors/Pizza15_L.prefab
+  artifactKey: Guid(cdce135d2e7d91541969ff88bec13ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_L.prefab using Guid(cdce135d2e7d91541969ff88bec13ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90a258e3186728dadf2558abf5ced2e0') in 0.034426 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 88.040446 seconds.
+  path: Assets/ibah555TexturePack/Gradius/Short_Pizza_15_3.fbx
+  artifactKey: Guid(bc0f2a422f88d7b4293f6d90a4b432f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Gradius/Short_Pizza_15_3.fbx using Guid(bc0f2a422f88d7b4293f6d90a4b432f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a1b1aa697cd417e76a933ab6fd03b4a') in 0.052020 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 77.147884 seconds.
+  path: Assets/Resources/Cursors/Short_Pizza_15_3.prefab
+  artifactKey: Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Short_Pizza_15_3.prefab using Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf3f5dfbf3d972f321fa74b4735deaee') in 0.031423 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.050656 seconds.
+  path: Assets/Resources/Cursors/Pizza15_L_2.prefab
+  artifactKey: Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_L_2.prefab using Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa2c61f5343226f53fc96f6f377f9fa5') in 0.034098 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.899488 seconds.
+  path: Assets/Resources/Cursors/Pizza15_L.prefab
+  artifactKey: Guid(cdce135d2e7d91541969ff88bec13ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_L.prefab using Guid(cdce135d2e7d91541969ff88bec13ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58067976a11c1a24f02babc87b2ff6b3') in 0.027360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.155478 seconds.
+  path: Assets/Resources/Cursors/Pizza15_L.prefab
+  artifactKey: Guid(cdce135d2e7d91541969ff88bec13ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_L.prefab using Guid(cdce135d2e7d91541969ff88bec13ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94a065f960f93fe6da2728bbf38b89ff') in 0.023828 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.404957 seconds.
+  path: Assets/Resources/Cursors/Pizza15_L_2.prefab
+  artifactKey: Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_L_2.prefab using Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0395ac95b498fd60fa45780bf56d9ef') in 0.026607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.526638 seconds.
+  path: Assets/Resources/Cursors/Pizza15_L_2.prefab
+  artifactKey: Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_L_2.prefab using Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a520a494ea0751911b4971f5838a0eb') in 0.022837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.019976 seconds.
+  path: Assets/Resources/Cursors/Pizza15_L_2.prefab
+  artifactKey: Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza15_L_2.prefab using Guid(41ddae53b546cd646aa7c9ea5c5146f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12af8b91b1aae564ecf7aa7bc8097036') in 0.023076 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.259992 seconds.
+  path: Assets/Resources/Cursors/Pizza60_L.prefab
+  artifactKey: Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60_L.prefab using Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f9a250d865283f5426b150fab83872a') in 0.021737 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.120535 seconds.
+  path: Assets/Resources/Cursors/Pizza60_L.prefab
+  artifactKey: Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60_L.prefab using Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1125b6b74b4333d625124ee7ba2387e6') in 0.022196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.128553 seconds.
+  path: Assets/Resources/Cursors/Pizza60_L.prefab
+  artifactKey: Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60_L.prefab using Guid(9ca1fa77043c92044ae46f9442b65796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3870e775c427e717c110120c08b5c80') in 0.021674 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.516902 seconds.
+  path: Assets/Resources/Cursors/Pizza60_S.prefab
+  artifactKey: Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60_S.prefab using Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7c901b2da196910d1af3b4b175400cb') in 0.022302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.540403 seconds.
+  path: Assets/Resources/Cursors/Pizza60_S.prefab
+  artifactKey: Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60_S.prefab using Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9f1c86367078d12f3dd6570e28653a2') in 0.023353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.964350 seconds.
+  path: Assets/Resources/Cursors/Pizza60_S.prefab
+  artifactKey: Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Cursors/Pizza60_S.prefab using Guid(5686b1cb9267e524da9c9e2e25a218a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '813d0b5878332d877af48ca859803193') in 0.021729 seconds 

@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-61641
+50064
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [12844] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 2083151518 [EditorId] 2083151518 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [14996] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 3267280293 [EditorId] 3267280293 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [12844] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 2083151518 [EditorId] 2083151518 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [14996] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 3267280293 [EditorId] 3267280293 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 492.18 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 685.88 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56116
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56824
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007340 seconds.
+Registered in 0.007806 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 563.49 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 550.14 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.299 seconds
+- Completed reload, in  3.674 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3303ms)
-		BeginReloadAssembly (411ms)
+	ReloadAssembly (3677ms)
+		BeginReloadAssembly (450ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (5ms)
-		EndReloadAssembly (2483ms)
-			LoadAssemblies (405ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (2715ms)
+			LoadAssemblies (449ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (493ms)
+			SetupTypeCache (532ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (195ms)
-			SetupLoadedEditorAssemblies (1526ms)
+			RebuildScriptCaches (148ms)
+			SetupLoadedEditorAssemblies (1708ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (36ms)
+				InitializePlatformSupportModulesInManaged (28ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (564ms)
+				RefreshPlugins (551ms)
 				BeforeProcessingInitializeOnLoad (6ms)
-				ProcessInitializeOnLoadAttributes (696ms)
-				ProcessInitializeOnLoadMethodAttributes (223ms)
+				ProcessInitializeOnLoadAttributes (863ms)
+				ProcessInitializeOnLoadMethodAttributes (258ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (1ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.032767 seconds.
+Registered in 0.024692 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1012.07 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 802.64 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  7.760 seconds
+- Completed reload, in  7.778 seconds
 Domain Reload Profiling:
-	ReloadAssembly (7762ms)
-		BeginReloadAssembly (456ms)
+	ReloadAssembly (7782ms)
+		BeginReloadAssembly (556ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (24ms)
+			DisableScriptedObjects (27ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (1ms)
-			CreateAndSetChildDomain (53ms)
-		EndReloadAssembly (6823ms)
-			LoadAssemblies (436ms)
+			CreateAndSetChildDomain (67ms)
+		EndReloadAssembly (6777ms)
+			LoadAssemblies (451ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1441ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (494ms)
-			SetupLoadedEditorAssemblies (4241ms)
+			SetupTypeCache (1446ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (536ms)
+			SetupLoadedEditorAssemblies (4042ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (15ms)
+				InitializePlatformSupportModulesInManaged (18ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1012ms)
-				BeforeProcessingInitializeOnLoad (777ms)
-				ProcessInitializeOnLoadAttributes (1983ms)
-				ProcessInitializeOnLoadMethodAttributes (442ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (1ms)
+				RefreshPlugins (803ms)
+				BeforeProcessingInitializeOnLoad (700ms)
+				ProcessInitializeOnLoadAttributes (1941ms)
+				ProcessInitializeOnLoadMethodAttributes (568ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (2ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (28ms)
+			AwakeInstancesAfterBackupRestoration (32ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.30 seconds
-Refreshing native plugins compatible for Editor in 17.00 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.28 seconds
+Refreshing native plugins compatible for Editor in 3.14 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5944 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6421.
-Memory consumption went from 355.3 MB to 352.7 MB.
-Total: 25.224000 ms (FindLiveObjects: 1.312400 ms CreateObjectMapping: 1.299000 ms MarkObjects: 19.996900 ms  DeleteObjects: 2.612400 ms)
+Unloading 5942 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6419.
+Memory consumption went from 356.9 MB to 354.2 MB.
+Total: 42.070300 ms (FindLiveObjects: 1.130800 ms CreateObjectMapping: 1.643500 ms MarkObjects: 37.461600 ms  DeleteObjects: 1.831400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,91 +164,85 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 2977713.988394 seconds.
-  path: Assets/ibah555TexturePack/Well/Bucket_2.fbx
-  artifactKey: Guid(7a9ce195c5e43a04c96f23eede28d875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Well/Bucket_2.fbx using Guid(7a9ce195c5e43a04c96f23eede28d875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c49dc95fe09c2252ff2bbc1b689a90') in 1.694267 seconds 
+  Time since last request: 12150.469086 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_4.fbx
+  artifactKey: Guid(1abbaa7a9abf67841b05eb16f5ede175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_4.fbx using Guid(1abbaa7a9abf67841b05eb16f5ede175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9055ac47f92682b9b1c6083538fea918') in 2.038614 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1345.375488 seconds.
-  path: Assets/Prefabs/DefaultObjects/Buckets/Bucket_2_Water.prefab
-  artifactKey: Guid(a5644d68383f20541b4dbe5872570555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DefaultObjects/Buckets/Bucket_2_Water.prefab using Guid(a5644d68383f20541b4dbe5872570555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '300bb77b688e23e9dc00144f80cedb54') in 0.052719 seconds 
+  Time since last request: 0.000065 seconds.
+  path: Assets/ibah555TexturePack/Well/Box_2_Stone.fbx
+  artifactKey: Guid(55ed46a96e55618409570271a7265384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Box_2_Stone.fbx using Guid(55ed46a96e55618409570271a7265384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '888c355ce78943ae26b127a1ce0026fa') in 0.710380 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 874.526122 seconds.
-  path: Assets/Prefabs/DefaultObjects/Buckets/Bucket_2_Water.prefab
-  artifactKey: Guid(a5644d68383f20541b4dbe5872570555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DefaultObjects/Buckets/Bucket_2_Water.prefab using Guid(a5644d68383f20541b4dbe5872570555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b0588862da9c1b5b977a50a6ab89fe3') in 0.011705 seconds 
+  Time since last request: 0.000083 seconds.
+  path: Assets/ibah555TexturePack/Well/Try_Xyini_97.fbx
+  artifactKey: Guid(046b07148e5581e45b5ea81a5fbefbb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Try_Xyini_97.fbx using Guid(046b07148e5581e45b5ea81a5fbefbb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd70f901335fd844d812a50c6fc841af') in 0.712439 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3737.028001 seconds.
-  path: Assets/Prefabs/ImportantObjects/SpellsList.prefab
-  artifactKey: Guid(b611c9cdf32bf7d41b0535e8e01f57fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/ImportantObjects/SpellsList.prefab using Guid(b611c9cdf32bf7d41b0535e8e01f57fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbc3251a51eec6ecee42d2e6a4da49f5') in 0.196607 seconds 
+  Time since last request: 0.000277 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_4_Water.fbx
+  artifactKey: Guid(0a15955f6e1b3c94fa2ee79b47dcdf3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_4_Water.fbx using Guid(0a15955f6e1b3c94fa2ee79b47dcdf3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2233106c2a09b957dd0e0aed4f8f7596') in 0.329854 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 35.857321 seconds.
-  path: Assets/Resources/_OtherEffects/BombGray.prefab
-  artifactKey: Guid(8591dd0ef646e034195652c585db0c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/_OtherEffects/BombGray.prefab using Guid(8591dd0ef646e034195652c585db0c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6965d65a3f4a0eeb8009083bf3c0f2c3') in 0.294897 seconds 
+  Time since last request: 0.000068 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_3_Water.fbx
+  artifactKey: Guid(193af46c490b070468c8a3f215a94540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_3_Water.fbx using Guid(193af46c490b070468c8a3f215a94540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64ea0ce3e12cef700e6370a53c137917') in 0.231576 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000077 seconds.
-  path: Assets/Resources/_OtherEffects/Trail.prefab
-  artifactKey: Guid(c3e3a5b046e9ad34aacbade458a98d86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/_OtherEffects/Trail.prefab using Guid(c3e3a5b046e9ad34aacbade458a98d86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0428d57408a88a669463b0b7d3b9e27b') in 0.111544 seconds 
+  Time since last request: 0.000057 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_3.fbx
+  artifactKey: Guid(ea4c5b42d48613c47a32758707b3da29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_3.fbx using Guid(ea4c5b42d48613c47a32758707b3da29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb9e5a483a7e13d9df6a35a4c51e18b5') in 0.188461 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000069 seconds.
-  path: Assets/Resources/_OtherEffects/Boom_Empty.prefab
-  artifactKey: Guid(61deb70aa17596d48b0b503dbab57b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/_OtherEffects/Boom_Empty.prefab using Guid(61deb70aa17596d48b0b503dbab57b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb92272b42b242fcb9524dd0863e4379') in 0.119616 seconds 
+  path: Assets/ibah555TexturePack/Well/Bucket_1.fbx
+  artifactKey: Guid(42be42be0b9430c428e7f6d08e1a02ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_1.fbx using Guid(42be42be0b9430c428e7f6d08e1a02ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c00a00621cf9da581af26ea8ab3cb655') in 0.154638 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Resources/_OtherEffects/PoisonCharka.prefab
-  artifactKey: Guid(0089ec9ac028d404da55d828b88ce8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/_OtherEffects/PoisonCharka.prefab using Guid(0089ec9ac028d404da55d828b88ce8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50b02e4e4cc0ddac7c6087e978e17af0') in 0.088024 seconds 
+  Time since last request: 0.000057 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_2_Water.fbx
+  artifactKey: Guid(7a9ce195c5e43a04c96f23eede28d875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_2_Water.fbx using Guid(7a9ce195c5e43a04c96f23eede28d875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'becfadba232ea81a606e42cb5dba8437') in 0.163663 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 976.461994 seconds.
-  path: Assets/NavMeshComponents/Scripts/NavMeshComponents.asmdef
-  artifactKey: Guid(7e5d27ada4a21da4ea7671a922de9192) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NavMeshComponents/Scripts/NavMeshComponents.asmdef using Guid(7e5d27ada4a21da4ea7671a922de9192) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05bd30ef62c746b8f657bd79e68b44cf') in 0.034631 seconds 
+  Time since last request: 0.000063 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_5_Water.fbx
+  artifactKey: Guid(7cdccb44011522b438968df8d53894b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_5_Water.fbx using Guid(7cdccb44011522b438968df8d53894b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efa5fa07158790ca784f4f48d9c78515') in 0.268270 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000082 seconds.
-  path: Assets/NavMeshComponents/Editor/NavMeshComponentsEditor.asmdef
-  artifactKey: Guid(d022e32c14257af4796495d46706c373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NavMeshComponents/Editor/NavMeshComponentsEditor.asmdef using Guid(d022e32c14257af4796495d46706c373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09134aba65391c8fe1f8aeecd24e49bf') in 0.025677 seconds 
+  Time since last request: 0.000098 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_1_Water.fbx
+  artifactKey: Guid(540003afa1f5d6144a2b8024e0699f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_1_Water.fbx using Guid(540003afa1f5d6144a2b8024e0699f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13f6b2bc461e92f2b0d02b8a10403f01') in 0.170342 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000100 seconds.
-  path: Assets/ibah555TexturePack/Test2/New Post-processing Profile.asset
-  artifactKey: Guid(c43ac5773361fd14eae1c7f962d610ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Test2/New Post-processing Profile.asset using Guid(c43ac5773361fd14eae1c7f962d610ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '164f74229839c996795937aba1c0051d') in 0.098597 seconds 
+  Time since last request: 0.000054 seconds.
+  path: Assets/ibah555TexturePack/Well/Box_2.fbx
+  artifactKey: Guid(67e73452bd0e35644a097490b10b2fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Box_2.fbx using Guid(67e73452bd0e35644a097490b10b2fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f27646533c97f531d8c71a65402c318') in 0.518111 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 43.358025 seconds.
-  path: Assets/ibah555TexturePack/SkilAnimations/PoisonInBootle.shadergraph
-  artifactKey: Guid(26906760e91a17b4390232a2278f5dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/SkilAnimations/PoisonInBootle.shadergraph using Guid(26906760e91a17b4390232a2278f5dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a2f2ca7429ea5aa768abcc40ec766ae') in 0.012048 seconds 
+  Time since last request: 0.000057 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_2.fbx
+  artifactKey: Guid(7bdebb908ee0f8a438c69b92fcf9b495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_2.fbx using Guid(7bdebb908ee0f8a438c69b92fcf9b495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16fe34ccfe1696dee1cc0104a2b678bc') in 0.128227 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 427.494928 seconds.
-  path: Assets/ibah555TexturePack/PoisonCharka.prefab
-  artifactKey: Guid(91f5e2f659af62345850d68537554c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/PoisonCharka.prefab using Guid(91f5e2f659af62345850d68537554c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91ac4585cf7eab515728724feb248b47') in 0.068978 seconds 
+  Time since last request: 0.000080 seconds.
+  path: Assets/ibah555TexturePack/Well/Bucket_1 1.fbx
+  artifactKey: Guid(1d48c3f40b3ee25488253fdd65e3fbf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Well/Bucket_1 1.fbx using Guid(1d48c3f40b3ee25488253fdd65e3fbf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9686f8914c3c98cba47d48120b620a04') in 0.185438 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/ibah555TexturePack/Sphere.004.prefab
-  artifactKey: Guid(5813b36af1b3b9149a836b5513a3334a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Sphere.004.prefab using Guid(5813b36af1b3b9149a836b5513a3334a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf66ea9270c1554b65e75ccc78b20883') in 0.049181 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 637.382897 seconds.
-  path: Assets/ibah555TexturePack/Sphere.006 (1).prefab
-  artifactKey: Guid(989b62b9f723c0c479ccaacbd67a37dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Sphere.006 (1).prefab using Guid(989b62b9f723c0c479ccaacbd67a37dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '029d4a7187018de884e5b8e14dfaa816') in 0.049610 seconds 
+  Time since last request: 15.328851 seconds.
+  path: Assets/Prefabs/DefaultObjects/Box
+  artifactKey: Guid(4fe457ea156230d4c8566c203bdce021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DefaultObjects/Box using Guid(4fe457ea156230d4c8566c203bdce021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75764b97351771601f545ab19f8b552b') in 0.018480 seconds 
