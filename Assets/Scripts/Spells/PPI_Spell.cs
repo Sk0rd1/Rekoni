@@ -5,11 +5,8 @@ using UnityEngine;
 public class PPI_Spell : SpellUniversal
 {
     public const bool MOMENTARYCAST = true;
-    [SerializeField]
     private float shieldDuration = 7f;
-    [SerializeField]
     private float reloadTime = 4f;
-    [SerializeField]
     private int numOfAttack = 4;
 
     private bool isSpellReady = true;
