@@ -5,15 +5,10 @@ using static Unity.Burst.Intrinsics.X86;
 
 public class MMM_Spell : SpellUniversal
 {
-    [SerializeField]
     private float reloadTime = 4f;
-    [SerializeField]
     private int startDamage = 10;
-    [SerializeField]
     private int increasDamage = 1;
-    [SerializeField]
     private float fireDuration = 4f;
-    [SerializeField]
     private float precision = 30f; // стандарта ймовірність попадання в центральний круг 30%, лінійна залежність. Свіввідношення ймовірностей по кругам 3:3:4 = центр:середина:ззовні
 
     public const bool MOMENTARYCAST = false;

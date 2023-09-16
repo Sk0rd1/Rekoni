@@ -39,6 +39,7 @@ public class III_Spell : SpellUniversal
         {
             effectPrefabModel = Resources.Load<GameObject>(effectName);
             GameObject instantinateEffect = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+            instantinateEffect.SetActive(false);
             effectList.Add(instantinateEffect);
             III iii = instantinateEffect.GetComponent<III>();
             iii.SetValues(damage, timeStunned);
@@ -119,9 +120,9 @@ public class III_Spell : SpellUniversal
 
         Vector3 finalPoint = RotatePointAroundPivot(mousePosition, characterPosition, angularArrow);
 
-        effectList[num].SetActive(true);
         effectList[num].transform.position = characterPosition + characterDirection * 2f;
         effectList[num].transform.position = new Vector3(effectList[num].transform.position.x, mousePosition.y, effectList[num].transform.position.z);
+        effectList[num].SetActive(true);
         Vector3 finalDirection = finalPoint - characterPosition;
         finalDirection.y = 0;
         finalDirection.Normalize();

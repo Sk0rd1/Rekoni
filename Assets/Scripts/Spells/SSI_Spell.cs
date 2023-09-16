@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class SSI_Spell : SpellUniversal
 {
-    [SerializeField]
     private float reloadTime = 4f;
-    [SerializeField]
     private float timeCast = 3f;
-    [SerializeField]
-    private float timePeriod = 1f;
-    [SerializeField]
+    private float timePeriod = 0.5f;
     private int damage = 4;
-    [SerializeField]
     private float forceAttraction = 0.1f;
 
     public const bool MOMENTARYCAST = false;

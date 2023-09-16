@@ -13,10 +13,8 @@ public class MovementCharacter : MonoBehaviour
     private float MOVESPEED = 15f;
     [SerializeField]
     private float turnDuration = 0.1f;
-    [SerializeField]
-    private float gravity = 15f;    
-    [SerializeField]
-    private Vector3 moveTimeDirection = new Vector3(200f, 0f, 0f);
+    private float gravity = 30f;    
+    private Vector3 moveTimeDirection = new Vector3(1000f, 0f, 0f);
 
     private bool isNewTime = true;
     private bool isCastSpell = false;
@@ -37,6 +35,9 @@ public class MovementCharacter : MonoBehaviour
     private GameObject boxForClimb;
     private GameObject boxForClimbNew;
     private GameObject boxForClimbOld;
+
+    private GameObject teleportEffect1;
+    private GameObject teleportEffect2;
 
     private Transform cursorPosition;
 
@@ -62,7 +63,12 @@ public class MovementCharacter : MonoBehaviour
         oldValueY = transform.position.y;
         spellManager = GetComponent<SpellManager>();
         inputManager = GetComponent<InputManager>();
-        cameraCharacter.transform.position = transform.position + cameraStartPosition; 
+        cameraCharacter.transform.position = transform.position + cameraStartPosition;
+        teleportEffect1 = Resources.Load<GameObject>("OtherObjects/Teleports/MagicCircleForTeleport");
+        teleportEffect2 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        teleportEffect1 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        teleportEffect1.SetActive(false);
+        teleportEffect2.SetActive(false);
     }
 
     void Update()
@@ -358,7 +364,7 @@ public class MovementCharacter : MonoBehaviour
     {
         bool isFall = false;
 
-        if ((oldValueY - transform.position.y) > 0.05f * Time.deltaTime)
+        if ((oldValueY - transform.position.y) > 60f * Time.deltaTime)
         {
             //isRolling = false;
             isMoveTimeCast = false;
@@ -433,7 +439,10 @@ public class MovementCharacter : MonoBehaviour
         isMoveTimeReady = false;
         animator.SetBool("isRunning", false);
         animator.SetBool("isMoveTime", true);
-
+        animator.speed = 1.5f;
+        teleportEffect1.SetActive(true);
+        teleportEffect2.SetActive(true);
+        teleportEffect1.transform.position = transform.position + new Vector3(0f, 0.5f, 0f);
         Vector3 pointToCheck = Vector3.zero;
 
         if (isNewTime)
@@ -445,9 +454,11 @@ public class MovementCharacter : MonoBehaviour
             pointToCheck = transform.position - moveTimeDirection;
         }
 
+        teleportEffect2.transform.position = pointToCheck   ;
+
         pointToCheck.y += 1;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.33f);
 
         Collider[] colliders = Physics.OverlapSphere(pointToCheck, 1f);
         pointToCheck.y -= 1;
@@ -461,7 +472,7 @@ public class MovementCharacter : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.67f);
 
         if (isMoveTimeCast)
         {
@@ -475,8 +486,10 @@ public class MovementCharacter : MonoBehaviour
 
         }
 
-        yield return new WaitForSeconds(0.5f);
-
+        yield return new WaitForSeconds(0.33f);
+        animator.speed = 1.0f;
+        teleportEffect1.SetActive(false);
+        teleportEffect2.SetActive(false);
         isMoveTimeCast = false;
         animator.SetBool("isMoveTime", false);
         isMoveTimeReady = true;

@@ -53,17 +53,19 @@ public class EnHealthBirb : EnemysHealth
     {
         float currentValue = 1f;
         IsDeath = true;
+        GetComponent<Animator>().SetBool("isDeath", true);
         while(currentValue > -9f)
         {
-            currentValue -= 90 * Time.deltaTime;
+            currentValue -= 14 * Time.deltaTime;
             foreach (Material mat in material)
             {
                 mat.SetFloat("_Cuttof_Heigth", currentValue);
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForEndOfFrame();
         }
 
         yield return null;
+        Debug.Log("Destroy");
         Destroy(gameObject);
     }
 

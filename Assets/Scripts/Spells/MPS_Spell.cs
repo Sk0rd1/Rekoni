@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class MPS_Spell : SpellUniversal
 {
-    [SerializeField]
     private float slow = 10f;
-    [SerializeField]
     private float numOfHealPerSecond = 1f;
-    [SerializeField]
     private float buffDuration = 8f;
-    [SerializeField]
     private float reloadTime = 20f;
 
     private const bool MOMENTARYCAST = true;
