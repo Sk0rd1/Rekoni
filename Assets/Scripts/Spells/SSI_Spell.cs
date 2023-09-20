@@ -20,6 +20,10 @@ public class SSI_Spell : SpellUniversal
     private GameObject cursorModel;
     private GameObject effectModel;
     private GameObject radiusModel;
+    private Renderer rendererInside;
+    private Renderer rendererOutside;
+    private Material[] materialInside;
+    private Material[] materialOutside;
 
     private string cursorName = "Cursors/Pizza360";
     private string effectName = "SSI/BlackHole";
@@ -34,11 +38,23 @@ public class SSI_Spell : SpellUniversal
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
         cursorModel.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
+        rendererInside = cursorModel.GetComponentInChildren<Renderer>();
+        materialInside = rendererInside.materials;
+        foreach (Material mat in materialInside)
+        {
+            mat.SetFloat("_PowerRadius", 0.002f);
+        }
         cursorModel.SetActive(false);
 
         radiusPrefabModel = Resources.Load<GameObject>(radiusName);
         radiusModel = Instantiate(radiusPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-        radiusModel.transform.localScale = new Vector3(RadiusCast()/2, 2.0f, RadiusCast()/2);
+        radiusModel.transform.localScale = new Vector3(RadiusCast()/2.9f, 2.0f, RadiusCast()/2.9f);
+        rendererOutside = radiusModel.GetComponentInChildren<Renderer>();
+        materialOutside = rendererOutside.materials;
+        foreach (Material mat in materialOutside)
+        {
+            mat.SetFloat("_PowerRadius", 0.001f);
+        }
         radiusModel.SetActive(false);
 
         effectPrefabModel = Resources.Load<GameObject>(effectName);
