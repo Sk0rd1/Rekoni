@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-57911
+61459
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [19336] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 3990463677 [EditorId] 3990463677 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [12344] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 823091100 [EditorId] 823091100 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [19336] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 3990463677 [EditorId] 3990463677 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [12344] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 823091100 [EditorId] 823091100 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 569.84 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 386.49 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56380
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56384
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008711 seconds.
+Registered in 0.008115 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 428.56 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 406.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.950 seconds
+- Completed reload, in  2.459 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2952ms)
-		BeginReloadAssembly (396ms)
+	ReloadAssembly (2460ms)
+		BeginReloadAssembly (300ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (3ms)
-		EndReloadAssembly (2068ms)
-			LoadAssemblies (394ms)
+		EndReloadAssembly (1754ms)
+			LoadAssemblies (298ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (463ms)
+			SetupTypeCache (372ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (109ms)
-			SetupLoadedEditorAssemblies (1305ms)
+			RebuildScriptCaches (116ms)
+			SetupLoadedEditorAssemblies (1102ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (30ms)
+				InitializePlatformSupportModulesInManaged (25ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (429ms)
-				BeforeProcessingInitializeOnLoad (4ms)
-				ProcessInitializeOnLoadAttributes (629ms)
-				ProcessInitializeOnLoadMethodAttributes (212ms)
+				RefreshPlugins (407ms)
+				BeforeProcessingInitializeOnLoad (5ms)
+				ProcessInitializeOnLoadAttributes (492ms)
+				ProcessInitializeOnLoadMethodAttributes (171ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.033460 seconds.
+Registered in 0.026386 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 518.58 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 426.28 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  6.379 seconds
+- Completed reload, in  5.015 seconds
 Domain Reload Profiling:
-	ReloadAssembly (6383ms)
-		BeginReloadAssembly (488ms)
+	ReloadAssembly (5019ms)
+		BeginReloadAssembly (405ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (26ms)
+			DisableScriptedObjects (20ms)
 			BackupInstance (0ms)
-			ReleaseScriptingObjects (1ms)
-			CreateAndSetChildDomain (61ms)
-		EndReloadAssembly (5354ms)
-			LoadAssemblies (464ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (54ms)
+		EndReloadAssembly (4211ms)
+			LoadAssemblies (392ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1443ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (498ms)
-			SetupLoadedEditorAssemblies (2803ms)
+			SetupTypeCache (1149ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (366ms)
+			SetupLoadedEditorAssemblies (2218ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (519ms)
-				BeforeProcessingInitializeOnLoad (548ms)
-				ProcessInitializeOnLoadAttributes (1299ms)
-				ProcessInitializeOnLoadMethodAttributes (409ms)
-				AfterProcessingInitializeOnLoad (15ms)
+				RefreshPlugins (426ms)
+				BeforeProcessingInitializeOnLoad (394ms)
+				ProcessInitializeOnLoadAttributes (1104ms)
+				ProcessInitializeOnLoadMethodAttributes (273ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (23ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.21 seconds
-Refreshing native plugins compatible for Editor in 3.67 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
+Refreshing native plugins compatible for Editor in 2.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5972 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6449.
-Memory consumption went from 357.6 MB to 354.9 MB.
-Total: 14.877800 ms (FindLiveObjects: 1.073800 ms CreateObjectMapping: 1.567400 ms MarkObjects: 10.109600 ms  DeleteObjects: 2.124200 ms)
+Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6450.
+Memory consumption went from 357.8 MB to 355.1 MB.
+Total: 11.997400 ms (FindLiveObjects: 0.961900 ms CreateObjectMapping: 1.185300 ms MarkObjects: 8.151900 ms  DeleteObjects: 1.696000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,3 +162,87 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 200766.739021 seconds.
+  path: Assets/Enemys/Enemy_1/Birb_Secondary.mat
+  artifactKey: Guid(407af86e26dff6a40929fdded70cf4c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Enemy_1/Birb_Secondary.mat using Guid(407af86e26dff6a40929fdded70cf4c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d9820a6a5d9844f05e738bfa311c642') in 1.355581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Enemys/Enemy_1/Eye_White.mat
+  artifactKey: Guid(d57a678cd4c9cfc4a96aeb85a74e78d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Enemy_1/Eye_White.mat using Guid(d57a678cd4c9cfc4a96aeb85a74e78d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '930c1d1dbd43a05b9e0b64a6ae11dddf') in 0.063945 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Enemys/Enemy_1
+  artifactKey: Guid(38ef559787f04634e8fa9392089a01d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Enemy_1 using Guid(38ef559787f04634e8fa9392089a01d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a618b94b23b3c64d4044faae138414fb') in 0.023096 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Enemys/Enemy_1/Eye_Black.mat
+  artifactKey: Guid(344176a314fa15644a8f73566694dc9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Enemy_1/Eye_Black.mat using Guid(344176a314fa15644a8f73566694dc9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e285e89feec9bb6ca5bedeb39f0c50d1') in 0.081407 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Enemys/Enemy_1/Birb_Main.mat
+  artifactKey: Guid(e7cabe1ca42b00e4598825f93a2810fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Enemy_1/Birb_Main.mat using Guid(e7cabe1ca42b00e4598825f93a2810fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d38f21cb9d4bc4d841ef46750451b2e') in 0.078005 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/Enemys/Flying/Blends/Dragon_Evolved.fbx
+  artifactKey: Guid(a98bc16664c437d4996cb25e6e9ed905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Flying/Blends/Dragon_Evolved.fbx using Guid(a98bc16664c437d4996cb25e6e9ed905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6ac7ab600edaab41ce00f73dbc57334') in 0.532245 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000102 seconds.
+  path: Assets/Enemys/Enemy_1/Birb_Beak.mat
+  artifactKey: Guid(9f0f9e1f904c6d443a24dcd994922196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Enemy_1/Birb_Beak.mat using Guid(9f0f9e1f904c6d443a24dcd994922196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8caf302bc04511e76b31413ad7e5973') in 0.111512 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 959.088678 seconds.
+  path: Assets/Enemys/Flying/FBX/Dragon_Evolved.fbx
+  artifactKey: Guid(e8c4c04bf54aad44897833c91b62a531) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Flying/FBX/Dragon_Evolved.fbx using Guid(e8c4c04bf54aad44897833c91b62a531) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a0b344f18934eef890c3141f97f27d4') in 0.166182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/Enemys/Flying/FBX/Ghost.fbx
+  artifactKey: Guid(3ddacfdafd80d5142928e52b379a83db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Flying/FBX/Ghost.fbx using Guid(3ddacfdafd80d5142928e52b379a83db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88c24eab611e33ddb857d5682a4f2099') in 0.117923 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 114.379059 seconds.
+  path: Assets/Enemys/Flying/Blends/Glub.blend
+  artifactKey: Guid(880a73be4e11c584aad067df0692524a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Flying/Blends/Glub.blend using Guid(880a73be4e11c584aad067df0692524a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '070d674c23719f33ad0468d905c75fd8') in 0.134413 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.781936 seconds.
+  path: Assets/Enemys/Flying/FBX/Glub.fbx
+  artifactKey: Guid(f9800b6e260a23b4ba603930689b0803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Flying/FBX/Glub.fbx using Guid(f9800b6e260a23b4ba603930689b0803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f0fa1b8b3c30cb66dc6df9e48f8c5e3') in 0.113693 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 309.413088 seconds.
+  path: Assets/Enemys/Flying/Blends/Goleling_Evolved.blend
+  artifactKey: Guid(18d6708e959a101459600de2fb115295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Flying/Blends/Goleling_Evolved.blend using Guid(18d6708e959a101459600de2fb115295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2161adc58f676efd485728655d383794') in 0.161534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 94.567207 seconds.
+  path: Assets/Enemys/Flying/Blends/Pigeon.blend
+  artifactKey: Guid(68cf25033224ae54d9cb8b0512c797fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Flying/Blends/Pigeon.blend using Guid(68cf25033224ae54d9cb8b0512c797fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '539dd54c3939eb61f04b16e5ff35742e') in 0.145053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 89.792349 seconds.
+  path: Assets/Enemys/Flying/Blends/Tribal.blend
+  artifactKey: Guid(cfed5d8017cfe714cbc23fbbe4c295ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemys/Flying/Blends/Tribal.blend using Guid(cfed5d8017cfe714cbc23fbbe4c295ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6d29ec5da7ffa2b8f792a9e392ee8f4') in 0.138461 seconds 
