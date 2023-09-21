@@ -25,6 +25,9 @@ public class EnemysHealth : MonoBehaviour
     private Renderer renderer;
     private Material material;*/
 
+    public virtual bool IsDeath { get; protected set; } = false;
+    public virtual int MaxHealth { get; protected set; } = 1;
+
     private void Start()
     {
         /*renderer = GetComponent<Renderer>();

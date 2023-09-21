@@ -1,6 +1,9 @@
+using RobinGoodfellow.CircleGenerator;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SSI_Spell : SpellUniversal
 {
@@ -16,18 +19,17 @@ public class SSI_Spell : SpellUniversal
 
     private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
-    private GameObject radiusPrefabModel;
     private GameObject cursorModel;
     private GameObject effectModel;
     private GameObject radiusModel;
     private Renderer rendererInside;
-    private Renderer rendererOutside;
     private Material[] materialInside;
-    private Material[] materialOutside;
+
+    DashCircleGenerator circle;
 
     private string cursorName = "Cursors/Pizza360";
     private string effectName = "SSI/BlackHole";
-    private string radiusName = "Cursors/Pizza360";
+    private string radiusName = "Cursors/Pizza360Hole";
 
     private float effectRadius = 3f;
     private bool isSpellReady = true;
@@ -35,7 +37,7 @@ public class SSI_Spell : SpellUniversal
 
     void Start()
     {
-        cursorPrefabModel = Resources.Load<GameObject>(cursorName);
+        /*cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
         cursorModel.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
         rendererInside = cursorModel.GetComponentInChildren<Renderer>();
@@ -44,17 +46,31 @@ public class SSI_Spell : SpellUniversal
         {
             mat.SetFloat("_PowerRadius", 0.002f);
         }
+        cursorModel.SetActive(false);*/
+
+        cursorModel = new GameObject();
+        cursorModel.AddComponent<StrokeCircleGenerator>();
+        StrokeCircleGenerator strokeCircleGenerator = cursorModel.GetComponent<StrokeCircleGenerator>();
+        CircleData circleDataStroke = new CircleData(7.9f, 360f, 0f, 128, false);
+        StrokeData strokeDataStroke = new StrokeData(0.16f, false);
+        strokeCircleGenerator.CircleData = circleDataStroke;
+        strokeCircleGenerator.StrokeData = strokeDataStroke;
+        Material materialStroke = Resources.Load<Material>("Cursors/PizzaMaterial");
+        strokeCircleGenerator.GetComponent<MeshRenderer>().material = materialStroke;
+        strokeCircleGenerator.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         cursorModel.SetActive(false);
 
-        radiusPrefabModel = Resources.Load<GameObject>(radiusName);
-        radiusModel = Instantiate(radiusPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-        radiusModel.transform.localScale = new Vector3(RadiusCast()/2.9f, 2.0f, RadiusCast()/2.9f);
-        rendererOutside = radiusModel.GetComponentInChildren<Renderer>();
-        materialOutside = rendererOutside.materials;
-        foreach (Material mat in materialOutside)
-        {
-            mat.SetFloat("_PowerRadius", 0.001f);
-        }
+
+        radiusModel = new GameObject();
+        radiusModel.AddComponent<DashCircleGenerator>();
+        DashCircleGenerator dashCircleGenerator = radiusModel.GetComponent<DashCircleGenerator>();
+        CircleData circleDataDash = new CircleData(RadiusCast() * 1.392f, 360f, 0f, 128, false);
+        StrokeData strokeDataDash = new StrokeData(0.16f, false);
+        dashCircleGenerator.CircleData = circleDataDash;
+        dashCircleGenerator.StrokeData = strokeDataDash;
+        Material materialDash = Resources.Load<Material>("Cursors/PizzaMaterial");
+        dashCircleGenerator.GetComponent<MeshRenderer>().material = materialDash;
+        dashCircleGenerator.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         radiusModel.SetActive(false);
 
         effectPrefabModel = Resources.Load<GameObject>(effectName);
@@ -88,6 +104,7 @@ public class SSI_Spell : SpellUniversal
         cursorModel.SetActive(true);
         radiusModel.SetActive(true);
         cursorModel.transform.position = mousePosition;
+        radiusModel.transform.Rotate(new Vector3(0f, 0f, 3f) * Time.deltaTime);
         radiusModel.transform.position = characterPosition;
     }
 

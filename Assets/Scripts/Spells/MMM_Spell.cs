@@ -1,3 +1,4 @@
+using RobinGoodfellow.CircleGenerator;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,16 +25,17 @@ public class MMM_Spell : SpellUniversal
     private Vector3 centerSpell = Vector3.zero;
     private Vector3 currentGamepadPosition = Vector3.zero;
 
-    private GameObject cursorPrefabModel;
     private GameObject effectPrefabModel;
     private GameObject cursorForEffectPrefabModel;
     private GameObject boomEffectPrefab;
-    private GameObject cursorModel;
+    private GameObject cursorModel1;
+    private GameObject cursorModel2;
+    private GameObject cursorModel3;
+    private GameObject radiusModel;
     private List<GameObject> cursorList;
     private List<GameObject> effectList;
     private List<Vector3> cursorLocation = new List<Vector3>();
 
-    private string cursorName = "MMM/CT_MMM";
     private string effectName = "MMM/ES_MMM";
     private string cursorForEffectName = "MMM/CFE_MMM";
     private string boomEffectName = "MMM/BoomEffect";
@@ -41,8 +43,54 @@ public class MMM_Spell : SpellUniversal
     private void Start()
     {
         currentGamepadPosition = Vector3.zero;
-        cursorPrefabModel = Resources.Load<GameObject>(cursorName);
-        cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+
+        cursorModel1 = new GameObject();
+        cursorModel1.AddComponent<StrokeCircleGenerator>();
+        StrokeCircleGenerator strokeCircleGenerator1 = cursorModel1.GetComponent<StrokeCircleGenerator>();
+        CircleData circleDataStroke1 = new CircleData(3f, 360f, 0f, 128, false);
+        StrokeData strokeDataStroke1 = new StrokeData(0.16f, false);
+        strokeCircleGenerator1.CircleData = circleDataStroke1;
+        strokeCircleGenerator1.StrokeData = strokeDataStroke1;
+        Material materialStroke1 = Resources.Load<Material>("Cursors/PizzaMaterial");
+        strokeCircleGenerator1.GetComponent<MeshRenderer>().material = materialStroke1;
+        strokeCircleGenerator1.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        cursorModel1.SetActive(false);
+
+        cursorModel2 = new GameObject();
+        cursorModel2.AddComponent<StrokeCircleGenerator>();
+        StrokeCircleGenerator strokeCircleGenerator2 = cursorModel2.GetComponent<StrokeCircleGenerator>();
+        CircleData circleDataStroke2 = new CircleData(6f, 360f, 0f, 128, false);
+        StrokeData strokeDataStroke2 = new StrokeData(0.16f, false);
+        strokeCircleGenerator2.CircleData = circleDataStroke2;
+        strokeCircleGenerator2.StrokeData = strokeDataStroke2;
+        Material materialStroke2 = Resources.Load<Material>("Cursors/PizzaMaterial");
+        strokeCircleGenerator2.GetComponent<MeshRenderer>().material = materialStroke2;
+        strokeCircleGenerator2.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        cursorModel2.SetActive(false);
+
+        cursorModel3 = new GameObject();
+        cursorModel3.AddComponent<StrokeCircleGenerator>();
+        StrokeCircleGenerator strokeCircleGenerator3 = cursorModel3.GetComponent<StrokeCircleGenerator>();
+        CircleData circleDataStroke3 = new CircleData(9f, 360f, 0f, 128, false);
+        StrokeData strokeDataStroke3 = new StrokeData(0.16f, false);
+        strokeCircleGenerator3.CircleData = circleDataStroke3;
+        strokeCircleGenerator3.StrokeData = strokeDataStroke3;
+        Material materialStroke3 = Resources.Load<Material>("Cursors/PizzaMaterial");
+        strokeCircleGenerator3.GetComponent<MeshRenderer>().material = materialStroke3;
+        strokeCircleGenerator3.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        cursorModel3.SetActive(false);
+
+        radiusModel = new GameObject();
+        radiusModel.AddComponent<DashCircleGenerator>();
+        DashCircleGenerator dashCircleGenerator = radiusModel.GetComponent<DashCircleGenerator>();
+        CircleData circleData = new CircleData(RadiusCast() * 1.45f, 360f, 0f, 128, false);
+        StrokeData strokeData = new StrokeData(0.16f, false);
+        dashCircleGenerator.CircleData = circleData;
+        dashCircleGenerator.StrokeData = strokeData;
+        Material material = Resources.Load<Material>("Cursors/PizzaMaterial");
+        dashCircleGenerator.GetComponent<MeshRenderer>().material = material;
+        dashCircleGenerator.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        radiusModel.SetActive(false);
     }
 
     public override bool IsMomemtaryCast()
@@ -62,11 +110,16 @@ public class MMM_Spell : SpellUniversal
 
     public override void FirstStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
-        cursorModel.SetActive(true);
-
+        cursorModel1.SetActive(true);
+        cursorModel2.SetActive(true);
+        cursorModel3.SetActive(true);
+        radiusModel.SetActive(true);
         centerSpell = mousePosition;
-
-        cursorModel.transform.position = centerSpell;
+        radiusModel.transform.position = characterPosition;
+        cursorModel1.transform.position = centerSpell;
+        cursorModel2.transform.position = centerSpell;
+        cursorModel3.transform.position = centerSpell;
+        radiusModel.transform.Rotate(new Vector3(0f, 0f, 3f) * Time.deltaTime);
     }
 
     public override void SecondStageOfCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
@@ -74,7 +127,10 @@ public class MMM_Spell : SpellUniversal
         currentGamepadPosition = Vector3.zero;
         FirstStageOfCast(mousePosition, characterPosition, isGamepadUsing);
         StartCoroutine(Reload());
-        cursorModel.SetActive(false);
+        cursorModel1.SetActive(false);
+        cursorModel2.SetActive(false);
+        cursorModel3.SetActive(false);
+        radiusModel.SetActive(false);
         effectList = new List<GameObject>();
         cursorList = new List<GameObject>();
 
@@ -91,10 +147,18 @@ public class MMM_Spell : SpellUniversal
             MMM mmm = instantinateEffect.GetComponentInChildren<MMM>();
             mmm.SetValues(startDamage, increasDamage, fireDuration);
 
-            cursorForEffectPrefabModel = Resources.Load<GameObject>(cursorForEffectName);
-            GameObject instantinateCurdorForEffect = Instantiate(cursorForEffectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
-            instantinateCurdorForEffect.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-            cursorList.Add(instantinateCurdorForEffect);
+            GameObject cursorModel = new GameObject();
+            cursorModel.AddComponent<StrokeCircleGenerator>();
+            StrokeCircleGenerator strokeCircleGenerator = cursorModel.GetComponent<StrokeCircleGenerator>();
+            CircleData circleDataStroke = new CircleData(1.5f, 360f, 0f, 128, false);
+            StrokeData strokeDataStroke = new StrokeData(0.16f, false);
+            strokeCircleGenerator.CircleData = circleDataStroke;
+            strokeCircleGenerator.StrokeData = strokeDataStroke;
+            Material materialStroke = Resources.Load<Material>("Cursors/PizzaMaterial");
+            strokeCircleGenerator.GetComponent<MeshRenderer>().material = materialStroke;
+            strokeCircleGenerator.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+            cursorModel1.SetActive(false);
+            cursorList.Add(cursorModel);
         }
 
         //centerSpell = cursorModel.transform.position;
@@ -105,7 +169,10 @@ public class MMM_Spell : SpellUniversal
     public override void CancelCast(Vector3 mousePosition, Vector3 characterPosition, bool isGamepadUsing)
     {
         currentGamepadPosition = Vector3.zero;
-        cursorModel.SetActive(false);
+        cursorModel1.SetActive(false);
+        cursorModel2.SetActive(false);
+        cursorModel3.SetActive(false);
+        radiusModel.SetActive(false);
     }
 
     IEnumerator Reload()
