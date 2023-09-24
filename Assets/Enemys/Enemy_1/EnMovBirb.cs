@@ -92,7 +92,7 @@ public class EnMovBirb : EnemysMovement
     {
         while (transform.position != null)
         {
-            if (healthBirb.IsDeath)
+            if (healthBirb.IsDeath())
             {
                 agent.Stop();
                 animator.speed /= 1.5f;

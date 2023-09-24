@@ -25,16 +25,28 @@ public class EnemysHealth : MonoBehaviour
     private Renderer renderer;
     private Material material;*/
 
-    public virtual bool IsDeath { get; protected set; } = false;
-    public virtual int MaxHealth { get; protected set; } = 1;
+    protected int maxHealth = 1;
 
-    private void Start()
+    public virtual int MaxHealth()
     {
-        /*renderer = GetComponent<Renderer>();
-        material = renderer.material;*/
+        return maxHealth; 
     }
 
-    private void MinusHealth(int damage)
+    protected bool isDeath = false;
+
+    public virtual bool IsDeath()
+    {
+        return isDeath;
+    }
+
+    protected bool isBoss = true;
+
+    public virtual bool IsBoss()
+    {
+        return isBoss;
+    }
+
+    protected virtual void MinusHealth(int damage)
     {
         /*health -= damage;
         //Debug.Log("HP" + health);

@@ -44,8 +44,8 @@ public class SpellManager : MonoBehaviour
         spellPos[2] = GameObject.Find("SpellsList").GetComponent<PPI_Spell>();
         spellPos[3] = GameObject.Find("SpellsList").GetComponent<MPS_Spell>();
         spellPos[4] = GameObject.Find("SpellsList").GetComponent<III_Spell>();
-        spellPos[5] = GameObject.Find("SpellsList").GetComponent<MMM_Spell>();
-        spellPos[6] = GameObject.Find("SpellsList").GetComponent<MMM_Spell>();
+        spellPos[5] = GameObject.Find("SpellsList").GetComponent<MSI_Spell>();
+        spellPos[6] = GameObject.Find("SpellsList").GetComponent<UUU_Spell>();
         spellPos[7] = GameObject.Find("SpellsList").GetComponent<SUU_Spell>();
 
         for (int i = 0; i < 8; i++)

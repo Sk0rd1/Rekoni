@@ -5,27 +5,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SUU_Spell : SpellUniversal
+public class UUU_Spell : SpellUniversal
 {
     private float reloadTime = 4f;
-    private float timeCast = 15f;
-    private float damageRadius = 10f;
-    private float timePeriod = 0.5f;
-    private int percentDamage = 100; //потрібно 1 - 1%, а зараз 1 - 100%
-    private float forceAttraction = 0.1f;
+    private int heroDamage = 10;
 
     public const bool MOMENTARYCAST = false;
 
-    private GameObject effectPrefabModel;
     private GameObject cursorModel;
     private GameObject hintModel;
-    private GameObject effectModel;
     private GameObject effectParticl;
     private GameObject radiusModel;
     private GameObject enemy;
-
-    DashCircleGenerator circle;
-
 
     private string effectName = "SUU/Debuff";
     private string particlName = "SUU/Explosion";
@@ -37,10 +28,6 @@ public class SUU_Spell : SpellUniversal
     {
         effectParticl = Resources.Load<GameObject>(particlName);
         enemy = null;
-
-        effectModel = Resources.Load<GameObject>(effectName);
-        effectModel = Instantiate(effectModel);
-        effectModel.SetActive(false);
 
         cursorModel = new GameObject();
         cursorModel.AddComponent<StrokeCircleGenerator>();
@@ -58,7 +45,7 @@ public class SUU_Spell : SpellUniversal
         radiusModel = new GameObject();
         radiusModel.AddComponent<DashCircleGenerator>();
         DashCircleGenerator dashCircleGenerator = radiusModel.GetComponent<DashCircleGenerator>();
-        CircleData circleDataDash = new CircleData(RadiusCast() * 1.1f , 360f, 0f, 128, false);
+        CircleData circleDataDash = new CircleData(RadiusCast() * 1.1f, 360f, 0f, 128, false);
         StrokeData strokeDataDash = new StrokeData(0.16f, false);
         dashCircleGenerator.CircleData = circleDataDash;
         dashCircleGenerator.StrokeData = strokeDataDash;
@@ -157,9 +144,6 @@ public class SUU_Spell : SpellUniversal
         if (enemy != null)
         {
             StartCoroutine(Reload());
-            effectModel.SetActive(true);
-            effectModel.transform.position = cursorModel.transform.position;
-            //cursorModel.transform.position += new Vector3(0f, -20f, 0f);
             StartCoroutine(EffectCast());
         }
     }
@@ -185,37 +169,24 @@ public class SUU_Spell : SpellUniversal
 
     IEnumerator EffectCast()
     {
-        effectModel.SetActive(true);
         EnemysHealth eh = enemy.GetComponent<EnemysHealth>();
-        for (float i = 0; i < timeCast; i += Time.deltaTime)
+        if (eh.IsBoss())
         {
-            //eh.Damage(100);
-            if(eh.IsDeath())
-            {
-                effectModel.SetActive(false);
-                GameObject[] gos;
-                gos = GameObject.FindGameObjectsWithTag("Enemy");
-                foreach (GameObject go in gos) 
-                {
-                    if (Vector3.Distance(go.transform.position, enemy.transform.position) <= damageRadius * damageRadius)
-                    {
-                        EnemysHealth ehc = go.GetComponent<EnemysHealth>();
-                        StartCoroutine(OneEffect(go.transform.position));
-                        ehc.Damage(1000);
-                    }
-                }
-                break;
-            }
-            effectModel.transform.position = enemy.transform.position;
-            yield return new WaitForEndOfFrame();
+            // коли ціль бос то нічого не стається
         }
-        effectModel.SetActive(false);
+        else 
+        {
+            eh.Damage(eh.MaxHealth());
+            GameObject.Find("CharacterGirl").GetComponent<Health>().DealDamage(heroDamage);
+            //тут повинні вилітати додаткові монети
+        }
+        yield return null;
     }
 
     private IEnumerator OneEffect(Vector3 position)
     {
         Debug.Log("OneEffect");
-        GameObject gameObject = Instantiate(effectParticl); 
+        GameObject gameObject = Instantiate(effectParticl);
         gameObject.transform.position = position + new Vector3(0f, 0.5f, 0f);
         gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         yield return new WaitForSeconds(1);
