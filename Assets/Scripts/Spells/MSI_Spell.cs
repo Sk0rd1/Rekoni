@@ -36,7 +36,7 @@ public class MSI_Spell : SpellUniversal
         StrokeData strokeDataStroke = new StrokeData(0.16f, false);
         strokeCircleGenerator.CircleData = circleDataStroke;
         strokeCircleGenerator.StrokeData = strokeDataStroke;
-        Material materialStroke = Resources.Load<Material>("Cursors/PizzaMaterial");
+        Material materialStroke = Resources.Load<Material>("_Cursors/PizzaMaterial");
         strokeCircleGenerator.GetComponent<MeshRenderer>().material = materialStroke;
         strokeCircleGenerator.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         cursorModel.SetActive(false);
@@ -49,7 +49,7 @@ public class MSI_Spell : SpellUniversal
         StrokeData strokeDataDash = new StrokeData(0.16f, false);
         dashCircleGenerator.CircleData = circleDataDash;
         dashCircleGenerator.StrokeData = strokeDataDash;
-        Material materialDash = Resources.Load<Material>("Cursors/PizzaMaterial");
+        Material materialDash = Resources.Load<Material>("_Cursors/PizzaMaterial");
         dashCircleGenerator.GetComponent<MeshRenderer>().material = materialDash;
         dashCircleGenerator.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         radiusModel.SetActive(false);
@@ -61,7 +61,7 @@ public class MSI_Spell : SpellUniversal
         StrokeData strokeDataDashHint = new StrokeData(0.16f, false);
         dashCircleGeneratorHint.CircleData = circleDataDashHint;
         dashCircleGeneratorHint.StrokeData = strokeDataDashHint;
-        Material materialDashHint = Resources.Load<Material>("Cursors/PizzaMaterial");
+        Material materialDashHint = Resources.Load<Material>("_Cursors/PizzaMaterial");
         dashCircleGeneratorHint.GetComponent<MeshRenderer>().material = materialDashHint;
         dashCircleGeneratorHint.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         hintModel.SetActive(false);

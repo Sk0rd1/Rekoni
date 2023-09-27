@@ -18,7 +18,7 @@ public class III_Spell : SpellUniversal
     private GameObject effectPrefabModel;
     private GameObject cursorModel;
 
-    private string cursorName = "Cursors/Pizza60";
+    private string cursorName = "_Cursors/Pizza60";
     private string effectName = "III/IceArrow";
 
     private float effectRadius = 3f;

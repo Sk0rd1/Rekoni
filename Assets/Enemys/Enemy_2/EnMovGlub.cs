@@ -30,7 +30,7 @@ public class EnMovGlub : EnemysMovement
         //animator.SetBool("isRunnning", false);
         healthBirb = GetComponent<EnHealthBirb>();
         reloadTeleport = Random.Range(2f, 7f);
-        teleportEffect1 = Resources.Load<GameObject>("OtherObjects/Teleports/MagicCircleForTeleportEnemyBlue");
+        teleportEffect1 = Resources.Load<GameObject>("_OtherObjects/Teleports/MagicCircleForTeleportEnemyBlue");
         teleportEffect2 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
         teleportEffect1 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
         teleportEffect1.SetActive(false);

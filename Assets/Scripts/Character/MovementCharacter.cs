@@ -64,7 +64,7 @@ public class MovementCharacter : MonoBehaviour
         spellManager = GetComponent<SpellManager>();
         inputManager = GetComponent<InputManager>();
         cameraCharacter.transform.position = transform.position + cameraStartPosition;
-        teleportEffect1 = Resources.Load<GameObject>("OtherObjects/Teleports/MagicCircleForTeleport");
+        teleportEffect1 = Resources.Load<GameObject>("_OtherObjects/Teleports/MagicCircleForTeleport");
         teleportEffect2 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
         teleportEffect1 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
         teleportEffect1.SetActive(false);
