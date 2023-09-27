@@ -6,107 +6,120 @@ using UnityEngine;
 
 public class EnemysHealth : MonoBehaviour
 {
-    /*private int health = 10;
-    private bool enemyIsDeath = false;
+    protected int health;
+    protected bool enemyIsDeath = false;
 
-    private const float POISONINTERVAL = 1f;
-    private int increasePoisonDamage = 0;
-    private int totalPoisonDamage = 0;
-    private float totalPoisonDuration = 0f;
-    private bool isPoisonTimerStart = false;
+    protected const float POISONINTERVAL = 1f;
+    protected int increasePoisonDamage = 0;
+    protected int totalPoisonDamage = 0;
+    protected float totalPoisonDuration = 0f;
+    protected bool isPoisonTimerStart = false;
 
-    private const float FIREINTERVAL = 1f;
-    private const float TIMETOFIREDAMAGE = 5f;
-    private int finalFireDamage = 0;
-    private int increaseFireDamage = 0;
-    private int numOfFireEffects = 0;
-    private bool isFireTimerStart = false;
+    protected const float FIREINTERVAL = 1f;
+    protected const float TIMETOFIREDAMAGE = 5f;
+    protected int finalFireDamage = 0;
+    protected int increaseFireDamage = 0;
+    protected int numOfFireEffects = 0;
+    protected bool isFireTimerStart = false;
 
-    private Renderer renderer;
-    private Material material;*/
+    protected Renderer renderer;
+    protected Material[] material;
+    protected Animator animator;
+    protected EnMovBirb enMovBirb;
 
-    public virtual bool IsDeath { get; protected set; } = false;
-    public virtual int MaxHealth { get; protected set; } = 1;
+    protected int maxHealth = 1;
 
-    private void Start()
+    public virtual int MaxHealth()
     {
-        /*renderer = GetComponent<Renderer>();
-        material = renderer.material;*/
+        return maxHealth; 
     }
 
-    private void MinusHealth(int damage)
-    {
-        /*health -= damage;
-        //Debug.Log("HP" + health);
+    protected bool isDeath = false;
 
-        if(health < 1 && !enemyIsDeath)
+    public virtual bool IsDeath()
+    {
+        return isDeath;
+    }
+
+    protected bool isBoss = true;
+
+    public virtual bool IsBoss()
+    {
+        return isBoss;
+    }
+
+    protected virtual void MinusHealth(int damage)
+    {
+        health -= damage;
+
+        if (health < 1 && !enemyIsDeath)
         {
             enemyIsDeath = true;
             StartCoroutine(Death());
-        }*/
+        }
     }
 
-    /*IEnumerator Death()
+    protected virtual IEnumerator Death()
     {
         float currentValue = 1f;
-
-        while(currentValue > -9f)
+        isDeath = true;
+        GetComponent<Animator>().SetBool("isDeath", true);
+        while (currentValue > -9f)
         {
-            currentValue -= 200 * Time.deltaTime;
-            material.SetFloat("_Cuttof_Heigth", currentValue);
-            yield return new WaitForSeconds(0.1f);
+            currentValue -= 14 * Time.deltaTime;
+            foreach (Material mat in material)
+            {
+                mat.SetFloat("_Cuttof_Heigth", currentValue);
+            }
+            yield return new WaitForEndOfFrame();
         }
 
         yield return null;
+        Debug.Log("Destroy");
         Destroy(gameObject);
-    }*/
+    }
 
     public virtual void Damage(int damage)
     {
-        /*MinusHealth(damage);*/
-    }
-
-    public virtual void Stunned(float time)
-    {
-
+        MinusHealth(damage);
     }
 
     public virtual void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
     {
-        /*totalPoisonDamage += totalDamage;
+        totalPoisonDamage += totalDamage;
 
         StartCoroutine(DamageFromPoison(increasesDamage, fullTime));
 
         if (!isPoisonTimerStart)
         {
             StartCoroutine(CountPoisonDamage(increasesDamage, fullTime));
-        }*/
+        }
     }
 
     public virtual void FireDamage(int finalDamage, int increasingDamage)
     {
-        /*increaseFireDamage += increasingDamage;
+        increaseFireDamage += increasingDamage;
         StartCoroutine(CountFireDamage());
         finalFireDamage += finalDamage;
         numOfFireEffects++;
         if (!isFireTimerStart)
         {
             StartCoroutine(FinalFireDamage());
-        }*/
+        }
     }
 
-    /*IEnumerator CountFireDamage()
+    protected virtual IEnumerator CountFireDamage()
     {
         int numOfTiks = (int)(TIMETOFIREDAMAGE / FIREINTERVAL);
 
-        while(numOfTiks > 0)
+        while (numOfTiks > 0)
         {
             MinusHealth(increaseFireDamage);
             yield return new WaitForSeconds(FIREINTERVAL);
         }
     }
- 
-    IEnumerator FinalFireDamage()
+
+    protected virtual IEnumerator FinalFireDamage()
     {
         isFireTimerStart = true;
 
@@ -121,11 +134,11 @@ public class EnemysHealth : MonoBehaviour
         isFireTimerStart = false;
     }
 
-    IEnumerator CountPoisonDamage(int damage, float fullTime)
+    protected virtual IEnumerator CountPoisonDamage(int damage, float fullTime)
     {
         totalPoisonDuration = (int)(fullTime / POISONINTERVAL);
 
-        while(totalPoisonDuration >= 0)
+        while (totalPoisonDuration >= 0)
         {
             yield return new WaitForSeconds(POISONINTERVAL);
 
@@ -140,11 +153,11 @@ public class EnemysHealth : MonoBehaviour
         totalPoisonDuration = 0f;
     }
 
-    IEnumerator DamageFromPoison(int increasesDamage, float fullTime)
+    protected virtual IEnumerator DamageFromPoison(int increasesDamage, float fullTime)
     {
         increasePoisonDamage += increasesDamage;
 
-        if(fullTime > totalPoisonDuration)
+        if (fullTime > totalPoisonDuration)
         {
             totalPoisonDuration = fullTime;
         }
@@ -152,5 +165,5 @@ public class EnemysHealth : MonoBehaviour
         yield return new WaitForSeconds(fullTime);
 
         increasePoisonDamage -= increasesDamage;
-    }*/
+    }
 }

@@ -16,8 +16,6 @@ public class SUU_Spell : SpellUniversal
 
     public const bool MOMENTARYCAST = false;
 
-    SSI ssi;
-
     private GameObject effectPrefabModel;
     private GameObject cursorModel;
     private GameObject hintModel;
@@ -51,7 +49,7 @@ public class SUU_Spell : SpellUniversal
         StrokeData strokeDataStroke = new StrokeData(0.16f, false);
         strokeCircleGenerator.CircleData = circleDataStroke;
         strokeCircleGenerator.StrokeData = strokeDataStroke;
-        Material materialStroke = Resources.Load<Material>("Cursors/PizzaMaterial");
+        Material materialStroke = Resources.Load<Material>("_Cursors/PizzaMaterial");
         strokeCircleGenerator.GetComponent<MeshRenderer>().material = materialStroke;
         strokeCircleGenerator.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         cursorModel.SetActive(false);
@@ -64,7 +62,7 @@ public class SUU_Spell : SpellUniversal
         StrokeData strokeDataDash = new StrokeData(0.16f, false);
         dashCircleGenerator.CircleData = circleDataDash;
         dashCircleGenerator.StrokeData = strokeDataDash;
-        Material materialDash = Resources.Load<Material>("Cursors/PizzaMaterial");
+        Material materialDash = Resources.Load<Material>("_Cursors/PizzaMaterial");
         dashCircleGenerator.GetComponent<MeshRenderer>().material = materialDash;
         dashCircleGenerator.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         radiusModel.SetActive(false);
@@ -76,7 +74,7 @@ public class SUU_Spell : SpellUniversal
         StrokeData strokeDataDashHint = new StrokeData(0.16f, false);
         dashCircleGeneratorHint.CircleData = circleDataDashHint;
         dashCircleGeneratorHint.StrokeData = strokeDataDashHint;
-        Material materialDashHint = Resources.Load<Material>("Cursors/PizzaMaterial");
+        Material materialDashHint = Resources.Load<Material>("_Cursors/PizzaMaterial");
         dashCircleGeneratorHint.GetComponent<MeshRenderer>().material = materialDashHint;
         dashCircleGeneratorHint.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         hintModel.SetActive(false);
@@ -192,7 +190,7 @@ public class SUU_Spell : SpellUniversal
         for (float i = 0; i < timeCast; i += Time.deltaTime)
         {
             //eh.Damage(100);
-            if(eh.IsDeath)
+            if(eh.IsDeath())
             {
                 effectModel.SetActive(false);
                 GameObject[] gos;

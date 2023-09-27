@@ -30,7 +30,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        cursorPrefabPosition = Resources.Load<GameObject>("OtherObjects/CursorPosition");
+        cursorPrefabPosition = Resources.Load<GameObject>("_OtherObjects/CursorPosition");
         cursorPosition = Instantiate(cursorPrefabPosition);
     }
 

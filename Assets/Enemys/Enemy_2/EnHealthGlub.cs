@@ -22,7 +22,9 @@ public class EnHealthGlub : EnemysHealth
     private int numOfFireEffects = 0;
     private bool isFireTimerStart = false;
 
-    public bool IsDeath { get; private set; } = false;
+    //public override bool IsDeath { get; protected set; } = false;
+    //public override int MaxHealth { get; protected set; } = 50;
+    //public override bool IsBoss { get; protected set; } = false;
 
     private Renderer renderer;
     private Material[] material;
@@ -37,7 +39,7 @@ public class EnHealthGlub : EnemysHealth
         enMovBirb = GetComponent<EnMovBirb>();
     }
 
-    private void MinusHealth(int damage)
+    protected override void MinusHealth(int damage)
     {
         health -= damage;
         //Debug.Log("HP" + health);
@@ -52,7 +54,7 @@ public class EnHealthGlub : EnemysHealth
     IEnumerator Death()
     {
         float currentValue = 1f;
-        IsDeath = true;
+        isDeath = true;
         GetComponent<Animator>().SetBool("isDeath", true);
         while(currentValue > -9f)
         {
