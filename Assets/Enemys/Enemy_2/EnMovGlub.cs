@@ -5,37 +5,25 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnMovGlub : EnemysMovement 
+public class EnMovGlub : EnemysMovement
 {
-    private bool inLeftWorld = true;
-
-    private float moveSpeed = 7.0f;
-    private bool isSee = false;
-    private bool readyToFight = true;
-    private float punchRadius = 4.0f;
-    private float timeStunned = 0f;
-    private float numOfStunns = 0f;
-    private bool isStunned = false;
-    private float reloadTeleport;
-    private float minReload = 4f;
-    private float maxReload = 12f;
-
     private Vector3 chPositionMinus = Vector3.zero;
     private Vector3 chPositionPlus = Vector3.zero;
     Vector3 shortestPoint = Vector3.zero;
 
-
-    private float currentPercentSpeed = 100f;
-    private float minimalPercentSpeed = 10f;
-    private NavMeshAgent agent;
-    private Transform characterGirl;
-    private Animator animator;
-    private EnHealthBirb healthBirb;
-    private GameObject teleportEffect1;
-    private GameObject teleportEffect2;
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isSee && other.CompareTag("Player"))
+        {
+            isSee = true;
+            characterGirl = other.transform;
+            StartCoroutine(Move());
+        }
+    }
 
     private void Start()
     {
+        moveSpeed = 8f;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
         animator = GetComponent<Animator>();
@@ -49,49 +37,8 @@ public class EnMovGlub : EnemysMovement
         teleportEffect2.SetActive(false);
     }
 
-    public override void IsStunned(float time)
-    {
-        numOfStunns++;
-        StartCoroutine(Stunned(time));
-    }
-
-    private IEnumerator Stunned(float time)
-    {
-        isStunned = true;
-        yield return new WaitForSeconds(time);
-        if(--numOfStunns == 0) isStunned = false;
-    }
-
-    public override void Slow(float slow)
-    {
-        currentPercentSpeed -= slow;
-        if(currentPercentSpeed < minimalPercentSpeed)
-        {
-            currentPercentSpeed = minimalPercentSpeed;
-        }
-
-        if(currentPercentSpeed > 100f)
-        {
-            currentPercentSpeed = 100f;
-        }
-
-        agent.speed = currentPercentSpeed * moveSpeed / 100f;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(!isSee && other.CompareTag("Player"))
-        {
-            isSee = true;
-            characterGirl = other.transform;
-            Debug.Log("Go");
-            StartCoroutine(Move());
-        }
-    }
-
     private IEnumerator Move()
     {
-        Debug.Log("Move");
         while (transform.position != null)
         {
             if (healthBirb.IsDeath())
@@ -122,7 +69,7 @@ public class EnMovGlub : EnemysMovement
                     }
                     else
                     {
-                        if(mi < pl)
+                        if (mi < pl)
                             shortestPoint = chPositionMinus;
                         else
                             shortestPoint = chPositionPlus;
@@ -134,11 +81,11 @@ public class EnMovGlub : EnemysMovement
                         agent.velocity = Vector3.zero;
                         StartCoroutine(DealDamage());
                     }
-                    else if(Vector3.Distance(shortestPoint, transform.position) < punchRadius)
+                    else if (Vector3.Distance(shortestPoint, transform.position) < punchRadius)
                     {
                         StartCoroutine(Teleport());
                     }
-                    else if(reloadTeleport < 0f && Vector3.Distance(characterGirl.transform.position, transform.position) > 2 * punchRadius)
+                    else if (reloadTeleport < 0f && Vector3.Distance(characterGirl.transform.position, transform.position) > 2 * punchRadius)
                     {
                         StartCoroutine(Teleport());
                     }
@@ -154,84 +101,9 @@ public class EnMovGlub : EnemysMovement
                     agent.ResetPath();
                 }
             }
-            
+
             reloadTeleport -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-    }
-
-    private IEnumerator Teleport()
-    {
-        readyToFight = false;
-        agent.isStopped = true;
-        agent.velocity = Vector3.zero;
-        reloadTeleport = 1000f;
-        Vector3 pointToCheck = Vector3.zero;
-        animator.SetBool("isTeleport", true);  
-        animator.SetBool("isRunning", true);  
-
-        if (inLeftWorld)
-        {
-            pointToCheck = transform.position + new Vector3(1000f, 0f, 0f);
-        }
-        else
-        {
-            pointToCheck = transform.position - new Vector3(1000f, 0f, 0f);
-        }
-        teleportEffect1.transform.position = transform.position;
-        teleportEffect2.transform.position = pointToCheck;
-        teleportEffect1.SetActive(true);
-        teleportEffect2.SetActive(true);
-
-        pointToCheck.y += 1;
-
-        yield return new WaitForSeconds(0.867f);
-
-        Collider[] colliders = Physics.OverlapSphere(pointToCheck, 1f);
-        pointToCheck.y -= 1;
-        foreach (Collider collider in colliders)
-        {
-            if (collider.tag == "BanTeleport" || collider.tag == "BoxBanTeleport")
-            {
-                reloadTeleport = 2f;
-                animator.SetBool("isTeleport", false);
-                teleportEffect1.SetActive(false);
-                yield break;
-            }
-        }
-
-        animator.SetBool("isTeleport", false);
-        transform.position = pointToCheck;
-
-        if (inLeftWorld)
-            inLeftWorld = false;
-        else
-            inLeftWorld = true;
-
-        yield return new WaitForSeconds(0.1f);
-        teleportEffect1.SetActive(false);
-        yield return new WaitForSeconds(0.4f);
-        teleportEffect2.SetActive(false);
-        readyToFight = true;
-        animator.speed = 1.0f;
-        reloadTeleport = Random.Range(minReload, maxReload);
-    }
-
-    private IEnumerator DealDamage()
-    {
-        readyToFight = false;
-        animator.SetBool("isPunch", true);
-        //animator.SetBool("isRunning", false);
-        agent.SetDestination(transform.position);
-        agent.Stop();
-        agent.ResetPath();
-        yield return new WaitForSeconds(0.367f);
-        if (Vector3.Distance(characterGirl.transform.position, transform.position) < punchRadius * 1.5f)
-            characterGirl.GetComponent<Health>().DealDamage(10);
-        yield return new WaitForSeconds(0.65f);
-        animator.SetBool("isPunch", false);
-        yield return new WaitForSeconds(0.3f);
-        readyToFight = true;
-        agent.Resume();
     }
 }

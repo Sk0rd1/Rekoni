@@ -1,56 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemysHealth : MonoBehaviour
+public class EnHealthDragon : EnemysHealth
 {
-    protected int health;
-    protected bool enemyIsDeath = false;
+    private int health;
+    private bool enemyIsDeath = false;
 
-    protected const float POISONINTERVAL = 1f;
-    protected int increasePoisonDamage = 0;
-    protected int totalPoisonDamage = 0;
-    protected float totalPoisonDuration = 0f;
-    protected bool isPoisonTimerStart = false;
+    private const float POISONINTERVAL = 1f;
+    private int increasePoisonDamage = 0;
+    private int totalPoisonDamage = 0;
+    private float totalPoisonDuration = 0f;
+    private bool isPoisonTimerStart = false;
 
-    protected const float FIREINTERVAL = 1f;
-    protected const float TIMETOFIREDAMAGE = 5f;
-    protected int finalFireDamage = 0;
-    protected int increaseFireDamage = 0;
-    protected int numOfFireEffects = 0;
-    protected bool isFireTimerStart = false;
+    private const float FIREINTERVAL = 1f;
+    private const float TIMETOFIREDAMAGE = 5f;
+    private int finalFireDamage = 0;
+    private int increaseFireDamage = 0;
+    private int numOfFireEffects = 0;
+    private bool isFireTimerStart = false;
 
-    protected Renderer renderer;
-    protected Material[] material;
-    protected Animator animator;
-    protected EnMovBirb enMovBirb;
+    private Renderer renderer;
+    private Material[] material;
+    private Animator animator;
+    private EnMovBirb enMovBirb;
 
-    protected int maxHealth = 1;
-
-    public virtual int MaxHealth()
+    private void Start()
     {
-        return maxHealth; 
+        isBoss = false;
+        maxHealth = 50;
+        renderer = GetComponentInChildren<Renderer>();
+        material = renderer.materials;
+        animator = GetComponent<Animator>();
+        enMovBirb = GetComponent<EnMovBirb>();
+        health = MaxHealth();
     }
 
-    protected bool isDeath = false;
-
-    public virtual bool IsDeath()
-    {
-        return isDeath;
-    }
-
-    protected bool isBoss = true;
-
-    public virtual bool IsBoss()
-    {
-        return isBoss;
-    }
-
-    protected virtual void MinusHealth(int damage)
+    protected override void MinusHealth(int damage)
     {
         health -= damage;
+        //Debug.Log("HP" + health);
 
         if (health < 1 && !enemyIsDeath)
         {
@@ -59,7 +48,7 @@ public class EnemysHealth : MonoBehaviour
         }
     }
 
-    protected virtual IEnumerator Death()
+    IEnumerator Death()
     {
         float currentValue = 1f;
         isDeath = true;
@@ -79,12 +68,12 @@ public class EnemysHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void Damage(int damage)
+    public override void Damage(int damage)
     {
         MinusHealth(damage);
     }
 
-    public virtual void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
+    public override void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
     {
         totalPoisonDamage += totalDamage;
 
@@ -96,7 +85,7 @@ public class EnemysHealth : MonoBehaviour
         }
     }
 
-    public virtual void FireDamage(int finalDamage, int increasingDamage)
+    public override void FireDamage(int finalDamage, int increasingDamage)
     {
         increaseFireDamage += increasingDamage;
         StartCoroutine(CountFireDamage());
@@ -108,7 +97,7 @@ public class EnemysHealth : MonoBehaviour
         }
     }
 
-    protected virtual IEnumerator CountFireDamage()
+    IEnumerator CountFireDamage()
     {
         int numOfTiks = (int)(TIMETOFIREDAMAGE / FIREINTERVAL);
 
@@ -119,7 +108,7 @@ public class EnemysHealth : MonoBehaviour
         }
     }
 
-    protected virtual IEnumerator FinalFireDamage()
+    IEnumerator FinalFireDamage()
     {
         isFireTimerStart = true;
 
@@ -134,7 +123,7 @@ public class EnemysHealth : MonoBehaviour
         isFireTimerStart = false;
     }
 
-    protected virtual IEnumerator CountPoisonDamage(int damage, float fullTime)
+    IEnumerator CountPoisonDamage(int damage, float fullTime)
     {
         totalPoisonDuration = (int)(fullTime / POISONINTERVAL);
 
@@ -153,7 +142,7 @@ public class EnemysHealth : MonoBehaviour
         totalPoisonDuration = 0f;
     }
 
-    protected virtual IEnumerator DamageFromPoison(int increasesDamage, float fullTime)
+    IEnumerator DamageFromPoison(int increasesDamage, float fullTime)
     {
         increasePoisonDamage += increasesDamage;
 

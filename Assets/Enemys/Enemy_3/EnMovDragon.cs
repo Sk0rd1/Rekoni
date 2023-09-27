@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnMovBirb : EnemysMovement 
+public class EnMovDragon : EnemysMovement
 {
     private Vector3 chPositionMinus = Vector3.zero;
     private Vector3 chPositionPlus = Vector3.zero;
@@ -69,7 +67,7 @@ public class EnMovBirb : EnemysMovement
                     }
                     else
                     {
-                        if(mi < pl)
+                        if (mi < pl)
                             shortestPoint = chPositionMinus;
                         else
                             shortestPoint = chPositionPlus;
@@ -81,11 +79,11 @@ public class EnMovBirb : EnemysMovement
                         agent.velocity = Vector3.zero;
                         StartCoroutine(DealDamage());
                     }
-                    else if(Vector3.Distance(shortestPoint, transform.position) < punchRadius)
+                    else if (Vector3.Distance(shortestPoint, transform.position) < punchRadius)
                     {
                         StartCoroutine(Teleport());
                     }
-                    else if(reloadTeleport < 0f && Vector3.Distance(characterGirl.transform.position, transform.position) > 2 * punchRadius)
+                    else if (reloadTeleport < 0f && Vector3.Distance(characterGirl.transform.position, transform.position) > 2 * punchRadius)
                     {
                         StartCoroutine(Teleport());
                     }
@@ -101,7 +99,7 @@ public class EnMovBirb : EnemysMovement
                     agent.ResetPath();
                 }
             }
-            
+
             reloadTeleport -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
