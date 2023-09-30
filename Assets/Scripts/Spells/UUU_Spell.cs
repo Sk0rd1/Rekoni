@@ -18,7 +18,7 @@ public class UUU_Spell : SpellUniversal
     private GameObject radiusModel;
     private GameObject enemy;
 
-    private string effectName = "SUU/Debuff";
+    //private string effectName = "SUU/Debuff";
     private string particlName = "SUU/Explosion";
 
     private bool isSpellReady = true;

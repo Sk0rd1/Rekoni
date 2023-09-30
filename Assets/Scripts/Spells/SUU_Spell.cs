@@ -10,9 +10,8 @@ public class SUU_Spell : SpellUniversal
     private float reloadTime = 4f;
     private float timeCast = 15f;
     private float damageRadius = 10f;
-    private float timePeriod = 0.5f;
-    private int percentDamage = 100; //потрібно 1 - 1%, а зараз 1 - 100%
-    private float forceAttraction = 0.1f;
+    //private int percentDamage = 100; //потрібно 1 - 1%, а зараз 1 - 100%
+    //private float forceAttraction = 0.1f;
 
     public const bool MOMENTARYCAST = false;
 

@@ -26,6 +26,7 @@ public class EnemysHealth : MonoBehaviour
     protected Material[] material;
     protected Animator animator;
     protected EnMovBirb enMovBirb;
+    protected string coinPath = "_OtherObjects/Coin";
 
     protected int maxHealth = 1;
 
@@ -64,6 +65,21 @@ public class EnemysHealth : MonoBehaviour
         float currentValue = 1f;
         isDeath = true;
         GetComponent<Animator>().SetBool("isDeath", true);
+
+        GameObject coin = Resources.Load<GameObject>(coinPath);
+        for (int i = 0; i < 10;  i++) 
+        {
+            GameObject currentCoin = Instantiate(coin);
+            currentCoin.transform.position = transform.position;
+            Rigidbody rb = currentCoin.GetComponent<Rigidbody>();
+            Vector3 coinDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
+            coinDirection.Normalize();
+            coinDirection /= Random.Range(1f, 10f);
+            coinDirection *= 5f;
+            coinDirection.y = 5f;
+            rb.velocity = coinDirection;
+        }
+
         while (currentValue > -9f)
         {
             currentValue -= 14 * Time.deltaTime;

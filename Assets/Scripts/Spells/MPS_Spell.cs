@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MPS_Spell : SpellUniversal
 {
-    private float slow = 10f;
+    private float slow = 50f;
     private float numOfHealPerSecond = 1f;
     private float buffDuration = 8f;
-    private float reloadTime = 20f;
+    private float reloadTime = 5f;
 
     private const bool MOMENTARYCAST = true;
 
@@ -65,6 +65,9 @@ public class MPS_Spell : SpellUniversal
             buffEffect.transform.position = characterGirl.transform.position + shieldOffset;
             currenrTime += Time.deltaTime;
         }
+        buffEffect.transform.position = new Vector3(0f, -100f, 0f);
+
+        yield return new WaitForEndOfFrame();
 
         Destroy(buffEffect);
     }

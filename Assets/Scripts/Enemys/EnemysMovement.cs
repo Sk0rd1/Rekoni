@@ -47,7 +47,16 @@ public class EnemysMovement : MonoBehaviour
 
     public virtual void Slow(float slow)
     {
-        currentPercentSpeed -= slow;
+
+        if(slow < 0)
+        {
+            currentPercentSpeed = currentPercentSpeed * 100f / (100f + slow);
+        }
+        else
+        {
+            currentPercentSpeed = currentPercentSpeed * (100f - slow) / 100f;
+        }
+
         if (currentPercentSpeed < minimalPercentSpeed)
         {
             currentPercentSpeed = minimalPercentSpeed;
@@ -124,7 +133,7 @@ public class EnemysMovement : MonoBehaviour
         animator.SetBool("isPunch", true);
         //animator.SetBool("isRunning", false);
         agent.SetDestination(transform.position);
-        agent.Stop();
+        agent.isStopped = true;
         agent.ResetPath();
         yield return new WaitForSeconds(0.367f);
         if (Vector3.Distance(characterGirl.transform.position, transform.position) < punchRadius * 1.5f)
@@ -133,6 +142,6 @@ public class EnemysMovement : MonoBehaviour
         animator.SetBool("isPunch", false);
         yield return new WaitForSeconds(0.3f);
         readyToFight = true;
-        agent.Resume();
+        agent.isStopped = false;
     }
 }

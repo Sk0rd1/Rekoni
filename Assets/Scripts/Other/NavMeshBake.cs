@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class NavMeshBake : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         NavMeshSurface navMesh = GetComponent<NavMeshSurface>();
         navMesh.BuildNavMesh();

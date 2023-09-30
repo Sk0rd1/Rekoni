@@ -9,8 +9,8 @@ public class MPS : MonoBehaviour
     private float slow = 0;
     private float periodOfHeal = 1000;
 
-    private int enemyCount = 0;
     private List<Transform> enemys = new List<Transform>();
+    private List<Transform> slowedEnemys = new List<Transform>();
 
     public void SetValues(float slow, float periodOfHeal)
     {
@@ -22,25 +22,17 @@ public class MPS : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            enemys.Add(other.transform);
-            EnemysMovement enMov = other.GetComponent<EnemysMovement>();
-            enMov.Slow(slow);
-            enemyCount++;
-            if (enemyCount == 1)
+            bool isAdded = false;
+            foreach(Transform en in enemys)
+            {
+                if (en.transform == other.transform) isAdded = true;
+            }
+            if (!isAdded)
+                enemys.Add(other.transform);
+            if (enemys.Count == 1)
             {
                 StartCoroutine(Heal());
             }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            EnemysMovement enMov = other.GetComponent<EnemysMovement>();
-            float unslow = -1 * slow;
-            enMov.Slow(unslow);
-            enemyCount--;
         }
     }
 
@@ -49,7 +41,9 @@ public class MPS : MonoBehaviour
         Health characterHealth = GameObject.Find("CharacterGirl").GetComponent<Health>();
         GameObject character = GameObject.Find("CharacterGirl");
 
-        while (enemyCount != 0)
+        slowedEnemys.Add(null);
+
+        while (enemys.Count != 0)
         {
             int currentEnemyCount = 0;
             foreach(Transform enemy in enemys)
@@ -57,11 +51,26 @@ public class MPS : MonoBehaviour
                 if(enemy != null)
                 {
                     Vector3 distance3 = enemy.position - character.transform.position;
-                    float distance = Mathf.Sqrt(Mathf.Pow(distance3.x, 2f) + Mathf.Pow(distance3.z, 2f));
+                    float distance = Mathf.Sqrt(Mathf.Pow(distance3.x, 2) + Mathf.Pow(distance3.z, 2));
 
-                    if(distance > 6.75)
+                    if (distance < 12f && distance > 6f)
                     {
+                        if (!slowedEnemys.Contains(enemy))
+                        {
+                            EnemysMovement enMov = enemy.GetComponent<EnemysMovement>();
+                            enMov.Slow(slow);
+                            slowedEnemys.Add(enemy);
+                        }
                         currentEnemyCount++;
+                    }
+                    else
+                    {
+                        if (slowedEnemys.Contains(enemy))   
+                        {
+                            EnemysMovement enMov = enemy.GetComponent<EnemysMovement>();
+                            enMov.Slow(-slow);
+                            slowedEnemys.Remove(enemy);
+                        }
                     }
                 }
             }

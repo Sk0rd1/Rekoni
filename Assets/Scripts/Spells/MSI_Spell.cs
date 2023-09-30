@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class MSI_Spell : SpellUniversal
 {
     private float reloadTime = 4f;
-    private int heroDamage = 10;
+    //private int heroDamage = 10;
 
     public const bool MOMENTARYCAST = false;
 
@@ -18,7 +18,7 @@ public class MSI_Spell : SpellUniversal
     private GameObject radiusModel;
     private GameObject enemy;
 
-    private string effectName = "SUU/Debuff";
+    //private string effectName = "SUU/Debuff";
     private string particlName = "SUU/Explosion";
 
     private bool isSpellReady = true;

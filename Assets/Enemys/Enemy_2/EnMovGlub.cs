@@ -43,7 +43,7 @@ public class EnMovGlub : EnemysMovement
         {
             if (healthBirb.IsDeath())
             {
-                agent.Stop();
+                agent.isStopped = true;
                 animator.speed /= 1.5f;
                 animator.SetBool("isDeath", true);
                 teleportEffect1.SetActive(false);
@@ -92,6 +92,7 @@ public class EnMovGlub : EnemysMovement
                     else
                     {
                         animator.SetBool("isRunning", true);
+                        agent.isStopped = false;
                         agent.SetDestination(shortestPoint);
                     }
                 }

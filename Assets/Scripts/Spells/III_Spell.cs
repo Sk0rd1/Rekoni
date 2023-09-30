@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+//using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class III_Spell : SpellUniversal
 {
@@ -18,10 +18,10 @@ public class III_Spell : SpellUniversal
     private GameObject effectPrefabModel;
     private GameObject cursorModel;
 
-    private string cursorName = "_Cursors/Pizza60";
+    private string cursorName = "_Cursors/Pizza60III";
     private string effectName = "III/IceArrow";
 
-    private float effectRadius = 3f;
+    //private float effectRadius = 3f;
     private bool isSpellReady = true;
     private float spellDistance = 20f;
     private float currentReload = 0f;
@@ -32,7 +32,7 @@ public class III_Spell : SpellUniversal
     {
         cursorPrefabModel = Resources.Load<GameObject>(cursorName);
         cursorModel = Instantiate(cursorPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.EulerAngles(-90f, 0f, 0f));
-        cursorModel.transform.localScale *= 3f; 
+        //cursorModel.transform.localScale *= 3f; 
         cursorModel.SetActive(false);
 
         for (int i = 0; i < numberOfArrows; i++)

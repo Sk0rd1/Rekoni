@@ -37,7 +37,7 @@ public class MMM_Spell : SpellUniversal
     private List<Vector3> cursorLocation = new List<Vector3>();
 
     private string effectName = "MMM/ES_MMM";
-    private string cursorForEffectName = "MMM/CFE_MMM";
+    //private string cursorForEffectName = "MMM/CFE_MMM";
     private string boomEffectName = "MMM/BoomEffect";
 
     private void Start()

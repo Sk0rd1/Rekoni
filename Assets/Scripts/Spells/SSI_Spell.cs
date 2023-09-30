@@ -9,7 +9,7 @@ public class SSI_Spell : SpellUniversal
 {
     private float reloadTime = 4f;
     private float timeCast = 3f;
-    private float timePeriod = 0.5f;
+    //private float timePeriod = 0.5f;
     private int damage = 4;
     private float forceAttraction = 0.1f;
 
@@ -22,14 +22,14 @@ public class SSI_Spell : SpellUniversal
     private GameObject cursorModel;
     private GameObject effectModel;
     private GameObject radiusModel;
-    private Renderer rendererInside;
-    private Material[] materialInside;
+    //private Renderer rendererInside;
+    //private Material[] materialInside;
 
-    DashCircleGenerator circle;
+    //DashCircleGenerator circle;
 
-    private string cursorName = "_Cursors/Pizza360";
+    //private string cursorName = "_Cursors/Pizza360";
     private string effectName = "SSI/BlackHole";
-    private string radiusName = "_Cursors/Pizza360Hole";
+    //private string radiusName = "_Cursors/Pizza360Hole";
 
     private float effectRadius = 3f;
     private bool isSpellReady = true;
