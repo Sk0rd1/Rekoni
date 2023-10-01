@@ -14,20 +14,19 @@ public class MSI_Spell : SpellUniversal
 
     private GameObject cursorModel;
     private GameObject hintModel;
-    private GameObject effectParticl;
     private GameObject radiusModel;
     private GameObject enemy;
-
-    //private string effectName = "SUU/Debuff";
-    private string particlName = "SUU/Explosion";
+    private GameObject effectModel;
 
     private bool isSpellReady = true;
     private float currentReload = 0f;
+    private string effectName = "MSI/Strike";
 
     void Start()
     {
-        effectParticl = Resources.Load<GameObject>(particlName);
         enemy = null;
+
+        effectModel = Resources.Load<GameObject>(effectName);
 
         cursorModel = new GameObject();
         cursorModel.AddComponent<StrokeCircleGenerator>();
@@ -169,17 +168,21 @@ public class MSI_Spell : SpellUniversal
 
     IEnumerator EffectCast()
     {
+        Vector3 position = enemy.transform.position;
+        GameObject gameObject = Instantiate(effectModel);
+        gameObject.transform.localScale = new Vector3(1f, 3f, 1f);
         enemy.GetComponent<EnemysMovement>().IsStunned(1f);
-        yield return new WaitForSeconds(0.5f);
         enemy.GetComponent<EnemysHealth>().Damage(100);
-        
+        gameObject.transform.position = position + new Vector3(0f, 0.5f, 0f);
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
         yield return null;
     }
 
     private IEnumerator OneEffect(Vector3 position)
     {
         Debug.Log("OneEffect");
-        GameObject gameObject = Instantiate(effectParticl);
+        GameObject gameObject = Instantiate(effectModel);
         gameObject.transform.position = position + new Vector3(0f, 0.5f, 0f);
         gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         yield return new WaitForSeconds(1);

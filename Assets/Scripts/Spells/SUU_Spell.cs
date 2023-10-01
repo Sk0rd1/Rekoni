@@ -213,7 +213,6 @@ public class SUU_Spell : SpellUniversal
 
     private IEnumerator OneEffect(Vector3 position)
     {
-        Debug.Log("OneEffect");
         GameObject gameObject = Instantiate(effectParticl); 
         gameObject.transform.position = position + new Vector3(0f, 0.5f, 0f);
         gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
