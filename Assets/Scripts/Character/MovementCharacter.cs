@@ -127,7 +127,7 @@ public class MovementCharacter : MonoBehaviour
             StartCoroutine(DelayMoveTime());
         }*/
 
-        if (!isFalling() && !isMoveTimeCast && !isRolling && !isClimbing)
+        if (!isFalling() && !isMoveTimeCast && !isRolling && !isClimbing && !isMoveBox)
         {
             Running(currentDirection);
         }
@@ -253,26 +253,27 @@ public class MovementCharacter : MonoBehaviour
             currentBoxOld.GetComponent<Rigidbody>().isKinematic = false;
             animator.SetBool("isMoveBox", true);
         }
-
     }
 
     private void MoveBox()
     {
-        Vector3 boxDirection = cursorPosition.transform.position;
-
+        //Vector3 boxDirection = cursorPosition.transform.position;
+        Vector3 boxDirection =   inputManager.LeftSteakDirection();
         if (currentBoxNew != null && currentBoxOld != null)
         {
             if (isNewTime)
             {
                 //currentBoxNew.transform.position += boxDirection * moveSpeed * Time.deltaTime;
-                currentBoxNew.GetComponent<Rigidbody>().AddForce(5f * boxDirection * moveSpeed * Time.deltaTime, ForceMode.Impulse);
+                //currentBoxNew.transform.position = new Vector3(currentBoxNew.transform.position.x, transform.position.y + 4f, currentBoxNew.transform.position.z);
+                currentBoxNew.GetComponent<Rigidbody>().AddForce(3f * boxDirection * moveSpeed * Time.deltaTime, ForceMode.Impulse);
                 currentBoxOld.transform.position = currentBoxNew.transform.position + moveTimeDirection;
                 transform.LookAt(new Vector3(currentBoxNew.transform.position.x, transform.position.y, currentBoxNew.transform.position.z));
             }
             else
             {
                 //currentBoxOld.transform.position += boxDirection * moveSpeed * Time.deltaTime;
-                currentBoxOld.GetComponent<Rigidbody>().AddForce(5f * boxDirection * moveSpeed * Time.deltaTime, ForceMode.Impulse);
+                //currentBoxOld.transform.position = new Vector3(currentBoxOld.transform.position.x, transform.position.y + 0.2f, currentBoxOld.transform.position.z);
+                currentBoxOld.GetComponent<Rigidbody>().AddForce(3f * boxDirection * moveSpeed * Time.deltaTime, ForceMode.Impulse);
                 currentBoxNew.transform.position = currentBoxOld.transform.position - moveTimeDirection;
                 transform.LookAt(new Vector3(currentBoxOld.transform.position.x, transform.position.y, currentBoxOld.transform.position.z));
             }
@@ -348,7 +349,8 @@ public class MovementCharacter : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
             newVector = transform.position;
-            if ((Mathf.Abs(direction.z) < 0.01f && Mathf.Abs(oldVector.x - newVector.x) < 0.01f) || (Mathf.Abs(direction.x) < 0.01f && Mathf.Abs(oldVector.z - newVector.z) < 0.01f) || (Mathf.Abs(oldVector.x - newVector.x) < 0.01f && Mathf.Abs(oldVector.z - newVector.z) < 0.01f))
+            float valueTime = Time.deltaTime * 10;
+            if ((Mathf.Abs(direction.z) < valueTime && Mathf.Abs(oldVector.x - newVector.x) < valueTime) || (Mathf.Abs(direction.x) < valueTime && Mathf.Abs(oldVector.z - newVector.z) < valueTime) || (Mathf.Abs(oldVector.x - newVector.x) < valueTime && Mathf.Abs(oldVector.z - newVector.z) < valueTime))
             {
                 yield break;
             }
@@ -527,7 +529,7 @@ public class MovementCharacter : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
             transform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
-            //yield return null;
+            yield return null;
         }
 
         transform.rotation = targetRotation;

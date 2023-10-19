@@ -5,15 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject loadingScreen;
+
+    private void Start()
+    {
+
+        loadingScreen.SetActive(false);
+    }
+
     public void LoadGame()
     {
-        Debug.Log("—цену запущено.");
+        loadingScreen.SetActive(true);
         SceneManager.LoadScene("TestScene2");
     }
 
     public void ExitGame()
     {
-        Debug.Log("¬их≥д з гри.");
         Application.Quit();
     }
 }

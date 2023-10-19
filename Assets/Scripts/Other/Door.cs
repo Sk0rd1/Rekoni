@@ -4,20 +4,44 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private bool isOpen;
+    private float startPosY; 
+    private float endPosY;
 
-    public void Open()
+    private void Start()
     {
-        isOpen = true;
+        startPosY = transform.position.y;
+        endPosY = startPosY - 10f;
     }
 
-    void Update()
+    public void Open(bool isOpen)
     {
-        if(isOpen)
+        StopAllCoroutines();
+        StartCoroutine(OpenDoor(isOpen));
+    }
+
+    private IEnumerator OpenDoor(bool isOpen)
+    { 
+        float currentDistance = 0;
+        float doorSpeed = 10;
+        Transform cube = transform.GetChild(0);
+        if (isOpen)
         {
-            Transform cube = transform.GetChild(0);
-            if (cube.transform.position.y > -7)
-                cube.transform.position += new Vector3(0f, -5f * Time.deltaTime, 0f);
+            while (cube.position.y > endPosY)
+            {
+                currentDistance += doorSpeed * Time.deltaTime;
+                cube.position -= new Vector3(0f, doorSpeed * Time.deltaTime, 0f);
+                yield return new WaitForEndOfFrame();
+            }
         }
+        else
+        {
+            while (cube.position.y < startPosY)
+            {
+                currentDistance += doorSpeed * Time.deltaTime;
+                cube.position += new Vector3(0f, doorSpeed * Time.deltaTime, 0f);
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
     }
 }

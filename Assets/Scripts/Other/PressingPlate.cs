@@ -5,19 +5,37 @@ using UnityEngine.Events;
 
 public class PressingPlate : MonoBehaviour
 {
-    public UnityEvent OnPressed;    
-    private bool isPressed = false;
+    [SerializeField]
+    GameObject door;
+
+    private bool isDoorOpen = false;
+    private int countObjects = 0;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player") || other.CompareTag("BoxBanTeleport"))
         {
-            if (!isPressed)
+            countObjects++;
+            if(countObjects == 1 && !isDoorOpen)
             {
-                Transform cube = transform.GetChild(0);
-                cube.transform.position += new Vector3(0f, -0.49f, 0f);
-                isPressed = true;
+                isDoorOpen = true;
+                door.GetComponent<Door>().Open(isDoorOpen);
+                transform.GetChild(1).transform.position -= new Vector3(0, 0.35f, 0);
             }
-            OnPressed.Invoke();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") || other.CompareTag("BoxBanTeleport"))
+        {
+            countObjects--;
+            if(countObjects == 0 && isDoorOpen)
+            {
+                isDoorOpen = false;
+                door.GetComponent<Door>().Open(isDoorOpen);
+                transform.GetChild(1).transform.position += new Vector3(0, 0.35f, 0);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -27,9 +28,8 @@ public class CoinMovement : MonoBehaviour
             transform.position += moveSpeed * direction * Time.deltaTime;
             if (Vector3.Distance(characterGirl.position, transform.position) < 1f) break;
             yield return new WaitForEndOfFrame();
-            Debug.Log("MoveCoin");
         }
-            Debug.Log("DestroyCoin");
+        characterGirl.GetComponent<ExpendableResources>().PlusCoin();
         Destroy(this.gameObject);
     }
 }

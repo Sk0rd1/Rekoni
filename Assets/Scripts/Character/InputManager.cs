@@ -18,6 +18,7 @@ public class InputManager : MonoBehaviour
     public bool ButtonClimbOnBox { get; private set; }
     public bool ButtonMoveBox { get; private set; }
     public bool ButtonNextSpells { get; private set; }
+    public bool ButtonPause { get; private set; }
 
     private Camera cameraCharacter;
     private Vector3 leftSteakDirection = Vector3.zero;
@@ -26,6 +27,9 @@ public class InputManager : MonoBehaviour
 
     private bool is3SpellCast = false;
     private bool is4SpellCast = false;
+
+    private Pause pause;
+
 
 
     private void Awake()
@@ -36,9 +40,8 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-        // я хз чи присвоїлась камера
         cameraCharacter = Camera.main;
-
+        pause = GameObject.Find("Main Camera").GetComponent<Pause>();
         SpellNum = 0;
         SpellNumUp = 0;
         IsCancelSpell = false;
@@ -51,6 +54,8 @@ public class InputManager : MonoBehaviour
 
     public void CheckButton()
     {
+        OnPause();
+        OnInventory();
         CheckGamepad();
         PressRoll();
         PressMoveTime();
@@ -90,7 +95,7 @@ public class InputManager : MonoBehaviour
 
     private void PressMoveBox()
     {
-        if ((Input.GetKey(KeyCode.JoystickButton2) && isGamepadUsing) || (Input.GetKey(KeyCode.F) && !isGamepadUsing))
+        if ((Input.GetKeyDown(KeyCode.JoystickButton2) && isGamepadUsing) || (Input.GetKeyDown(KeyCode.F) && !isGamepadUsing))
         {
             ButtonMoveBox = true;
         }
@@ -102,7 +107,7 @@ public class InputManager : MonoBehaviour
 
     private void PressClimbOnBox()
     {
-        if ((Input.GetKey(KeyCode.JoystickButton1) && isGamepadUsing) || (Input.GetKey(KeyCode.V) && !isGamepadUsing))
+        if ((Input.GetKeyDown(KeyCode.JoystickButton1) && isGamepadUsing) || (Input.GetKeyDown(KeyCode.V) && !isGamepadUsing))
         {
             ButtonClimbOnBox = true;
         }
@@ -288,10 +293,7 @@ public class InputManager : MonoBehaviour
             {
                 cursorPosition.transform.position = newHitPoint;
             }
-            catch
-            {
-                Debug.Log("GG");
-            }
+            catch { }
             //rightSteakDirection = newHitPoint;
             //rSvalue = newHitPoint;
 
@@ -380,6 +382,22 @@ public class InputManager : MonoBehaviour
                 else
                     isGamepadUsing = false;
             }
+        }
+    }
+
+    private void OnPause()
+    {
+        if (Input.GetKeyDown(KeyCode.JoystickButton6) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameObject.Find("Main Camera").GetComponent<Pause>().PressExit();
+        }
+    }
+
+    private void OnInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.I))
+        {
+            GameObject.Find("Main Camera").GetComponent<Pause>().PressInventory();
         }
     }
 }
