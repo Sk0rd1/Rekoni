@@ -18,6 +18,7 @@ public class InputManager : MonoBehaviour
     public bool ButtonClimbOnBox { get; private set; }
     public bool ButtonMoveBox { get; private set; }
     public bool ButtonNextSpells { get; private set; }
+    public bool ButtonPause { get; private set; }
 
     private Camera cameraCharacter;
     private Vector3 leftSteakDirection = Vector3.zero;
@@ -26,6 +27,8 @@ public class InputManager : MonoBehaviour
 
     private bool is3SpellCast = false;
     private bool is4SpellCast = false;
+
+    private Pause pause;
 
 
     private void Awake()
@@ -36,9 +39,8 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-        // я хз чи присвоїлась камера
         cameraCharacter = Camera.main;
-
+        pause = GameObject.Find("Main Camera").GetComponent<Pause>();
         SpellNum = 0;
         SpellNumUp = 0;
         IsCancelSpell = false;
@@ -51,101 +53,9 @@ public class InputManager : MonoBehaviour
 
     public void CheckButton()
     {
-        /*if (Input.GetKeyDown(KeyCode.JoystickButton1))
-            Debug.Log(1);
-        if (Input.GetKeyDown(KeyCode.JoystickButton2))
-            Debug.Log(2);
-        if (Input.GetKeyDown(KeyCode.JoystickButton3))
-            Debug.Log(3);
-        if (Input.GetKeyDown(KeyCode.JoystickButton4))
-            Debug.Log(4);
-        if (Input.GetKeyDown(KeyCode.JoystickButton5))
-            Debug.Log(5);
-        if (Input.GetKeyDown(KeyCode.JoystickButton6))
-            Debug.Log(6);
-        if (Input.GetKeyDown(KeyCode.JoystickButton7))
-            Debug.Log(7);
-        if (Input.GetKeyDown(KeyCode.JoystickButton8))
-            Debug.Log(8);
-        if (Input.GetKeyDown(KeyCode.JoystickButton9))
-            Debug.Log(9);
-        if (Input.GetKeyDown(KeyCode.JoystickButton10))
-            Debug.Log(10);
-        if (Input.GetKeyDown(KeyCode.JoystickButton11))
-            Debug.Log(11);
-        if (Input.GetKeyDown(KeyCode.JoystickButton12))
-            Debug.Log(12);
-        if (Input.GetKeyDown(KeyCode.JoystickButton13))
-            Debug.Log(13);
-        if (Input.GetKeyDown(KeyCode.JoystickButton14))
-            Debug.Log(14);
-        if (Input.GetKeyDown(KeyCode.JoystickButton15))
-            Debug.Log(15);
-        if (Input.GetKeyDown(KeyCode.JoystickButton16))
-            Debug.Log(16);
-        if (Input.GetKeyDown(KeyCode.JoystickButton17))
-            Debug.Log(17);
-        if (Input.GetKeyDown(KeyCode.JoystickButton18))
-            Debug.Log(18);
-        if (Input.GetKeyDown(KeyCode.JoystickButton19))
-            Debug.Log(19);
-
-        if (Input.GetKeyUp(KeyCode.JoystickButton1))
-            Debug.Log(100);
-        if (Input.GetKeyUp(KeyCode.JoystickButton2))
-            Debug.Log(200);
-        if (Input.GetKeyUp(KeyCode.JoystickButton3))
-            Debug.Log(300);
-        if (Input.GetKeyUp(KeyCode.JoystickButton4))
-            Debug.Log(400);
-        if (Input.GetKeyUp(KeyCode.JoystickButton5))
-            Debug.Log(500);
-        if (Input.GetKeyUp(KeyCode.JoystickButton6))
-            Debug.Log(600);
-        if (Input.GetKeyUp(KeyCode.JoystickButton7))
-            Debug.Log(700);
-        if (Input.GetKeyUp(KeyCode.JoystickButton8))
-            Debug.Log(800);
-        if (Input.GetKeyUp(KeyCode.JoystickButton9))
-            Debug.Log(900);
-        if (Input.GetKeyUp(KeyCode.JoystickButton10))
-            Debug.Log(1000);
-        if (Input.GetKeyUp(KeyCode.JoystickButton11))
-            Debug.Log(1100);
-        if (Input.GetKeyUp(KeyCode.JoystickButton12))
-            Debug.Log(1200);
-        if (Input.GetKeyUp(KeyCode.JoystickButton13))
-            Debug.Log(1300);
-        if (Input.GetKeyUp(KeyCode.JoystickButton14))
-            Debug.Log(1400);
-        if (Input.GetKeyUp(KeyCode.JoystickButton15))
-            Debug.Log(15);
-        if (Input.GetKeyUp(KeyCode.JoystickButton16))
-            Debug.Log(1600);
-        if (Input.GetKeyUp(KeyCode.JoystickButton17))
-            Debug.Log(1700);
-        if (Input.GetKeyUp(KeyCode.JoystickButton18))
-            Debug.Log(1800);
-        if (Input.GetKeyUp(KeyCode.JoystickButton19))
-            Debug.Log(1900);
-
-        if (Input.GetAxis("Axis 1") != 0)
-            Debug.Log("A1");
-        if (Input.GetAxis("Axis 2") != 0)
-            Debug.Log("A2");
-        if (Input.GetAxis("Axis 3") != 0)
-            Debug.Log("A3");
-        if (Input.GetAxis("Axis 4") != 0)
-            Debug.Log("A4");
-        if (Input.GetAxis("Axis 5") != 0)
-            Debug.Log("A5");
-        if (Input.GetAxis("Axis 6") != 0)
-            Debug.Log("A6");
-        if (Input.GetAxis("Axis 7") != 0)
-            Debug.Log("A7");
-        if (Input.GetAxis("Axis 8") != 0)
-            Debug.Log("A8");*/
-
+        OnPause();
+        OnInventory();
+        CheckGamepad();
         PressRoll();
         PressMoveTime();
         PressMoveBox();
@@ -184,9 +94,11 @@ public class InputManager : MonoBehaviour
 
     private void PressMoveBox()
     {
-        if ((Input.GetKey(KeyCode.JoystickButton2) && isGamepadUsing) || (Input.GetKey(KeyCode.F) && !isGamepadUsing))
+        if ((Input.GetKeyDown(KeyCode.JoystickButton2) && isGamepadUsing) || (Input.GetKeyDown(KeyCode.F) && !isGamepadUsing))
         {
             ButtonMoveBox = true;
+            SaveManager sm = new SaveManager();
+            sm.SaveGame();
         }
         else
         {
@@ -196,7 +108,7 @@ public class InputManager : MonoBehaviour
 
     private void PressClimbOnBox()
     {
-        if ((Input.GetKey(KeyCode.JoystickButton1) && isGamepadUsing) || (Input.GetKey(KeyCode.V) && !isGamepadUsing))
+        if ((Input.GetKeyDown(KeyCode.JoystickButton1) && isGamepadUsing) || (Input.GetKeyDown(KeyCode.V) && !isGamepadUsing))
         {
             ButtonClimbOnBox = true;
         }
@@ -382,10 +294,7 @@ public class InputManager : MonoBehaviour
             {
                 cursorPosition.transform.position = newHitPoint;
             }
-            catch
-            {
-                Debug.Log("GG");
-            }
+            catch { }
             //rightSteakDirection = newHitPoint;
             //rSvalue = newHitPoint;
 
@@ -444,8 +353,52 @@ public class InputManager : MonoBehaviour
         return leftSteakDirection;
     }
 
-    public void IsGamepadUsing(bool isGamepadUsing)
+    public void CheckGamepad()
     {
-        this.isGamepadUsing = isGamepadUsing;
+        // хз чи потрібен наступний код
+        /*if(Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        {
+            Debug.Log("Mouse");
+            isGamepadUsing = false;
+        }*/
+
+        int joystickCount = Input.GetJoystickNames().Length;
+        for (int i = 1; i <= joystickCount; i++)
+        {
+
+            float axisValue = Input.GetAxis("Axis " + i);
+            if (axisValue != 0)
+            {
+                isGamepadUsing = true;
+            }
+        }
+
+        foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKey(kcode))
+            {
+                string name = (kcode.ToString() + "000").Substring(0, 3);
+                if(name == "Joy")
+                    isGamepadUsing = true;
+                else
+                    isGamepadUsing = false;
+            }
+        }
+    }
+
+    private void OnPause()
+    {
+        if (Input.GetKeyDown(KeyCode.JoystickButton6) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameObject.Find("Main Camera").GetComponent<Pause>().PressExit();
+        }
+    }
+
+    private void OnInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.I))
+        {
+            GameObject.Find("Main Camera").GetComponent<Pause>().PressInventory();
+        }
     }
 }

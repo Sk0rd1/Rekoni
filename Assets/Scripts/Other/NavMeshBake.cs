@@ -5,15 +5,10 @@ using UnityEngine.AI;
 
 public class NavMeshBake : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         NavMeshSurface navMesh = GetComponent<NavMeshSurface>();
         navMesh.BuildNavMesh();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

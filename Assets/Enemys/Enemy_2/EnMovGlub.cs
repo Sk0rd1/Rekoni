@@ -28,7 +28,9 @@ public class EnMovGlub : EnemysMovement
         agent.speed = moveSpeed;
         animator = GetComponent<Animator>();
         //animator.SetBool("isRunnning", false);
-        healthBirb = GetComponent<EnHealthBirb>();
+
+        //наступний рядок потрібно змінити
+        enHealth = GetComponent<EnHealthBirb>();
         reloadTeleport = Random.Range(2f, 7f);
         teleportEffect1 = Resources.Load<GameObject>("_OtherObjects/Teleports/MagicCircleForTeleportEnemyBlue");
         teleportEffect2 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
@@ -41,9 +43,9 @@ public class EnMovGlub : EnemysMovement
     {
         while (transform.position != null)
         {
-            if (healthBirb.IsDeath())
+            if (enHealth.IsDeath())
             {
-                agent.Stop();
+                agent.isStopped = true;
                 animator.speed /= 1.5f;
                 animator.SetBool("isDeath", true);
                 teleportEffect1.SetActive(false);
@@ -92,6 +94,7 @@ public class EnMovGlub : EnemysMovement
                     else
                     {
                         animator.SetBool("isRunning", true);
+                        agent.isStopped = false;
                         agent.SetDestination(shortestPoint);
                     }
                 }

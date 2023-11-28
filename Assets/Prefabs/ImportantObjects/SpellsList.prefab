@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1945469467995951218}
   - component: {fileID: 8578448865577474419}
   - component: {fileID: -3115391854141149835}
+  - component: {fileID: -8654431684505374267}
+  - component: {fileID: 1079200631395532075}
   m_Layer: 0
   m_Name: SpellsList
   m_TagString: Untagged
@@ -49,10 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49bc51ad14f75f45b8d0ae15fb22e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slow: 10
-  numOfHealPerSecond: 1
-  buffDuration: 6
-  reloadTime: 10
 --- !u!114 &1945469467995951216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,9 +63,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35d77de83508be4186a4924033c9128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldDuration: 3
-  reloadTime: 4
-  numOfAttack: 4
 --- !u!114 &1945469467995951219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,11 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb5f559e31d7c4459dc69933d58c475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: 4
-  timeCast: 3
-  timePeriod: 1
-  damage: 4
-  forceAttraction: 0.1
 --- !u!114 &1945469467995951218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,11 +87,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209e0860e89181c49886451100114fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: 4
-  startDamage: 10
-  increasDamage: 1
-  fireDuration: 4
-  precision: 30
 --- !u!114 &8578448865577474419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,11 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd609f0a9326894a9725a1e7e2d1b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: 4
-  damage: 4
-  timeStunned: 1.5
-  distanceArrow: 10
-  numberOfArrows: 6
 --- !u!114 &-3115391854141149835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,3 +116,27 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 7baf0709e13ab3a439d9964f6017536f, type: 2}
+--- !u!114 &-8654431684505374267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945469467995951228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7903813fb4d5d43aba83f12d4f434b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1079200631395532075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945469467995951228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4277ab2353f1cee4bac74f417c563bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

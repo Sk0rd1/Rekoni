@@ -106,6 +106,7 @@ public class Health : MonoBehaviour
         this.numOfShields.Add(newShield);
 
         //this.numOfShields[this.numOfShields.Count - 1].obj.SetActive(false);
+        //yield return new WaitForSeconds(timeShield);
         yield return new WaitForSeconds(timeShield);
 
         this.numOfShields.Remove(newShield);

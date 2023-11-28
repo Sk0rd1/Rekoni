@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -25,7 +26,9 @@ public class EnemysHealth : MonoBehaviour
     protected Renderer renderer;
     protected Material[] material;
     protected Animator animator;
-    protected EnMovBirb enMovBirb;
+    protected EnemysMovement enMov;
+    protected string coinPath = "_OtherObjects/Coin";
+    protected string textPath = "_OtherObjects/FloatingText";
 
     protected int maxHealth = 1;
 
@@ -48,9 +51,15 @@ public class EnemysHealth : MonoBehaviour
         return isBoss;
     }
 
-    protected virtual void MinusHealth(int damage)
+    protected virtual void MinusHealth(int damage, TypeDamage typeDamage)
     {
         health -= damage;
+
+        var go = Instantiate(Resources.Load<GameObject>(textPath), transform.position, Quaternion.identity, transform);
+        TextMesh text = go.GetComponent<TextMesh>();
+        text.text = damage.ToString();
+        text.color = DamageInfo.GetColor(typeDamage);
+
 
         if (health < 1 && !enemyIsDeath)
         {
@@ -64,6 +73,21 @@ public class EnemysHealth : MonoBehaviour
         float currentValue = 1f;
         isDeath = true;
         GetComponent<Animator>().SetBool("isDeath", true);
+
+        GameObject coin = Resources.Load<GameObject>(coinPath);
+        for (int i = 0; i < 10;  i++) 
+        {
+            GameObject currentCoin = Instantiate(coin);
+            currentCoin.transform.position = transform.position;
+            Rigidbody rb = currentCoin.GetComponent<Rigidbody>();
+            Vector3 coinDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
+            coinDirection.Normalize();
+            coinDirection /= Random.Range(1f, 10f);
+            coinDirection *= 5f;
+            coinDirection.y = 5f;
+            rb.velocity = coinDirection;
+        }
+
         while (currentValue > -9f)
         {
             currentValue -= 14 * Time.deltaTime;
@@ -79,9 +103,9 @@ public class EnemysHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void Damage(int damage)
+    public virtual void Damage(int damage, TypeDamage typeDamage)
     {
-        MinusHealth(damage);
+        MinusHealth(damage, typeDamage);
     }
 
     public virtual void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
@@ -114,7 +138,7 @@ public class EnemysHealth : MonoBehaviour
 
         while (numOfTiks > 0)
         {
-            MinusHealth(increaseFireDamage);
+            MinusHealth(increaseFireDamage, TypeDamage.Fire);
             yield return new WaitForSeconds(FIREINTERVAL);
         }
     }
@@ -125,7 +149,7 @@ public class EnemysHealth : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-        MinusHealth(finalFireDamage * numOfFireEffects);
+        MinusHealth(finalFireDamage * numOfFireEffects, TypeDamage.Fire);
 
         finalFireDamage = 0;
         numOfFireEffects = 0;
@@ -143,7 +167,7 @@ public class EnemysHealth : MonoBehaviour
             yield return new WaitForSeconds(POISONINTERVAL);
 
             totalPoisonDamage += increasePoisonDamage;
-            MinusHealth(totalPoisonDamage);
+            MinusHealth(totalPoisonDamage, TypeDamage.Poison);
 
             totalPoisonDuration -= POISONINTERVAL;
         }
