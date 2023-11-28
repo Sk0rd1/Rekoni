@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class SpellUniversal : MonoBehaviour
 {
@@ -38,4 +39,40 @@ public class SpellUniversal : MonoBehaviour
     {
 
     }
+
+    /*public virtual void ChangeScaleVisualEffect(List<GameObject> effectList)
+    {
+        foreach (GameObject effect in effectList)
+        {
+            VisualEffect[] visualEffect = effect.GetComponentsInChildren<VisualEffect>();
+            foreach (VisualEffect ve in visualEffect)
+            {
+                ve.pause = true;
+            }
+        }
+    }
+
+    public virtual void ChangeScaleMaterialAndParticle(GameObject effectModel)
+    {
+        ParticleSystem[] particleSystems = effectModel.GetComponentsInChildren<ParticleSystem>();
+
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            var main = particle.main;
+            main.simulationSpeed = scaleGame;
+        }
+
+        Renderer[] renderers = effectModel.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in renderers)
+        {
+            Material[] materials = renderer.materials;
+            foreach (Material material in materials)
+            {
+                if (material.name == "BlackHole_Material (Instance)")
+                {
+                    material.SetFloat("_RotationAmount", scaleGame);
+                }
+            }
+        }
+    }*/
 }

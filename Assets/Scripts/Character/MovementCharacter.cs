@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class MovementCharacter : MonoBehaviour
@@ -12,7 +13,11 @@ public class MovementCharacter : MonoBehaviour
     [SerializeField]
     private float MOVESPEED = 15f;
     [SerializeField]
+    private float timeForMoveTime = 5f;
+    [SerializeField]
     private float turnDuration = 0.1f;
+
+    private float reloadMoveTime = 3f;
     private float gravity = 30f;    
     private Vector3 moveTimeDirection = new Vector3(1000f, 0f, 0f);
 
@@ -26,9 +31,11 @@ public class MovementCharacter : MonoBehaviour
     private bool isClimbing = false;
     private bool isFirstStageOfClimbing = false;
     private bool isMoveBox = false;
+    private bool stopMoveOnOneFrame = false;
     private float oldValueY;
     private float moveSpeed;
     private Vector3 cameraStartPosition = new Vector3(0f, 40f, -11f);
+    //private float scaleCharacter = 1f;
 
     private GameObject currentBoxNew;
     private GameObject currentBoxOld;
@@ -40,6 +47,8 @@ public class MovementCharacter : MonoBehaviour
     private GameObject teleportEffect2;
 
     private Transform cursorPosition;
+
+    private UIAnimator timerAnimator;
 
     // V-sync and lock FPS
     //private void Awake()
@@ -69,12 +78,27 @@ public class MovementCharacter : MonoBehaviour
         teleportEffect1 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
         teleportEffect1.SetActive(false);
         teleportEffect2.SetActive(false);
+        timerAnimator = GameObject.Find("Main Camera/Canvas/Timer").GetComponent<UIAnimator>();
+    }
+
+    public void StopMoveOnOneFram()
+    {
+        StartCoroutine(StopMove());
+    }
+
+    private IEnumerator StopMove()
+    {
+        stopMoveOnOneFrame = true;
+        yield return new WaitForEndOfFrame();
+        stopMoveOnOneFrame = false;
     }
 
     void Update()
     {
         inputManager.CheckButton();
         spellManager.CheckCast();
+
+        if (stopMoveOnOneFrame) return;
 
         moveSpeed = MOVESPEED;
         Vector3 currentDirection = GetCurrentPosition();
@@ -155,6 +179,7 @@ public class MovementCharacter : MonoBehaviour
 
     IEnumerator DelayMoveTime()
     {
+        //yield return new WaitForSeconds(1f);
         yield return new WaitForSeconds(1f);
         isMoveTimeCast = false;
     }
@@ -312,6 +337,7 @@ public class MovementCharacter : MonoBehaviour
         animator.SetBool("isClimbing", true);
         isFirstStageOfClimbing = true;
 
+        //yield return new WaitForSeconds(0.9f);
         yield return new WaitForSeconds(0.9f);
 
         animator.SetBool("isClimbing", false);
@@ -323,6 +349,7 @@ public class MovementCharacter : MonoBehaviour
 
         animator.speed = 0.5f;
 
+        //yield return new WaitForSeconds(0.4f);
         yield return new WaitForSeconds(0.4f);
 
         animator.speed = 1f;
@@ -412,7 +439,8 @@ public class MovementCharacter : MonoBehaviour
             // delete next row
             //animator.speed = 1.25f; потрібно пришвидшити анімацію бігу
             RotationCharacter(currentDirection);
-            controller.Move(currentDirection * moveSpeed * Time.deltaTime);
+            if(!stopMoveOnOneFrame)
+                controller.Move(currentDirection * moveSpeed * Time.deltaTime);
         }
         else
         {
@@ -447,14 +475,15 @@ public class MovementCharacter : MonoBehaviour
         teleportEffect1.transform.position = transform.position + new Vector3(0f, 0.5f, 0f);
         Vector3 pointToCheck = Vector3.zero;
 
-        if (isNewTime)
+        /*if (isNewTime)
         {
             pointToCheck = transform.position + moveTimeDirection;
         }
         else
         {
             pointToCheck = transform.position - moveTimeDirection;
-        }
+        }*/
+        pointToCheck = transform.position + moveTimeDirection;
 
         teleportEffect2.transform.position = pointToCheck   ;
 
@@ -480,13 +509,8 @@ public class MovementCharacter : MonoBehaviour
         {
             transform.position = pointToCheck;
             cameraCharacter.transform.position = transform.position + cameraStartPosition;
-
-            if (isNewTime)
-                isNewTime = false;
-            else
-                isNewTime = true;
-
         }
+        timerAnimator.StartCharacterAnimation(0.1f);
 
         yield return new WaitForSeconds(0.33f);
         animator.speed = 1.0f;
@@ -494,6 +518,26 @@ public class MovementCharacter : MonoBehaviour
         teleportEffect2.SetActive(false);
         isMoveTimeCast = false;
         animator.SetBool("isMoveTime", false);
+
+        yield return new WaitForSeconds(5f);
+
+        teleportEffect1.SetActive(true);
+        teleportEffect2.SetActive(true);
+        teleportEffect1.transform.position = transform.position + new Vector3(0f, 0.5f, 0f);
+        teleportEffect2.transform.position = transform.position - moveTimeDirection + new Vector3(0f, 0.5f, 0f);
+
+        isMoveTimeCast = true;
+        yield return new WaitForEndOfFrame();
+        transform.position = transform.position - moveTimeDirection;
+        cameraCharacter.transform.position = transform.position + cameraStartPosition;
+        isMoveTimeCast = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        teleportEffect1.SetActive(false);
+        teleportEffect2.SetActive(false);
+
+        yield return new WaitForSeconds(reloadMoveTime - 0.5f);
         isMoveTimeReady = true;
     }
 
@@ -546,22 +590,26 @@ public class MovementCharacter : MonoBehaviour
         controller.center = new Vector3(0f, 0.6f, 0f);
         controller.height = 1.2f;
 
+        //yield return new WaitForSeconds(0.2f);
         yield return new WaitForSeconds(0.2f);
 
         controller.center = new Vector3(0f, 0.45f, 0f);
         controller.height = 0.9f;
 
+        //yield return new WaitForSeconds(0.45f);
         yield return new WaitForSeconds(0.45f);
 
         animator.speed = 1.0f;
         animator.SetBool("isRoll", false);
 
+        //yield return new WaitForSeconds(0.05f);
         yield return new WaitForSeconds(0.05f);
 
         controller.center = new Vector3(0f, 0.9f, 0f);
         controller.height = 1.8f;
         isRolling = false;
 
+        //yield return new WaitForSeconds(0.7f);
         yield return new WaitForSeconds(0.7f);
         isRollingReady = true;
     }

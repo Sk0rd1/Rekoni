@@ -22,7 +22,7 @@ public class EnemysMovement : MonoBehaviour
     protected NavMeshAgent agent;
     protected Transform characterGirl;
     protected Animator animator;
-    protected EnHealthBirb healthBirb;
+    protected EnemysHealth enHealth;
     protected GameObject teleportEffect1;
     protected GameObject teleportEffect2;
     protected bool readyToFight = true;
@@ -90,6 +90,7 @@ public class EnemysMovement : MonoBehaviour
         }
         teleportEffect1.transform.position = transform.position;
         teleportEffect2.transform.position = pointToCheck;
+
         teleportEffect1.SetActive(true);
         teleportEffect2.SetActive(true);
 

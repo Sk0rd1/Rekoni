@@ -13,7 +13,8 @@ public class EnHealthGlub : EnemysHealth
         renderer = GetComponentInChildren<Renderer>();
         material = renderer.materials;
         animator = GetComponent<Animator>();
-        enMovBirb = GetComponent<EnMovBirb>();
+        // там потрібно замінити
+        //enMov = GetComponent<EnMovBirb>();
         health = MaxHealth();
     }
 }

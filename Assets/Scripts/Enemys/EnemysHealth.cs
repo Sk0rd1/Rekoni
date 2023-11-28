@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -25,8 +26,9 @@ public class EnemysHealth : MonoBehaviour
     protected Renderer renderer;
     protected Material[] material;
     protected Animator animator;
-    protected EnMovBirb enMovBirb;
+    protected EnemysMovement enMov;
     protected string coinPath = "_OtherObjects/Coin";
+    protected string textPath = "_OtherObjects/FloatingText";
 
     protected int maxHealth = 1;
 
@@ -49,9 +51,15 @@ public class EnemysHealth : MonoBehaviour
         return isBoss;
     }
 
-    protected virtual void MinusHealth(int damage)
+    protected virtual void MinusHealth(int damage, TypeDamage typeDamage)
     {
         health -= damage;
+
+        var go = Instantiate(Resources.Load<GameObject>(textPath), transform.position, Quaternion.identity, transform);
+        TextMesh text = go.GetComponent<TextMesh>();
+        text.text = damage.ToString();
+        text.color = DamageInfo.GetColor(typeDamage);
+
 
         if (health < 1 && !enemyIsDeath)
         {
@@ -95,9 +103,9 @@ public class EnemysHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void Damage(int damage)
+    public virtual void Damage(int damage, TypeDamage typeDamage)
     {
-        MinusHealth(damage);
+        MinusHealth(damage, typeDamage);
     }
 
     public virtual void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
@@ -130,7 +138,7 @@ public class EnemysHealth : MonoBehaviour
 
         while (numOfTiks > 0)
         {
-            MinusHealth(increaseFireDamage);
+            MinusHealth(increaseFireDamage, TypeDamage.Fire);
             yield return new WaitForSeconds(FIREINTERVAL);
         }
     }
@@ -141,7 +149,7 @@ public class EnemysHealth : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-        MinusHealth(finalFireDamage * numOfFireEffects);
+        MinusHealth(finalFireDamage * numOfFireEffects, TypeDamage.Fire);
 
         finalFireDamage = 0;
         numOfFireEffects = 0;
@@ -159,7 +167,7 @@ public class EnemysHealth : MonoBehaviour
             yield return new WaitForSeconds(POISONINTERVAL);
 
             totalPoisonDamage += increasePoisonDamage;
-            MinusHealth(totalPoisonDamage);
+            MinusHealth(totalPoisonDamage, TypeDamage.Poison);
 
             totalPoisonDuration -= POISONINTERVAL;
         }

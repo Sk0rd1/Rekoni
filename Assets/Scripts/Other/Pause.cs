@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,7 @@ public class Pause : MonoBehaviour
 
     private bool onInventory = false;
     private bool onPause = false;
-    private float slowTime = 0f; 
-    public bool isPausedTime { get; private set; } = false;
-
+    private float slowTime = 0f;
 
     public void PressExit()
     {
@@ -43,7 +42,6 @@ public class Pause : MonoBehaviour
                 OpenInventory();
             }
         }
-        isPausedTime = true;
     }
 
     public void Continue()
@@ -53,8 +51,7 @@ public class Pause : MonoBehaviour
         pauseCanvas.SetActive(false);
         gameCanvas.SetActive(true);
         inventoryCanvas.SetActive(false);
-        Time.timeScale = 1f;
-        isPausedTime = false;
+        GameObject.Find("Main Camera").GetComponent<SpellsInfo>().FillSpellManager();
     }
 
     public void OnPause()
@@ -64,8 +61,6 @@ public class Pause : MonoBehaviour
         pauseCanvas.SetActive(true);
         gameCanvas.SetActive(false);
         inventoryCanvas.SetActive(false);
-        Time.timeScale = slowTime;
-        isPausedTime = true;
     }
 
     public void OpenInventory()
@@ -74,8 +69,7 @@ public class Pause : MonoBehaviour
         inventoryCanvas.SetActive(true);
         gameCanvas.SetActive(false);
         pauseCanvas.SetActive(false);
-        Time.timeScale = slowTime;
-        isPausedTime = true;
+        GameObject.Find("Main Camera").GetComponent<SpellsInfo>().NewInfoInInventory();
     }
 
     public void HideInventory()
@@ -84,13 +78,11 @@ public class Pause : MonoBehaviour
         pauseCanvas.SetActive(false);
         inventoryCanvas.SetActive(false);
         gameCanvas.SetActive(true);
-        Time.timeScale = 1f;
-        isPausedTime = false;
+        GameObject.Find("Main Camera").GetComponent<SpellsInfo>().FillSpellManager();
     }
 
     public void Exit()
     {
-        Time.timeScale = 1f;
         GameObject.Find("Main Camera/PauseCanvas/Exit/LoadingScreen").SetActive(true);
         SceneManager.LoadScene("MainMenu");
     }

@@ -11,9 +11,4 @@ public class NavMeshBake : MonoBehaviour
         navMesh.BuildNavMesh();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

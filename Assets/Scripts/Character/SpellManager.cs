@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class SpellManager : MonoBehaviour
 {
@@ -35,18 +35,8 @@ public class SpellManager : MonoBehaviour
     {
         inputManager = GetComponent<InputManager>();
         cursorPosition = GameObject.Find("CursorPosition(Clone)").GetComponent<Transform>();
-
         back1 = GameObject.Find("Main Camera/Canvas/Back_1");
         back2 = GameObject.Find("Main Camera/Canvas/Back_2");
-
-        spellPos[0] = GameObject.Find("SpellsList").GetComponent<SSI_Spell>();
-        spellPos[1] = GameObject.Find("SpellsList").GetComponent<MMM_Spell>();
-        spellPos[2] = GameObject.Find("SpellsList").GetComponent<PPI_Spell>();
-        spellPos[3] = GameObject.Find("SpellsList").GetComponent<PSM_Spell>();
-        spellPos[4] = GameObject.Find("SpellsList").GetComponent<III_Spell>();
-        spellPos[5] = GameObject.Find("SpellsList").GetComponent<MSI_Spell>();
-        spellPos[6] = GameObject.Find("SpellsList").GetComponent<UUU_Spell>();
-        spellPos[7] = GameObject.Find("SpellsList").GetComponent<UUS_Spell>();
 
         for (int i = 0; i < 8; i++)
         {
@@ -55,6 +45,109 @@ public class SpellManager : MonoBehaviour
             frontImage[i] = GameObject.Find(resultFront);
             string resultNum = "Main Camera/Canvas/Num_" + frontNum;
             textNum[i] = GameObject.Find(resultNum).GetComponent<TextMeshProUGUI>();
+        }
+    }
+
+    public void SetValues(int[] spellNumFromSave)
+    {
+        for (int i = 0; i < spellPos.Length; i++)
+        {
+            switch (spellNumFromSave[i])
+            {
+                case 0:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<Spell_Empty>();
+                    break;
+                case 1:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<MMM_Spell>();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<PPI_Spell>();
+                    break;
+                case 11:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<SSM_Spell>();
+                    break;
+                case 12:
+                    break;
+                case 13:
+                    break;
+                case 14:
+                    break;
+                case 15:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<SSI_Spell>();
+                    break;
+                case 16:
+                    break;
+                case 17:
+                    break;
+                case 18:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<UUS_Spell>();
+                    break;
+                case 19:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<UUU_Spell>();
+                    break;
+                case 20:
+                    break;
+                case 21:
+                    break;
+                case 22:
+                    break;
+                case 23:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<IIS_Spell>();
+                    break;
+                case 24:
+                    break;
+                case 25:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<III_Spell>();
+                    break;
+                case 26:
+                    break;
+                case 27:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<SIP_Spell>();
+                    break;
+                case 28:
+                    break;
+                case 29:
+                    break;
+                case 30:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<MSI_Spell>();
+                    break;
+                case 31:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<PSM_Spell>();
+                    break;
+                case 32:
+                    break;
+                case 33:
+                    break;
+                case 34:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<UIS_Spell>();
+                    break;
+                case 35:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<IMU_Spell>();
+                    break;
+                default:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<Spell_Empty>();
+                    break;
+            }
+
+            string objectPath = "Main Camera/Canvas/Spell_" + (i + 1).ToString();
+            string imagePath = "SpellIcon/Icon" + spellNumFromSave[i].ToString();
+            GameObject.Find(objectPath).GetComponent<Image>().sprite = Resources.Load<Sprite>(imagePath);
         }
     }
 

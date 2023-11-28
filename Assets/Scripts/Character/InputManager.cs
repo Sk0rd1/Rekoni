@@ -31,7 +31,6 @@ public class InputManager : MonoBehaviour
     private Pause pause;
 
 
-
     private void Awake()
     {
         cursorPrefabPosition = Resources.Load<GameObject>("_OtherObjects/CursorPosition");
@@ -98,6 +97,8 @@ public class InputManager : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.JoystickButton2) && isGamepadUsing) || (Input.GetKeyDown(KeyCode.F) && !isGamepadUsing))
         {
             ButtonMoveBox = true;
+            SaveManager sm = new SaveManager();
+            sm.SaveGame();
         }
         else
         {
