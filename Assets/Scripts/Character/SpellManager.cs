@@ -128,9 +128,9 @@ public class SpellManager : MonoBehaviour
                     spellPos[i] = GameObject.Find("SpellsList").GetComponent<MSI_Spell>();
                     break;
                 case 31:
-                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<PSM_Spell>();
                     break;
                 case 32:
+                    spellPos[i] = GameObject.Find("SpellsList").GetComponent<PSM_Spell>();
                     break;
                 case 33:
                     break;
