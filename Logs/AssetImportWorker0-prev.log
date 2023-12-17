@@ -15,7 +15,7 @@ H:/Unique/gitSAVES/Rekoni
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56243
+57085
 Successfully changed project path to: H:/Unique/gitSAVES/Rekoni
 H:/Unique/gitSAVES/Rekoni
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ H:/Unique/gitSAVES/Rekoni
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [18232] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 398612100 [EditorId] 398612100 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [18096] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 4142911687 [EditorId] 4142911687 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [18232] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 398612100 [EditorId] 398612100 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [18096] Host "[IP] 192.168.31.130 [Port] 0 [Flags] 2 [Guid] 4142911687 [EditorId] 4142911687 [Version] 1048832 [Id] WindowsEditor(7,MeineSpaziren) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 453.29 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 452.11 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56072
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unique/UnityVersions/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005965 seconds.
+Registered in 0.006085 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 686.67 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 397.91 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.712 seconds
+- Completed reload, in  2.471 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2715ms)
-		BeginReloadAssembly (285ms)
+	ReloadAssembly (2472ms)
+		BeginReloadAssembly (510ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (2103ms)
-			LoadAssemblies (284ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (1578ms)
+			LoadAssemblies (508ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (400ms)
+			SetupTypeCache (355ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (117ms)
-			SetupLoadedEditorAssemblies (1394ms)
+			RebuildScriptCaches (105ms)
+			SetupLoadedEditorAssemblies (952ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (22ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (687ms)
-				BeforeProcessingInitializeOnLoad (7ms)
-				ProcessInitializeOnLoadAttributes (500ms)
-				ProcessInitializeOnLoadMethodAttributes (177ms)
+				InitializePlatformSupportModulesInManaged (24ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (398ms)
+				BeforeProcessingInitializeOnLoad (4ms)
+				ProcessInitializeOnLoadAttributes (389ms)
+				ProcessInitializeOnLoadMethodAttributes (135ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (1ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.032637 seconds.
+Registered in 0.018382 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image H:\Unique\gitSAVES\Rekoni\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 423.41 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 502.30 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.569 seconds
+- Completed reload, in  5.171 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4572ms)
-		BeginReloadAssembly (353ms)
+	ReloadAssembly (5174ms)
+		BeginReloadAssembly (355ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (20ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (3955ms)
-			LoadAssemblies (465ms)
+			CreateAndSetChildDomain (49ms)
+		EndReloadAssembly (4542ms)
+			LoadAssemblies (339ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (924ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (287ms)
-			SetupLoadedEditorAssemblies (2214ms)
+			SetupTypeCache (1161ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (354ms)
+			SetupLoadedEditorAssemblies (2554ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (26ms)
+				InitializePlatformSupportModulesInManaged (38ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (424ms)
-				BeforeProcessingInitializeOnLoad (366ms)
-				ProcessInitializeOnLoadAttributes (1153ms)
-				ProcessInitializeOnLoadMethodAttributes (236ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				RefreshPlugins (503ms)
+				BeforeProcessingInitializeOnLoad (419ms)
+				ProcessInitializeOnLoadAttributes (1284ms)
+				ProcessInitializeOnLoadMethodAttributes (303ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (22ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.16 seconds
-Refreshing native plugins compatible for Editor in 2.31 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 4.23 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6042 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 47 unused Assets / (2.7 MB). Loaded Objects now: 6554.
 Memory consumption went from 376.4 MB to 373.7 MB.
-Total: 10.004700 ms (FindLiveObjects: 0.877000 ms CreateObjectMapping: 0.434200 ms MarkObjects: 7.348400 ms  DeleteObjects: 1.342900 ms)
+Total: 14.888600 ms (FindLiveObjects: 1.019800 ms CreateObjectMapping: 1.324600 ms MarkObjects: 9.918700 ms  DeleteObjects: 2.622300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,67 +164,949 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 60320.530770 seconds.
-  path: Assets/Prefabs/DefaultObjects/Small_Objects/flour_white.prefab
-  artifactKey: Guid(ecc8c671ff3b9604e8dffeec83d4927c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DefaultObjects/Small_Objects/flour_white.prefab using Guid(ecc8c671ff3b9604e8dffeec83d4927c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b77b49c9e27444e81f1b7c0e95079c6') in 0.812882 seconds 
+  Time since last request: 268916.555255 seconds.
+  path: Assets/ibah555TexturePack/New Folder
+  artifactKey: Guid(4cf8dbae74838e842a7ff233cdae914a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/New Folder using Guid(4cf8dbae74838e842a7ff233cdae914a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c729fe69924fc920e9b184679294b92') in 0.048284 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 89.541979 seconds.
-  path: Assets/Enemys/Big/Blends/Birb.blend
-  artifactKey: Guid(4f9464b8984ea384782aa61aa7d9f24f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Enemys/Big/Blends/Birb.blend using Guid(4f9464b8984ea384782aa61aa7d9f24f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4cf817a94f5119d1b89ab99cf1d7474') in 0.330619 seconds 
+  Time since last request: 0.000067 seconds.
+  path: Assets/ibah555TexturePack/New Folder/Tower_Def_4_Yellow.fbx
+  artifactKey: Guid(d92c8266f5e085248add06f66a166f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/New Folder/Tower_Def_4_Yellow.fbx using Guid(d92c8266f5e085248add06f66a166f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '324d6fb9f8ab7b5ca48b9670e4956eab') in 0.975314 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.181934 seconds.
-  path: Assets/Enemys/Anim_Big/CharacterArmature_Death.anim
-  artifactKey: Guid(5f194d5e9ad51e848bb5606f2c7a0f8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Enemys/Anim_Big/CharacterArmature_Death.anim using Guid(5f194d5e9ad51e848bb5606f2c7a0f8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5e24b503c1171e68ccfe64f1335819b') in 0.035882 seconds 
+  Time since last request: 3.299189 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2660b6cdad9a9121a178f877a1ad411') in 0.856309 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.708752 seconds.
-  path: Assets/Prefabs/ImportantObjects/CharacterGirl.prefab
-  artifactKey: Guid(6b5596da38a8bb2439f47ac04fcbd653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/ImportantObjects/CharacterGirl.prefab using Guid(6b5596da38a8bb2439f47ac04fcbd653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b025eb2b64ef64cc884a6392b138954c') in 0.145978 seconds 
+  Time since last request: 27.046576 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a473cd0b47d11d8f149ca94f11b55621') in 0.351963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 134.723569 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '097968e9d512f06353cf1da29359ad5c') in 0.378290 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.613785 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3815553a66c36366f3b3ede5bbec6eb4') in 0.361057 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.250462 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab21ab10c13cadb396adc208d6899193') in 0.457518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.798820 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa18c1670693e3cf0c08ff241f779dbd') in 0.242777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.675426 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfeb3872e15857425e4562eae55242d1') in 0.247667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.023939 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bef6ec4041fd428e96a5f322454956e1') in 0.250430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.657238 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5b853e326c4b6f94c68099d3535ef4c') in 0.235078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.753859 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2246c69b785b923bef9fe5ae2b70065') in 0.775902 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.697157 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0097255ba1382967d2216b447c2462a') in 0.199987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 347.968979 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Skills_Make.fbx
+  artifactKey: Guid(c5758dd194da4e64bac4cfcefc44ac8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Skills_Make.fbx using Guid(c5758dd194da4e64bac4cfcefc44ac8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcf03af8f957df9d44bfa29be891ef7a') in 0.061815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.354225 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Skills_Make.fbx
+  artifactKey: Guid(c5758dd194da4e64bac4cfcefc44ac8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Skills_Make.fbx using Guid(c5758dd194da4e64bac4cfcefc44ac8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '223c67883a8afdf511d673779a4a38b5') in 0.047403 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80.173753 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e3dba60084b19e53a9530658587c69f') in 0.392207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.521296 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ed507276c13344ac4d0cb50d0069392') in 0.351366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.036615 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '876794c92b8492e3b7ef1700aebc4913') in 0.521148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.069813 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c001238a014bb7223155a972d36b03cf') in 0.381088 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80.325788 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de81b9cb572250ad8649371027a63cce') in 0.228497 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.353623 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4452e52a6071974890a7d157c34597e') in 0.205409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.424941 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcbf8185ac5caeef9eb3a925969c8433') in 0.205510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 125.313503 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1169af043e8c9debc97a286525bcf07') in 0.374748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.453771 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f53213a7728ec05d903eec0babd56eaa') in 0.205651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.429324 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34331af128583cb03687b50a75f559a8') in 0.373986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.413933 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0014e90f695d0c8f2bc5ae04ec58b5a') in 0.209900 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.977572 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df2de7e8aa16f7cce475914063799916') in 0.214370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.322811 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce808d9a9dd9e6bc630c5126e05dd4f2') in 0.218833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 130.690393 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02da3c95a0796e001979c254d907a7fb') in 0.426353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.392496 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61a31ac8f82b910edea69184ca706565') in 0.249889 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.435285 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcc55d7a1f4d95a2bdb863d5c284e62e') in 0.393926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.007715 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '626dbb012a4bc5e913d5cb7833e61250') in 0.498940 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.203411 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0592cb014d2f82aadf200441dc962142') in 0.431518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.861812 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1f4f7670d72a6080d9bbc52a5e3d44d') in 0.436030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 285.134390 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62e5faaf978bfd2f68176be7263c81ab') in 0.278058 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 56.282919 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '627413bde4d483dfb3fa7f6ffcd85c5e') in 0.258108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.622542 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '099bf43e66eae7c870da92a11d191d63') in 0.261855 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.118989 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a03c38c1ccf4002412fb1b94083b4aa4') in 0.333150 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.636158 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0dc9fd1f39ddf263ae2f12a41aa6ed7') in 0.438420 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.357647 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1815e03444e8fbe2592dd346d6d23fa2') in 0.414989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 82.957758 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1576d601803df91cbeb955aa2b87a25f') in 0.278684 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 113.562736 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5f7d3e2ed84b8a44c0cdb21737b28b9') in 0.273717 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.834222 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86f6533990c7d2805382dd9d56bd887a') in 0.270963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.975351 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85c82fe8b9a137bd5123728d0d41ab89') in 0.282588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.858294 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e53cf6720497bc3f5fd8a196c41f343') in 0.258947 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.744581 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c74d447ed339d868e043574b2b9032c4') in 0.272641 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.078199 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a8165b80a600fb12ba9a05da55ba130') in 0.289006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.796277 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a78af62d357913f2e677894629c55421') in 0.281874 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.624649 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42fcaf4d2d7fb22a09c437a56bdb5dc2') in 0.268419 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.778164 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5674ed9850fce90cd361a35a27e602e') in 0.264425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.079340 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar
+  artifactKey: Guid(b3fbaa8b6a18e024b8c06f951c6dbdfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar using Guid(b3fbaa8b6a18e024b8c06f951c6dbdfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd4df6894944103d11b3c55dbfde529d') in 0.017295 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.938051 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Shader.shadergraph
+  artifactKey: Guid(7f26366412b53654094e2eccf3498401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Shader.shadergraph using Guid(7f26366412b53654094e2eccf3498401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '126e54b0d587009a3cf2e8017652c862') in 0.035444 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 238.729341 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Shader.shadergraph
+  artifactKey: Guid(7f26366412b53654094e2eccf3498401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Shader.shadergraph using Guid(7f26366412b53654094e2eccf3498401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cfe8f12ac81ae9e7f030c22b28fdb86') in 0.029052 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.109260 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59e2f23cd5ec6be7b372454cdc99d4ed') in 1.521650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.987661 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d35c70b66836f421fe480673048caa7') in 1.783096 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 180.715290 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c62815c1bb41a6785421cb0d7f23f5b6') in 0.974546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 63.945751 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Voronoi.shadergraph
+  artifactKey: Guid(0a3441b7ac02ce240be51d16c337338d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Voronoi.shadergraph using Guid(0a3441b7ac02ce240be51d16c337338d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e158dcf2ff944a6fb1c479afc619749') in 0.019608 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 441.033322 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Voronoi.shadergraph
+  artifactKey: Guid(0a3441b7ac02ce240be51d16c337338d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Voronoi.shadergraph using Guid(0a3441b7ac02ce240be51d16c337338d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '596a754091a5d9e097c45327bd5cb4f4') in 0.009895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.492584 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bddcf79485251acea8f134a71e50813') in 4.711777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 55.827771 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08e9e0bc4488429647a7b2e4ebf2867c') in 3.987814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 238.999656 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2590362344bc15f2e69cd1914fcec7ba') in 4.122414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 77.524713 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f80f8c967966dfe0493901713599e23d') in 1.681732 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.589226 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e1db5dc9f6384869106ea2be6daec00') in 2.594045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 84.291328 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98f7febf71ffeb99544746715988d9a5') in 1.923862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.345301 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6875b8c2f8c1c24e36dcad0c0c5ca95') in 1.691140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.421104 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da11e2844884678d89039770bb90be59') in 2.830698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.602087 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbdd277bfeb8b2ca5d0d8be3d4b62cfa') in 2.713653 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 74.183082 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd09a2b1cf952200fd37898759e6d7eff') in 0.920478 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.092915 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9abe5fcfc640dfe8c143c476ca6d5c6') in 1.681489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.170115 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b54ca6f3655584f2a6bfaaa274d5fc2') in 2.666226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.535577 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f44040167417c54e150d087b34db841') in 2.795820 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 59.466483 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5ca8f6923667c44b80205f5bc054ed8') in 2.788354 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.811714 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29b3c5979c4e349281001f2116077f9d') in 2.792585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.716794 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd448385e438445972f10ee0bf150259c') in 2.794327 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80.275842 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a694e246a6687d52bcb345d925182a82') in 4.299004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.881964 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf6571ebb63b5b32c03c1af26f05fbe9') in 3.955601 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.899872 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1be4766bc5c728c62730c906e6226683') in 1.666942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.485796 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9af1d8d715848a110723772e1c8c955') in 2.522907 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 89.560142 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad18999b4a7983893514daa1a13bdf1e') in 1.637430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 530.196738 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '230e1911884914497b26d619a57ed8aa') in 1.767535 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 157.201181 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89ed684ac5428c1e80465e76e523ec5b') in 3.902436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 193.784650 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/3213.mat
+  artifactKey: Guid(eaf351b88047d584b86c36ef3b364f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/3213.mat using Guid(eaf351b88047d584b86c36ef3b364f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47859f67afede1155bd1bc473299955e') in 0.087000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.122432 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Voronoi.shadergraph
+  artifactKey: Guid(0a3441b7ac02ce240be51d16c337338d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Voronoi.shadergraph using Guid(0a3441b7ac02ce240be51d16c337338d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6434a76ba2c9e29fe1c2db32e0ecbd3f') in 0.020669 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 68.551506 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c97714762c5721e399c5c175b2df692') in 5.688285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 94.960693 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/3213.mat
+  artifactKey: Guid(eaf351b88047d584b86c36ef3b364f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/3213.mat using Guid(eaf351b88047d584b86c36ef3b364f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f1441aa38d2e2b635386e258cb9cef4') in 1.708600 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.668929 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b84ac87070613e504127a61d5639223') in 2.495482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 73.046410 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ff484a50dc3bcce3018139bf6ab2aa4') in 2.346622 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.843546 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96631fc03d68ba64ad702aec2ccd0f8a') in 2.504326 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.641569 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddae1decbe9750b7aeb55e02730f7c21') in 2.500894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.530255 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd95e98fecdb10636c896c7d47029534') in 2.560223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 73.074902 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/3213.mat
+  artifactKey: Guid(eaf351b88047d584b86c36ef3b364f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/3213.mat using Guid(eaf351b88047d584b86c36ef3b364f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5973acbe1443ba08526f3ab28cdaa0b8') in 2.725240 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 155.236221 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3157c3df7e6ef644c427a68103d0e2e0') in 4.620272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 195.734659 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b920eedadc8f8592917e4f5f56a5cc') in 3.109921 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 82.199888 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '283ef68f77a0d809e006ed3afa11efe3') in 2.070420 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 101.998343 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e338e6712b947d058ed48ad734a6927a') in 2.158873 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.777602 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ffdcdb5d8de66ab364031d42a62f212') in 1.969562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 169.117595 seconds.
+  path: Assets/ibah555TexturePack/Lazer
+  artifactKey: Guid(c6cdaf07d52220a478e0a7bd4649e1c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Lazer using Guid(c6cdaf07d52220a478e0a7bd4649e1c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '358053a0b1ad8188948bc619a3473477') in 0.025719 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.276561 seconds.
+  path: Assets/ibah555TexturePack/Lazer/Lazer_vfx.vfx
+  artifactKey: Guid(5e7328de9e61273419a47fe29792ab9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Lazer/Lazer_vfx.vfx using Guid(5e7328de9e61273419a47fe29792ab9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd268d51a755afd038b164be33307e8f') in 0.223369 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.661106 seconds.
+  path: Assets/ibah555TexturePack/Lazer/Lazer_vfx.vfx
+  artifactKey: Guid(5e7328de9e61273419a47fe29792ab9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Lazer/Lazer_vfx.vfx using Guid(5e7328de9e61273419a47fe29792ab9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2552467b89285b3135a96d3bb6a69081') in 0.179267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 679.516493 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '338aa9cd44a8dad8a02509da3f52fd78') in 5.626547 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 180.790481 seconds.
+  path: Assets/ibah555TexturePack/Lazer/Lazer_vfx.vfx
+  artifactKey: Guid(5e7328de9e61273419a47fe29792ab9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Lazer/Lazer_vfx.vfx using Guid(5e7328de9e61273419a47fe29792ab9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9a8a713a8c902d995e869146427f911') in 1.766225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.785373 seconds.
+  path: Assets/ibah555TexturePack/Lazer/Lazer_vfx.vfx
+  artifactKey: Guid(5e7328de9e61273419a47fe29792ab9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Lazer/Lazer_vfx.vfx using Guid(5e7328de9e61273419a47fe29792ab9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98de8e8c20022fbc70d4d064ea7a47c7') in 0.177999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 163.619496 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a81af01fa9c05adf4f93b68a27c9864') in 5.532472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 155.862723 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42b4763a1100bf49be7df79a15ea21ee') in 2.298332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.433147 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f9b866baf71ab1851a9e4368b65ec78') in 2.508885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.181182 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '330cc58274ff1f30ae7d477937f068ef') in 2.436348 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.099455 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b827f3938865a3afd309c53af35f5cec') in 2.407162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 233.931295 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f272c327900e7c80ff4478e7f88770c1') in 2.015092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 68.740341 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5951368b0c716bacb0b0d72539a4e4a5') in 3.827736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.434965 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecd69eff129d7359ebf1c208af21250c') in 2.051193 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.030394 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a340ece1574779542ae1cc68dcbfb75c') in 2.182196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.097395 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a7afe1c936bb3f26a7d0e3ac2b3468b') in 2.106888 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.579766 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6565a97fd897eb481ba4db8e137bf993') in 1.880271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 83.802369 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd03af14b1e81189d40fc5fcdca4b5e33') in 2.193956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 46.987188 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9453c0ff8bd4f92d2d32232e21ecbf97') in 2.129010 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 122.146383 seconds.
+  path: Assets/ibah555TexturePack/ProgressBar
+  artifactKey: Guid(0d8adfc6a5d9d6b4bb7bf7e1131279fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/ProgressBar using Guid(0d8adfc6a5d9d6b4bb7bf7e1131279fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e0baedcd7b4392c11e90488c5fceb2a') in 0.026223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.353850 seconds.
+  path: Assets/ibah555TexturePack/Objects_3
+  artifactKey: Guid(d6e33c37f813ac04791850e9324b8f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Objects_3 using Guid(d6e33c37f813ac04791850e9324b8f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '330590c88415408039f8121652ba955a') in 0.019584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.031120 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Plate.mat
+  artifactKey: Guid(4922eb396faab244c8b71352c0bb0ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Plate.mat using Guid(4922eb396faab244c8b71352c0bb0ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4cfba35185075032d8b68d751bfd980') in 0.293053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Plate_3.mat
+  artifactKey: Guid(ca0214e3bafb7cb4c94da57a7d0cd486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Plate_3.mat using Guid(ca0214e3bafb7cb4c94da57a7d0cd486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dca4efb4bb0c68b9e0acb1b91b9abf9') in 0.058841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/ibah555TexturePack/AnotherObjects/Plate_NO.mat
+  artifactKey: Guid(802d411057995fc4e9efb4397f3505f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/AnotherObjects/Plate_NO.mat using Guid(802d411057995fc4e9efb4397f3505f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8ad7f49aafda56c792e720c5014790b') in 0.056300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.630231 seconds.
+  path: Assets/ibah555TexturePack/After_Shoot_Effects/After_Shoot_2.vfx
+  artifactKey: Guid(c0dfaaf35dbbc034db8e0881e46381d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/After_Shoot_Effects/After_Shoot_2.vfx using Guid(c0dfaaf35dbbc034db8e0881e46381d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdd2571bfb0a40ca9e85df1d3310481f') in 0.219089 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.166615 seconds.
+  path: Assets/ibah555TexturePack/FairyTail/Tail_Material_1.mat
+  artifactKey: Guid(20c0d0b63304b8340b3813a35ffd6e3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/FairyTail/Tail_Material_1.mat using Guid(20c0d0b63304b8340b3813a35ffd6e3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14f40ea3e2c8e77a2c0c007c1bde03d4') in 0.234982 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.782101 seconds.
+  path: Assets/ibah555TexturePack/Fresnel
+  artifactKey: Guid(2784ab01ed7d99f4d8c7a2395d7fd189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Fresnel using Guid(2784ab01ed7d99f4d8c7a2395d7fd189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bb0f2628f40e6c4680311d645cdbada') in 0.020338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.733291 seconds.
+  path: Assets/ibah555TexturePack/Light_Arrow/Light_VFX.vfx
+  artifactKey: Guid(04025e2c652a1824b85f0c1d9a22d32b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Light_Arrow/Light_VFX.vfx using Guid(04025e2c652a1824b85f0c1d9a22d32b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27d897a28fa879ec03cda7df8efaa4ee') in 0.230252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.428673 seconds.
+  path: Assets/ibah555TexturePack/Light_Strike/Light_Strike_VFX.vfx
+  artifactKey: Guid(cef5a104fd74cd54f930e4ae9e3a6579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Light_Strike/Light_Strike_VFX.vfx using Guid(cef5a104fd74cd54f930e4ae9e3a6579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa7e8414d9f8debd37b803bd6f20e5d4') in 0.597668 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 63.666205 seconds.
+  path: Assets/ibah555TexturePack/Light_Strike/Strike_2.vfx
+  artifactKey: Guid(8e8d15dbc87b6d0479bb0c2ab97ae214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Light_Strike/Strike_2.vfx using Guid(8e8d15dbc87b6d0479bb0c2ab97ae214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9ffe867f0696e785c8f3c8be3bf660f') in 0.266916 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 108.382490 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6848316e2bc2a8f1e008c45d3bc3ccf0') in 2.191473 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.511645 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cc3ed3c11bd0ac367023ca0702d3146') in 2.338563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.873484 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e73665387617cf154a6705676eaa2466') in 6.559155 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 74.794420 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4178826a6881f8872f4f672ab6d300fa') in 6.205771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.815083 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e228a1819a4e1a6dfa4c9c20ff28d1d1') in 5.535015 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 148.616060 seconds.
+  path: Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx
+  artifactKey: Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Alah_Acbar/Alach_Boom.vfx using Guid(ff911d07e7e22af4189aa833fd372971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e56a63beafb6216870af5c8e87b2543') in 2.687086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 88.682087 seconds.
+  path: Assets/Resources/MMM/ES_MMM.prefab
+  artifactKey: Guid(02479fc51d4b5144997d8b8facc70e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/MMM/ES_MMM.prefab using Guid(02479fc51d4b5144997d8b8facc70e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70dd98fef4db1593e19e8f0e9c300d46') in 0.662638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.102798 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Axes/Axe_1H_Textures/Axe1H_Basic_MetallicSmoothness.png
+  artifactKey: Guid(50560ea6cc6925b4d8b552f809daf9fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Axes/Axe_1H_Textures/Axe1H_Basic_MetallicSmoothness.png using Guid(50560ea6cc6925b4d8b552f809daf9fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61d59ba376715b3494a926e16f568e2d') in 0.408140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Maces/Mace_1H_Textures/Mace1H_Basic_MetallicSmoothness.png
+  artifactKey: Guid(6fdb37838a5d5c449a7915040e9f42ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Maces/Mace_1H_Textures/Mace1H_Basic_MetallicSmoothness.png using Guid(6fdb37838a5d5c449a7915040e9f42ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e5a7e1f5273a2388bdfee3b8febbaf0') in 0.079020 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000107 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Shield/Shields_Textures/Shield_Epic_MetallicSmoothness.png
+  artifactKey: Guid(d0dd376ba73c0d1478e00e3b64a8ba8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Shield/Shields_Textures/Shield_Epic_MetallicSmoothness.png using Guid(d0dd376ba73c0d1478e00e3b64a8ba8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ecfe2ba0f16fe08eea6b599675db2b5') in 0.087322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000128 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Axes/Axe_2H_Textures/Axe2H_Epic_MetallicSmoothness.png
+  artifactKey: Guid(1f6c5a272ce35a14e84bfd3fa7c6d3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Axes/Axe_2H_Textures/Axe2H_Epic_MetallicSmoothness.png using Guid(1f6c5a272ce35a14e84bfd3fa7c6d3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '787973f89a96a6fdc062d114bc617bbc') in 0.092377 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Maces/Mace_1H_Textures/Mace1H_Epic_MetallicSmoothness.png
+  artifactKey: Guid(e2ceb3b5235df354ba179dc0e66eab73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Maces/Mace_1H_Textures/Mace1H_Epic_MetallicSmoothness.png using Guid(e2ceb3b5235df354ba179dc0e66eab73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '717941a578017773cd41146bb67a1a90') in 0.102442 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Maces/Mace_1H_Textures/Mace1H_Medium_MetallicSmoothness.png
+  artifactKey: Guid(79065a279459cef419643ab3be92e275) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Maces/Mace_1H_Textures/Mace1H_Medium_MetallicSmoothness.png using Guid(79065a279459cef419643ab3be92e275) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88eb7efd67da76fd4edfc9f4f206ed52') in 0.100414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Spears/Spear_1H_Textures/Spear1H_Epic2_MetallicSmoothness.png
+  artifactKey: Guid(de7059300cc100f4498e7a6b26b8279a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Spears/Spear_1H_Textures/Spear1H_Epic2_MetallicSmoothness.png using Guid(de7059300cc100f4498e7a6b26b8279a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8b8795985c9add04520b386b5e315b4') in 0.092847 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Axes/Axe_2H_Textures/Axe2H_Basic_MetallicSmoothness.png
+  artifactKey: Guid(7ff75775a5b9f24428b63cce304e7a74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Axes/Axe_2H_Textures/Axe2H_Basic_MetallicSmoothness.png using Guid(7ff75775a5b9f24428b63cce304e7a74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f32110a8020154486e62d002e20a7661') in 0.083987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Maces/Mace_2H_Textures/Mace2H_Epic_MetallicSmoothness.png
+  artifactKey: Guid(597576a17b35ce54b9377022e0d774fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Maces/Mace_2H_Textures/Mace2H_Epic_MetallicSmoothness.png using Guid(597576a17b35ce54b9377022e0d774fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18ebe25340330c9851e75ccfcad281ef') in 0.102821 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Spears/Spear_1H_Textures/Spear1H_Epic_MetallicSmoothness.png
+  artifactKey: Guid(907240a9deac1214291fadf4d26cf5a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Spears/Spear_1H_Textures/Spear1H_Epic_MetallicSmoothness.png using Guid(907240a9deac1214291fadf4d26cf5a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b9aa72fed37f291ab44e355e72733f4') in 0.085557 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Shield/Shields_Textures/Shield_Medium_MetallicSmoothness.png
+  artifactKey: Guid(93809448f3766f84e977a1029b5e7b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Shield/Shields_Textures/Shield_Medium_MetallicSmoothness.png using Guid(93809448f3766f84e977a1029b5e7b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c437f942b34dcc0a4d88de7a1a126d5') in 0.094316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Spears/Spear_1H_Textures/Spear1H_Medium_MetallicSmoothness.png
+  artifactKey: Guid(0b353d46426bdee4b9662cb1c3e4bdb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Something/Blink/Art/Weapons/LowPoly/FreeRPGWeapons/Spears/Spear_1H_Textures/Spear1H_Medium_MetallicSmoothness.png using Guid(0b353d46426bdee4b9662cb1c3e4bdb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22b06391df34d5c8c921dde94b03f569') in 0.115360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.511318 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Ban_1.fbx
+  artifactKey: Guid(e524b1ac8a8a99c45b71b76a22ab749a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Ban_1.fbx using Guid(e524b1ac8a8a99c45b71b76a22ab749a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8c3e2874da7add7f38be58d1c4f9157') in 0.417478 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Cart_2.fbx
+  artifactKey: Guid(04eedd28ed5b65f4cb558f8d2dc60b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Cart_2.fbx using Guid(04eedd28ed5b65f4cb558f8d2dc60b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6b41b709c9f08a8efa8e0fc30a9933e') in 0.183429 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Sino_1.fbx
+  artifactKey: Guid(590159089608b5c4d8a4173f77248a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Sino_1.fbx using Guid(590159089608b5c4d8a4173f77248a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9230773d54a38219524ae65c9763d9eb') in 0.315799 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000061 seconds.
-  path: Assets/Prefabs/ImportantObjects/SpellsList.prefab
-  artifactKey: Guid(b611c9cdf32bf7d41b0535e8e01f57fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/ImportantObjects/SpellsList.prefab using Guid(b611c9cdf32bf7d41b0535e8e01f57fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1420e23d1aa53eae7dc8a201df9939b3') in 0.034515 seconds 
+  path: Assets/ibah555TexturePack/Smoke/flour_red.fbx
+  artifactKey: Guid(74a7a9d67e6cbf54dae2034252faa66b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/flour_red.fbx using Guid(74a7a9d67e6cbf54dae2034252faa66b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f083878a8ccd3b19400b9d1aedf8df') in 0.160230 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.641498 seconds.
-  path: Assets/Enemys/Big/FBX/Orc 1.mat
-  artifactKey: Guid(eb830554e7f7f7945beaa047092e4723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Enemys/Big/FBX/Orc 1.mat using Guid(eb830554e7f7f7945beaa047092e4723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba3f7eac25e0ff278b62c0d6af7fd702') in 0.056329 seconds 
+  Time since last request: 0.000075 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Bridge_1.fbx
+  artifactKey: Guid(622bf92d59148b84d9a0b2ca8ae6eeae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Bridge_1.fbx using Guid(622bf92d59148b84d9a0b2ca8ae6eeae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cd93bd81559e879ebcfcc97858a4fb4') in 0.731125 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/Enemys/Big/FBX/Orc 7.mat
-  artifactKey: Guid(f9857bf6e0d2c8c479ac4e6f78de1a24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Enemys/Big/FBX/Orc 7.mat using Guid(f9857bf6e0d2c8c479ac4e6f78de1a24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '996cc4a565448c213e31a9435de0708c') in 0.067323 seconds 
+  Time since last request: 52.192105 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5361e17e497ab42c4fc40cdf7d4b3679') in 0.122501 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000061 seconds.
-  path: Assets/Enemys/Big/FBX/Orc.mat
-  artifactKey: Guid(c8a4a1a80d8549940a62c44a9f723de3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Enemys/Big/FBX/Orc.mat using Guid(c8a4a1a80d8549940a62c44a9f723de3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c232d62e3101de74a95e44aa8d65790') in 0.049120 seconds 
+  Time since last request: 33.453851 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6dad041d8ec604afd84ef8500429476') in 0.050243 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000070 seconds.
-  path: Assets/Enemys/Big/FBX/Orc 3.mat
-  artifactKey: Guid(4f1559c052477ce4ea91a2440bc90f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Enemys/Big/FBX/Orc 3.mat using Guid(4f1559c052477ce4ea91a2440bc90f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92e750f13f4e43efd68704a54fa4f1e0') in 0.050658 seconds 
+  Time since last request: 7.290547 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5894eedf887378e3e20b27ad1ab20087') in 0.037858 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000058 seconds.
-  path: Assets/Enemys/Big/FBX/Orc 4.mat
-  artifactKey: Guid(795b73137c813e449b4417afaa6f6592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Enemys/Big/FBX/Orc 4.mat using Guid(795b73137c813e449b4417afaa6f6592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ad8573602d940c03e8f8b4ed0072d4f') in 0.038803 seconds 
+  Time since last request: 9.474805 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7037470e47eaac126e7c1784f09ccce6') in 0.028859 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3435.430846 seconds.
-  path: Assets/ibah555TexturePack/Grass/Body2.fbx
-  artifactKey: Guid(7556c41266d2f1e4fb654d340be3ced2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ibah555TexturePack/Grass/Body2.fbx using Guid(7556c41266d2f1e4fb654d340be3ced2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a301e98919ef8af856cb407aba356d6e') in 0.210415 seconds 
+  Time since last request: 7.119082 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a20822e449bc5a3699302611fdac8867') in 0.021810 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 143.608821 seconds.
+  path: Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx
+  artifactKey: Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ibah555TexturePack/Smoke/Smoke_FVX.vfx using Guid(0e4235317c758bd4e9d014e5a15ba303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3682912ac87c6c8bc096961d9e98d05e') in 0.026452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.015351 seconds.
+  path: Assets/Resources/MMM/BeautifulFire.prefab
+  artifactKey: Guid(d7ea51d4fb182354489a9782ce2c8b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/MMM/BeautifulFire.prefab using Guid(d7ea51d4fb182354489a9782ce2c8b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c96d9be293187068dc3afe19e9e3ee7') in 0.049359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.922172 seconds.
+  path: Assets/Resources/MMM/Smoke_FVX.prefab
+  artifactKey: Guid(ad4dd3c6eabc8f24bb9f68015231f8c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/MMM/Smoke_FVX.prefab using Guid(ad4dd3c6eabc8f24bb9f68015231f8c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8d473c65caf71d22aaba9c776992782') in 0.043904 seconds 
