@@ -19,7 +19,11 @@ public class Pause : MonoBehaviour
 
     public void PressExit()
     {
-        if (onPause)
+        if (onInventory && !onPause)
+        {
+            HideInventory();
+        }
+        else if (onPause)
         {
             Continue();
         }

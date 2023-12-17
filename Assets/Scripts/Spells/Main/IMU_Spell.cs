@@ -143,10 +143,9 @@ public class IMU_Spell : SpellUniversal
         if (enemy != null)
         {
             StartCoroutine(Reload());
-            GameObject go = Instantiate(Resources.Load<GameObject>("IMU/Light"));
+            GameObject go = Instantiate(Resources.Load<GameObject>("IMU/Light"), enemy.transform);
             IMU imu = go.GetComponent<IMU>();
-            imu.SetValues(damage, duration, radius);
-            imu.MoveTo(enemy);
+            imu.SetValues(damage, duration, radius, enemy, true);
         }
     }
 

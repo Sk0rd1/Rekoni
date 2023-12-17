@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class IMU : MonoBehaviour
@@ -10,21 +12,39 @@ public class IMU : MonoBehaviour
     private float radius;
     private float period = 0.2f;
 
-    public void SetValues(int damage, float duration, float radius)
+    private bool isParent = false;
+
+    private struct ListForIMU
     {
+        public GameObject enemy;
+        public GameObject imu;
+
+        public ListForIMU(GameObject enemy, GameObject imu)
+        {
+            this.enemy = enemy;
+            this.imu = imu;
+        }
+
+    }
+
+    List<ListForIMU> list;
+
+    public void SetValues(int damage, float duration, float radius, GameObject enemy, bool isParent)
+    {
+        list = new List<ListForIMU>();
         this.damage = damage;
         this.duration = duration;
         this.radius = radius;
-    }
-
-    public void MoveTo(GameObject enemy)
-    {
+        this.isParent = isParent;
         StartCoroutine(Move(enemy));
+        if(isParent)
+        {
+            this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     private IEnumerator Move(GameObject enemy)
     {
-        StartCoroutine(MoveLight(enemy));
         EnemysHealth eh = enemy.GetComponent<EnemysHealth>();
         float currentDuration = 0;
         while (currentDuration <= duration)
@@ -34,10 +54,10 @@ public class IMU : MonoBehaviour
             try
             {
                 duration += period;
-            
+
                 eh.Damage(damage, TypeDamage.Thunder);
             }
-            catch 
+            catch
             {
                 break;
             }
@@ -49,37 +69,49 @@ public class IMU : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemy"))   
+        if (isParent)
         {
-            /*var allColliders = Physics.OverlapSphere(other.transform.position, 0.5f);
-            foreach (var collider in allColliders)
+            if (other.CompareTag("Enemy"))
             {
-                if (other.CompareTag("IMU"))
-                    Debug.Log("GG");
-            }*/
-            if (Vector3.Distance(other.transform.position, this.transform.position) > 0.5f)
-            {
-                GameObject go = Instantiate(Resources.Load<GameObject>("IMU/Light"));
+                /*bool isNear = false;
+                var allColliders = Physics.OverlapSphere(other.transform.position, 5f);
+                foreach (var collider in allColliders)
+                {
+                    Debug.Log(other.tag);
+                    if (other.CompareTag("IMU"))
+                    {
+                        isNear = true;
+                        break;
+                    }
+                }*/
+
+                GameObject go = Instantiate(Resources.Load<GameObject>("IMU/Light"), other.transform);
                 IMU imu = go.GetComponent<IMU>();
-                imu.SetValues(damage, duration, radius);
-                imu.MoveTo(other.gameObject);
+                imu.SetValues(damage, duration, radius, other.gameObject, false);
+
+                list.Add(new ListForIMU(other.gameObject, go));
             }
         }
-        
     }
 
-    private IEnumerator MoveLight(GameObject enemy)
+    private void OnTriggerExit(Collider other)
     {
-        EnemysHealth enemysHealth = enemy.GetComponent<EnemysHealth>();
-        while (!enemysHealth.IsDeath())
+        if (isParent)
         {
-            transform.position = enemy.transform.position;
-            yield return new WaitForEndOfFrame();
+            if (other.CompareTag("Enemy"))
+            {
+                ListForIMU result = list.Find(item => item.enemy == other.gameObject);
+
+                if (result.imu != null)
+                {
+                    list.Remove(result);
+                    Destroy(result.imu);
+                }
+            }
         }
     }
 
-
-    private void Share(GameObject defaultEnemy)
+    /*private void Share(GameObject defaultEnemy)
     {
         var enemyColliders = Physics.OverlapSphere(defaultEnemy.transform.position, 1f, LayerMask.GetMask("Enemy"));
         var allColliders = Physics.OverlapSphere(defaultEnemy.transform.position, 1f);
@@ -120,5 +152,6 @@ public class IMU : MonoBehaviour
             }
             Debug.Log("End");
         }
-    }
+    }*/
 }
+
