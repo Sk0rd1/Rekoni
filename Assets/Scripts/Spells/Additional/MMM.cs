@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class MMM : MonoBehaviour
 {
-    private int startDamage = 0;
-    private int periodDamage = 0;
-    private float timeCast = 0;
+    private int fireDamage = 0;
 
-    public void SetValues(int startDamage, int periodDamage, float timeCast)
+    public void SetValues(int fireDamage)
     {
-        this.timeCast = timeCast;
-        this.startDamage = startDamage;
-        this.periodDamage = periodDamage;
+        this.fireDamage = fireDamage;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +19,7 @@ public class MMM : MonoBehaviour
 
             if( enemysHealth != null)
             {
-                enemysHealth.FireDamage(startDamage, periodDamage);
+                enemysHealth.FireDamage(fireDamage);
             }
 
         }

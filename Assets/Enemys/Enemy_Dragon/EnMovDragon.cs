@@ -79,14 +79,14 @@ public class EnMovDragon : EnemysMovement
                         agent.velocity = Vector3.zero;
                         StartCoroutine(DealDamage());
                     }
-                    else if (Vector3.Distance(shortestPoint, transform.position) < punchRadius)
+                    /*else if (Vector3.Distance(shortestPoint, transform.position) < punchRadius)
                     {
                         StartCoroutine(Teleport());
                     }
                     else if (reloadTeleport < 0f && Vector3.Distance(characterGirl.transform.position, transform.position) > 2 * punchRadius)
                     {
                         StartCoroutine(Teleport());
-                    }
+                    }*/
                     else
                     {
                         animator.SetBool("isRunning", true);
