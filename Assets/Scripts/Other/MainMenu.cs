@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         loadingScreen.SetActive(true);
-        SceneManager.LoadScene("TestScene2");
+        SceneManager.LoadScene("Level1");
     }
 
     public void ExitGame()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +9,11 @@ public class EnMovDragon : EnemysMovement
     private Vector3 chPositionMinus = Vector3.zero;
     private Vector3 chPositionPlus = Vector3.zero;
     Vector3 shortestPoint = Vector3.zero;
+
+    GameObject dragonBullet;
+    string strDragonBullet = "_Enemys/Ammo/MagicBullets/DragonBulletFire";
+
+    private bool isDealDamageReady = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +27,7 @@ public class EnMovDragon : EnemysMovement
 
     private void Start()
     {
+        punchRadius = 16.0f;
         moveSpeed = 8f;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
@@ -33,6 +40,8 @@ public class EnMovDragon : EnemysMovement
         teleportEffect1 = Instantiate(teleportEffect1, new Vector3(0f, -20f, 0f), Quaternion.identity);
         teleportEffect1.SetActive(false);
         teleportEffect2.SetActive(false);
+
+        dragonBullet = Resources.Load<GameObject>(strDragonBullet);
     }
 
     private IEnumerator Move()
@@ -74,19 +83,11 @@ public class EnMovDragon : EnemysMovement
                     }
 
 
-                    if (Vector3.Distance(characterGirl.transform.position, transform.position) < punchRadius)
+                    if (Vector3.Distance(characterGirl.transform.position, transform.position) < punchRadius && isDealDamageReady)
                     {
                         agent.velocity = Vector3.zero;
                         StartCoroutine(DealDamage());
                     }
-                    /*else if (Vector3.Distance(shortestPoint, transform.position) < punchRadius)
-                    {
-                        StartCoroutine(Teleport());
-                    }
-                    else if (reloadTeleport < 0f && Vector3.Distance(characterGirl.transform.position, transform.position) > 2 * punchRadius)
-                    {
-                        StartCoroutine(Teleport());
-                    }*/
                     else
                     {
                         animator.SetBool("isRunning", true);
@@ -103,5 +104,28 @@ public class EnMovDragon : EnemysMovement
             reloadTeleport -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    protected override IEnumerator DealDamage()
+    {
+        isDealDamageReady = false;
+        readyToFight = false;
+        animator.SetBool("isPunch", true);
+        agent.SetDestination(transform.position);
+        agent.isStopped = true;
+        agent.ResetPath();
+
+        yield return new WaitForSeconds(0.367f);
+
+        GameObject bullet = Instantiate(dragonBullet, gameObject.transform.position + new Vector3(0,1,0), Quaternion.identity);
+
+        yield return new WaitForSeconds(0.65f);
+        animator.SetBool("isPunch", false);
+        yield return new WaitForSeconds(0.3f);
+        readyToFight = true;
+        agent.isStopped = false;
+
+        yield return new WaitForSeconds(0.5f);
+        isDealDamageReady = true;
     }
 }
