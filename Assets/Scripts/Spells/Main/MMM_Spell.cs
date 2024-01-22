@@ -7,9 +7,7 @@ using static Unity.Burst.Intrinsics.X86;
 public class MMM_Spell : SpellUniversal
 {
     private float reloadTime = 4f;
-    private int startDamage = 10;
-    private int increasDamage = 1;
-    private float fireDuration = 4f;
+    private int fireDamage = 5;
     private float precision = 30f; // стандарта ймовірність попадання в центральний круг 30%, лінійна залежність. Свіввідношення ймовірностей по кругам 3:3:4 = центр:середина:ззовні
 
     public const bool MOMENTARYCAST = false;
@@ -145,7 +143,7 @@ public class MMM_Spell : SpellUniversal
             GameObject instantinateEffect = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
             effectList.Add(instantinateEffect);
             MMM mmm = instantinateEffect.GetComponentInChildren<MMM>();
-            mmm.SetValues(startDamage, increasDamage, fireDuration);
+            mmm.SetValues(fireDamage);
 
             GameObject cursorModel = new GameObject();
             cursorModel.AddComponent<StrokeCircleGenerator>();

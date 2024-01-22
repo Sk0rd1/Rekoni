@@ -48,6 +48,7 @@ public class IIS_Spell : SpellUniversal
 
         GameObject effectPrefabModel = Resources.Load<GameObject>(effectName);
         effectModel = Instantiate(effectPrefabModel, new Vector3(0f, -20f, 0f), Quaternion.identity);
+        effectModel.SetActive(false);
         iis = effectModel.GetComponent<IIS>();
         iis.SetValues(stunDuration);
     }

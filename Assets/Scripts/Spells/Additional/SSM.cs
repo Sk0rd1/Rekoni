@@ -69,7 +69,6 @@ public class SSM : MonoBehaviour
 
         while (currentTime < 2f)
         {
-            Debug.Log(toAngleX);
             if (toAngleX)
             {
                 currentAngleX += angleX * angularSpeed * Time.deltaTime;
@@ -85,7 +84,6 @@ public class SSM : MonoBehaviour
                     angleX = Random.Range(-15f, 15f);
                 }
             }
-            Debug.Log(angleX);
 
             if (toAngleZ)
             {
@@ -120,7 +118,6 @@ public class SSM : MonoBehaviour
                 enDirection *= 5000f;
 
                 en.GetComponent<Rigidbody>().AddForce(enDirection);
-                Debug.Log("Damage");
             }
             catch { }
         }

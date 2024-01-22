@@ -11,16 +11,14 @@ public class EnemysHealth : MonoBehaviour
     protected bool enemyIsDeath = false;
 
     protected const float POISONINTERVAL = 1f;
-    protected int increasePoisonDamage = 0;
     protected int totalPoisonDamage = 0;
-    protected float totalPoisonDuration = 0f;
-    protected bool isPoisonTimerStart = false;
+    protected int countOfPoisons = 0;
 
     protected const float FIREINTERVAL = 1f;
-    protected const float TIMETOFIREDAMAGE = 5f;
-    protected int finalFireDamage = 0;
-    protected int increaseFireDamage = 0;
-    protected int numOfFireEffects = 0;
+    protected const float PERCENTVALUE = 20f;
+    protected float maxFireDamage = 0;
+    protected float totalFireDamage = 0;
+    protected int countOfFires = 0;
     protected bool isFireTimerStart = false;
 
     protected Renderer renderer;
@@ -108,86 +106,83 @@ public class EnemysHealth : MonoBehaviour
         MinusHealth(damage, typeDamage);
     }
 
-    public virtual void PoisonDamage(int totalDamage, int increasesDamage, float fullTime)
+    public virtual void PoisonDamage(int damage, float fullTime)
     {
-        totalPoisonDamage += totalDamage;
-
-        StartCoroutine(DamageFromPoison(increasesDamage, fullTime));
-
-        if (!isPoisonTimerStart)
-        {
-            StartCoroutine(CountPoisonDamage(increasesDamage, fullTime));
-        }
+        countOfPoisons++;
+        StartCoroutine(DamageFromPoison(damage, fullTime));
     }
 
-    public virtual void FireDamage(int finalDamage, int increasingDamage)
+    public virtual void FireDamage(int damage)
     {
-        increaseFireDamage += increasingDamage;
-        StartCoroutine(CountFireDamage());
-        finalFireDamage += finalDamage;
-        numOfFireEffects++;
+        maxFireDamage += damage;
+        totalFireDamage += damage;
+        countOfFires++;
+
+        if (countOfFires > 11) countOfFires = 11;
+
         if (!isFireTimerStart)
         {
-            StartCoroutine(FinalFireDamage());
+            isFireTimerStart = true;
+            StartCoroutine(DamageFromFire());
         }
     }
-
-    protected virtual IEnumerator CountFireDamage()
+    protected virtual IEnumerator DamageFromFire()
     {
-        int numOfTiks = (int)(TIMETOFIREDAMAGE / FIREINTERVAL);
-
-        while (numOfTiks > 0)
+        while (totalFireDamage > 0)
         {
-            MinusHealth(increaseFireDamage, TypeDamage.Fire);
             yield return new WaitForSeconds(FIREINTERVAL);
+
+            int currentDamage = (int)(maxFireDamage * PERCENTVALUE / 100f);
+
+            if (totalFireDamage > currentDamage)
+            {
+                MinusHealth((int)(totalFireDamage - currentDamage), TypeDamage.Fire);
+                //Debug.Log("t  " + (totalFireDamage - currentDamage));
+            }
+            else
+            {
+                MinusHealth((int)totalFireDamage, TypeDamage.Fire);
+                //Debug.Log("f  " + totalFireDamage);
+            }
+
+            float value = maxFireDamage * ((PERCENTVALUE - countOfFires + 1) / 100f);
+            if (value < 1)
+            {
+                totalFireDamage -= 1;
+            }
+            else
+            {
+                totalFireDamage -= value;
+            }
+
+            totalFireDamage -= (int)(maxFireDamage * ((PERCENTVALUE - countOfFires + 1) / 100f));
+            Debug.Log(maxFireDamage * ((PERCENTVALUE - countOfFires) / 100f));
         }
-    }
 
-    protected virtual IEnumerator FinalFireDamage()
-    {
-        isFireTimerStart = true;
-
-        yield return new WaitForSeconds(5f);
-
-        MinusHealth(finalFireDamage * numOfFireEffects, TypeDamage.Fire);
-
-        finalFireDamage = 0;
-        numOfFireEffects = 0;
-        increaseFireDamage = 0;
-
+        maxFireDamage = 0;
         isFireTimerStart = false;
     }
 
-    protected virtual IEnumerator CountPoisonDamage(int damage, float fullTime)
-    {
-        totalPoisonDuration = (int)(fullTime / POISONINTERVAL);
 
-        while (totalPoisonDuration >= 0)
+    protected virtual IEnumerator DamageFromPoison(int damage, float fullTime)
+    {
+        while (fullTime >= 0f)
         {
             yield return new WaitForSeconds(POISONINTERVAL);
 
-            totalPoisonDamage += increasePoisonDamage;
-            MinusHealth(totalPoisonDamage, TypeDamage.Poison);
-
-            totalPoisonDuration -= POISONINTERVAL;
+            MinusHealth(damage + totalPoisonDamage, TypeDamage.Poison);
+            fullTime -= POISONINTERVAL;
         }
 
-        totalPoisonDamage = 0;
-        increasePoisonDamage = 0;
-        totalPoisonDuration = 0f;
-    }
+        countOfPoisons--;
 
-    protected virtual IEnumerator DamageFromPoison(int increasesDamage, float fullTime)
-    {
-        increasePoisonDamage += increasesDamage;
-
-        if (fullTime > totalPoisonDuration)
+        if (countOfPoisons == 0)
         {
-            totalPoisonDuration = fullTime;
+            totalPoisonDamage = 0;
         }
-
-        yield return new WaitForSeconds(fullTime);
-
-        increasePoisonDamage -= increasesDamage;
+        else
+        {
+            totalPoisonDamage += (int)Mathf.Sqrt(damage);
+        }
     }
 }
